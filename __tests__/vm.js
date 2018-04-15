@@ -2,9 +2,9 @@ import { Root, observable } from "react-mobx-vm";
 
 /**
  *
- * @typedef {AcceptGrantDTO}
+ * @typedef {Acceptgrantdto}
  */
-export class AcceptGrantDTO extends Root {
+export class Acceptgrantdto extends Root {
   /**
    * 授予ID
    * @example 11111
@@ -15,9 +15,9 @@ export class AcceptGrantDTO extends Root {
 
 /**
  *
- * @typedef {AgreementQueryDTO}
+ * @typedef {Agreementquerydto}
  */
-export class AgreementQueryDTO extends Root {
+export class Agreementquerydto extends Root {
   /**
    *
    * @example
@@ -42,9 +42,9 @@ export class AgreementQueryDTO extends Root {
 
 /**
  *
- * @typedef {AgreementSuggestVO}
+ * @typedef {Agreementsuggestvo}
  */
-export class AgreementSuggestVO extends Root {
+export class Agreementsuggestvo extends Root {
   /**
    * 协议ID
    * @example 1212
@@ -69,9 +69,9 @@ export class AgreementSuggestVO extends Root {
 
 /**
  *
- * @typedef {AgreementUpdateDTO}
+ * @typedef {Agreementupdatedto}
  */
-export class AgreementUpdateDTO extends Root {
+export class Agreementupdatedto extends Root {
   /**
    * 英文协议内容
    * @example Hello XiaoHu
@@ -116,10 +116,22 @@ export class AgreementUpdateDTO extends Root {
 }
 
 /**
- *
- * @typedef {AgreementVO}
+ * 属性是否可以编辑
+ * @typedef {Edit}
  */
-export class AgreementVO extends Root {
+export class Edit extends Root {}
+
+/**
+ * 国际化
+ * @typedef {Map}
+ */
+export class Map extends Root {}
+
+/**
+ *
+ * @typedef {Agreementvo}
+ */
+export class Agreementvo extends Root {
   /**
    * 协议ID
    * @example 1212
@@ -163,9 +175,9 @@ export class AgreementVO extends Root {
   @observable creationDate;
 
   /**
-   * 属性是否可以编辑
-   * @example {"attribute1":"N","attribute2":"Y"}
-   * @type {object}
+   *
+   * @example
+   * @type {Edit}
    */
   @observable edit;
 
@@ -205,9 +217,9 @@ export class AgreementVO extends Root {
   @observable lastUpdatedByName;
 
   /**
-   * 国际化
+   *
    * @example
-   * @type {object}
+   * @type {Map}
    */
   @observable map;
 
@@ -235,9 +247,9 @@ export class AgreementVO extends Root {
 
 /**
  *
- * @typedef {AgreementViewVO}
+ * @typedef {Agreementviewvo}
  */
-export class AgreementViewVO extends Root {
+export class Agreementviewvo extends Root {
   /**
    * 中文协议内容
    * @example 你好
@@ -374,9 +386,9 @@ export class AgreementViewVO extends Root {
 
 /**
  *
- * @typedef {AnalyzeMovePanelVO}
+ * @typedef {Analyzemovepanelvo}
  */
-export class AnalyzeMovePanelVO extends Root {
+export class Analyzemovepanelvo extends Root {
   /**
    * 扣减状态
    * @example
@@ -457,9 +469,9 @@ export class AnalyzeMovePanelVO extends Root {
 
 /**
  *
- * @typedef {AnalyzePanelVO}
+ * @typedef {Analyzepanelvo}
  */
-export class AnalyzePanelVO extends Root {
+export class Analyzepanelvo extends Root {
   /**
    * 员工类型
    * @example
@@ -512,9 +524,9 @@ export class AnalyzePanelVO extends Root {
 
 /**
  *
- * @typedef {AnalyzeQuitPanelVO}
+ * @typedef {Analyzequitpanelvo}
  */
-export class AnalyzeQuitPanelVO extends Root {
+export class Analyzequitpanelvo extends Root {
   /**
    * 操作列表
    * @example
@@ -553,9 +565,9 @@ export class AnalyzeQuitPanelVO extends Root {
 
 /**
  *
- * @typedef {AscrRuleDTO}
+ * @typedef {Ascrruledto}
  */
-export class AscrRuleDTO extends Root {
+export class Ascrruledto extends Root {
   /**
    * 授予数量
    * @example 10000
@@ -573,9 +585,9 @@ export class AscrRuleDTO extends Root {
 
 /**
  *
- * @typedef {AscriptionInfoVO}
+ * @typedef {Ascriptioninfovo}
  */
-export class AscriptionInfoVO extends Root {
+export class Ascriptioninfovo extends Root {
   /**
    * 归属日期
    * @example 2018-01-01
@@ -621,9 +633,9 @@ export class AscriptionInfoVO extends Root {
 
 /**
  *
- * @typedef {AscriptionSimpleVO}
+ * @typedef {Ascriptionsimplevo}
  */
-export class AscriptionSimpleVO extends Root {
+export class Ascriptionsimplevo extends Root {
   /**
    * 归属日期
    * @example 2018-01-01
@@ -648,9 +660,9 @@ export class AscriptionSimpleVO extends Root {
 
 /**
  *
- * @typedef {AscriptionVO}
+ * @typedef {Ascriptionvo}
  */
-export class AscriptionVO extends Root {
+export class Ascriptionvo extends Root {
   /**
    * 授予ID
    * @example 1000
@@ -675,9 +687,9 @@ export class AscriptionVO extends Root {
 
 /**
  *
- * @typedef {BussLineCreateDTO}
+ * @typedef {Busslinecreatedto}
  */
-export class BussLineCreateDTO extends Root {
+export class Busslinecreatedto extends Root {
   /**
    * 业务线名字
    * @example 度秘
@@ -709,9 +721,9 @@ export class BussLineCreateDTO extends Root {
 
 /**
  *
- * @typedef {BussLineOrgCreateDTO}
+ * @typedef {Busslineorgcreatedto}
  */
-export class BussLineOrgCreateDTO extends Root {
+export class Busslineorgcreatedto extends Root {
   /**
    * 业务线ID
    * @example 12
@@ -750,9 +762,9 @@ export class BussLineOrgCreateDTO extends Root {
 
 /**
  *
- * @typedef {BussLineOrgQueryDTO}
+ * @typedef {Busslineorgquerydto}
  */
-export class BussLineOrgQueryDTO extends Root {
+export class Busslineorgquerydto extends Root {
   /**
    * 业务线id
    * @example
@@ -791,9 +803,9 @@ export class BussLineOrgQueryDTO extends Root {
 
 /**
  *
- * @typedef {BussLineOrgUpdateDTO}
+ * @typedef {Busslineorgupdatedto}
  */
-export class BussLineOrgUpdateDTO extends Root {
+export class Busslineorgupdatedto extends Root {
   /**
    * 部門ID
    * @example 12
@@ -825,9 +837,9 @@ export class BussLineOrgUpdateDTO extends Root {
 
 /**
  *
- * @typedef {BussLineQueryTempDTO}
+ * @typedef {Busslinequerytempdto}
  */
-export class BussLineQueryTempDTO extends Root {
+export class Busslinequerytempdto extends Root {
   /**
    * 业务线名字
    * @example 度秘
@@ -852,9 +864,9 @@ export class BussLineQueryTempDTO extends Root {
 
 /**
  *
- * @typedef {BussLineSuggestVO}
+ * @typedef {Busslinesuggestvo}
  */
-export class BussLineSuggestVO extends Root {
+export class Busslinesuggestvo extends Root {
   /**
    * ID
    * @example 1212
@@ -872,9 +884,9 @@ export class BussLineSuggestVO extends Root {
 
 /**
  *
- * @typedef {BussLineUpdateDTO}
+ * @typedef {Busslineupdatedto}
  */
-export class BussLineUpdateDTO extends Root {
+export class Busslineupdatedto extends Root {
   /**
    * 业务线ID
    * @example 12
@@ -913,9 +925,9 @@ export class BussLineUpdateDTO extends Root {
 
 /**
  *
- * @typedef {BussLineVO}
+ * @typedef {Busslinevo}
  */
-export class BussLineVO extends Root {
+export class Busslinevo extends Root {
   /**
    * ID
    * @example 1212
@@ -1031,9 +1043,9 @@ export class BussLineVO extends Root {
 
 /**
  *
- * @typedef {BussOrgLogListVO}
+ * @typedef {Bussorgloglistvo}
  */
-export class BussOrgLogListVO extends Root {
+export class Bussorgloglistvo extends Root {
   /**
    * 日志详情
    * @example
@@ -1044,7 +1056,7 @@ export class BussOrgLogListVO extends Root {
   /**
    * 操作人信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable operation;
 
@@ -1072,9 +1084,9 @@ export class BussOrgLogListVO extends Root {
 
 /**
  *
- * @typedef {BussOrgLogVO}
+ * @typedef {Bussorglogvo}
  */
-export class BussOrgLogVO extends Root {
+export class Bussorglogvo extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -1120,9 +1132,9 @@ export class BussOrgLogVO extends Root {
 
 /**
  *
- * @typedef {CABUpdateMoveVo}
+ * @typedef {Cabupdatemovevo}
  */
-export class CABUpdateMoveVo extends Root {
+export class Cabupdatemovevo extends Root {
   /**
    * 已归属
    * @example 111
@@ -1154,7 +1166,7 @@ export class CABUpdateMoveVo extends Root {
   /**
    * 员工信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -1217,9 +1229,9 @@ export class CABUpdateMoveVo extends Root {
 
 /**
  *
- * @typedef {CGrantForRSVO}
+ * @typedef {Cgrantforrsvo}
  */
-export class CGrantForRSVO extends Root {
+export class Cgrantforrsvo extends Root {
   /**
    * 已出资金额
    * @example 12.1
@@ -1384,9 +1396,9 @@ export class CGrantForRSVO extends Root {
 
 /**
  *
- * @typedef {CGrantForSOVO}
+ * @typedef {Cgrantforsovo}
  */
-export class CGrantForSOVO extends Root {
+export class Cgrantforsovo extends Root {
   /**
    * 协议ID
    * @example 1111
@@ -1544,9 +1556,9 @@ export class CGrantForSOVO extends Root {
 
 /**
  *
- * @typedef {CancelSimpleVO}
+ * @typedef {Cancelsimplevo}
  */
-export class CancelSimpleVO extends Root {
+export class Cancelsimplevo extends Root {
   /**
    * 取消时间
    * @example 2018-01-01 01:02:2
@@ -1578,9 +1590,9 @@ export class CancelSimpleVO extends Root {
 
 /**
  *
- * @typedef {CancelVO}
+ * @typedef {Cancelvo}
  */
-export class CancelVO extends Root {
+export class Cancelvo extends Root {
   /**
    * 已经归属
    * @example []
@@ -1612,9 +1624,9 @@ export class CancelVO extends Root {
 
 /**
  *
- * @typedef {CodeAndValueVO}
+ * @typedef {Codeandvaluevo}
  */
-export class CodeAndValueVO extends Root {
+export class Codeandvaluevo extends Root {
   /**
    * code
    * @example update
@@ -1639,9 +1651,9 @@ export class CodeAndValueVO extends Root {
 
 /**
  *
- * @typedef {DateCheckDTO}
+ * @typedef {Datecheckdto}
  */
-export class DateCheckDTO extends Root {
+export class Datecheckdto extends Root {
   /**
    *
    * @example
@@ -1673,9 +1685,9 @@ export class DateCheckDTO extends Root {
 
 /**
  *
- * @typedef {DepartmentSimpleVO}
+ * @typedef {Departmentsimplevo}
  */
-export class DepartmentSimpleVO extends Root {
+export class Departmentsimplevo extends Root {
   /**
    * 部门ID
    * @example 1212
@@ -1693,9 +1705,9 @@ export class DepartmentSimpleVO extends Root {
 
 /**
  *
- * @typedef {DepartmentSuggestVO}
+ * @typedef {Departmentsuggestvo}
  */
-export class DepartmentSuggestVO extends Root {
+export class Departmentsuggestvo extends Root {
   /**
    * 部门Id
    * @example
@@ -1720,9 +1732,9 @@ export class DepartmentSuggestVO extends Root {
 
 /**
  *
- * @typedef {DepartmentVO}
+ * @typedef {Departmentvo}
  */
-export class DepartmentVO extends Root {
+export class Departmentvo extends Root {
   /**
    * 业务线ID
    * @example 1212
@@ -1859,9 +1871,9 @@ export class DepartmentVO extends Root {
 
 /**
  *
- * @typedef {EmployeeGrantsDataVO}
+ * @typedef {Employeegrantsdatavo}
  */
-export class EmployeeGrantsDataVO extends Root {
+export class Employeegrantsdatavo extends Root {
   /**
    * 部门名称
    * @example 流程信息管理部
@@ -1935,9 +1947,9 @@ export class EmployeeGrantsDataVO extends Root {
 
 /**
  *
- * @typedef {EmployeeGrantsVO}
+ * @typedef {Employeegrantsvo}
  */
-export class EmployeeGrantsVO extends Root {
+export class Employeegrantsvo extends Root {
   /**
    * id
    * @example
@@ -1955,9 +1967,9 @@ export class EmployeeGrantsVO extends Root {
 
 /**
  *
- * @typedef {EmployeeVO}
+ * @typedef {Employeevo}
  */
-export class EmployeeVO extends Root {
+export class Employeevo extends Root {
   /**
    * 部门名称
    * @example 流程信息管理部
@@ -2017,9 +2029,9 @@ export class EmployeeVO extends Root {
 
 /**
  *
- * @typedef {EsopMenuVO}
+ * @typedef {Esopmenuvo}
  */
-export class EsopMenuVO extends Root {
+export class Esopmenuvo extends Root {
   /**
    * 应用ID
    * @example 800
@@ -2079,9 +2091,9 @@ export class EsopMenuVO extends Root {
 
 /**
  *
- * @typedef {FreezingPeriodQueryDTO}
+ * @typedef {Freezingperiodquerydto}
  */
-export class FreezingPeriodQueryDTO extends Root {
+export class Freezingperiodquerydto extends Root {
   /**
    * 页码
    * @example 2
@@ -2106,9 +2118,9 @@ export class FreezingPeriodQueryDTO extends Root {
 
 /**
  *
- * @typedef {FreezingPeriodQueryVO}
+ * @typedef {Freezingperiodqueryvo}
  */
-export class FreezingPeriodQueryVO extends Root {
+export class Freezingperiodqueryvo extends Root {
   /**
    * 备注
    * @example 冻结2周，授予停止
@@ -2161,9 +2173,9 @@ export class FreezingPeriodQueryVO extends Root {
 
 /**
  *
- * @typedef {FreezingPeriodSaveDTO}
+ * @typedef {Freezingperiodsavedto}
  */
-export class FreezingPeriodSaveDTO extends Root {
+export class Freezingperiodsavedto extends Root {
   /**
    * 备注
    * @example 冻结2周，授予停止
@@ -2202,9 +2214,9 @@ export class FreezingPeriodSaveDTO extends Root {
 
 /**
  *
- * @typedef {GrantAddDTO}
+ * @typedef {Grantadddto}
  */
-export class GrantAddDTO extends Root {
+export class Grantadddto extends Root {
   /**
    * 归属明细，SO类型有
    * @example []
@@ -2299,9 +2311,9 @@ export class GrantAddDTO extends Root {
 
 /**
  *
- * @typedef {GrantLogListDTO}
+ * @typedef {Grantloglistdto}
  */
-export class GrantLogListDTO extends Root {
+export class Grantloglistdto extends Root {
   /**
    * 授予结束日期
    * @example 2018-01-25 12:23:12
@@ -2382,9 +2394,9 @@ export class GrantLogListDTO extends Root {
 
 /**
  *
- * @typedef {GrantPostDTO}
+ * @typedef {Grantpostdto}
  */
-export class GrantPostDTO extends Root {
+export class Grantpostdto extends Root {
   /**
    *
    * @example
@@ -2409,9 +2421,9 @@ export class GrantPostDTO extends Root {
 
 /**
  *
- * @typedef {GrantUpdateDTO}
+ * @typedef {Grantupdatedto}
  */
-export class GrantUpdateDTO extends Root {
+export class Grantupdatedto extends Root {
   /**
    * 归属明细，SO类型有
    * @example []
@@ -2499,9 +2511,9 @@ export class GrantUpdateDTO extends Root {
 
 /**
  *
- * @typedef {GrantsListDTO}
+ * @typedef {Grantslistdto}
  */
-export class GrantsListDTO extends Root {
+export class Grantslistdto extends Root {
   /**
    * 负责角色
    * @example []
@@ -2596,9 +2608,9 @@ export class GrantsListDTO extends Root {
 
 /**
  *
- * @typedef {GrantsListVO}
+ * @typedef {Grantslistvo}
  */
-export class GrantsListVO extends Root {
+export class Grantslistvo extends Root {
   /**
    * 归属规则
    * @example 特殊规则
@@ -2770,9 +2782,9 @@ export class GrantsListVO extends Root {
 
 /**
  *
- * @typedef {GrantsLogListVO}
+ * @typedef {Grantsloglistvo}
  */
-export class GrantsLogListVO extends Root {
+export class Grantsloglistvo extends Root {
   /**
    * 已归属
    * @example
@@ -3021,9 +3033,9 @@ export class GrantsLogListVO extends Root {
 
 /**
  *
- * @typedef {GrantsQueryInitVO}
+ * @typedef {Grantsqueryinitvo}
  */
-export class GrantsQueryInitVO extends Root {
+export class Grantsqueryinitvo extends Root {
   /**
    * 负责角色
    * @example
@@ -3083,9 +3095,9 @@ export class GrantsQueryInitVO extends Root {
 
 /**
  *
- * @typedef {GrantsVO}
+ * @typedef {Grantsvo}
  */
-export class GrantsVO extends Root {
+export class Grantsvo extends Root {
   /**
    * 归属明细，SO类型有
    * @example []
@@ -3110,9 +3122,9 @@ export class GrantsVO extends Root {
   /**
    * 员工信息
    * @example {}
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
-  @observable employeeVO;
+  @observable employeeVo;
 
   /**
    * 授予数量
@@ -3187,9 +3199,9 @@ export class GrantsVO extends Root {
 
 /**
  *
- * @typedef {GrantsViewLog}
+ * @typedef {Grantsviewlog}
  */
-export class GrantsViewLog extends Root {
+export class Grantsviewlog extends Root {
   /**
    * 授予类型
    * @example
@@ -3214,13 +3226,66 @@ export class GrantsViewLog extends Root {
 
 /**
  *
- * @typedef {JsonResult_AgreementViewVO_}
+ * @typedef {Errors}
  */
-export class JsonResult_AgreementViewVO_ extends Root {
+export class Errors extends Root {}
+
+/**
+ *
+ * @typedef {Warnings}
+ */
+export class Warnings extends Root {}
+
+/**
+ *
+ * @typedef {Jsonresult_agreementviewvo_}
+ */
+export class Jsonresult_agreementviewvo_ extends Root {
   /**
    *
    * @example
-   * @type {AgreementViewVO}
+   * @type {Agreementviewvo}
+   */
+  @observable data;
+
+  /**
+   *
+   * @example
+   * @type {Errors}
+   */
+  @observable errors;
+
+  /**
+   * 话术
+   * @example 系统异常/操作成功
+   * @type {string}
+   */
+  @observable message;
+
+  /**
+   * 状态code
+   * @example ok
+   * @type {string}
+   */
+  @observable status;
+
+  /**
+   *
+   * @example
+   * @type {Warnings}
+   */
+  @observable warnings;
+}
+
+/**
+ *
+ * @typedef {Jsonresult_ascriptionvo_}
+ */
+export class Jsonresult_ascriptionvo_ extends Root {
+  /**
+   *
+   * @example
+   * @type {Ascriptionvo}
    */
   @observable data;
 
@@ -3255,13 +3320,13 @@ export class JsonResult_AgreementViewVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_AscriptionVO_}
+ * @typedef {Jsonresult_busslinevo_}
  */
-export class JsonResult_AscriptionVO_ extends Root {
+export class Jsonresult_busslinevo_ extends Root {
   /**
    *
    * @example
-   * @type {AscriptionVO}
+   * @type {Busslinevo}
    */
   @observable data;
 
@@ -3296,13 +3361,13 @@ export class JsonResult_AscriptionVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_BussLineVO_}
+ * @typedef {Jsonresult_cabupdatemovevo_}
  */
-export class JsonResult_BussLineVO_ extends Root {
+export class Jsonresult_cabupdatemovevo_ extends Root {
   /**
    *
    * @example
-   * @type {BussLineVO}
+   * @type {Cabupdatemovevo}
    */
   @observable data;
 
@@ -3337,13 +3402,13 @@ export class JsonResult_BussLineVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_CABUpdateMoveVo_}
+ * @typedef {Jsonresult_cancelvo_}
  */
-export class JsonResult_CABUpdateMoveVo_ extends Root {
+export class Jsonresult_cancelvo_ extends Root {
   /**
    *
    * @example
-   * @type {CABUpdateMoveVo}
+   * @type {Cancelvo}
    */
   @observable data;
 
@@ -3378,13 +3443,13 @@ export class JsonResult_CABUpdateMoveVo_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_CancelVO_}
+ * @typedef {Jsonresult_departmentvo_}
  */
-export class JsonResult_CancelVO_ extends Root {
+export class Jsonresult_departmentvo_ extends Root {
   /**
    *
    * @example
-   * @type {CancelVO}
+   * @type {Departmentvo}
    */
   @observable data;
 
@@ -3419,13 +3484,13 @@ export class JsonResult_CancelVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_DepartmentVO_}
+ * @typedef {Jsonresult_grantsvo_}
  */
-export class JsonResult_DepartmentVO_ extends Root {
+export class Jsonresult_grantsvo_ extends Root {
   /**
    *
    * @example
-   * @type {DepartmentVO}
+   * @type {Grantsvo}
    */
   @observable data;
 
@@ -3460,13 +3525,13 @@ export class JsonResult_DepartmentVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_GrantsVO_}
+ * @typedef {Jsonresult_grantsviewlog_}
  */
-export class JsonResult_GrantsVO_ extends Root {
+export class Jsonresult_grantsviewlog_ extends Root {
   /**
    *
    * @example
-   * @type {GrantsVO}
+   * @type {Grantsviewlog}
    */
   @observable data;
 
@@ -3501,91 +3566,9 @@ export class JsonResult_GrantsVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_GrantsViewLog_}
+ * @typedef {Jsonresult_list_agreementsuggestvo__}
  */
-export class JsonResult_GrantsViewLog_ extends Root {
-  /**
-   *
-   * @example
-   * @type {GrantsViewLog}
-   */
-  @observable data;
-
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable errors;
-
-  /**
-   * 话术
-   * @example 系统异常/操作成功
-   * @type {string}
-   */
-  @observable message;
-
-  /**
-   * 状态code
-   * @example ok
-   * @type {string}
-   */
-  @observable status;
-
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable warnings;
-}
-
-/**
- *
- * @typedef {JsonResult_List_AgreementSuggestVO__}
- */
-export class JsonResult_List_AgreementSuggestVO__ extends Root {
-  /**
-   *
-   * @example
-   * @type {array}
-   */
-  @observable data;
-
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable errors;
-
-  /**
-   * 话术
-   * @example 系统异常/操作成功
-   * @type {string}
-   */
-  @observable message;
-
-  /**
-   * 状态code
-   * @example ok
-   * @type {string}
-   */
-  @observable status;
-
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable warnings;
-}
-
-/**
- *
- * @typedef {JsonResult_List_BussLineSuggestVO__}
- */
-export class JsonResult_List_BussLineSuggestVO__ extends Root {
+export class Jsonresult_list_agreementsuggestvo__ extends Root {
   /**
    *
    * @example
@@ -3624,9 +3607,9 @@ export class JsonResult_List_BussLineSuggestVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_BussOrgLogListVO__}
+ * @typedef {Jsonresult_list_busslinesuggestvo__}
  */
-export class JsonResult_List_BussOrgLogListVO__ extends Root {
+export class Jsonresult_list_busslinesuggestvo__ extends Root {
   /**
    *
    * @example
@@ -3665,9 +3648,9 @@ export class JsonResult_List_BussOrgLogListVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_CGrantForRSVO__}
+ * @typedef {Jsonresult_list_bussorgloglistvo__}
  */
-export class JsonResult_List_CGrantForRSVO__ extends Root {
+export class Jsonresult_list_bussorgloglistvo__ extends Root {
   /**
    *
    * @example
@@ -3706,9 +3689,9 @@ export class JsonResult_List_CGrantForRSVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_CGrantForSOVO__}
+ * @typedef {Jsonresult_list_cgrantforrsvo__}
  */
-export class JsonResult_List_CGrantForSOVO__ extends Root {
+export class Jsonresult_list_cgrantforrsvo__ extends Root {
   /**
    *
    * @example
@@ -3747,9 +3730,9 @@ export class JsonResult_List_CGrantForSOVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_DepartmentSimpleVO__}
+ * @typedef {Jsonresult_list_cgrantforsovo__}
  */
-export class JsonResult_List_DepartmentSimpleVO__ extends Root {
+export class Jsonresult_list_cgrantforsovo__ extends Root {
   /**
    *
    * @example
@@ -3788,9 +3771,9 @@ export class JsonResult_List_DepartmentSimpleVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_DepartmentSuggestVO__}
+ * @typedef {Jsonresult_list_departmentsimplevo__}
  */
-export class JsonResult_List_DepartmentSuggestVO__ extends Root {
+export class Jsonresult_list_departmentsimplevo__ extends Root {
   /**
    *
    * @example
@@ -3829,9 +3812,9 @@ export class JsonResult_List_DepartmentSuggestVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_EmployeeGrantsVO__}
+ * @typedef {Jsonresult_list_departmentsuggestvo__}
  */
-export class JsonResult_List_EmployeeGrantsVO__ extends Root {
+export class Jsonresult_list_departmentsuggestvo__ extends Root {
   /**
    *
    * @example
@@ -3870,9 +3853,9 @@ export class JsonResult_List_EmployeeGrantsVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_EmployeeVO__}
+ * @typedef {Jsonresult_list_employeegrantsvo__}
  */
-export class JsonResult_List_EmployeeVO__ extends Root {
+export class Jsonresult_list_employeegrantsvo__ extends Root {
   /**
    *
    * @example
@@ -3911,9 +3894,9 @@ export class JsonResult_List_EmployeeVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_EsopMenuVO__}
+ * @typedef {Jsonresult_list_employeevo__}
  */
-export class JsonResult_List_EsopMenuVO__ extends Root {
+export class Jsonresult_list_employeevo__ extends Root {
   /**
    *
    * @example
@@ -3952,9 +3935,9 @@ export class JsonResult_List_EsopMenuVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___}
+ * @typedef {Jsonresult_list_esopmenuvo__}
  */
-export class JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___ extends Root {
+export class Jsonresult_list_esopmenuvo__ extends Root {
   /**
    *
    * @example
@@ -3993,9 +3976,9 @@ export class JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___ extends Root
 
 /**
  *
- * @typedef {JsonResult_List_LogCommonVO_LogPlanViewVO___}
+ * @typedef {Jsonresult_list_logcommonvo_logfreezingperiodviewvo___}
  */
-export class JsonResult_List_LogCommonVO_LogPlanViewVO___ extends Root {
+export class Jsonresult_list_logcommonvo_logfreezingperiodviewvo___ extends Root {
   /**
    *
    * @example
@@ -4034,9 +4017,9 @@ export class JsonResult_List_LogCommonVO_LogPlanViewVO___ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_LogCommonVO_LogRightPriceViewVO___}
+ * @typedef {Jsonresult_list_logcommonvo_logplanviewvo___}
  */
-export class JsonResult_List_LogCommonVO_LogRightPriceViewVO___ extends Root {
+export class Jsonresult_list_logcommonvo_logplanviewvo___ extends Root {
   /**
    *
    * @example
@@ -4075,9 +4058,9 @@ export class JsonResult_List_LogCommonVO_LogRightPriceViewVO___ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_LogCommonVO_LogStockPriceViewVO___}
+ * @typedef {Jsonresult_list_logcommonvo_logrightpriceviewvo___}
  */
-export class JsonResult_List_LogCommonVO_LogStockPriceViewVO___ extends Root {
+export class Jsonresult_list_logcommonvo_logrightpriceviewvo___ extends Root {
   /**
    *
    * @example
@@ -4116,9 +4099,9 @@ export class JsonResult_List_LogCommonVO_LogStockPriceViewVO___ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_OrgVO__}
+ * @typedef {Jsonresult_list_logcommonvo_logstockpriceviewvo___}
  */
-export class JsonResult_List_OrgVO__ extends Root {
+export class Jsonresult_list_logcommonvo_logstockpriceviewvo___ extends Root {
   /**
    *
    * @example
@@ -4157,9 +4140,9 @@ export class JsonResult_List_OrgVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_PlanSimpleVO__}
+ * @typedef {Jsonresult_list_orgvo__}
  */
-export class JsonResult_List_PlanSimpleVO__ extends Root {
+export class Jsonresult_list_orgvo__ extends Root {
   /**
    *
    * @example
@@ -4198,9 +4181,9 @@ export class JsonResult_List_PlanSimpleVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_SOAscriptionSimpleVO__}
+ * @typedef {Jsonresult_list_plansimplevo__}
  */
-export class JsonResult_List_SOAscriptionSimpleVO__ extends Root {
+export class Jsonresult_list_plansimplevo__ extends Root {
   /**
    *
    * @example
@@ -4239,9 +4222,9 @@ export class JsonResult_List_SOAscriptionSimpleVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_TBCGrantVO__}
+ * @typedef {Jsonresult_list_soascriptionsimplevo__}
  */
-export class JsonResult_List_TBCGrantVO__ extends Root {
+export class Jsonresult_list_soascriptionsimplevo__ extends Root {
   /**
    *
    * @example
@@ -4280,9 +4263,9 @@ export class JsonResult_List_TBCGrantVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_List_string__}
+ * @typedef {Jsonresult_list_tbcgrantvo__}
  */
-export class JsonResult_List_string__ extends Root {
+export class Jsonresult_list_tbcgrantvo__ extends Root {
   /**
    *
    * @example
@@ -4321,13 +4304,13 @@ export class JsonResult_List_string__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_LogPlanPanelVO_}
+ * @typedef {Jsonresult_list_string__}
  */
-export class JsonResult_LogPlanPanelVO_ extends Root {
+export class Jsonresult_list_string__ extends Root {
   /**
    *
    * @example
-   * @type {LogPlanPanelVO}
+   * @type {array}
    */
   @observable data;
 
@@ -4362,13 +4345,13 @@ export class JsonResult_LogPlanPanelVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_LogPlanPlanViewVO_}
+ * @typedef {Jsonresult_logplanpanelvo_}
  */
-export class JsonResult_LogPlanPlanViewVO_ extends Root {
+export class Jsonresult_logplanpanelvo_ extends Root {
   /**
    *
    * @example
-   * @type {LogPlanPlanViewVO}
+   * @type {Logplanpanelvo}
    */
   @observable data;
 
@@ -4403,13 +4386,13 @@ export class JsonResult_LogPlanPlanViewVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_LogQueryInitVO_}
+ * @typedef {Jsonresult_logplanplanviewvo_}
  */
-export class JsonResult_LogQueryInitVO_ extends Root {
+export class Jsonresult_logplanplanviewvo_ extends Root {
   /**
    *
    * @example
-   * @type {LogQueryInitVO}
+   * @type {Logplanplanviewvo}
    */
   @observable data;
 
@@ -4444,13 +4427,13 @@ export class JsonResult_LogQueryInitVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_Map_string_AnalyzeMovePanelVO__}
+ * @typedef {Jsonresult_logqueryinitvo_}
  */
-export class JsonResult_Map_string_AnalyzeMovePanelVO__ extends Root {
+export class Jsonresult_logqueryinitvo_ extends Root {
   /**
    *
    * @example
-   * @type {object}
+   * @type {Logqueryinitvo}
    */
   @observable data;
 
@@ -4485,13 +4468,19 @@ export class JsonResult_Map_string_AnalyzeMovePanelVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_Map_string_AnalyzePanelVO__}
+ * @typedef {Data}
  */
-export class JsonResult_Map_string_AnalyzePanelVO__ extends Root {
+export class Data extends Root {}
+
+/**
+ *
+ * @typedef {Jsonresult_map_string_analyzemovepanelvo__}
+ */
+export class Jsonresult_map_string_analyzemovepanelvo__ extends Root {
   /**
    *
    * @example
-   * @type {object}
+   * @type {Data}
    */
   @observable data;
 
@@ -4526,50 +4515,9 @@ export class JsonResult_Map_string_AnalyzePanelVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_Map_string_AnalyzeQuitPanelVO__}
+ * @typedef {Jsonresult_map_string_analyzepanelvo__}
  */
-export class JsonResult_Map_string_AnalyzeQuitPanelVO__ extends Root {
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable data;
-
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable errors;
-
-  /**
-   * 话术
-   * @example 系统异常/操作成功
-   * @type {string}
-   */
-  @observable message;
-
-  /**
-   * 状态code
-   * @example ok
-   * @type {string}
-   */
-  @observable status;
-
-  /**
-   *
-   * @example
-   * @type {object}
-   */
-  @observable warnings;
-}
-
-/**
- *
- * @typedef {JsonResult_Map_string_GrantsQueryInitVO__}
- */
-export class JsonResult_Map_string_GrantsQueryInitVO__ extends Root {
+export class Jsonresult_map_string_analyzepanelvo__ extends Root {
   /**
    *
    * @example
@@ -4608,9 +4556,9 @@ export class JsonResult_Map_string_GrantsQueryInitVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_Map_string_MovePanelVO__}
+ * @typedef {Jsonresult_map_string_analyzequitpanelvo__}
  */
-export class JsonResult_Map_string_MovePanelVO__ extends Root {
+export class Jsonresult_map_string_analyzequitpanelvo__ extends Root {
   /**
    *
    * @example
@@ -4649,9 +4597,9 @@ export class JsonResult_Map_string_MovePanelVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_Map_string_QuitPanelVO__}
+ * @typedef {Jsonresult_map_string_grantsqueryinitvo__}
  */
-export class JsonResult_Map_string_QuitPanelVO__ extends Root {
+export class Jsonresult_map_string_grantsqueryinitvo__ extends Root {
   /**
    *
    * @example
@@ -4690,13 +4638,13 @@ export class JsonResult_Map_string_QuitPanelVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_MoveCBQueryParams_}
+ * @typedef {Jsonresult_map_string_movepanelvo__}
  */
-export class JsonResult_MoveCBQueryParams_ extends Root {
+export class Jsonresult_map_string_movepanelvo__ extends Root {
   /**
    *
    * @example
-   * @type {MoveCBQueryParams}
+   * @type {object}
    */
   @observable data;
 
@@ -4731,13 +4679,13 @@ export class JsonResult_MoveCBQueryParams_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_AgreementVO__}
+ * @typedef {Jsonresult_map_string_quitpanelvo__}
  */
-export class JsonResult_PageInfo_AgreementVO__ extends Root {
+export class Jsonresult_map_string_quitpanelvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_AgreementVO_}
+   * @type {object}
    */
   @observable data;
 
@@ -4772,13 +4720,13 @@ export class JsonResult_PageInfo_AgreementVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_BussLineVO__}
+ * @typedef {Jsonresult_movecbqueryparams_}
  */
-export class JsonResult_PageInfo_BussLineVO__ extends Root {
+export class Jsonresult_movecbqueryparams_ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_BussLineVO_}
+   * @type {Movecbqueryparams}
    */
   @observable data;
 
@@ -4813,13 +4761,13 @@ export class JsonResult_PageInfo_BussLineVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_DepartmentVO__}
+ * @typedef {Jsonresult_pageinfo_agreementvo__}
  */
-export class JsonResult_PageInfo_DepartmentVO__ extends Root {
+export class Jsonresult_pageinfo_agreementvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_DepartmentVO_}
+   * @type {Pageinfo_agreementvo_}
    */
   @observable data;
 
@@ -4854,13 +4802,13 @@ export class JsonResult_PageInfo_DepartmentVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_FreezingPeriodQueryVO__}
+ * @typedef {Jsonresult_pageinfo_busslinevo__}
  */
-export class JsonResult_PageInfo_FreezingPeriodQueryVO__ extends Root {
+export class Jsonresult_pageinfo_busslinevo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_FreezingPeriodQueryVO_}
+   * @type {Pageinfo_busslinevo_}
    */
   @observable data;
 
@@ -4895,13 +4843,13 @@ export class JsonResult_PageInfo_FreezingPeriodQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_GrantsListVO__}
+ * @typedef {Jsonresult_pageinfo_departmentvo__}
  */
-export class JsonResult_PageInfo_GrantsListVO__ extends Root {
+export class Jsonresult_pageinfo_departmentvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_GrantsListVO_}
+   * @type {Pageinfo_departmentvo_}
    */
   @observable data;
 
@@ -4936,13 +4884,13 @@ export class JsonResult_PageInfo_GrantsListVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_GrantsLogListVO__}
+ * @typedef {Jsonresult_pageinfo_freezingperiodqueryvo__}
  */
-export class JsonResult_PageInfo_GrantsLogListVO__ extends Root {
+export class Jsonresult_pageinfo_freezingperiodqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_GrantsLogListVO_}
+   * @type {Pageinfo_freezingperiodqueryvo_}
    */
   @observable data;
 
@@ -4977,13 +4925,13 @@ export class JsonResult_PageInfo_GrantsLogListVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_LogPlanQueryVO__}
+ * @typedef {Jsonresult_pageinfo_grantslistvo__}
  */
-export class JsonResult_PageInfo_LogPlanQueryVO__ extends Root {
+export class Jsonresult_pageinfo_grantslistvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_LogPlanQueryVO_}
+   * @type {Pageinfo_grantslistvo_}
    */
   @observable data;
 
@@ -5018,13 +4966,13 @@ export class JsonResult_PageInfo_LogPlanQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_MoveCBQueryVO__}
+ * @typedef {Jsonresult_pageinfo_grantsloglistvo__}
  */
-export class JsonResult_PageInfo_MoveCBQueryVO__ extends Root {
+export class Jsonresult_pageinfo_grantsloglistvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_MoveCBQueryVO_}
+   * @type {Pageinfo_grantsloglistvo_}
    */
   @observable data;
 
@@ -5059,13 +5007,13 @@ export class JsonResult_PageInfo_MoveCBQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_MoveRsAnlyVO__}
+ * @typedef {Jsonresult_pageinfo_logplanqueryvo__}
  */
-export class JsonResult_PageInfo_MoveRsAnlyVO__ extends Root {
+export class Jsonresult_pageinfo_logplanqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_MoveRsAnlyVO_}
+   * @type {Pageinfo_logplanqueryvo_}
    */
   @observable data;
 
@@ -5100,13 +5048,13 @@ export class JsonResult_PageInfo_MoveRsAnlyVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_MoveRsQueryVO__}
+ * @typedef {Jsonresult_pageinfo_movecbqueryvo__}
  */
-export class JsonResult_PageInfo_MoveRsQueryVO__ extends Root {
+export class Jsonresult_pageinfo_movecbqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_MoveRsQueryVO_}
+   * @type {Pageinfo_movecbqueryvo_}
    */
   @observable data;
 
@@ -5141,13 +5089,13 @@ export class JsonResult_PageInfo_MoveRsQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_MoveSoAnlyVO__}
+ * @typedef {Jsonresult_pageinfo_moversanlyvo__}
  */
-export class JsonResult_PageInfo_MoveSoAnlyVO__ extends Root {
+export class Jsonresult_pageinfo_moversanlyvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_MoveSoAnlyVO_}
+   * @type {Pageinfo_moversanlyvo_}
    */
   @observable data;
 
@@ -5182,13 +5130,13 @@ export class JsonResult_PageInfo_MoveSoAnlyVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_MoveSoQueryVO__}
+ * @typedef {Jsonresult_pageinfo_moversqueryvo__}
  */
-export class JsonResult_PageInfo_MoveSoQueryVO__ extends Root {
+export class Jsonresult_pageinfo_moversqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_MoveSoQueryVO_}
+   * @type {Pageinfo_moversqueryvo_}
    */
   @observable data;
 
@@ -5223,13 +5171,13 @@ export class JsonResult_PageInfo_MoveSoQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_PlanQueryVO__}
+ * @typedef {Jsonresult_pageinfo_movesoanlyvo__}
  */
-export class JsonResult_PageInfo_PlanQueryVO__ extends Root {
+export class Jsonresult_pageinfo_movesoanlyvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_PlanQueryVO_}
+   * @type {Pageinfo_movesoanlyvo_}
    */
   @observable data;
 
@@ -5264,13 +5212,13 @@ export class JsonResult_PageInfo_PlanQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_QuitRsAnlyVO__}
+ * @typedef {Jsonresult_pageinfo_movesoqueryvo__}
  */
-export class JsonResult_PageInfo_QuitRsAnlyVO__ extends Root {
+export class Jsonresult_pageinfo_movesoqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_QuitRsAnlyVO_}
+   * @type {Pageinfo_movesoqueryvo_}
    */
   @observable data;
 
@@ -5305,13 +5253,13 @@ export class JsonResult_PageInfo_QuitRsAnlyVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_QuitRsQueryVO__}
+ * @typedef {Jsonresult_pageinfo_planqueryvo__}
  */
-export class JsonResult_PageInfo_QuitRsQueryVO__ extends Root {
+export class Jsonresult_pageinfo_planqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_QuitRsQueryVO_}
+   * @type {Pageinfo_planqueryvo_}
    */
   @observable data;
 
@@ -5346,13 +5294,13 @@ export class JsonResult_PageInfo_QuitRsQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_QuitSoAnlyVO__}
+ * @typedef {Jsonresult_pageinfo_quitrsanlyvo__}
  */
-export class JsonResult_PageInfo_QuitSoAnlyVO__ extends Root {
+export class Jsonresult_pageinfo_quitrsanlyvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_QuitSoAnlyVO_}
+   * @type {Pageinfo_quitrsanlyvo_}
    */
   @observable data;
 
@@ -5387,13 +5335,13 @@ export class JsonResult_PageInfo_QuitSoAnlyVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_QuitSoQueryVO__}
+ * @typedef {Jsonresult_pageinfo_quitrsqueryvo__}
  */
-export class JsonResult_PageInfo_QuitSoQueryVO__ extends Root {
+export class Jsonresult_pageinfo_quitrsqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_QuitSoQueryVO_}
+   * @type {Pageinfo_quitrsqueryvo_}
    */
   @observable data;
 
@@ -5428,13 +5376,13 @@ export class JsonResult_PageInfo_QuitSoQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_RightPriceQueryVO__}
+ * @typedef {Jsonresult_pageinfo_quitsoanlyvo__}
  */
-export class JsonResult_PageInfo_RightPriceQueryVO__ extends Root {
+export class Jsonresult_pageinfo_quitsoanlyvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_RightPriceQueryVO_}
+   * @type {Pageinfo_quitsoanlyvo_}
    */
   @observable data;
 
@@ -5469,13 +5417,13 @@ export class JsonResult_PageInfo_RightPriceQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_StockOwnVO__}
+ * @typedef {Jsonresult_pageinfo_quitsoqueryvo__}
  */
-export class JsonResult_PageInfo_StockOwnVO__ extends Root {
+export class Jsonresult_pageinfo_quitsoqueryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_StockOwnVO_}
+   * @type {Pageinfo_quitsoqueryvo_}
    */
   @observable data;
 
@@ -5510,13 +5458,13 @@ export class JsonResult_PageInfo_StockOwnVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PageInfo_StockPriceQueryVO__}
+ * @typedef {Jsonresult_pageinfo_rightpricequeryvo__}
  */
-export class JsonResult_PageInfo_StockPriceQueryVO__ extends Root {
+export class Jsonresult_pageinfo_rightpricequeryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PageInfo_StockPriceQueryVO_}
+   * @type {Pageinfo_rightpricequeryvo_}
    */
   @observable data;
 
@@ -5551,13 +5499,13 @@ export class JsonResult_PageInfo_StockPriceQueryVO__ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PlanPanelVO_}
+ * @typedef {Jsonresult_pageinfo_stockownvo__}
  */
-export class JsonResult_PlanPanelVO_ extends Root {
+export class Jsonresult_pageinfo_stockownvo__ extends Root {
   /**
    *
    * @example
-   * @type {PlanPanelVO}
+   * @type {Pageinfo_stockownvo_}
    */
   @observable data;
 
@@ -5592,13 +5540,13 @@ export class JsonResult_PlanPanelVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_PlanViewVO_}
+ * @typedef {Jsonresult_pageinfo_stockpricequeryvo__}
  */
-export class JsonResult_PlanViewVO_ extends Root {
+export class Jsonresult_pageinfo_stockpricequeryvo__ extends Root {
   /**
    *
    * @example
-   * @type {PlanViewVO}
+   * @type {Pageinfo_stockpricequeryvo_}
    */
   @observable data;
 
@@ -5633,13 +5581,13 @@ export class JsonResult_PlanViewVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_QuitDeduDetailVO_}
+ * @typedef {Jsonresult_planpanelvo_}
  */
-export class JsonResult_QuitDeduDetailVO_ extends Root {
+export class Jsonresult_planpanelvo_ extends Root {
   /**
    *
    * @example
-   * @type {QuitDeduDetailVO}
+   * @type {Planpanelvo}
    */
   @observable data;
 
@@ -5674,13 +5622,13 @@ export class JsonResult_QuitDeduDetailVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_RSAscriptionVO_}
+ * @typedef {Jsonresult_planviewvo_}
  */
-export class JsonResult_RSAscriptionVO_ extends Root {
+export class Jsonresult_planviewvo_ extends Root {
   /**
    *
    * @example
-   * @type {RSAscriptionVO}
+   * @type {Planviewvo}
    */
   @observable data;
 
@@ -5715,13 +5663,13 @@ export class JsonResult_RSAscriptionVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_RightPriceQueryVO_}
+ * @typedef {Jsonresult_quitdedudetailvo_}
  */
-export class JsonResult_RightPriceQueryVO_ extends Root {
+export class Jsonresult_quitdedudetailvo_ extends Root {
   /**
    *
    * @example
-   * @type {RightPriceQueryVO}
+   * @type {Quitdedudetailvo}
    */
   @observable data;
 
@@ -5756,13 +5704,13 @@ export class JsonResult_RightPriceQueryVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_StockUseSimpleInfoVO_}
+ * @typedef {Jsonresult_rsascriptionvo_}
  */
-export class JsonResult_StockUseSimpleInfoVO_ extends Root {
+export class Jsonresult_rsascriptionvo_ extends Root {
   /**
    *
    * @example
-   * @type {StockUseSimpleInfoVO}
+   * @type {Rsascriptionvo}
    */
   @observable data;
 
@@ -5797,13 +5745,13 @@ export class JsonResult_StockUseSimpleInfoVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_TBCGrantBeforeVO_}
+ * @typedef {Jsonresult_rightpricequeryvo_}
  */
-export class JsonResult_TBCGrantBeforeVO_ extends Root {
+export class Jsonresult_rightpricequeryvo_ extends Root {
   /**
    *
    * @example
-   * @type {TBCGrantBeforeVO}
+   * @type {Rightpricequeryvo}
    */
   @observable data;
 
@@ -5838,13 +5786,13 @@ export class JsonResult_TBCGrantBeforeVO_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_UserVo_}
+ * @typedef {Jsonresult_stockusesimpleinfovo_}
  */
-export class JsonResult_UserVo_ extends Root {
+export class Jsonresult_stockusesimpleinfovo_ extends Root {
   /**
    *
    * @example
-   * @type {UserVo}
+   * @type {Stockusesimpleinfovo}
    */
   @observable data;
 
@@ -5879,9 +5827,16 @@ export class JsonResult_UserVo_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_Void_}
+ * @typedef {Jsonresult_tbcgrantbeforevo_}
  */
-export class JsonResult_Void_ extends Root {
+export class Jsonresult_tbcgrantbeforevo_ extends Root {
+  /**
+   *
+   * @example
+   * @type {Tbcgrantbeforevo}
+   */
+  @observable data;
+
   /**
    *
    * @example
@@ -5913,9 +5868,84 @@ export class JsonResult_Void_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_boolean_}
+ * @typedef {Jsonresult_uservo_}
  */
-export class JsonResult_boolean_ extends Root {
+export class Jsonresult_uservo_ extends Root {
+  /**
+   *
+   * @example
+   * @type {Uservo}
+   */
+  @observable data;
+
+  /**
+   *
+   * @example
+   * @type {object}
+   */
+  @observable errors;
+
+  /**
+   * 话术
+   * @example 系统异常/操作成功
+   * @type {string}
+   */
+  @observable message;
+
+  /**
+   * 状态code
+   * @example ok
+   * @type {string}
+   */
+  @observable status;
+
+  /**
+   *
+   * @example
+   * @type {object}
+   */
+  @observable warnings;
+}
+
+/**
+ *
+ * @typedef {Jsonresult_void_}
+ */
+export class Jsonresult_void_ extends Root {
+  /**
+   *
+   * @example
+   * @type {object}
+   */
+  @observable errors;
+
+  /**
+   * 话术
+   * @example 系统异常/操作成功
+   * @type {string}
+   */
+  @observable message;
+
+  /**
+   * 状态code
+   * @example ok
+   * @type {string}
+   */
+  @observable status;
+
+  /**
+   *
+   * @example
+   * @type {object}
+   */
+  @observable warnings;
+}
+
+/**
+ *
+ * @typedef {Jsonresult_boolean_}
+ */
+export class Jsonresult_boolean_ extends Root {
   /**
    *
    * @example
@@ -5954,9 +5984,9 @@ export class JsonResult_boolean_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_int_}
+ * @typedef {Jsonresult_int_}
  */
-export class JsonResult_int_ extends Root {
+export class Jsonresult_int_ extends Root {
   /**
    *
    * @example
@@ -5995,9 +6025,9 @@ export class JsonResult_int_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_long_}
+ * @typedef {Jsonresult_long_}
  */
-export class JsonResult_long_ extends Root {
+export class Jsonresult_long_ extends Root {
   /**
    *
    * @example
@@ -6036,9 +6066,9 @@ export class JsonResult_long_ extends Root {
 
 /**
  *
- * @typedef {JsonResult_string_}
+ * @typedef {Jsonresult_string_}
  */
-export class JsonResult_string_ extends Root {
+export class Jsonresult_string_ extends Root {
   /**
    *
    * @example
@@ -6077,9 +6107,9 @@ export class JsonResult_string_ extends Root {
 
 /**
  *
- * @typedef {LogCommonVO}
+ * @typedef {Logcommonvo}
  */
-export class LogCommonVO extends Root {
+export class Logcommonvo extends Root {
   /**
    * 日志详情
    * @example
@@ -6090,7 +6120,7 @@ export class LogCommonVO extends Root {
   /**
    * 操作人信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable operation;
 
@@ -6118,9 +6148,9 @@ export class LogCommonVO extends Root {
 
 /**
  *
- * @typedef {LogCommonVO_LogFreezingPeriodViewVO_}
+ * @typedef {Logcommonvo_logfreezingperiodviewvo_}
  */
-export class LogCommonVO_LogFreezingPeriodViewVO_ extends Root {
+export class Logcommonvo_logfreezingperiodviewvo_ extends Root {
   /**
    * 日志详情
    * @example
@@ -6131,7 +6161,7 @@ export class LogCommonVO_LogFreezingPeriodViewVO_ extends Root {
   /**
    * 操作人信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable operation;
 
@@ -6159,9 +6189,9 @@ export class LogCommonVO_LogFreezingPeriodViewVO_ extends Root {
 
 /**
  *
- * @typedef {LogCommonVO_LogPlanViewVO_}
+ * @typedef {Logcommonvo_logplanviewvo_}
  */
-export class LogCommonVO_LogPlanViewVO_ extends Root {
+export class Logcommonvo_logplanviewvo_ extends Root {
   /**
    * 日志详情
    * @example
@@ -6172,7 +6202,7 @@ export class LogCommonVO_LogPlanViewVO_ extends Root {
   /**
    * 操作人信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable operation;
 
@@ -6200,9 +6230,9 @@ export class LogCommonVO_LogPlanViewVO_ extends Root {
 
 /**
  *
- * @typedef {LogCommonVO_LogRightPriceViewVO_}
+ * @typedef {Logcommonvo_logrightpriceviewvo_}
  */
-export class LogCommonVO_LogRightPriceViewVO_ extends Root {
+export class Logcommonvo_logrightpriceviewvo_ extends Root {
   /**
    * 日志详情
    * @example
@@ -6213,7 +6243,7 @@ export class LogCommonVO_LogRightPriceViewVO_ extends Root {
   /**
    * 操作人信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable operation;
 
@@ -6241,9 +6271,9 @@ export class LogCommonVO_LogRightPriceViewVO_ extends Root {
 
 /**
  *
- * @typedef {LogCommonVO_LogStockPriceViewVO_}
+ * @typedef {Logcommonvo_logstockpriceviewvo_}
  */
-export class LogCommonVO_LogStockPriceViewVO_ extends Root {
+export class Logcommonvo_logstockpriceviewvo_ extends Root {
   /**
    * 日志详情
    * @example
@@ -6254,7 +6284,7 @@ export class LogCommonVO_LogStockPriceViewVO_ extends Root {
   /**
    * 操作人信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable operation;
 
@@ -6282,9 +6312,9 @@ export class LogCommonVO_LogStockPriceViewVO_ extends Root {
 
 /**
  *
- * @typedef {LogFreezingPeriodViewVO}
+ * @typedef {Logfreezingperiodviewvo}
  */
-export class LogFreezingPeriodViewVO extends Root {
+export class Logfreezingperiodviewvo extends Root {
   /**
    * 备注
    * @example 冻结2周，授予停止
@@ -6323,9 +6353,9 @@ export class LogFreezingPeriodViewVO extends Root {
 
 /**
  *
- * @typedef {LogPlanPanelVO}
+ * @typedef {Logplanpanelvo}
  */
-export class LogPlanPanelVO extends Root {
+export class Logplanpanelvo extends Root {
   /**
    * 状态
    * @example
@@ -6336,9 +6366,9 @@ export class LogPlanPanelVO extends Root {
 
 /**
  *
- * @typedef {LogPlanPlanViewVO}
+ * @typedef {Logplanplanviewvo}
  */
-export class LogPlanPlanViewVO extends Root {
+export class Logplanplanviewvo extends Root {
   /**
    * 协议id
    * @example
@@ -6447,9 +6477,9 @@ export class LogPlanPlanViewVO extends Root {
 
 /**
  *
- * @typedef {LogPlanQueryDTO}
+ * @typedef {Logplanquerydto}
  */
-export class LogPlanQueryDTO extends Root {
+export class Logplanquerydto extends Root {
   /**
    * 业务线id
    * @example 11111
@@ -6502,9 +6532,9 @@ export class LogPlanQueryDTO extends Root {
 
 /**
  *
- * @typedef {LogPlanQueryVO}
+ * @typedef {Logplanqueryvo}
  */
-export class LogPlanQueryVO extends Root {
+export class Logplanqueryvo extends Root {
   /**
    * 业务线名称
    * @example 业务线名称
@@ -6613,9 +6643,9 @@ export class LogPlanQueryVO extends Root {
 
 /**
  *
- * @typedef {LogPlanViewVO}
+ * @typedef {Logplanviewvo}
  */
-export class LogPlanViewVO extends Root {
+export class Logplanviewvo extends Root {
   /**
    * 协议名称
    * @example
@@ -6717,9 +6747,9 @@ export class LogPlanViewVO extends Root {
 
 /**
  *
- * @typedef {LogQueryInitVO}
+ * @typedef {Logqueryinitvo}
  */
-export class LogQueryInitVO extends Root {
+export class Logqueryinitvo extends Root {
   /**
    * 授予结束日期
    * @example
@@ -6772,9 +6802,9 @@ export class LogQueryInitVO extends Root {
 
 /**
  *
- * @typedef {LogRightPriceViewVO}
+ * @typedef {Logrightpriceviewvo}
  */
-export class LogRightPriceViewVO extends Root {
+export class Logrightpriceviewvo extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -6813,9 +6843,9 @@ export class LogRightPriceViewVO extends Root {
 
 /**
  *
- * @typedef {LogStockPriceViewVO}
+ * @typedef {Logstockpriceviewvo}
  */
-export class LogStockPriceViewVO extends Root {
+export class Logstockpriceviewvo extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -6861,45 +6891,45 @@ export class LogStockPriceViewVO extends Root {
 
 /**
  *
- * @typedef {Map_string_AnalyzeMovePanelVO_}
+ * @typedef {Map_string_analyzemovepanelvo_}
  */
-export class Map_string_AnalyzeMovePanelVO_ extends Root {}
+export class Map_string_analyzemovepanelvo_ extends Root {}
 
 /**
  *
- * @typedef {Map_string_AnalyzePanelVO_}
+ * @typedef {Map_string_analyzepanelvo_}
  */
-export class Map_string_AnalyzePanelVO_ extends Root {}
+export class Map_string_analyzepanelvo_ extends Root {}
 
 /**
  *
- * @typedef {Map_string_AnalyzeQuitPanelVO_}
+ * @typedef {Map_string_analyzequitpanelvo_}
  */
-export class Map_string_AnalyzeQuitPanelVO_ extends Root {}
+export class Map_string_analyzequitpanelvo_ extends Root {}
 
 /**
  *
- * @typedef {Map_string_GrantsQueryInitVO_}
+ * @typedef {Map_string_grantsqueryinitvo_}
  */
-export class Map_string_GrantsQueryInitVO_ extends Root {}
+export class Map_string_grantsqueryinitvo_ extends Root {}
 
 /**
  *
- * @typedef {Map_string_MovePanelVO_}
+ * @typedef {Map_string_movepanelvo_}
  */
-export class Map_string_MovePanelVO_ extends Root {}
+export class Map_string_movepanelvo_ extends Root {}
 
 /**
  *
- * @typedef {Map_string_QuitPanelVO_}
+ * @typedef {Map_string_quitpanelvo_}
  */
-export class Map_string_QuitPanelVO_ extends Root {}
+export class Map_string_quitpanelvo_ extends Root {}
 
 /**
  *
- * @typedef {MoveAnalyzeDTO}
+ * @typedef {Moveanalyzedto}
  */
-export class MoveAnalyzeDTO extends Root {
+export class Moveanalyzedto extends Root {
   /**
    * 扣减状态
    * @example 扣减状态
@@ -6987,9 +7017,9 @@ export class MoveAnalyzeDTO extends Root {
 
 /**
  *
- * @typedef {MoveCBListDTO}
+ * @typedef {Movecblistdto}
  */
-export class MoveCBListDTO extends Root {
+export class Movecblistdto extends Root {
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -7070,9 +7100,9 @@ export class MoveCBListDTO extends Root {
 
 /**
  *
- * @typedef {MoveCBPanelVO}
+ * @typedef {Movecbpanelvo}
  */
-export class MoveCBPanelVO extends Root {
+export class Movecbpanelvo extends Root {
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -7118,9 +7148,9 @@ export class MoveCBPanelVO extends Root {
 
 /**
  *
- * @typedef {MoveCBQueryDTO}
+ * @typedef {Movecbquerydto}
  */
-export class MoveCBQueryDTO extends Root {
+export class Movecbquerydto extends Root {
   /**
    *
    * @example
@@ -7131,13 +7161,19 @@ export class MoveCBQueryDTO extends Root {
 
 /**
  *
- * @typedef {MoveCBQueryParams}
+ * @typedef {Panelmap}
  */
-export class MoveCBQueryParams extends Root {
+export class Panelmap extends Root {}
+
+/**
+ *
+ * @typedef {Movecbqueryparams}
+ */
+export class Movecbqueryparams extends Root {
   /**
    *
    * @example
-   * @type {object}
+   * @type {Panelmap}
    */
   @observable panelMap;
 
@@ -7151,9 +7187,9 @@ export class MoveCBQueryParams extends Root {
 
 /**
  *
- * @typedef {MoveCBQueryVO}
+ * @typedef {Movecbqueryvo}
  */
-export class MoveCBQueryVO extends Root {
+export class Movecbqueryvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -7206,7 +7242,7 @@ export class MoveCBQueryVO extends Root {
   /**
    * 员工信息
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -7339,9 +7375,9 @@ export class MoveCBQueryVO extends Root {
 
 /**
  *
- * @typedef {MoveCBUpdateDTO}
+ * @typedef {Movecbupdatedto}
  */
-export class MoveCBUpdateDTO extends Root {
+export class Movecbupdatedto extends Root {
   /**
    * 已归属
    * @example 111
@@ -7366,9 +7402,9 @@ export class MoveCBUpdateDTO extends Root {
 
 /**
  *
- * @typedef {MovePanelVO}
+ * @typedef {Movepanelvo}
  */
-export class MovePanelVO extends Root {
+export class Movepanelvo extends Root {
   /**
    * 授予负责角色/授予创建角色
    * @example
@@ -7435,9 +7471,9 @@ export class MovePanelVO extends Root {
 
 /**
  *
- * @typedef {MoveRsAnlyVO}
+ * @typedef {Moversanlyvo}
  */
-export class MoveRsAnlyVO extends Root {
+export class Moversanlyvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -7616,9 +7652,9 @@ export class MoveRsAnlyVO extends Root {
 
 /**
  *
- * @typedef {MoveRsQueryDTO}
+ * @typedef {Moversquerydto}
  */
-export class MoveRsQueryDTO extends Root {
+export class Moversquerydto extends Root {
   /**
    * 授予负责角色
    * @example
@@ -7713,9 +7749,9 @@ export class MoveRsQueryDTO extends Root {
 
 /**
  *
- * @typedef {MoveRsQueryVO}
+ * @typedef {Moversqueryvo}
  */
-export class MoveRsQueryVO extends Root {
+export class Moversqueryvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -7761,7 +7797,7 @@ export class MoveRsQueryVO extends Root {
   /**
    * 员工
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -7894,9 +7930,9 @@ export class MoveRsQueryVO extends Root {
 
 /**
  *
- * @typedef {MoveSoAnlyVO}
+ * @typedef {Movesoanlyvo}
  */
-export class MoveSoAnlyVO extends Root {
+export class Movesoanlyvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -8033,9 +8069,9 @@ export class MoveSoAnlyVO extends Root {
 
 /**
  *
- * @typedef {MoveSoQueryDTO}
+ * @typedef {Movesoquerydto}
  */
-export class MoveSoQueryDTO extends Root {
+export class Movesoquerydto extends Root {
   /**
    * 授予负责角色
    * @example
@@ -8123,9 +8159,9 @@ export class MoveSoQueryDTO extends Root {
 
 /**
  *
- * @typedef {MoveSoQueryVO}
+ * @typedef {Movesoqueryvo}
  */
-export class MoveSoQueryVO extends Root {
+export class Movesoqueryvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -8171,7 +8207,7 @@ export class MoveSoQueryVO extends Root {
   /**
    * 员工
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -8276,9 +8312,9 @@ export class MoveSoQueryVO extends Root {
 
 /**
  *
- * @typedef {OrgVO}
+ * @typedef {Orgvo}
  */
-export class OrgVO extends Root {
+export class Orgvo extends Root {
   /**
    * 部门id
    * @example 1111
@@ -8296,9 +8332,9 @@ export class OrgVO extends Root {
 
 /**
  *
- * @typedef {PageInfo_AgreementVO_}
+ * @typedef {Pageinfo_agreementvo_}
  */
-export class PageInfo_AgreementVO_ extends Root {
+export class Pageinfo_agreementvo_ extends Root {
   /**
    *
    * @example
@@ -8442,9 +8478,9 @@ export class PageInfo_AgreementVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_BussLineVO_}
+ * @typedef {Pageinfo_busslinevo_}
  */
-export class PageInfo_BussLineVO_ extends Root {
+export class Pageinfo_busslinevo_ extends Root {
   /**
    *
    * @example
@@ -8588,9 +8624,9 @@ export class PageInfo_BussLineVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_DepartmentVO_}
+ * @typedef {Pageinfo_departmentvo_}
  */
-export class PageInfo_DepartmentVO_ extends Root {
+export class Pageinfo_departmentvo_ extends Root {
   /**
    *
    * @example
@@ -8734,9 +8770,9 @@ export class PageInfo_DepartmentVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_FreezingPeriodQueryVO_}
+ * @typedef {Pageinfo_freezingperiodqueryvo_}
  */
-export class PageInfo_FreezingPeriodQueryVO_ extends Root {
+export class Pageinfo_freezingperiodqueryvo_ extends Root {
   /**
    *
    * @example
@@ -8880,9 +8916,9 @@ export class PageInfo_FreezingPeriodQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_GrantsListVO_}
+ * @typedef {Pageinfo_grantslistvo_}
  */
-export class PageInfo_GrantsListVO_ extends Root {
+export class Pageinfo_grantslistvo_ extends Root {
   /**
    *
    * @example
@@ -9026,9 +9062,9 @@ export class PageInfo_GrantsListVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_GrantsLogListVO_}
+ * @typedef {Pageinfo_grantsloglistvo_}
  */
-export class PageInfo_GrantsLogListVO_ extends Root {
+export class Pageinfo_grantsloglistvo_ extends Root {
   /**
    *
    * @example
@@ -9172,9 +9208,9 @@ export class PageInfo_GrantsLogListVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_LogPlanQueryVO_}
+ * @typedef {Pageinfo_logplanqueryvo_}
  */
-export class PageInfo_LogPlanQueryVO_ extends Root {
+export class Pageinfo_logplanqueryvo_ extends Root {
   /**
    *
    * @example
@@ -9318,9 +9354,9 @@ export class PageInfo_LogPlanQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_MoveCBQueryVO_}
+ * @typedef {Pageinfo_movecbqueryvo_}
  */
-export class PageInfo_MoveCBQueryVO_ extends Root {
+export class Pageinfo_movecbqueryvo_ extends Root {
   /**
    *
    * @example
@@ -9464,9 +9500,9 @@ export class PageInfo_MoveCBQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_MoveRsAnlyVO_}
+ * @typedef {Pageinfo_moversanlyvo_}
  */
-export class PageInfo_MoveRsAnlyVO_ extends Root {
+export class Pageinfo_moversanlyvo_ extends Root {
   /**
    *
    * @example
@@ -9610,9 +9646,9 @@ export class PageInfo_MoveRsAnlyVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_MoveRsQueryVO_}
+ * @typedef {Pageinfo_moversqueryvo_}
  */
-export class PageInfo_MoveRsQueryVO_ extends Root {
+export class Pageinfo_moversqueryvo_ extends Root {
   /**
    *
    * @example
@@ -9756,9 +9792,9 @@ export class PageInfo_MoveRsQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_MoveSoAnlyVO_}
+ * @typedef {Pageinfo_movesoanlyvo_}
  */
-export class PageInfo_MoveSoAnlyVO_ extends Root {
+export class Pageinfo_movesoanlyvo_ extends Root {
   /**
    *
    * @example
@@ -9902,9 +9938,9 @@ export class PageInfo_MoveSoAnlyVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_MoveSoQueryVO_}
+ * @typedef {Pageinfo_movesoqueryvo_}
  */
-export class PageInfo_MoveSoQueryVO_ extends Root {
+export class Pageinfo_movesoqueryvo_ extends Root {
   /**
    *
    * @example
@@ -10048,9 +10084,9 @@ export class PageInfo_MoveSoQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_PlanQueryVO_}
+ * @typedef {Pageinfo_planqueryvo_}
  */
-export class PageInfo_PlanQueryVO_ extends Root {
+export class Pageinfo_planqueryvo_ extends Root {
   /**
    *
    * @example
@@ -10194,9 +10230,9 @@ export class PageInfo_PlanQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_QuitRsAnlyVO_}
+ * @typedef {Pageinfo_quitrsanlyvo_}
  */
-export class PageInfo_QuitRsAnlyVO_ extends Root {
+export class Pageinfo_quitrsanlyvo_ extends Root {
   /**
    *
    * @example
@@ -10340,9 +10376,9 @@ export class PageInfo_QuitRsAnlyVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_QuitRsQueryVO_}
+ * @typedef {Pageinfo_quitrsqueryvo_}
  */
-export class PageInfo_QuitRsQueryVO_ extends Root {
+export class Pageinfo_quitrsqueryvo_ extends Root {
   /**
    *
    * @example
@@ -10486,9 +10522,9 @@ export class PageInfo_QuitRsQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_QuitSoAnlyVO_}
+ * @typedef {Pageinfo_quitsoanlyvo_}
  */
-export class PageInfo_QuitSoAnlyVO_ extends Root {
+export class Pageinfo_quitsoanlyvo_ extends Root {
   /**
    *
    * @example
@@ -10632,9 +10668,9 @@ export class PageInfo_QuitSoAnlyVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_QuitSoQueryVO_}
+ * @typedef {Pageinfo_quitsoqueryvo_}
  */
-export class PageInfo_QuitSoQueryVO_ extends Root {
+export class Pageinfo_quitsoqueryvo_ extends Root {
   /**
    *
    * @example
@@ -10778,9 +10814,9 @@ export class PageInfo_QuitSoQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_RightPriceQueryVO_}
+ * @typedef {Pageinfo_rightpricequeryvo_}
  */
-export class PageInfo_RightPriceQueryVO_ extends Root {
+export class Pageinfo_rightpricequeryvo_ extends Root {
   /**
    *
    * @example
@@ -10924,9 +10960,9 @@ export class PageInfo_RightPriceQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_StockOwnVO_}
+ * @typedef {Pageinfo_stockownvo_}
  */
-export class PageInfo_StockOwnVO_ extends Root {
+export class Pageinfo_stockownvo_ extends Root {
   /**
    *
    * @example
@@ -11070,9 +11106,9 @@ export class PageInfo_StockOwnVO_ extends Root {
 
 /**
  *
- * @typedef {PageInfo_StockPriceQueryVO_}
+ * @typedef {Pageinfo_stockpricequeryvo_}
  */
-export class PageInfo_StockPriceQueryVO_ extends Root {
+export class Pageinfo_stockpricequeryvo_ extends Root {
   /**
    *
    * @example
@@ -11216,9 +11252,9 @@ export class PageInfo_StockPriceQueryVO_ extends Root {
 
 /**
  *
- * @typedef {PlanNameCodeCheckDTO}
+ * @typedef {Plannamecodecheckdto}
  */
-export class PlanNameCodeCheckDTO extends Root {
+export class Plannamecodecheckdto extends Root {
   /**
    * 计划id
    * @example 111
@@ -11236,9 +11272,9 @@ export class PlanNameCodeCheckDTO extends Root {
 
 /**
  *
- * @typedef {PlanPanelVO}
+ * @typedef {Planpanelvo}
  */
-export class PlanPanelVO extends Root {
+export class Planpanelvo extends Root {
   /**
    * 操作列表
    * @example
@@ -11270,9 +11306,9 @@ export class PlanPanelVO extends Root {
 
 /**
  *
- * @typedef {PlanQueryDTO}
+ * @typedef {Planquerydto}
  */
-export class PlanQueryDTO extends Root {
+export class Planquerydto extends Root {
   /**
    * 业务线id
    * @example 11111
@@ -11325,9 +11361,9 @@ export class PlanQueryDTO extends Root {
 
 /**
  *
- * @typedef {PlanQueryVO}
+ * @typedef {Planqueryvo}
  */
-export class PlanQueryVO extends Root {
+export class Planqueryvo extends Root {
   /**
    * 业务线名称
    * @example 业务线名称
@@ -11436,9 +11472,9 @@ export class PlanQueryVO extends Root {
 
 /**
  *
- * @typedef {PlanReleaseDTO}
+ * @typedef {Planreleasedto}
  */
-export class PlanReleaseDTO extends Root {
+export class Planreleasedto extends Root {
   /**
    * 协议
    * @example
@@ -11533,9 +11569,9 @@ export class PlanReleaseDTO extends Root {
 
 /**
  *
- * @typedef {PlanSaveDTO}
+ * @typedef {Plansavedto}
  */
-export class PlanSaveDTO extends Root {
+export class Plansavedto extends Root {
   /**
    * 协议
    * @example
@@ -11630,9 +11666,9 @@ export class PlanSaveDTO extends Root {
 
 /**
  *
- * @typedef {PlanSimpleVO}
+ * @typedef {Plansimplevo}
  */
-export class PlanSimpleVO extends Root {
+export class Plansimplevo extends Root {
   /**
    * 计划Code
    * @example planCode
@@ -11657,9 +11693,9 @@ export class PlanSimpleVO extends Root {
 
 /**
  *
- * @typedef {PlanViewVO}
+ * @typedef {Planviewvo}
  */
-export class PlanViewVO extends Root {
+export class Planviewvo extends Root {
   /**
    * 协议id
    * @example
@@ -11775,9 +11811,9 @@ export class PlanViewVO extends Root {
 
 /**
  *
- * @typedef {PriceQueryDTO}
+ * @typedef {Pricequerydto}
  */
-export class PriceQueryDTO extends Root {
+export class Pricequerydto extends Root {
   /**
    *
    * @example
@@ -11802,9 +11838,9 @@ export class PriceQueryDTO extends Root {
 
 /**
  *
- * @typedef {QuitAnalyzeDTO}
+ * @typedef {Quitanalyzedto}
  */
-export class QuitAnalyzeDTO extends Root {
+export class Quitanalyzedto extends Root {
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
@@ -11864,9 +11900,9 @@ export class QuitAnalyzeDTO extends Root {
 
 /**
  *
- * @typedef {QuitDeduDetailVO}
+ * @typedef {Quitdedudetailvo}
  */
-export class QuitDeduDetailVO extends Root {
+export class Quitdedudetailvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -11919,7 +11955,7 @@ export class QuitDeduDetailVO extends Root {
   /**
    * 员工
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -12031,9 +12067,9 @@ export class QuitDeduDetailVO extends Root {
 
 /**
  *
- * @typedef {QuitModifyDTO}
+ * @typedef {Quitmodifydto}
  */
-export class QuitModifyDTO extends Root {
+export class Quitmodifydto extends Root {
   /**
    * 已归属
    * @example 111
@@ -12093,9 +12129,9 @@ export class QuitModifyDTO extends Root {
 
 /**
  *
- * @typedef {QuitPanelVO}
+ * @typedef {Quitpanelvo}
  */
-export class QuitPanelVO extends Root {
+export class Quitpanelvo extends Root {
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -12141,9 +12177,9 @@ export class QuitPanelVO extends Root {
 
 /**
  *
- * @typedef {QuitRsAnlyVO}
+ * @typedef {Quitrsanlyvo}
  */
-export class QuitRsAnlyVO extends Root {
+export class Quitrsanlyvo extends Root {
   /**
    * 离职日期
    * @example 2017-12-12
@@ -12301,9 +12337,9 @@ export class QuitRsAnlyVO extends Root {
 
 /**
  *
- * @typedef {QuitRsQueryDTO}
+ * @typedef {Quitrsquerydto}
  */
-export class QuitRsQueryDTO extends Root {
+export class Quitrsquerydto extends Root {
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -12377,9 +12413,9 @@ export class QuitRsQueryDTO extends Root {
 
 /**
  *
- * @typedef {QuitRsQueryVO}
+ * @typedef {Quitrsqueryvo}
  */
-export class QuitRsQueryVO extends Root {
+export class Quitrsqueryvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -12425,7 +12461,7 @@ export class QuitRsQueryVO extends Root {
   /**
    * 员工
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -12544,9 +12580,9 @@ export class QuitRsQueryVO extends Root {
 
 /**
  *
- * @typedef {QuitSoAnlyVO}
+ * @typedef {Quitsoanlyvo}
  */
-export class QuitSoAnlyVO extends Root {
+export class Quitsoanlyvo extends Root {
   /**
    * 离职日期
    * @example 2017-12-12
@@ -12697,9 +12733,9 @@ export class QuitSoAnlyVO extends Root {
 
 /**
  *
- * @typedef {QuitSoQueryDTO}
+ * @typedef {Quitsoquerydto}
  */
-export class QuitSoQueryDTO extends Root {
+export class Quitsoquerydto extends Root {
   /**
    * 授予日期左边界
    * @example 2018-02-02
@@ -12766,9 +12802,9 @@ export class QuitSoQueryDTO extends Root {
 
 /**
  *
- * @typedef {QuitSoQueryVO}
+ * @typedef {Quitsoqueryvo}
  */
-export class QuitSoQueryVO extends Root {
+export class Quitsoqueryvo extends Root {
   /**
    * 已归属
    * @example 111
@@ -12814,7 +12850,7 @@ export class QuitSoQueryVO extends Root {
   /**
    * 员工
    * @example
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
   @observable employee;
 
@@ -12905,9 +12941,9 @@ export class QuitSoQueryVO extends Root {
 
 /**
  *
- * @typedef {RSAscrUpdateDTO}
+ * @typedef {Rsascrupdatedto}
  */
-export class RSAscrUpdateDTO extends Root {
+export class Rsascrupdatedto extends Root {
   /**
    *
    * @example
@@ -12925,9 +12961,9 @@ export class RSAscrUpdateDTO extends Root {
 
 /**
  *
- * @typedef {RSAscriptionDTO}
+ * @typedef {Rsascriptiondto}
  */
-export class RSAscriptionDTO extends Root {
+export class Rsascriptiondto extends Root {
   /**
    * 归属日期
    * @example 2018-01-01
@@ -12959,9 +12995,9 @@ export class RSAscriptionDTO extends Root {
 
 /**
  *
- * @typedef {RSAscriptionSimpleVO}
+ * @typedef {Rsascriptionsimplevo}
  */
-export class RSAscriptionSimpleVO extends Root {
+export class Rsascriptionsimplevo extends Root {
   /**
    * 归属日期
    * @example 2018-01-01
@@ -13007,15 +13043,15 @@ export class RSAscriptionSimpleVO extends Root {
 
 /**
  *
- * @typedef {RSAscriptionVO}
+ * @typedef {Rsascriptionvo}
  */
-export class RSAscriptionVO extends Root {
+export class Rsascriptionvo extends Root {
   /**
    * 员工信息
    * @example {}
-   * @type {EmployeeVO}
+   * @type {Employeevo}
    */
-  @observable employeeVO;
+  @observable employeeVo;
 
   /**
    * 授予数量
@@ -13062,9 +13098,9 @@ export class RSAscriptionVO extends Root {
 
 /**
  *
- * @typedef {RSFullAscrDTO}
+ * @typedef {Rsfullascrdto}
  */
-export class RSFullAscrDTO extends Root {
+export class Rsfullascrdto extends Root {
   /**
    * 归属日期
    * @example 2017-12-10
@@ -13082,9 +13118,9 @@ export class RSFullAscrDTO extends Root {
 
 /**
  *
- * @typedef {RightPriceQueryDTO}
+ * @typedef {Rightpricequerydto}
  */
-export class RightPriceQueryDTO extends Root {
+export class Rightpricequerydto extends Root {
   /**
    * 页码
    * @example 2
@@ -13116,9 +13152,9 @@ export class RightPriceQueryDTO extends Root {
 
 /**
  *
- * @typedef {RightPriceQueryVO}
+ * @typedef {Rightpricequeryvo}
  */
-export class RightPriceQueryVO extends Root {
+export class Rightpricequeryvo extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -13171,9 +13207,9 @@ export class RightPriceQueryVO extends Root {
 
 /**
  *
- * @typedef {RightPriceSaveDTO}
+ * @typedef {Rightpricesavedto}
  */
-export class RightPriceSaveDTO extends Root {
+export class Rightpricesavedto extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -13219,9 +13255,9 @@ export class RightPriceSaveDTO extends Root {
 
 /**
  *
- * @typedef {SOAscriptionSimpleVO}
+ * @typedef {Soascriptionsimplevo}
  */
-export class SOAscriptionSimpleVO extends Root {
+export class Soascriptionsimplevo extends Root {
   /**
    * 归属日期
    * @example 2018-01-01
@@ -13260,9 +13296,9 @@ export class SOAscriptionSimpleVO extends Root {
 
 /**
  *
- * @typedef {StockOwnQueryDTO}
+ * @typedef {Stockownquerydto}
  */
-export class StockOwnQueryDTO extends Root {
+export class Stockownquerydto extends Root {
   /**
    * 员工类型
    * @example []
@@ -13350,9 +13386,9 @@ export class StockOwnQueryDTO extends Root {
 
 /**
  *
- * @typedef {StockOwnVO}
+ * @typedef {Stockownvo}
  */
-export class StockOwnVO extends Root {
+export class Stockownvo extends Root {
   /**
    * 已归属
    * @example
@@ -13601,9 +13637,9 @@ export class StockOwnVO extends Root {
 
 /**
  *
- * @typedef {StockPriceQueryDTO}
+ * @typedef {Stockpricequerydto}
  */
-export class StockPriceQueryDTO extends Root {
+export class Stockpricequerydto extends Root {
   /**
    * 页码
    * @example 2
@@ -13628,9 +13664,9 @@ export class StockPriceQueryDTO extends Root {
 
 /**
  *
- * @typedef {StockPriceQueryVO}
+ * @typedef {Stockpricequeryvo}
  */
-export class StockPriceQueryVO extends Root {
+export class Stockpricequeryvo extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -13690,9 +13726,9 @@ export class StockPriceQueryVO extends Root {
 
 /**
  *
- * @typedef {StockSaveDTO}
+ * @typedef {Stocksavedto}
  */
-export class StockSaveDTO extends Root {
+export class Stocksavedto extends Root {
   /**
    * 备注
    * @example 涨势喜人
@@ -13738,9 +13774,9 @@ export class StockSaveDTO extends Root {
 
 /**
  *
- * @typedef {StockSimpleVO}
+ * @typedef {Stocksimplevo}
  */
-export class StockSimpleVO extends Root {
+export class Stocksimplevo extends Root {
   /**
    * 已作废股票
    * @example
@@ -13779,9 +13815,9 @@ export class StockSimpleVO extends Root {
 
 /**
  *
- * @typedef {StockUseInfoDTO}
+ * @typedef {Stockuseinfodto}
  */
-export class StockUseInfoDTO extends Root {
+export class Stockuseinfodto extends Root {
   /**
    * 计划ID
    * @example
@@ -13792,9 +13828,9 @@ export class StockUseInfoDTO extends Root {
 
 /**
  *
- * @typedef {StockUseSimpleInfoVO}
+ * @typedef {Stockusesimpleinfovo}
  */
-export class StockUseSimpleInfoVO extends Root {
+export class Stockusesimpleinfovo extends Root {
   /**
    *
    * @example
@@ -13812,23 +13848,23 @@ export class StockUseSimpleInfoVO extends Root {
   /**
    * rs股票使用情况
    * @example
-   * @type {StockSimpleVO}
+   * @type {Stocksimplevo}
    */
   @observable rs;
 
   /**
    * so股票使用情况
    * @example
-   * @type {StockSimpleVO}
+   * @type {Stocksimplevo}
    */
   @observable so;
 }
 
 /**
  *
- * @typedef {SuggestDTO}
+ * @typedef {Suggestdto}
  */
-export class SuggestDTO extends Root {
+export class Suggestdto extends Root {
   /**
    * keyword
    * @example xx
@@ -13846,9 +13882,9 @@ export class SuggestDTO extends Root {
 
 /**
  *
- * @typedef {TBCGrantBeforeVO}
+ * @typedef {Tbcgrantbeforevo}
  */
-export class TBCGrantBeforeVO extends Root {
+export class Tbcgrantbeforevo extends Root {
   /**
    * 协议ID
    * @example 1111
@@ -13887,9 +13923,9 @@ export class TBCGrantBeforeVO extends Root {
 
 /**
  *
- * @typedef {TBCGrantVO}
+ * @typedef {Tbcgrantvo}
  */
-export class TBCGrantVO extends Root {
+export class Tbcgrantvo extends Root {
   /**
    * 协议ID
    * @example 1111
@@ -14102,9 +14138,9 @@ export class Timestamp extends Root {
 
 /**
  *
- * @typedef {UserVo}
+ * @typedef {Uservo}
  */
-export class UserVo extends Root {
+export class Uservo extends Root {
   /**
    *
    * @example

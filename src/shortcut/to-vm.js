@@ -7,8 +7,13 @@
 const to = require('../')
 const swagger = require('../transformer/swagger')
 
-module.exports = function (json, { filter, raw, prettyOptions } = {}, cb) {
+module.exports = function(json, flags, cb) {
   to()
-    .use(swagger, { filter: filter })
-    .format(json, 'vm', { raw: raw, pretty: true, prettyOptions }, cb)
+    .use(swagger, { filter: flags.filter })
+    .format(
+      json,
+      'vm',
+      { ...flags, pretty: true },
+      cb
+    )
 }

@@ -87,6 +87,19 @@ export class SchemaPath {
 
   schema: Schema
   parent: SchemaPath
+  clear() {
+    Object.keys(this.schema)
+      .forEach(name => {
+        delete this.schema[name]
+      })
+  }
+  get rootParent() {
+    let p = this
+    while (p.parent) {
+      p = p.parent
+    }
+    return p
+  }
   get(paths: string | string[]) {
     return new SchemaPath(get(this.schema, paths), this)
   }

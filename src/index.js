@@ -49,18 +49,16 @@ class TransformUmbrella {
 
         return formatter(schemaPath, options)
       })
-      .then(
-        output => {
-          if (options.pretty && typeof output === 'string') {
-            output = prettier(output, options.prettyOptions)
-          }
-
-          callback && callback(null, output)
-        },
-        err => {
-          callback && callback(err)
+      .then(output => {
+        if (options.pretty && typeof output === 'string') {
+          output = prettier(output, options.prettyOptions)
         }
-      )
+        // console.log(schemaPath.schema)
+        callback && callback(null, output)
+      })
+      .catch(err => {
+        callback && callback(err)
+      })
   }
 }
 

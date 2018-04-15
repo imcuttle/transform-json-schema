@@ -6,15 +6,28 @@
  */
 const isPlainObj = require('is-plain-obj')
 
-exports.keyword = function (word) {
+exports.keyword = function(word) {
   return (word || '').replace(/[^\d\w]/g, '_')
 }
 
-exports.type = function (type = '') {
+const uniqueid = require('lodash.uniqueid')
+exports.uKeyword = function(word) {
+  return exports.keyword(word) || uniqueid('_')
+}
+
+exports.type = function(type = '') {
   let lower = type.toLowerCase()
-  return {
-    'integer': 'number'
-  }[lower] || type
+  return (
+    {
+      integer: 'number',
+      number: 'number',
+      string: 'string',
+      object: 'object',
+      array: 'array',
+      boolean: 'boolean',
+      function: 'function'
+    }[lower] || type
+  )
 }
 
 /**
@@ -45,4 +58,3 @@ exports.toString = function(rule, { empty = 'undefined' } = {}) {
 
   return rule.toString() || ''
 }
-
