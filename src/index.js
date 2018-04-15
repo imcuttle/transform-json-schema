@@ -1,0 +1,69 @@
+// @flow
+import type { Formatter } from './types/Formatter'
+import { SchemaPath } from './types/Schema'
+import type { Schema } from './types/Schema'
+import type { Transformer } from './types/Transformer'
+import prettier from './prettier'
+const pReduce = require('p-reduce')
+
+const presetFormat = {
+  vm: require('./formatter/vm').default
+}
+
+class TransformUmbrella {
+  transformers: [Transformer, any][] = []
+  use(t: Transformer, options: any): TransformUmbrella {
+    this.transformers.push([t, options])
+    return this
+  }
+  format(
+    schema: Schema,
+    formatter: Formatter | string,
+    options?: {
+      pretty?: boolean,
+      prettyOptions?: {}
+    } = { pretty: true, prettyOptions: {} },
+    callback?: (err: null | Error, output: any) => any
+  ): any | Promise<any> {
+    const schemaPath = new SchemaPath(schema)
+    if (typeof options === 'function') {
+      callback = options
+      options = { pretty: true }
+    }
+
+    pReduce(
+      this.transformers,
+      (schemaPath, [t, opt]) => {
+        return Promise.resolve(t(schemaPath, opt)).then(() => schemaPath)
+      },
+      schemaPath
+    )
+      .then(schemaPath => {
+        if (typeof formatter === 'string') {
+          let tmp = formatter
+          formatter = presetFormat[formatter]
+          if (!formatter) {
+            throw new Error('Formatter: ' + tmp + ' is not exists.')
+          }
+        }
+
+        return formatter(schemaPath, options)
+      })
+      .then(
+        output => {
+          if (options.pretty && typeof output === 'string') {
+            output = prettier(output, options.prettyOptions)
+          }
+
+          callback && callback(null, output)
+        },
+        err => {
+          callback && callback(err)
+        }
+      )
+  }
+}
+
+module.exports = function jsonSchemaTransform() {
+  return new TransformUmbrella()
+}
