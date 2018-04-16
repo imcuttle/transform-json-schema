@@ -7,5 +7,9 @@
 import app from './pages/app'
 
 export default {
-    component: app
+  path: '/',
+  component: app,
+  indexRoute: {
+    getComponent: app.toVM
+  }
 }

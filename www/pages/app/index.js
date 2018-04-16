@@ -9,6 +9,19 @@ import { action, observable, Root, bindView } from 'react-mobx-vm'
 import View from './View'
 
 @bindView(View)
-export default class App extends Root {
+export class App extends Root {
   @observable key = 1
+
+  toVM = () =>
+    new Promise(resolve => {
+      require.ensure(
+        [],
+        () => {
+          resolve(require('../toVM').default)
+        },
+        'toVM'
+      )
+    })
 }
+
+export default App.create()

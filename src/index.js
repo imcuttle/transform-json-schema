@@ -3,11 +3,12 @@ import type { Formatter } from './types/Formatter'
 import { SchemaPath } from './types/Schema'
 import type { Schema } from './types/Schema'
 import type { Transformer } from './types/Transformer'
-import prettier from './prettier'
+import prettier from './prettier/index'
 const pReduce = require('p-reduce')
 
 const presetFormat = {
-  vm: require('./formatter/vm').default
+  vm: require('./formatter/vm').default,
+  walli: require('./formatter/walli').default,
 }
 
 class TransformUmbrella {

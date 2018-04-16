@@ -5,12 +5,15 @@
  * @description
  */
 
-import React from 'react'
+import * as React from 'react'
 
-export default class View extends React.PureComponent {
+export default class View extends React.Component {
   render() {
     return (
-
+      <div>
+        <h1>APP</h1>
+        {this.props.children}
+      </div>
     )
   }
 }

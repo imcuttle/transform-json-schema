@@ -19,6 +19,15 @@ describe('a', function() {
     })
   })
 
+  it('should to walli', function(done) {
+    to().format(schema, 'walli', function(err, output) {
+      console.log(err)
+      console.log(output)
+      writeFileSync(__dirname + '/walli.js', output)
+      done()
+    })
+  })
+
   it('should schemaPath', function() {
     const path = new SchemaPath(schema)
     const AgreementVO = path.get('definitions.AgreementVO')
