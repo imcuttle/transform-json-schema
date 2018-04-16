@@ -36,13 +36,13 @@ exports.type = function(type = '') {
  * @param {any} empty - the string placeholder when equals undefined
  * @return {any}
  */
-exports.toString = function(rule, { empty = 'undefined' } = {}) {
+function toString(rule, { empty = 'undefined' } = {}) {
   if (typeof rule === 'undefined') {
     return empty
   }
 
   if (Array.isArray(rule)) {
-    return `[${rule.map(x => toString(x)).join(', ')}]`
+    return `[${rule.map(x => JSON.stringify(x)).join(', ')}]`
   }
   if (isPlainObj(rule)) {
     return JSON.stringify(rule)
@@ -58,3 +58,5 @@ exports.toString = function(rule, { empty = 'undefined' } = {}) {
 
   return rule.toString() || ''
 }
+
+exports.toString = toString
