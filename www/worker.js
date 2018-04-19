@@ -10,25 +10,30 @@ const toVM = require('../src/shortcut/to-vm')
 
 registerPromiseWorker(function(message) {
   return new Promise((resolve, reject) => {
-    const { data, type } = message
-    let json = data
-    if (type !== 'schema') {
-      json = toJSONSchema('JSONSchema', data)
-    }
-
-    console.log('worker received:', json)
-    if (json) {
-      toVM(
-        json,
-        {
-          pretty: true,
-          depth: 0
-        },
-        (err, output) => {
-          if (err) reject(err)
-          resolve(output)
-        }
-      )
+    const { data, type, options = {} } = message
+    switch (type) {
+      case 'json-to-schema': {
+        json = toJSONSchema('JSONSchema', data)
+        resolve(JSON.stringify(json, null, 2))
+        break
+      }
+      case 'schema-to-vm': {
+        toVM(
+          data,
+          {
+            pretty: true,
+            depth: 0,
+            ...options
+          },
+          (err, output) => {
+            if (err) reject(err)
+            resolve(output)
+          }
+        )
+        break
+      }
+      default:
+        resolve(JSON.stringify(data, null, 2))
     }
   })
 })

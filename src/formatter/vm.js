@@ -5,10 +5,47 @@
  * @description
  */
 import * as u from '../util'
+import { reactUrlSync } from 'react-mobx-vm';
 
 const wrapLike = require('./framework/wrap-like').default
 
+function fillDefault (p = {}) {
+  p = { ...p }
+  if (p.hasOwnProperty('default')) {
+    return p
+  }
+
+  if (!p.type) {
+    delete p.default
+    return p
+  }
+
+  switch (p.type) {
+    case 'number':
+    case 'string':
+    case 'integer':
+      p.default = '""'
+      return p
+    case 'date':
+    case 'boolean':
+      delete p.default
+      return p
+    case 'object':
+      p.default = '{}'
+      return p
+    case 'array':
+      p.default = '[]'
+      return p
+    default:
+      p.default = `${p.type}.create()`
+      return p
+  }
+}
+
 export default wrapLike({
+  options: {
+    default: true
+  },
   wrapString(str) {
     return `import { Root, observable } from 'react-mobx-vm'\n` + str
   },
@@ -24,6 +61,9 @@ export default wrapLike({
     `
   },
   propertyString(p) {
+    if (this.options.default) {
+      p = fillDefault(p)
+    }
     return (
       '/**\n' +
       ` * ${p.description || ''}\n` +

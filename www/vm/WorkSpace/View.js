@@ -14,25 +14,30 @@ import './style.less'
 export default class View extends React.Component {
   constructor(props) {
     super(props)
-    this.transform = debounce(this.transform, 2000, { trailing: true })
+    this.transform = debounce(this._transform, 2000, { trailing: true })
   }
 
   async componentDidMount() {
-    let json = JSON.parse(this.local.input)
-    const res = await boss.postMessage(
-      { type: 'json', data: json }
-    )
-    console.log('res', res)
-    this.local.setValue('output', res)
+    await this._transform()
   }
 
-  // concurrent??
-  transform = async (input = this.local.input) => {
-    let json = JSON.parse(input)
-    const res = await boss.postMessage(
-      { type: 'json', data: json }
-    )
-    this.local.setValue('output', res)
+  _transform = async (input = this.local.input) => {
+    let json
+    try {
+      json = JSON.parse(input || '{}')
+    } catch (err) {
+      this.local.setValue('inError', err)
+      return
+    }
+    try {
+      const res = await boss.postMessage(
+        { type: this.local.type, data: json, options: this.local.options }
+      )
+      this.local.setValue('output', res)
+    } catch (err) {
+      this.local.setValue('outError', err)
+      return
+    }
   }
 
   onChange = (editor, data, value) => {
@@ -41,7 +46,6 @@ export default class View extends React.Component {
   }
 
   render() {
-    console.log('this.local.output', this.local.output)
     return (
       <div className={'work-space'}>
         <div className={'editor'}>
@@ -50,6 +54,7 @@ export default class View extends React.Component {
             onChange={this.onChange}
             placeholder={'please input json here'}
           />
+          {this.local.inError && <pre className="error-box">{this.local.inError.toString()}</pre>}
         </div>
         <div className={'result'}>
           <CodeMirror
@@ -58,6 +63,7 @@ export default class View extends React.Component {
               readOnly: true
             }}
           />
+          {this.local.outError && <pre className="error-box">{this.local.outError.toString()}</pre>}
         </div>
       </div>
     )

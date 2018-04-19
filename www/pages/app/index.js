@@ -10,6 +10,12 @@ import View from './View'
 
 @bindView(View)
 export class App extends Root {
+  @observable title = 'Schema Transform'
+
+  setTitle(title) {
+    this.title = title
+  }
+
   @observable drawerOpen = true
 
   toVM = () =>

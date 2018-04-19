@@ -22,7 +22,7 @@ describe('a', function() {
   it('should to walli', function(done) {
     to().format(schema, 'walli', function(err, output) {
       console.log(err)
-      console.log(output)
+      // console.log(output)
       writeFileSync(__dirname + '/walli.js', output)
       done()
     })

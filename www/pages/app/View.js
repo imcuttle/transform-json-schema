@@ -12,18 +12,38 @@ import Drawer from 'material-ui/Drawer'
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
 import Subheader from 'material-ui/Subheader'
+import IconButton from 'material-ui/IconButton'
 import { List, ListItem } from 'material-ui/List'
+
+import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
+import FileUploadDownload from 'material-ui/svg-icons/file/file-upload';
+import {red500, yellow500, blue500} from 'material-ui/styles/colors';
+
 
 export default class View extends React.Component {
   @computed
   get Header() {
     return (
       <AppBar
-        title="Title"
+        title={
+          <div>
+            {this.local.title}
+            <small>
+              <IconButton key="remote">
+                <FileCloudDownload colore="white"/>
+              </IconButton>
+              <IconButton key="file">
+                <FileUploadDownload color="white" />
+              </IconButton>
+            </small>
+          </div>
+        }
         onLeftIconButtonClick={() => {
           this.local.setValue('drawerOpen', !this.local.drawerOpen)
         }}
-      />
+      >
+        
+      </AppBar>
     )
   }
 

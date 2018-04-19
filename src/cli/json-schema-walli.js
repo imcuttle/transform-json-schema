@@ -23,9 +23,9 @@ if (flags.help) {
   console.log(
     `
   -h, --help
-  --filter
+  --filter      eg. --filter=^UserVO
+  --depth <n>   eg. --depth=1
   --deep
-  --depth
   --type-capitalize
   --property-camelcase
 `

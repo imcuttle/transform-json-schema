@@ -10,19 +10,13 @@ import View from './View'
 
 @bindView(View)
 export default class WorkSpace extends Root {
-  @observable input = JSON.stringify({
-    name: 'imcuttle',
-    age: 23,
-    gender: 'M',
-    parent: {
-      name: 'ppp',
-      age: 50,
-      gender: 'M'
-    }
-  }, null, 2)
+  @observable input = ''
 
   @observable inMimeType = 'json'
 
+  @observable options = {}
+  @observable inError = null
+  @observable outError = null
 
   @observable outMimeType = 'javascript'
   @observable output = ''

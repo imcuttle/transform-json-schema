@@ -9,9 +9,7 @@ export class AcceptGrantDTOClass extends t.Verifiable {
     return t.leq({ grantsId: t.number }).check(req);
   }
 }
-export const acceptGrantDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(AcceptGrantDTOClass)
-);
+export const acceptGrantDto = t.util.createFinalVerifiable(AcceptGrantDTOClass);
 
 /**
  *
@@ -28,8 +26,8 @@ export class AgreementQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const agreementQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(AgreementQueryDTOClass)
+export const agreementQueryDto = t.util.createFinalVerifiable(
+  AgreementQueryDTOClass
 );
 
 /**
@@ -47,8 +45,8 @@ export class AgreementSuggestVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const agreementSuggestVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AgreementSuggestVOClass)
+export const agreementSuggestVo = t.util.createFinalVerifiable(
+  AgreementSuggestVOClass
 );
 
 /**
@@ -69,33 +67,9 @@ export class AgreementUpdateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const agreementUpdateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(AgreementUpdateDTOClass)
+export const agreementUpdateDto = t.util.createFinalVerifiable(
+  AgreementUpdateDTOClass
 );
-
-/**
- *
- * @typedef {editClass}
- */
-export class editClass extends t.Verifiable {
-  _check(req) {
-    return t.leq({}).check(req);
-  }
-}
-export const edit = t.util.createFinalVerifiableClass(
-  t.util.funcify(editClass)
-);
-
-/**
- *
- * @typedef {mapClass}
- */
-export class mapClass extends t.Verifiable {
-  _check(req) {
-    return t.leq({}).check(req);
-  }
-}
-export const map = t.util.createFinalVerifiableClass(t.util.funcify(mapClass));
 
 /**
  *
@@ -125,9 +99,29 @@ export class AgreementVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const agreementVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AgreementVOClass)
-);
+export const agreementVo = t.util.createFinalVerifiable(AgreementVOClass);
+
+/**
+ * 属性是否可以编辑
+ * @typedef {editClass}
+ */
+export class editClass extends t.Verifiable {
+  _check(req) {
+    return t.leq({}).check(req);
+  }
+}
+export const edit = t.util.createFinalVerifiable(editClass);
+
+/**
+ * 国际化
+ * @typedef {mapClass}
+ */
+export class mapClass extends t.Verifiable {
+  _check(req) {
+    return t.leq({}).check(req);
+  }
+}
+export const map = t.util.createFinalVerifiable(mapClass);
 
 /**
  *
@@ -160,8 +154,8 @@ export class AgreementViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const agreementViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AgreementViewVOClass)
+export const agreementViewVo = t.util.createFinalVerifiable(
+  AgreementViewVOClass
 );
 
 /**
@@ -187,8 +181,8 @@ export class AnalyzeMovePanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const analyzeMovePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AnalyzeMovePanelVOClass)
+export const analyzeMovePanelVo = t.util.createFinalVerifiable(
+  AnalyzeMovePanelVOClass
 );
 
 /**
@@ -210,9 +204,7 @@ export class AnalyzePanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const analyzePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AnalyzePanelVOClass)
-);
+export const analyzePanelVo = t.util.createFinalVerifiable(AnalyzePanelVOClass);
 
 /**
  *
@@ -231,8 +223,8 @@ export class AnalyzeQuitPanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const analyzeQuitPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AnalyzeQuitPanelVOClass)
+export const analyzeQuitPanelVo = t.util.createFinalVerifiable(
+  AnalyzeQuitPanelVOClass
 );
 
 /**
@@ -249,9 +241,7 @@ export class AscrRuleDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const ascrRuleDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(AscrRuleDTOClass)
-);
+export const ascrRuleDto = t.util.createFinalVerifiable(AscrRuleDTOClass);
 
 /**
  *
@@ -271,8 +261,8 @@ export class AscriptionInfoVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const ascriptionInfoVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AscriptionInfoVOClass)
+export const ascriptionInfoVo = t.util.createFinalVerifiable(
+  AscriptionInfoVOClass
 );
 
 /**
@@ -290,8 +280,8 @@ export class AscriptionSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const ascriptionSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AscriptionSimpleVOClass)
+export const ascriptionSimpleVo = t.util.createFinalVerifiable(
+  AscriptionSimpleVOClass
 );
 
 /**
@@ -309,9 +299,7 @@ export class AscriptionVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const ascriptionVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(AscriptionVOClass)
-);
+export const ascriptionVo = t.util.createFinalVerifiable(AscriptionVOClass);
 
 /**
  *
@@ -329,8 +317,8 @@ export class BussLineCreateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineCreateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineCreateDTOClass)
+export const bussLineCreateDto = t.util.createFinalVerifiable(
+  BussLineCreateDTOClass
 );
 
 /**
@@ -350,8 +338,8 @@ export class BussLineOrgCreateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineOrgCreateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineOrgCreateDTOClass)
+export const bussLineOrgCreateDto = t.util.createFinalVerifiable(
+  BussLineOrgCreateDTOClass
 );
 
 /**
@@ -371,8 +359,8 @@ export class BussLineOrgQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineOrgQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineOrgQueryDTOClass)
+export const bussLineOrgQueryDto = t.util.createFinalVerifiable(
+  BussLineOrgQueryDTOClass
 );
 
 /**
@@ -391,8 +379,8 @@ export class BussLineOrgUpdateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineOrgUpdateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineOrgUpdateDTOClass)
+export const bussLineOrgUpdateDto = t.util.createFinalVerifiable(
+  BussLineOrgUpdateDTOClass
 );
 
 /**
@@ -410,8 +398,8 @@ export class BussLineQueryTempDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineQueryTempDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineQueryTempDTOClass)
+export const bussLineQueryTempDto = t.util.createFinalVerifiable(
+  BussLineQueryTempDTOClass
 );
 
 /**
@@ -428,8 +416,8 @@ export class BussLineSuggestVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineSuggestVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineSuggestVOClass)
+export const bussLineSuggestVo = t.util.createFinalVerifiable(
+  BussLineSuggestVOClass
 );
 
 /**
@@ -449,8 +437,8 @@ export class BussLineUpdateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineUpdateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineUpdateDTOClass)
+export const bussLineUpdateDto = t.util.createFinalVerifiable(
+  BussLineUpdateDTOClass
 );
 
 /**
@@ -481,9 +469,7 @@ export class BussLineVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussLineVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussLineVOClass)
-);
+export const bussLineVo = t.util.createFinalVerifiable(BussLineVOClass);
 
 /**
  *
@@ -502,8 +488,8 @@ export class BussOrgLogListVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussOrgLogListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussOrgLogListVOClass)
+export const bussOrgLogListVo = t.util.createFinalVerifiable(
+  BussOrgLogListVOClass
 );
 
 /**
@@ -524,9 +510,7 @@ export class BussOrgLogVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const bussOrgLogVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(BussOrgLogVOClass)
-);
+export const bussOrgLogVo = t.util.createFinalVerifiable(BussOrgLogVOClass);
 
 /**
  *
@@ -553,8 +537,8 @@ export class CABUpdateMoveVoClass extends t.Verifiable {
       .check(req);
   }
 }
-export const cabUpdateMoveVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(CABUpdateMoveVoClass)
+export const cabUpdateMoveVo = t.util.createFinalVerifiable(
+  CABUpdateMoveVoClass
 );
 
 /**
@@ -592,9 +576,7 @@ export class CGrantForRSVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const cGrantForRsvo = t.util.createFinalVerifiableClass(
-  t.util.funcify(CGrantForRSVOClass)
-);
+export const cGrantForRsvo = t.util.createFinalVerifiable(CGrantForRSVOClass);
 
 /**
  *
@@ -630,9 +612,7 @@ export class CGrantForSOVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const cGrantForSovo = t.util.createFinalVerifiableClass(
-  t.util.funcify(CGrantForSOVOClass)
-);
+export const cGrantForSovo = t.util.createFinalVerifiable(CGrantForSOVOClass);
 
 /**
  *
@@ -650,9 +630,7 @@ export class CancelSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const cancelSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(CancelSimpleVOClass)
-);
+export const cancelSimpleVo = t.util.createFinalVerifiable(CancelSimpleVOClass);
 
 /**
  *
@@ -670,9 +648,7 @@ export class CancelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const cancelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(CancelVOClass)
-);
+export const cancelVo = t.util.createFinalVerifiable(CancelVOClass);
 
 /**
  *
@@ -689,9 +665,7 @@ export class CodeAndValueVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const codeAndValueVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(CodeAndValueVOClass)
-);
+export const codeAndValueVo = t.util.createFinalVerifiable(CodeAndValueVOClass);
 
 /**
  *
@@ -709,9 +683,7 @@ export class DateCheckDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const dateCheckDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(DateCheckDTOClass)
-);
+export const dateCheckDto = t.util.createFinalVerifiable(DateCheckDTOClass);
 
 /**
  *
@@ -727,8 +699,8 @@ export class DepartmentSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const departmentSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(DepartmentSimpleVOClass)
+export const departmentSimpleVo = t.util.createFinalVerifiable(
+  DepartmentSimpleVOClass
 );
 
 /**
@@ -746,8 +718,8 @@ export class DepartmentSuggestVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const departmentSuggestVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(DepartmentSuggestVOClass)
+export const departmentSuggestVo = t.util.createFinalVerifiable(
+  DepartmentSuggestVOClass
 );
 
 /**
@@ -781,9 +753,7 @@ export class DepartmentVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const departmentVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(DepartmentVOClass)
-);
+export const departmentVo = t.util.createFinalVerifiable(DepartmentVOClass);
 
 /**
  *
@@ -807,8 +777,8 @@ export class EmployeeGrantsDataVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const employeeGrantsDataVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(EmployeeGrantsDataVOClass)
+export const employeeGrantsDataVo = t.util.createFinalVerifiable(
+  EmployeeGrantsDataVOClass
 );
 
 /**
@@ -825,8 +795,8 @@ export class EmployeeGrantsVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const employeeGrantsVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(EmployeeGrantsVOClass)
+export const employeeGrantsVo = t.util.createFinalVerifiable(
+  EmployeeGrantsVOClass
 );
 
 /**
@@ -849,9 +819,7 @@ export class EmployeeVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const employeeVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(EmployeeVOClass)
-);
+export const employeeVo = t.util.createFinalVerifiable(EmployeeVOClass);
 
 /**
  *
@@ -873,9 +841,7 @@ export class EsopMenuVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const esopMenuVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(EsopMenuVOClass)
-);
+export const esopMenuVo = t.util.createFinalVerifiable(EsopMenuVOClass);
 
 /**
  *
@@ -892,8 +858,8 @@ export class FreezingPeriodQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const freezingPeriodQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(FreezingPeriodQueryDTOClass)
+export const freezingPeriodQueryDto = t.util.createFinalVerifiable(
+  FreezingPeriodQueryDTOClass
 );
 
 /**
@@ -915,8 +881,8 @@ export class FreezingPeriodQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const freezingPeriodQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(FreezingPeriodQueryVOClass)
+export const freezingPeriodQueryVo = t.util.createFinalVerifiable(
+  FreezingPeriodQueryVOClass
 );
 
 /**
@@ -936,8 +902,8 @@ export class FreezingPeriodSaveDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const freezingPeriodSaveDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(FreezingPeriodSaveDTOClass)
+export const freezingPeriodSaveDto = t.util.createFinalVerifiable(
+  FreezingPeriodSaveDTOClass
 );
 
 /**
@@ -965,9 +931,7 @@ export class GrantAddDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantAddDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantAddDTOClass)
-);
+export const grantAddDto = t.util.createFinalVerifiable(GrantAddDTOClass);
 
 /**
  *
@@ -992,8 +956,8 @@ export class GrantLogListDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantLogListDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantLogListDTOClass)
+export const grantLogListDto = t.util.createFinalVerifiable(
+  GrantLogListDTOClass
 );
 
 /**
@@ -1011,9 +975,7 @@ export class GrantPostDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantPostDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantPostDTOClass)
-);
+export const grantPostDto = t.util.createFinalVerifiable(GrantPostDTOClass);
 
 /**
  *
@@ -1039,9 +1001,7 @@ export class GrantUpdateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantUpdateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantUpdateDTOClass)
-);
+export const grantUpdateDto = t.util.createFinalVerifiable(GrantUpdateDTOClass);
 
 /**
  *
@@ -1068,9 +1028,7 @@ export class GrantsListDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantsListDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantsListDTOClass)
-);
+export const grantsListDto = t.util.createFinalVerifiable(GrantsListDTOClass);
 
 /**
  *
@@ -1108,9 +1066,7 @@ export class GrantsListVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantsListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantsListVOClass)
-);
+export const grantsListVo = t.util.createFinalVerifiable(GrantsListVOClass);
 
 /**
  *
@@ -1159,8 +1115,8 @@ export class GrantsLogListVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantsLogListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantsLogListVOClass)
+export const grantsLogListVo = t.util.createFinalVerifiable(
+  GrantsLogListVOClass
 );
 
 /**
@@ -1183,8 +1139,8 @@ export class GrantsQueryInitVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantsQueryInitVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantsQueryInitVOClass)
+export const grantsQueryInitVo = t.util.createFinalVerifiable(
+  GrantsQueryInitVOClass
 );
 
 /**
@@ -1213,9 +1169,7 @@ export class GrantsVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantsVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantsVOClass)
-);
+export const grantsVo = t.util.createFinalVerifiable(GrantsVOClass);
 
 /**
  *
@@ -1232,35 +1186,7 @@ export class GrantsViewLogClass extends t.Verifiable {
       .check(req);
   }
 }
-export const grantsViewLog = t.util.createFinalVerifiableClass(
-  t.util.funcify(GrantsViewLogClass)
-);
-
-/**
- *
- * @typedef {errorsClass}
- */
-export class errorsClass extends t.Verifiable {
-  _check(req) {
-    return t.leq({}).check(req);
-  }
-}
-export const errors = t.util.createFinalVerifiableClass(
-  t.util.funcify(errorsClass)
-);
-
-/**
- *
- * @typedef {warningsClass}
- */
-export class warningsClass extends t.Verifiable {
-  _check(req) {
-    return t.leq({}).check(req);
-  }
-}
-export const warnings = t.util.createFinalVerifiableClass(
-  t.util.funcify(warningsClass)
-);
+export const grantsViewLog = t.util.createFinalVerifiable(GrantsViewLogClass);
 
 /**
  *
@@ -1279,9 +1205,31 @@ export class JsonResult_AgreementViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultAgreementViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_AgreementViewVO_Class)
+export const jsonResultAgreementViewVo = t.util.createFinalVerifiable(
+  JsonResult_AgreementViewVO_Class
 );
+
+/**
+ *
+ * @typedef {errorsClass}
+ */
+export class errorsClass extends t.Verifiable {
+  _check(req) {
+    return t.leq({}).check(req);
+  }
+}
+export const errors = t.util.createFinalVerifiable(errorsClass);
+
+/**
+ *
+ * @typedef {warningsClass}
+ */
+export class warningsClass extends t.Verifiable {
+  _check(req) {
+    return t.leq({}).check(req);
+  }
+}
+export const warnings = t.util.createFinalVerifiable(warningsClass);
 
 /**
  *
@@ -1300,8 +1248,8 @@ export class JsonResult_AscriptionVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultAscriptionVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_AscriptionVO_Class)
+export const jsonResultAscriptionVo = t.util.createFinalVerifiable(
+  JsonResult_AscriptionVO_Class
 );
 
 /**
@@ -1321,8 +1269,8 @@ export class JsonResult_BussLineVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultBussLineVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_BussLineVO_Class)
+export const jsonResultBussLineVo = t.util.createFinalVerifiable(
+  JsonResult_BussLineVO_Class
 );
 
 /**
@@ -1342,8 +1290,8 @@ export class JsonResult_CABUpdateMoveVo_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultCabUpdateMoveVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_CABUpdateMoveVo_Class)
+export const jsonResultCabUpdateMoveVo = t.util.createFinalVerifiable(
+  JsonResult_CABUpdateMoveVo_Class
 );
 
 /**
@@ -1363,8 +1311,8 @@ export class JsonResult_CancelVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultCancelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_CancelVO_Class)
+export const jsonResultCancelVo = t.util.createFinalVerifiable(
+  JsonResult_CancelVO_Class
 );
 
 /**
@@ -1384,8 +1332,8 @@ export class JsonResult_DepartmentVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultDepartmentVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_DepartmentVO_Class)
+export const jsonResultDepartmentVo = t.util.createFinalVerifiable(
+  JsonResult_DepartmentVO_Class
 );
 
 /**
@@ -1405,8 +1353,8 @@ export class JsonResult_GrantsVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultGrantsVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_GrantsVO_Class)
+export const jsonResultGrantsVo = t.util.createFinalVerifiable(
+  JsonResult_GrantsVO_Class
 );
 
 /**
@@ -1426,8 +1374,8 @@ export class JsonResult_GrantsViewLog_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultGrantsViewLog = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_GrantsViewLog_Class)
+export const jsonResultGrantsViewLog = t.util.createFinalVerifiable(
+  JsonResult_GrantsViewLog_Class
 );
 
 /**
@@ -1447,8 +1395,8 @@ export class JsonResult_List_AgreementSuggestVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListAgreementSuggestVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_AgreementSuggestVO__Class)
+export const jsonResultListAgreementSuggestVo = t.util.createFinalVerifiable(
+  JsonResult_List_AgreementSuggestVO__Class
 );
 
 /**
@@ -1468,8 +1416,8 @@ export class JsonResult_List_BussLineSuggestVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListBussLineSuggestVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_BussLineSuggestVO__Class)
+export const jsonResultListBussLineSuggestVo = t.util.createFinalVerifiable(
+  JsonResult_List_BussLineSuggestVO__Class
 );
 
 /**
@@ -1489,8 +1437,8 @@ export class JsonResult_List_BussOrgLogListVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListBussOrgLogListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_BussOrgLogListVO__Class)
+export const jsonResultListBussOrgLogListVo = t.util.createFinalVerifiable(
+  JsonResult_List_BussOrgLogListVO__Class
 );
 
 /**
@@ -1510,8 +1458,8 @@ export class JsonResult_List_CGrantForRSVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListCGrantForRsvo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_CGrantForRSVO__Class)
+export const jsonResultListCGrantForRsvo = t.util.createFinalVerifiable(
+  JsonResult_List_CGrantForRSVO__Class
 );
 
 /**
@@ -1531,8 +1479,8 @@ export class JsonResult_List_CGrantForSOVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListCGrantForSovo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_CGrantForSOVO__Class)
+export const jsonResultListCGrantForSovo = t.util.createFinalVerifiable(
+  JsonResult_List_CGrantForSOVO__Class
 );
 
 /**
@@ -1552,8 +1500,8 @@ export class JsonResult_List_DepartmentSimpleVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListDepartmentSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_DepartmentSimpleVO__Class)
+export const jsonResultListDepartmentSimpleVo = t.util.createFinalVerifiable(
+  JsonResult_List_DepartmentSimpleVO__Class
 );
 
 /**
@@ -1573,8 +1521,8 @@ export class JsonResult_List_DepartmentSuggestVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListDepartmentSuggestVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_DepartmentSuggestVO__Class)
+export const jsonResultListDepartmentSuggestVo = t.util.createFinalVerifiable(
+  JsonResult_List_DepartmentSuggestVO__Class
 );
 
 /**
@@ -1594,8 +1542,8 @@ export class JsonResult_List_EmployeeGrantsVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListEmployeeGrantsVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_EmployeeGrantsVO__Class)
+export const jsonResultListEmployeeGrantsVo = t.util.createFinalVerifiable(
+  JsonResult_List_EmployeeGrantsVO__Class
 );
 
 /**
@@ -1615,8 +1563,8 @@ export class JsonResult_List_EmployeeVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListEmployeeVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_EmployeeVO__Class)
+export const jsonResultListEmployeeVo = t.util.createFinalVerifiable(
+  JsonResult_List_EmployeeVO__Class
 );
 
 /**
@@ -1636,8 +1584,8 @@ export class JsonResult_List_EsopMenuVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListEsopMenuVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_EsopMenuVO__Class)
+export const jsonResultListEsopMenuVo = t.util.createFinalVerifiable(
+  JsonResult_List_EsopMenuVO__Class
 );
 
 /**
@@ -1657,8 +1605,8 @@ export class JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___Class extends
       .check(req);
   }
 }
-export const jsonResultListLogCommonVoLogFreezingPeriodViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___Class)
+export const jsonResultListLogCommonVoLogFreezingPeriodViewVo = t.util.createFinalVerifiable(
+  JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___Class
 );
 
 /**
@@ -1678,8 +1626,8 @@ export class JsonResult_List_LogCommonVO_LogPlanViewVO___Class extends t.Verifia
       .check(req);
   }
 }
-export const jsonResultListLogCommonVoLogPlanViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_LogCommonVO_LogPlanViewVO___Class)
+export const jsonResultListLogCommonVoLogPlanViewVo = t.util.createFinalVerifiable(
+  JsonResult_List_LogCommonVO_LogPlanViewVO___Class
 );
 
 /**
@@ -1699,8 +1647,8 @@ export class JsonResult_List_LogCommonVO_LogRightPriceViewVO___Class extends t.V
       .check(req);
   }
 }
-export const jsonResultListLogCommonVoLogRightPriceViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_LogCommonVO_LogRightPriceViewVO___Class)
+export const jsonResultListLogCommonVoLogRightPriceViewVo = t.util.createFinalVerifiable(
+  JsonResult_List_LogCommonVO_LogRightPriceViewVO___Class
 );
 
 /**
@@ -1720,8 +1668,8 @@ export class JsonResult_List_LogCommonVO_LogStockPriceViewVO___Class extends t.V
       .check(req);
   }
 }
-export const jsonResultListLogCommonVoLogStockPriceViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_LogCommonVO_LogStockPriceViewVO___Class)
+export const jsonResultListLogCommonVoLogStockPriceViewVo = t.util.createFinalVerifiable(
+  JsonResult_List_LogCommonVO_LogStockPriceViewVO___Class
 );
 
 /**
@@ -1741,8 +1689,8 @@ export class JsonResult_List_OrgVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListOrgVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_OrgVO__Class)
+export const jsonResultListOrgVo = t.util.createFinalVerifiable(
+  JsonResult_List_OrgVO__Class
 );
 
 /**
@@ -1762,8 +1710,8 @@ export class JsonResult_List_PlanSimpleVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListPlanSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_PlanSimpleVO__Class)
+export const jsonResultListPlanSimpleVo = t.util.createFinalVerifiable(
+  JsonResult_List_PlanSimpleVO__Class
 );
 
 /**
@@ -1783,8 +1731,8 @@ export class JsonResult_List_SOAscriptionSimpleVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListSoAscriptionSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_SOAscriptionSimpleVO__Class)
+export const jsonResultListSoAscriptionSimpleVo = t.util.createFinalVerifiable(
+  JsonResult_List_SOAscriptionSimpleVO__Class
 );
 
 /**
@@ -1804,8 +1752,8 @@ export class JsonResult_List_TBCGrantVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListTbcGrantVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_TBCGrantVO__Class)
+export const jsonResultListTbcGrantVo = t.util.createFinalVerifiable(
+  JsonResult_List_TBCGrantVO__Class
 );
 
 /**
@@ -1825,8 +1773,8 @@ export class JsonResult_List_string__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultListString = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_List_string__Class)
+export const jsonResultListString = t.util.createFinalVerifiable(
+  JsonResult_List_string__Class
 );
 
 /**
@@ -1846,8 +1794,8 @@ export class JsonResult_LogPlanPanelVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultLogPlanPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_LogPlanPanelVO_Class)
+export const jsonResultLogPlanPanelVo = t.util.createFinalVerifiable(
+  JsonResult_LogPlanPanelVO_Class
 );
 
 /**
@@ -1867,8 +1815,8 @@ export class JsonResult_LogPlanPlanViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultLogPlanPlanViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_LogPlanPlanViewVO_Class)
+export const jsonResultLogPlanPlanViewVo = t.util.createFinalVerifiable(
+  JsonResult_LogPlanPlanViewVO_Class
 );
 
 /**
@@ -1888,21 +1836,8 @@ export class JsonResult_LogQueryInitVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultLogQueryInitVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_LogQueryInitVO_Class)
-);
-
-/**
- *
- * @typedef {dataClass}
- */
-export class dataClass extends t.Verifiable {
-  _check(req) {
-    return t.leq({}).check(req);
-  }
-}
-export const data = t.util.createFinalVerifiableClass(
-  t.util.funcify(dataClass)
+export const jsonResultLogQueryInitVo = t.util.createFinalVerifiable(
+  JsonResult_LogQueryInitVO_Class
 );
 
 /**
@@ -1922,9 +1857,20 @@ export class JsonResult_Map_string_AnalyzeMovePanelVO__Class extends t.Verifiabl
       .check(req);
   }
 }
-export const jsonResultMapStringAnalyzeMovePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Map_string_AnalyzeMovePanelVO__Class)
+export const jsonResultMapStringAnalyzeMovePanelVo = t.util.createFinalVerifiable(
+  JsonResult_Map_string_AnalyzeMovePanelVO__Class
 );
+
+/**
+ *
+ * @typedef {dataClass}
+ */
+export class dataClass extends t.Verifiable {
+  _check(req) {
+    return t.leq({}).check(req);
+  }
+}
+export const data = t.util.createFinalVerifiable(dataClass);
 
 /**
  *
@@ -1943,8 +1889,8 @@ export class JsonResult_Map_string_AnalyzePanelVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultMapStringAnalyzePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Map_string_AnalyzePanelVO__Class)
+export const jsonResultMapStringAnalyzePanelVo = t.util.createFinalVerifiable(
+  JsonResult_Map_string_AnalyzePanelVO__Class
 );
 
 /**
@@ -1964,8 +1910,8 @@ export class JsonResult_Map_string_AnalyzeQuitPanelVO__Class extends t.Verifiabl
       .check(req);
   }
 }
-export const jsonResultMapStringAnalyzeQuitPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Map_string_AnalyzeQuitPanelVO__Class)
+export const jsonResultMapStringAnalyzeQuitPanelVo = t.util.createFinalVerifiable(
+  JsonResult_Map_string_AnalyzeQuitPanelVO__Class
 );
 
 /**
@@ -1985,8 +1931,8 @@ export class JsonResult_Map_string_GrantsQueryInitVO__Class extends t.Verifiable
       .check(req);
   }
 }
-export const jsonResultMapStringGrantsQueryInitVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Map_string_GrantsQueryInitVO__Class)
+export const jsonResultMapStringGrantsQueryInitVo = t.util.createFinalVerifiable(
+  JsonResult_Map_string_GrantsQueryInitVO__Class
 );
 
 /**
@@ -2006,8 +1952,8 @@ export class JsonResult_Map_string_MovePanelVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultMapStringMovePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Map_string_MovePanelVO__Class)
+export const jsonResultMapStringMovePanelVo = t.util.createFinalVerifiable(
+  JsonResult_Map_string_MovePanelVO__Class
 );
 
 /**
@@ -2027,8 +1973,8 @@ export class JsonResult_Map_string_QuitPanelVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultMapStringQuitPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Map_string_QuitPanelVO__Class)
+export const jsonResultMapStringQuitPanelVo = t.util.createFinalVerifiable(
+  JsonResult_Map_string_QuitPanelVO__Class
 );
 
 /**
@@ -2048,8 +1994,8 @@ export class JsonResult_MoveCBQueryParams_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultMoveCbQueryParams = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_MoveCBQueryParams_Class)
+export const jsonResultMoveCbQueryParams = t.util.createFinalVerifiable(
+  JsonResult_MoveCBQueryParams_Class
 );
 
 /**
@@ -2069,8 +2015,8 @@ export class JsonResult_PageInfo_AgreementVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoAgreementVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_AgreementVO__Class)
+export const jsonResultPageInfoAgreementVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_AgreementVO__Class
 );
 
 /**
@@ -2090,8 +2036,8 @@ export class JsonResult_PageInfo_BussLineVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoBussLineVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_BussLineVO__Class)
+export const jsonResultPageInfoBussLineVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_BussLineVO__Class
 );
 
 /**
@@ -2111,8 +2057,8 @@ export class JsonResult_PageInfo_DepartmentVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoDepartmentVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_DepartmentVO__Class)
+export const jsonResultPageInfoDepartmentVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_DepartmentVO__Class
 );
 
 /**
@@ -2132,8 +2078,8 @@ export class JsonResult_PageInfo_FreezingPeriodQueryVO__Class extends t.Verifiab
       .check(req);
   }
 }
-export const jsonResultPageInfoFreezingPeriodQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_FreezingPeriodQueryVO__Class)
+export const jsonResultPageInfoFreezingPeriodQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_FreezingPeriodQueryVO__Class
 );
 
 /**
@@ -2153,8 +2099,8 @@ export class JsonResult_PageInfo_GrantsListVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoGrantsListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_GrantsListVO__Class)
+export const jsonResultPageInfoGrantsListVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_GrantsListVO__Class
 );
 
 /**
@@ -2174,8 +2120,8 @@ export class JsonResult_PageInfo_GrantsLogListVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoGrantsLogListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_GrantsLogListVO__Class)
+export const jsonResultPageInfoGrantsLogListVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_GrantsLogListVO__Class
 );
 
 /**
@@ -2195,8 +2141,8 @@ export class JsonResult_PageInfo_LogPlanQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoLogPlanQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_LogPlanQueryVO__Class)
+export const jsonResultPageInfoLogPlanQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_LogPlanQueryVO__Class
 );
 
 /**
@@ -2216,8 +2162,8 @@ export class JsonResult_PageInfo_MoveCBQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoMoveCbQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_MoveCBQueryVO__Class)
+export const jsonResultPageInfoMoveCbQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_MoveCBQueryVO__Class
 );
 
 /**
@@ -2237,8 +2183,8 @@ export class JsonResult_PageInfo_MoveRsAnlyVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoMoveRsAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_MoveRsAnlyVO__Class)
+export const jsonResultPageInfoMoveRsAnlyVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_MoveRsAnlyVO__Class
 );
 
 /**
@@ -2258,8 +2204,8 @@ export class JsonResult_PageInfo_MoveRsQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoMoveRsQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_MoveRsQueryVO__Class)
+export const jsonResultPageInfoMoveRsQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_MoveRsQueryVO__Class
 );
 
 /**
@@ -2279,8 +2225,8 @@ export class JsonResult_PageInfo_MoveSoAnlyVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoMoveSoAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_MoveSoAnlyVO__Class)
+export const jsonResultPageInfoMoveSoAnlyVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_MoveSoAnlyVO__Class
 );
 
 /**
@@ -2300,8 +2246,8 @@ export class JsonResult_PageInfo_MoveSoQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoMoveSoQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_MoveSoQueryVO__Class)
+export const jsonResultPageInfoMoveSoQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_MoveSoQueryVO__Class
 );
 
 /**
@@ -2321,8 +2267,8 @@ export class JsonResult_PageInfo_PlanQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoPlanQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_PlanQueryVO__Class)
+export const jsonResultPageInfoPlanQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_PlanQueryVO__Class
 );
 
 /**
@@ -2342,8 +2288,8 @@ export class JsonResult_PageInfo_QuitRsAnlyVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoQuitRsAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_QuitRsAnlyVO__Class)
+export const jsonResultPageInfoQuitRsAnlyVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_QuitRsAnlyVO__Class
 );
 
 /**
@@ -2363,8 +2309,8 @@ export class JsonResult_PageInfo_QuitRsQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoQuitRsQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_QuitRsQueryVO__Class)
+export const jsonResultPageInfoQuitRsQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_QuitRsQueryVO__Class
 );
 
 /**
@@ -2384,8 +2330,8 @@ export class JsonResult_PageInfo_QuitSoAnlyVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoQuitSoAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_QuitSoAnlyVO__Class)
+export const jsonResultPageInfoQuitSoAnlyVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_QuitSoAnlyVO__Class
 );
 
 /**
@@ -2405,8 +2351,8 @@ export class JsonResult_PageInfo_QuitSoQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoQuitSoQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_QuitSoQueryVO__Class)
+export const jsonResultPageInfoQuitSoQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_QuitSoQueryVO__Class
 );
 
 /**
@@ -2426,8 +2372,8 @@ export class JsonResult_PageInfo_RightPriceQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoRightPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_RightPriceQueryVO__Class)
+export const jsonResultPageInfoRightPriceQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_RightPriceQueryVO__Class
 );
 
 /**
@@ -2447,8 +2393,8 @@ export class JsonResult_PageInfo_StockOwnVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoStockOwnVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_StockOwnVO__Class)
+export const jsonResultPageInfoStockOwnVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_StockOwnVO__Class
 );
 
 /**
@@ -2468,8 +2414,8 @@ export class JsonResult_PageInfo_StockPriceQueryVO__Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPageInfoStockPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PageInfo_StockPriceQueryVO__Class)
+export const jsonResultPageInfoStockPriceQueryVo = t.util.createFinalVerifiable(
+  JsonResult_PageInfo_StockPriceQueryVO__Class
 );
 
 /**
@@ -2489,8 +2435,8 @@ export class JsonResult_PlanPanelVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPlanPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PlanPanelVO_Class)
+export const jsonResultPlanPanelVo = t.util.createFinalVerifiable(
+  JsonResult_PlanPanelVO_Class
 );
 
 /**
@@ -2510,8 +2456,8 @@ export class JsonResult_PlanViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultPlanViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_PlanViewVO_Class)
+export const jsonResultPlanViewVo = t.util.createFinalVerifiable(
+  JsonResult_PlanViewVO_Class
 );
 
 /**
@@ -2531,8 +2477,8 @@ export class JsonResult_QuitDeduDetailVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultQuitDeduDetailVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_QuitDeduDetailVO_Class)
+export const jsonResultQuitDeduDetailVo = t.util.createFinalVerifiable(
+  JsonResult_QuitDeduDetailVO_Class
 );
 
 /**
@@ -2552,8 +2498,8 @@ export class JsonResult_RSAscriptionVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultRsAscriptionVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_RSAscriptionVO_Class)
+export const jsonResultRsAscriptionVo = t.util.createFinalVerifiable(
+  JsonResult_RSAscriptionVO_Class
 );
 
 /**
@@ -2573,8 +2519,8 @@ export class JsonResult_RightPriceQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultRightPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_RightPriceQueryVO_Class)
+export const jsonResultRightPriceQueryVo = t.util.createFinalVerifiable(
+  JsonResult_RightPriceQueryVO_Class
 );
 
 /**
@@ -2594,8 +2540,8 @@ export class JsonResult_StockUseSimpleInfoVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultStockUseSimpleInfoVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_StockUseSimpleInfoVO_Class)
+export const jsonResultStockUseSimpleInfoVo = t.util.createFinalVerifiable(
+  JsonResult_StockUseSimpleInfoVO_Class
 );
 
 /**
@@ -2615,8 +2561,8 @@ export class JsonResult_TBCGrantBeforeVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultTbcGrantBeforeVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_TBCGrantBeforeVO_Class)
+export const jsonResultTbcGrantBeforeVo = t.util.createFinalVerifiable(
+  JsonResult_TBCGrantBeforeVO_Class
 );
 
 /**
@@ -2636,8 +2582,8 @@ export class JsonResult_UserVo_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultUserVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_UserVo_Class)
+export const jsonResultUserVo = t.util.createFinalVerifiable(
+  JsonResult_UserVo_Class
 );
 
 /**
@@ -2656,8 +2602,8 @@ export class JsonResult_Void_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultVoid = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_Void_Class)
+export const jsonResultVoid = t.util.createFinalVerifiable(
+  JsonResult_Void_Class
 );
 
 /**
@@ -2677,8 +2623,8 @@ export class JsonResult_boolean_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultBoolean = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_boolean_Class)
+export const jsonResultBoolean = t.util.createFinalVerifiable(
+  JsonResult_boolean_Class
 );
 
 /**
@@ -2698,9 +2644,7 @@ export class JsonResult_int_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultInt = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_int_Class)
-);
+export const jsonResultInt = t.util.createFinalVerifiable(JsonResult_int_Class);
 
 /**
  *
@@ -2719,8 +2663,8 @@ export class JsonResult_long_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultLong = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_long_Class)
+export const jsonResultLong = t.util.createFinalVerifiable(
+  JsonResult_long_Class
 );
 
 /**
@@ -2740,8 +2684,8 @@ export class JsonResult_string_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const jsonResultString = t.util.createFinalVerifiableClass(
-  t.util.funcify(JsonResult_string_Class)
+export const jsonResultString = t.util.createFinalVerifiable(
+  JsonResult_string_Class
 );
 
 /**
@@ -2761,9 +2705,7 @@ export class LogCommonVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logCommonVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogCommonVOClass)
-);
+export const logCommonVo = t.util.createFinalVerifiable(LogCommonVOClass);
 
 /**
  *
@@ -2782,8 +2724,8 @@ export class LogCommonVO_LogFreezingPeriodViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const logCommonVoLogFreezingPeriodViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogCommonVO_LogFreezingPeriodViewVO_Class)
+export const logCommonVoLogFreezingPeriodViewVo = t.util.createFinalVerifiable(
+  LogCommonVO_LogFreezingPeriodViewVO_Class
 );
 
 /**
@@ -2803,8 +2745,8 @@ export class LogCommonVO_LogPlanViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const logCommonVoLogPlanViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogCommonVO_LogPlanViewVO_Class)
+export const logCommonVoLogPlanViewVo = t.util.createFinalVerifiable(
+  LogCommonVO_LogPlanViewVO_Class
 );
 
 /**
@@ -2824,8 +2766,8 @@ export class LogCommonVO_LogRightPriceViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const logCommonVoLogRightPriceViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogCommonVO_LogRightPriceViewVO_Class)
+export const logCommonVoLogRightPriceViewVo = t.util.createFinalVerifiable(
+  LogCommonVO_LogRightPriceViewVO_Class
 );
 
 /**
@@ -2845,8 +2787,8 @@ export class LogCommonVO_LogStockPriceViewVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const logCommonVoLogStockPriceViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogCommonVO_LogStockPriceViewVO_Class)
+export const logCommonVoLogStockPriceViewVo = t.util.createFinalVerifiable(
+  LogCommonVO_LogStockPriceViewVO_Class
 );
 
 /**
@@ -2866,8 +2808,8 @@ export class LogFreezingPeriodViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logFreezingPeriodViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogFreezingPeriodViewVOClass)
+export const logFreezingPeriodViewVo = t.util.createFinalVerifiable(
+  LogFreezingPeriodViewVOClass
 );
 
 /**
@@ -2879,9 +2821,7 @@ export class LogPlanPanelVOClass extends t.Verifiable {
     return t.leq({ status: t.array }).check(req);
   }
 }
-export const logPlanPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogPlanPanelVOClass)
-);
+export const logPlanPanelVo = t.util.createFinalVerifiable(LogPlanPanelVOClass);
 
 /**
  *
@@ -2910,8 +2850,8 @@ export class LogPlanPlanViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logPlanPlanViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogPlanPlanViewVOClass)
+export const logPlanPlanViewVo = t.util.createFinalVerifiable(
+  LogPlanPlanViewVOClass
 );
 
 /**
@@ -2933,8 +2873,8 @@ export class LogPlanQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logPlanQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogPlanQueryDTOClass)
+export const logPlanQueryDto = t.util.createFinalVerifiable(
+  LogPlanQueryDTOClass
 );
 
 /**
@@ -2964,9 +2904,7 @@ export class LogPlanQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logPlanQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogPlanQueryVOClass)
-);
+export const logPlanQueryVo = t.util.createFinalVerifiable(LogPlanQueryVOClass);
 
 /**
  *
@@ -2994,9 +2932,7 @@ export class LogPlanViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logPlanViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogPlanViewVOClass)
-);
+export const logPlanViewVo = t.util.createFinalVerifiable(LogPlanViewVOClass);
 
 /**
  *
@@ -3017,9 +2953,7 @@ export class LogQueryInitVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logQueryInitVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogQueryInitVOClass)
-);
+export const logQueryInitVo = t.util.createFinalVerifiable(LogQueryInitVOClass);
 
 /**
  *
@@ -3038,8 +2972,8 @@ export class LogRightPriceViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logRightPriceViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogRightPriceViewVOClass)
+export const logRightPriceViewVo = t.util.createFinalVerifiable(
+  LogRightPriceViewVOClass
 );
 
 /**
@@ -3060,8 +2994,8 @@ export class LogStockPriceViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const logStockPriceViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(LogStockPriceViewVOClass)
+export const logStockPriceViewVo = t.util.createFinalVerifiable(
+  LogStockPriceViewVOClass
 );
 
 /**
@@ -3073,8 +3007,8 @@ export class Map_string_AnalyzeMovePanelVO_Class extends t.Verifiable {
     return t.leq({}).check(req);
   }
 }
-export const mapStringAnalyzeMovePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(Map_string_AnalyzeMovePanelVO_Class)
+export const mapStringAnalyzeMovePanelVo = t.util.createFinalVerifiable(
+  Map_string_AnalyzeMovePanelVO_Class
 );
 
 /**
@@ -3086,8 +3020,8 @@ export class Map_string_AnalyzePanelVO_Class extends t.Verifiable {
     return t.leq({}).check(req);
   }
 }
-export const mapStringAnalyzePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(Map_string_AnalyzePanelVO_Class)
+export const mapStringAnalyzePanelVo = t.util.createFinalVerifiable(
+  Map_string_AnalyzePanelVO_Class
 );
 
 /**
@@ -3099,8 +3033,8 @@ export class Map_string_AnalyzeQuitPanelVO_Class extends t.Verifiable {
     return t.leq({}).check(req);
   }
 }
-export const mapStringAnalyzeQuitPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(Map_string_AnalyzeQuitPanelVO_Class)
+export const mapStringAnalyzeQuitPanelVo = t.util.createFinalVerifiable(
+  Map_string_AnalyzeQuitPanelVO_Class
 );
 
 /**
@@ -3112,8 +3046,8 @@ export class Map_string_GrantsQueryInitVO_Class extends t.Verifiable {
     return t.leq({}).check(req);
   }
 }
-export const mapStringGrantsQueryInitVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(Map_string_GrantsQueryInitVO_Class)
+export const mapStringGrantsQueryInitVo = t.util.createFinalVerifiable(
+  Map_string_GrantsQueryInitVO_Class
 );
 
 /**
@@ -3125,8 +3059,8 @@ export class Map_string_MovePanelVO_Class extends t.Verifiable {
     return t.leq({}).check(req);
   }
 }
-export const mapStringMovePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(Map_string_MovePanelVO_Class)
+export const mapStringMovePanelVo = t.util.createFinalVerifiable(
+  Map_string_MovePanelVO_Class
 );
 
 /**
@@ -3138,8 +3072,8 @@ export class Map_string_QuitPanelVO_Class extends t.Verifiable {
     return t.leq({}).check(req);
   }
 }
-export const mapStringQuitPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(Map_string_QuitPanelVO_Class)
+export const mapStringQuitPanelVo = t.util.createFinalVerifiable(
+  Map_string_QuitPanelVO_Class
 );
 
 /**
@@ -3166,9 +3100,7 @@ export class MoveAnalyzeDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveAnalyzeDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveAnalyzeDTOClass)
-);
+export const moveAnalyzeDto = t.util.createFinalVerifiable(MoveAnalyzeDTOClass);
 
 /**
  *
@@ -3193,9 +3125,7 @@ export class MoveCBListDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveCbListDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveCBListDTOClass)
-);
+export const moveCbListDto = t.util.createFinalVerifiable(MoveCBListDTOClass);
 
 /**
  *
@@ -3215,9 +3145,7 @@ export class MoveCBPanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveCbPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveCBPanelVOClass)
-);
+export const moveCbPanelVo = t.util.createFinalVerifiable(MoveCBPanelVOClass);
 
 /**
  *
@@ -3228,22 +3156,7 @@ export class MoveCBQueryDTOClass extends t.Verifiable {
     return t.leq({ moveDeduId: t.number }).check(req);
   }
 }
-export const moveCbQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveCBQueryDTOClass)
-);
-
-/**
- *
- * @typedef {panelMapClass}
- */
-export class panelMapClass extends t.Verifiable {
-  _check(req) {
-    return t.leq({}).check(req);
-  }
-}
-export const panelMap = t.util.createFinalVerifiableClass(
-  t.util.funcify(panelMapClass)
-);
+export const moveCbQueryDto = t.util.createFinalVerifiable(MoveCBQueryDTOClass);
 
 /**
  *
@@ -3259,8 +3172,8 @@ export class MoveCBQueryParamsClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveCbQueryParams = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveCBQueryParamsClass)
+export const moveCbQueryParams = t.util.createFinalVerifiable(
+  MoveCBQueryParamsClass
 );
 
 /**
@@ -3301,9 +3214,7 @@ export class MoveCBQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveCbQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveCBQueryVOClass)
-);
+export const moveCbQueryVo = t.util.createFinalVerifiable(MoveCBQueryVOClass);
 
 /**
  *
@@ -3320,8 +3231,8 @@ export class MoveCBUpdateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveCbUpdateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveCBUpdateDTOClass)
+export const moveCbUpdateDto = t.util.createFinalVerifiable(
+  MoveCBUpdateDTOClass
 );
 
 /**
@@ -3345,9 +3256,7 @@ export class MovePanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const movePanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MovePanelVOClass)
-);
+export const movePanelVo = t.util.createFinalVerifiable(MovePanelVOClass);
 
 /**
  *
@@ -3386,9 +3295,7 @@ export class MoveRsAnlyVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveRsAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveRsAnlyVOClass)
-);
+export const moveRsAnlyVo = t.util.createFinalVerifiable(MoveRsAnlyVOClass);
 
 /**
  *
@@ -3415,9 +3322,7 @@ export class MoveRsQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveRsQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveRsQueryDTOClass)
-);
+export const moveRsQueryDto = t.util.createFinalVerifiable(MoveRsQueryDTOClass);
 
 /**
  *
@@ -3456,9 +3361,7 @@ export class MoveRsQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveRsQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveRsQueryVOClass)
-);
+export const moveRsQueryVo = t.util.createFinalVerifiable(MoveRsQueryVOClass);
 
 /**
  *
@@ -3491,9 +3394,7 @@ export class MoveSoAnlyVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveSoAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveSoAnlyVOClass)
-);
+export const moveSoAnlyVo = t.util.createFinalVerifiable(MoveSoAnlyVOClass);
 
 /**
  *
@@ -3519,9 +3420,7 @@ export class MoveSoQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveSoQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveSoQueryDTOClass)
-);
+export const moveSoQueryDto = t.util.createFinalVerifiable(MoveSoQueryDTOClass);
 
 /**
  *
@@ -3556,9 +3455,7 @@ export class MoveSoQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const moveSoQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(MoveSoQueryVOClass)
-);
+export const moveSoQueryVo = t.util.createFinalVerifiable(MoveSoQueryVOClass);
 
 /**
  *
@@ -3574,9 +3471,7 @@ export class OrgVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const orgVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(OrgVOClass)
-);
+export const orgVo = t.util.createFinalVerifiable(OrgVOClass);
 
 /**
  *
@@ -3610,8 +3505,8 @@ export class PageInfo_AgreementVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoAgreementVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_AgreementVO_Class)
+export const pageInfoAgreementVo = t.util.createFinalVerifiable(
+  PageInfo_AgreementVO_Class
 );
 
 /**
@@ -3646,8 +3541,8 @@ export class PageInfo_BussLineVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoBussLineVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_BussLineVO_Class)
+export const pageInfoBussLineVo = t.util.createFinalVerifiable(
+  PageInfo_BussLineVO_Class
 );
 
 /**
@@ -3682,8 +3577,8 @@ export class PageInfo_DepartmentVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoDepartmentVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_DepartmentVO_Class)
+export const pageInfoDepartmentVo = t.util.createFinalVerifiable(
+  PageInfo_DepartmentVO_Class
 );
 
 /**
@@ -3718,8 +3613,8 @@ export class PageInfo_FreezingPeriodQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoFreezingPeriodQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_FreezingPeriodQueryVO_Class)
+export const pageInfoFreezingPeriodQueryVo = t.util.createFinalVerifiable(
+  PageInfo_FreezingPeriodQueryVO_Class
 );
 
 /**
@@ -3754,8 +3649,8 @@ export class PageInfo_GrantsListVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoGrantsListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_GrantsListVO_Class)
+export const pageInfoGrantsListVo = t.util.createFinalVerifiable(
+  PageInfo_GrantsListVO_Class
 );
 
 /**
@@ -3790,8 +3685,8 @@ export class PageInfo_GrantsLogListVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoGrantsLogListVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_GrantsLogListVO_Class)
+export const pageInfoGrantsLogListVo = t.util.createFinalVerifiable(
+  PageInfo_GrantsLogListVO_Class
 );
 
 /**
@@ -3826,8 +3721,8 @@ export class PageInfo_LogPlanQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoLogPlanQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_LogPlanQueryVO_Class)
+export const pageInfoLogPlanQueryVo = t.util.createFinalVerifiable(
+  PageInfo_LogPlanQueryVO_Class
 );
 
 /**
@@ -3862,8 +3757,8 @@ export class PageInfo_MoveCBQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoMoveCbQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_MoveCBQueryVO_Class)
+export const pageInfoMoveCbQueryVo = t.util.createFinalVerifiable(
+  PageInfo_MoveCBQueryVO_Class
 );
 
 /**
@@ -3898,8 +3793,8 @@ export class PageInfo_MoveRsAnlyVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoMoveRsAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_MoveRsAnlyVO_Class)
+export const pageInfoMoveRsAnlyVo = t.util.createFinalVerifiable(
+  PageInfo_MoveRsAnlyVO_Class
 );
 
 /**
@@ -3934,8 +3829,8 @@ export class PageInfo_MoveRsQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoMoveRsQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_MoveRsQueryVO_Class)
+export const pageInfoMoveRsQueryVo = t.util.createFinalVerifiable(
+  PageInfo_MoveRsQueryVO_Class
 );
 
 /**
@@ -3970,8 +3865,8 @@ export class PageInfo_MoveSoAnlyVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoMoveSoAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_MoveSoAnlyVO_Class)
+export const pageInfoMoveSoAnlyVo = t.util.createFinalVerifiable(
+  PageInfo_MoveSoAnlyVO_Class
 );
 
 /**
@@ -4006,8 +3901,8 @@ export class PageInfo_MoveSoQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoMoveSoQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_MoveSoQueryVO_Class)
+export const pageInfoMoveSoQueryVo = t.util.createFinalVerifiable(
+  PageInfo_MoveSoQueryVO_Class
 );
 
 /**
@@ -4042,8 +3937,8 @@ export class PageInfo_PlanQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoPlanQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_PlanQueryVO_Class)
+export const pageInfoPlanQueryVo = t.util.createFinalVerifiable(
+  PageInfo_PlanQueryVO_Class
 );
 
 /**
@@ -4078,8 +3973,8 @@ export class PageInfo_QuitRsAnlyVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoQuitRsAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_QuitRsAnlyVO_Class)
+export const pageInfoQuitRsAnlyVo = t.util.createFinalVerifiable(
+  PageInfo_QuitRsAnlyVO_Class
 );
 
 /**
@@ -4114,8 +4009,8 @@ export class PageInfo_QuitRsQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoQuitRsQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_QuitRsQueryVO_Class)
+export const pageInfoQuitRsQueryVo = t.util.createFinalVerifiable(
+  PageInfo_QuitRsQueryVO_Class
 );
 
 /**
@@ -4150,8 +4045,8 @@ export class PageInfo_QuitSoAnlyVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoQuitSoAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_QuitSoAnlyVO_Class)
+export const pageInfoQuitSoAnlyVo = t.util.createFinalVerifiable(
+  PageInfo_QuitSoAnlyVO_Class
 );
 
 /**
@@ -4186,8 +4081,8 @@ export class PageInfo_QuitSoQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoQuitSoQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_QuitSoQueryVO_Class)
+export const pageInfoQuitSoQueryVo = t.util.createFinalVerifiable(
+  PageInfo_QuitSoQueryVO_Class
 );
 
 /**
@@ -4222,8 +4117,8 @@ export class PageInfo_RightPriceQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoRightPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_RightPriceQueryVO_Class)
+export const pageInfoRightPriceQueryVo = t.util.createFinalVerifiable(
+  PageInfo_RightPriceQueryVO_Class
 );
 
 /**
@@ -4258,8 +4153,8 @@ export class PageInfo_StockOwnVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoStockOwnVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_StockOwnVO_Class)
+export const pageInfoStockOwnVo = t.util.createFinalVerifiable(
+  PageInfo_StockOwnVO_Class
 );
 
 /**
@@ -4294,8 +4189,8 @@ export class PageInfo_StockPriceQueryVO_Class extends t.Verifiable {
       .check(req);
   }
 }
-export const pageInfoStockPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PageInfo_StockPriceQueryVO_Class)
+export const pageInfoStockPriceQueryVo = t.util.createFinalVerifiable(
+  PageInfo_StockPriceQueryVO_Class
 );
 
 /**
@@ -4312,8 +4207,8 @@ export class PlanNameCodeCheckDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planNameCodeCheckDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanNameCodeCheckDTOClass)
+export const planNameCodeCheckDto = t.util.createFinalVerifiable(
+  PlanNameCodeCheckDTOClass
 );
 
 /**
@@ -4332,9 +4227,7 @@ export class PlanPanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanPanelVOClass)
-);
+export const planPanelVo = t.util.createFinalVerifiable(PlanPanelVOClass);
 
 /**
  *
@@ -4355,9 +4248,7 @@ export class PlanQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanQueryDTOClass)
-);
+export const planQueryDto = t.util.createFinalVerifiable(PlanQueryDTOClass);
 
 /**
  *
@@ -4386,9 +4277,7 @@ export class PlanQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanQueryVOClass)
-);
+export const planQueryVo = t.util.createFinalVerifiable(PlanQueryVOClass);
 
 /**
  *
@@ -4415,9 +4304,7 @@ export class PlanReleaseDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planReleaseDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanReleaseDTOClass)
-);
+export const planReleaseDto = t.util.createFinalVerifiable(PlanReleaseDTOClass);
 
 /**
  *
@@ -4444,9 +4331,7 @@ export class PlanSaveDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planSaveDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanSaveDTOClass)
-);
+export const planSaveDto = t.util.createFinalVerifiable(PlanSaveDTOClass);
 
 /**
  *
@@ -4463,9 +4348,7 @@ export class PlanSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanSimpleVOClass)
-);
+export const planSimpleVo = t.util.createFinalVerifiable(PlanSimpleVOClass);
 
 /**
  *
@@ -4495,9 +4378,7 @@ export class PlanViewVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const planViewVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(PlanViewVOClass)
-);
+export const planViewVo = t.util.createFinalVerifiable(PlanViewVOClass);
 
 /**
  *
@@ -4514,9 +4395,7 @@ export class PriceQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const priceQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(PriceQueryDTOClass)
-);
+export const priceQueryDto = t.util.createFinalVerifiable(PriceQueryDTOClass);
 
 /**
  *
@@ -4538,9 +4417,7 @@ export class QuitAnalyzeDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitAnalyzeDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitAnalyzeDTOClass)
-);
+export const quitAnalyzeDto = t.util.createFinalVerifiable(QuitAnalyzeDTOClass);
 
 /**
  *
@@ -4577,8 +4454,8 @@ export class QuitDeduDetailVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitDeduDetailVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitDeduDetailVOClass)
+export const quitDeduDetailVo = t.util.createFinalVerifiable(
+  QuitDeduDetailVOClass
 );
 
 /**
@@ -4601,9 +4478,7 @@ export class QuitModifyDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitModifyDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitModifyDTOClass)
-);
+export const quitModifyDto = t.util.createFinalVerifiable(QuitModifyDTOClass);
 
 /**
  *
@@ -4623,9 +4498,7 @@ export class QuitPanelVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitPanelVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitPanelVOClass)
-);
+export const quitPanelVo = t.util.createFinalVerifiable(QuitPanelVOClass);
 
 /**
  *
@@ -4661,9 +4534,7 @@ export class QuitRsAnlyVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitRsAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitRsAnlyVOClass)
-);
+export const quitRsAnlyVo = t.util.createFinalVerifiable(QuitRsAnlyVOClass);
 
 /**
  *
@@ -4687,9 +4558,7 @@ export class QuitRsQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitRsQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitRsQueryDTOClass)
-);
+export const quitRsQueryDto = t.util.createFinalVerifiable(QuitRsQueryDTOClass);
 
 /**
  *
@@ -4726,9 +4595,7 @@ export class QuitRsQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitRsQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitRsQueryVOClass)
-);
+export const quitRsQueryVo = t.util.createFinalVerifiable(QuitRsQueryVOClass);
 
 /**
  *
@@ -4763,9 +4630,7 @@ export class QuitSoAnlyVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitSoAnlyVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitSoAnlyVOClass)
-);
+export const quitSoAnlyVo = t.util.createFinalVerifiable(QuitSoAnlyVOClass);
 
 /**
  *
@@ -4788,9 +4653,7 @@ export class QuitSoQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitSoQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitSoQueryDTOClass)
-);
+export const quitSoQueryDto = t.util.createFinalVerifiable(QuitSoQueryDTOClass);
 
 /**
  *
@@ -4823,9 +4686,7 @@ export class QuitSoQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const quitSoQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(QuitSoQueryVOClass)
-);
+export const quitSoQueryVo = t.util.createFinalVerifiable(QuitSoQueryVOClass);
 
 /**
  *
@@ -4841,8 +4702,8 @@ export class RSAscrUpdateDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rsAscrUpdateDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(RSAscrUpdateDTOClass)
+export const rsAscrUpdateDto = t.util.createFinalVerifiable(
+  RSAscrUpdateDTOClass
 );
 
 /**
@@ -4861,8 +4722,8 @@ export class RSAscriptionDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rsAscriptionDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(RSAscriptionDTOClass)
+export const rsAscriptionDto = t.util.createFinalVerifiable(
+  RSAscriptionDTOClass
 );
 
 /**
@@ -4883,8 +4744,8 @@ export class RSAscriptionSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rsAscriptionSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(RSAscriptionSimpleVOClass)
+export const rsAscriptionSimpleVo = t.util.createFinalVerifiable(
+  RSAscriptionSimpleVOClass
 );
 
 /**
@@ -4906,9 +4767,7 @@ export class RSAscriptionVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rsAscriptionVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(RSAscriptionVOClass)
-);
+export const rsAscriptionVo = t.util.createFinalVerifiable(RSAscriptionVOClass);
 
 /**
  *
@@ -4924,9 +4783,7 @@ export class RSFullAscrDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rsFullAscrDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(RSFullAscrDTOClass)
-);
+export const rsFullAscrDto = t.util.createFinalVerifiable(RSFullAscrDTOClass);
 
 /**
  *
@@ -4944,8 +4801,8 @@ export class RightPriceQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rightPriceQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(RightPriceQueryDTOClass)
+export const rightPriceQueryDto = t.util.createFinalVerifiable(
+  RightPriceQueryDTOClass
 );
 
 /**
@@ -4967,8 +4824,8 @@ export class RightPriceQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rightPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(RightPriceQueryVOClass)
+export const rightPriceQueryVo = t.util.createFinalVerifiable(
+  RightPriceQueryVOClass
 );
 
 /**
@@ -4989,8 +4846,8 @@ export class RightPriceSaveDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const rightPriceSaveDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(RightPriceSaveDTOClass)
+export const rightPriceSaveDto = t.util.createFinalVerifiable(
+  RightPriceSaveDTOClass
 );
 
 /**
@@ -5010,8 +4867,8 @@ export class SOAscriptionSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const soAscriptionSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(SOAscriptionSimpleVOClass)
+export const soAscriptionSimpleVo = t.util.createFinalVerifiable(
+  SOAscriptionSimpleVOClass
 );
 
 /**
@@ -5038,8 +4895,8 @@ export class StockOwnQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockOwnQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockOwnQueryDTOClass)
+export const stockOwnQueryDto = t.util.createFinalVerifiable(
+  StockOwnQueryDTOClass
 );
 
 /**
@@ -5089,9 +4946,7 @@ export class StockOwnVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockOwnVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockOwnVOClass)
-);
+export const stockOwnVo = t.util.createFinalVerifiable(StockOwnVOClass);
 
 /**
  *
@@ -5108,8 +4963,8 @@ export class StockPriceQueryDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockPriceQueryDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockPriceQueryDTOClass)
+export const stockPriceQueryDto = t.util.createFinalVerifiable(
+  StockPriceQueryDTOClass
 );
 
 /**
@@ -5132,8 +4987,8 @@ export class StockPriceQueryVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockPriceQueryVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockPriceQueryVOClass)
+export const stockPriceQueryVo = t.util.createFinalVerifiable(
+  StockPriceQueryVOClass
 );
 
 /**
@@ -5154,9 +5009,7 @@ export class StockSaveDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockSaveDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockSaveDTOClass)
-);
+export const stockSaveDto = t.util.createFinalVerifiable(StockSaveDTOClass);
 
 /**
  *
@@ -5175,9 +5028,7 @@ export class StockSimpleVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockSimpleVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockSimpleVOClass)
-);
+export const stockSimpleVo = t.util.createFinalVerifiable(StockSimpleVOClass);
 
 /**
  *
@@ -5188,8 +5039,8 @@ export class StockUseInfoDTOClass extends t.Verifiable {
     return t.leq({ planId: t.number }).check(req);
   }
 }
-export const stockUseInfoDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockUseInfoDTOClass)
+export const stockUseInfoDto = t.util.createFinalVerifiable(
+  StockUseInfoDTOClass
 );
 
 /**
@@ -5208,8 +5059,8 @@ export class StockUseSimpleInfoVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const stockUseSimpleInfoVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(StockUseSimpleInfoVOClass)
+export const stockUseSimpleInfoVo = t.util.createFinalVerifiable(
+  StockUseSimpleInfoVOClass
 );
 
 /**
@@ -5226,9 +5077,7 @@ export class SuggestDTOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const suggestDto = t.util.createFinalVerifiableClass(
-  t.util.funcify(SuggestDTOClass)
-);
+export const suggestDto = t.util.createFinalVerifiable(SuggestDTOClass);
 
 /**
  *
@@ -5247,8 +5096,8 @@ export class TBCGrantBeforeVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const tbcGrantBeforeVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(TBCGrantBeforeVOClass)
+export const tbcGrantBeforeVo = t.util.createFinalVerifiable(
+  TBCGrantBeforeVOClass
 );
 
 /**
@@ -5282,9 +5131,7 @@ export class TBCGrantVOClass extends t.Verifiable {
       .check(req);
   }
 }
-export const tbcGrantVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(TBCGrantVOClass)
-);
+export const tbcGrantVo = t.util.createFinalVerifiable(TBCGrantVOClass);
 
 /**
  *
@@ -5308,9 +5155,7 @@ export class TimestampClass extends t.Verifiable {
       .check(req);
   }
 }
-export const timestamp = t.util.createFinalVerifiableClass(
-  t.util.funcify(TimestampClass)
-);
+export const timestamp = t.util.createFinalVerifiable(TimestampClass);
 
 /**
  *
@@ -5326,6 +5171,15 @@ export class UserVoClass extends t.Verifiable {
       .check(req);
   }
 }
-export const userVo = t.util.createFinalVerifiableClass(
-  t.util.funcify(UserVoClass)
-);
+export const userVo = t.util.createFinalVerifiable(UserVoClass);
+
+/**
+ *
+ * @typedef {panelMapClass}
+ */
+export class panelMapClass extends t.Verifiable {
+  _check(req) {
+    return t.leq({}).check(req);
+  }
+}
+export const panelMap = t.util.createFinalVerifiable(panelMapClass);

@@ -10,7 +10,7 @@ export class AcceptGrantDTO extends Root {
    * @example 11111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 }
 
 /**
@@ -23,21 +23,21 @@ export class AgreementQueryDTO extends Root {
    * @example
    * @type {string}
    */
-  @observable language;
+  @observable language = "";
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 }
 
 /**
@@ -50,21 +50,21 @@ export class AgreementSuggestVO extends Root {
    * @example 1212
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 协议名字
    * @example 协议名字
    * @type {string}
    */
-  @observable agreeName;
+  @observable agreeName = "";
 
   /**
    * 协议code
    * @example 0001
    * @type {string}
    */
-  @observable agreeNum;
+  @observable agreeNum = "";
 }
 
 /**
@@ -77,42 +77,42 @@ export class AgreementUpdateDTO extends Root {
    * @example Hello XiaoHu
    * @type {string}
    */
-  @observable agreeContentUs;
+  @observable agreeContentUs = "";
 
   /**
    * 中文协议内容
    * @example 您好
    * @type {string}
    */
-  @observable agreeContentZh;
+  @observable agreeContentZh = "";
 
   /**
    * 协议ID
    * @example
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 协议名称
    * @example 渡鸦协议
    * @type {string}
    */
-  @observable agreeName;
+  @observable agreeName = "";
 
   /**
    *
    * @example
    * @type {string}
    */
-  @observable signCodeEn;
+  @observable signCodeEn = "";
 
   /**
    *
    * @example
    * @type {string}
    */
-  @observable signCodeZh;
+  @observable signCodeZh = "";
 }
 
 /**
@@ -137,112 +137,112 @@ export class AgreementVO extends Root {
    * @example 1212
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 协议名称
    * @example 渡鸦协议
    * @type {string}
    */
-  @observable agreeName;
+  @observable agreeName = "";
 
   /**
    * 协议编号
    * @example 0001
    * @type {string}
    */
-  @observable agreeNum;
+  @observable agreeNum = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    *
    * @example
    * @type {edit}
    */
-  @observable edit;
+  @observable edit = edit.create();
 
   /**
    * 授予类型
    * @example SO
    * @type {string}
    */
-  @observable esopType;
+  @observable esopType = "";
 
   /**
    * 是否已经上传签字页
    * @example Y
    * @type {string}
    */
-  @observable isSignPage;
+  @observable isSignPage = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    *
    * @example
    * @type {map}
    */
-  @observable map;
+  @observable map = map.create();
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划ID
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划状态
    * @example SAVED
    * @type {string}
    */
-  @observable planStatus;
+  @observable planStatus = "";
 }
 
 /**
@@ -255,133 +255,133 @@ export class AgreementViewVO extends Root {
    * @example 你好
    * @type {string}
    */
-  @observable agreeContentUs;
+  @observable agreeContentUs = "";
 
   /**
    * 英文协议内容
    * @example Hi All
    * @type {string}
    */
-  @observable agreeContentZh;
+  @observable agreeContentZh = "";
 
   /**
    * 协议ID
    * @example 1212
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 协议名称
    * @example 渡鸦协议
    * @type {string}
    */
-  @observable agreeName;
+  @observable agreeName = "";
 
   /**
    * 协议编号
    * @example 0001
    * @type {string}
    */
-  @observable agreeNum;
+  @observable agreeNum = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 授予类型
    * @example SO
    * @type {string}
    */
-  @observable esopType;
+  @observable esopType = "";
 
   /**
    * 是否已上传英文协议签字页
    * @example N
    * @type {string}
    */
-  @observable hasSignCodeUs;
+  @observable hasSignCodeUs = "";
 
   /**
    * 是否已上传中文协议签字页
    * @example Y
    * @type {string}
    */
-  @observable hasSignCodeZh;
+  @observable hasSignCodeZh = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 英文协议签字页名字
    * @example 度秘协议签字页
    * @type {string}
    */
-  @observable signPageNameUs;
+  @observable signPageNameUs = "";
 
   /**
    * 中文协议签字页名字
    * @example 度秘协议签字页
    * @type {string}
    */
-  @observable signPageNameZh;
+  @observable signPageNameZh = "";
 }
 
 /**
@@ -394,77 +394,77 @@ export class AnalyzeMovePanelVO extends Root {
    * @example
    * @type {array}
    */
-  @observable deductionStatus;
+  @observable deductionStatus = [];
 
   /**
    * 授予日期左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 授予处理调出结束时间
    * @example 2017-12-11
    * @type {string}
    */
-  @observable grantMoveEndDate;
+  @observable grantMoveEndDate = "";
 
   /**
    * 授予处理调出开始时间
    * @example 2017-11-11
    * @type {string}
    */
-  @observable grantMoveStartDate;
+  @observable grantMoveStartDate = "";
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable grantStatus;
+  @observable grantStatus = [];
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 操作角色
    * @example
    * @type {array}
    */
-  @observable operationRole;
+  @observable operationRole = [];
 
   /**
    * 退款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 人事变更调出结束时间
    * @example 2017-12-11
    * @type {string}
    */
-  @observable personMoveEndDate;
+  @observable personMoveEndDate = "";
 
   /**
    * 人事变更调出开始时间
    * @example 2017-11-11
    * @type {string}
    */
-  @observable personMoveStartDate;
+  @observable personMoveStartDate = "";
 }
 
 /**
@@ -477,49 +477,49 @@ export class AnalyzePanelVO extends Root {
    * @example
    * @type {array}
    */
-  @observable employeeType;
+  @observable employeeType = [];
 
   /**
    * 授予编号
    * @example
    * @type {string}
    */
-  @observable grantCode;
+  @observable grantCode = "";
 
   /**
    * 授予日期左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 授予负责角色/授予创建角色
    * @example
    * @type {array}
    */
-  @observable grantRole;
+  @observable grantRole = [];
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable grantStatus;
+  @observable grantStatus = [];
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 }
 
 /**
@@ -532,35 +532,35 @@ export class AnalyzeQuitPanelVO extends Root {
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 操作角色
    * @example
    * @type {array}
    */
-  @observable operationRole;
+  @observable operationRole = [];
 
   /**
    * 退款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 离职日期截止时间
    * @example 授予Id/员工ID
    * @type {string}
    */
-  @observable quitDateEnd;
+  @observable quitDateEnd = "";
 
   /**
    * 离职日期起始时间
    * @example 授予Id/员工ID
    * @type {string}
    */
-  @observable quitDateStart;
+  @observable quitDateStart = "";
 }
 
 /**
@@ -573,14 +573,14 @@ export class AscrRuleDTO extends Root {
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-01
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 }
 
 /**
@@ -593,42 +593,42 @@ export class AscriptionInfoVO extends Root {
    * @example 2018-01-01
    * @type {string}
    */
-  @observable ascrDate;
+  @observable ascrDate = "";
 
   /**
    * 是否已归属
    * @example Y
    * @type {string}
    */
-  @observable ascrFlag;
+  @observable ascrFlag = "";
 
   /**
    * 归属数量
    * @example 1000
    * @type {number}
    */
-  @observable ascrNumber;
+  @observable ascrNumber = "";
 
   /**
    * 归属ID
    * @example 1000
    * @type {number}
    */
-  @observable ascriptionId;
+  @observable ascriptionId = "";
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 }
 
 /**
@@ -641,14 +641,14 @@ export class AscriptionSimpleVO extends Root {
    * @example 2018-01-01
    * @type {string}
    */
-  @observable ascrDate;
+  @observable ascrDate = "";
 
   /**
    * 归属数量
    * @example 1000
    * @type {number}
    */
-  @observable ascrNumber;
+  @observable ascrNumber = "";
 
   /**
    * 归属规则修改标志
@@ -668,21 +668,21 @@ export class AscriptionVO extends Root {
    * @example 1000
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 归属明细
    * @example []
    * @type {array}
    */
-  @observable rsAscrList;
+  @observable rsAscrList = [];
 }
 
 /**
@@ -695,28 +695,28 @@ export class BussLineCreateDTO extends Root {
    * @example 度秘
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 备注
    * @example XXX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * Leading BP/HRBP
-   * @example [[object Undefined], [object Undefined]]
+   * @example [12, 23]
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 操作类型(SAVE(保存),PUBLISH(保存并发布)),默认为”保存“操作
    * @example PUBLISH
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 }
 
 /**
@@ -729,35 +729,35 @@ export class BussLineOrgCreateDTO extends Root {
    * @example 12
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 备注
    * @example BPIT
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 部門ID
    * @example 12
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部門名字
    * @example BPIT
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 生效日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -770,35 +770,35 @@ export class BussLineOrgQueryDTO extends Root {
    * @example
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 标志位（大于0有效部门，小于0无效部门，等于0所有部门）
    * @example
    * @type {number}
    */
-  @observable flag;
+  @observable flag = "";
 
   /**
    * 部门名称
    * @example
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 }
 
 /**
@@ -811,28 +811,28 @@ export class BussLineOrgUpdateDTO extends Root {
    * @example 12
    * @type {number}
    */
-  @observable bussOrgId;
+  @observable bussOrgId = "";
 
   /**
    * 備註
    * @example notes
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 部門失效日期
    * @example 2018-01-21
    * @type {string}
    */
-  @observable endDate;
+  @observable endDate = "";
 
   /**
    * 部門生效日期
    * @example 2018-01-21
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -845,21 +845,21 @@ export class BussLineQueryTempDTO extends Root {
    * @example 度秘
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 }
 
 /**
@@ -872,14 +872,14 @@ export class BussLineSuggestVO extends Root {
    * @example 1212
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务线名字
    * @example 度秘
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 }
 
 /**
@@ -892,35 +892,35 @@ export class BussLineUpdateDTO extends Root {
    * @example 12
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务线名字
    * @example 度秘
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 备注
    * @example
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * Leading BP/HRBP
-   * @example [[object Undefined], [object Undefined]]
+   * @example [12, 23]
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 操作类型(SAVE(保存),PUBLISH(保存并发布))
    * @example
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 }
 
 /**
@@ -933,112 +933,112 @@ export class BussLineVO extends Root {
    * @example 1212
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务线名字
    * @example 度秘
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 备注
    * @example XXX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 有效部门数量
    * @example 2
    * @type {number}
    */
-  @observable departmentNum;
+  @observable departmentNum = "";
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * leadingBpIdStr
-   * @example [[object Undefined], [object Undefined]]
+   * @example [{"personId":"12","email":"12@baidu.com"}, {"personId":"12","email":"12@baidu.com"}]
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * leadingBpIdStr(该字段FE忽略)
    * @example
    * @type {string}
    */
-  @observable leadingBpIdStr;
+  @observable leadingBpIdStr = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 状态
    * @example 已发布
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -1051,35 +1051,35 @@ export class BussOrgLogListVO extends Root {
    * @example
    * @type {array}
    */
-  @observable logs;
+  @observable logs = [];
 
   /**
    * 操作人信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable operation;
+  @observable operation = EmployeeVO.create();
 
   /**
    * 操作类型
    * @example CREATE
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 
   /**
    * 操作日期
    * @example 2018-01-02 11:11:11
    * @type {string}
    */
-  @observable operationDate;
+  @observable operationDate = "";
 
   /**
    * 操作描述
    * @example 本次操作对XX做了XX修改
    * @type {string}
    */
-  @observable operationMsg;
+  @observable operationMsg = "";
 }
 
 /**
@@ -1092,42 +1092,42 @@ export class BussOrgLogVO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 原值／新值
    * @example 只有操作类型为修改的才有
    * @type {string}
    */
-  @observable dataFlag;
+  @observable dataFlag = "";
 
   /**
    *  失效日期
    * @example 新建状态下不显示失效日期
    * @type {string}
    */
-  @observable endDate;
+  @observable endDate = "";
 
   /**
    * 日志id
    * @example 1111
    * @type {number}
    */
-  @observable logId;
+  @observable logId = "";
 
   /**
    * 部门名称
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 生效日期
    * @example 删除状态下不显示生效日期
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -1140,91 +1140,91 @@ export class CABUpdateMoveVo extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 员工信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-03-31
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 人事变更调出时间
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 }
 
 /**
@@ -1237,161 +1237,161 @@ export class CGrantForRSVO extends Root {
    * @example 12.1
    * @type {number}
    */
-  @observable alreadyFound;
+  @observable alreadyFound = "";
 
   /**
    * 已归属
    * @example 1000
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 100
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 已取消
    * @example 100
    * @type {number}
    */
-  @observable canceled;
+  @observable canceled = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 当前股价
    * @example 270.6
    * @type {number}
    */
-  @observable currentStockPrice;
+  @observable currentStockPrice = "";
 
   /**
    * 当前股价生效日期
    * @example 2018-07-01
    * @type {string}
    */
-  @observable currentStockStartDate;
+  @observable currentStockStartDate = "";
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 出资期限
    * @example 2018-07-01
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 出资本金/股
    * @example 11.21
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 }
 
 /**
@@ -1404,154 +1404,154 @@ export class CGrantForSOVO extends Root {
    * @example 1111
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 已归属
    * @example 1000
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 100
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 已取消
    * @example 100
    * @type {number}
    */
-  @observable canceled;
+  @observable canceled = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 当前股价
    * @example 270.6
    * @type {number}
    */
-  @observable currentStockPrice;
+  @observable currentStockPrice = "";
 
   /**
    * 当前股价生效日期
    * @example 2018-07-01
    * @type {string}
    */
-  @observable currentStockStartDate;
+  @observable currentStockStartDate = "";
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 行权价/股 出资本金/股
    * @example 1
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 }
 
 /**
@@ -1564,28 +1564,28 @@ export class CancelSimpleVO extends Root {
    * @example 2018-01-01 01:02:2
    * @type {Timestamp}
    */
-  @observable cancelDate;
+  @observable cancelDate = Timestamp.create();
 
   /**
    * 取消数量
    * @example 1000
    * @type {number}
    */
-  @observable cancelNumber;
+  @observable cancelNumber = "";
 
   /**
    * 取消原因
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 }
 
 /**
@@ -1598,28 +1598,28 @@ export class CancelVO extends Root {
    * @example []
    * @type {array}
    */
-  @observable ascriEd;
+  @observable ascriEd = [];
 
   /**
    * 未归属
    * @example []
    * @type {array}
    */
-  @observable ascriIng;
+  @observable ascriIng = [];
 
   /**
    * 授予ID
    * @example 1000
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 }
 
 /**
@@ -1632,21 +1632,21 @@ export class CodeAndValueVO extends Root {
    * @example update
    * @type {string}
    */
-  @observable code;
+  @observable code = "";
 
   /**
    * 是否被选中
    * @example N
    * @type {string}
    */
-  @observable selectFlag;
+  @observable selectFlag = "";
 
   /**
    * value
    * @example 更新
    * @type {string}
    */
-  @observable value;
+  @observable value = "";
 }
 
 /**
@@ -1659,28 +1659,28 @@ export class DateCheckDTO extends Root {
    * @example
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    *
    * @example
    * @type {string}
    */
-  @observable grantsDate;
+  @observable grantsDate = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -1693,14 +1693,14 @@ export class DepartmentSimpleVO extends Root {
    * @example 1212
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部門名字
    * @example 度秘
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 }
 
 /**
@@ -1713,21 +1713,21 @@ export class DepartmentSuggestVO extends Root {
    * @example
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部门名字
    * @example
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 计划Id
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -1740,133 +1740,133 @@ export class DepartmentVO extends Root {
    * @example 1212
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务线名字
    * @example 度秘
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * ID
    * @example 1212
    * @type {number}
    */
-  @observable bussOrgId;
+  @observable bussOrgId = "";
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 删除日期
    * @example 2018-01-01 01:23:32
    * @type {Timestamp}
    */
-  @observable deleteDate;
+  @observable deleteDate = Timestamp.create();
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 删除生效日期
    * @example 2018-01-01
    * @type {string}
    */
-  @observable endDate;
+  @observable endDate = "";
 
   /**
    * 后台使用，前端忽略
    * @example
    * @type {number}
    */
-  @observable flag;
+  @observable flag = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 部门ID
    * @example 1212
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部門名字
    * @example 度秘
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 新增生效日期
    * @example 2018-01-01
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -1879,70 +1879,70 @@ export class EmployeeGrantsDataVO extends Root {
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable departmentName;
+  @observable departmentName = "";
 
   /**
    * 公司邮箱
    * @example zhangdabiao@baidu.com
    * @type {string}
    */
-  @observable email;
+  @observable email = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 员工姓名
    * @example 张大彪
    * @type {string}
    */
-  @observable fullName;
+  @observable fullName = "";
 
   /**
    * 服务器ID
    * @example 111
    * @type {number}
    */
-  @observable periodOfServiceId;
+  @observable periodOfServiceId = "";
 
   /**
    * 员工id
    * @example 1111
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 职位名称
    * @example 1110T050.研发.开发.-.Band4.T5.高级研发工程师
    * @type {string}
    */
-  @observable positionName;
+  @observable positionName = "";
 
   /**
    * 入职日期
    * @example 2018-01-01
    * @type {string}
    */
-  @observable serviceStartDate;
+  @observable serviceStartDate = "";
 
   /**
    * id
    * @example 1111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * suggest
    * @example 张大彪
    * @type {string}
    */
-  @observable suggestValue;
+  @observable suggestValue = "";
 }
 
 /**
@@ -1955,14 +1955,14 @@ export class EmployeeGrantsVO extends Root {
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    * 类型，需要回传
    * @example employee
    * @type {string}
    */
-  @observable type;
+  @observable type = "";
 }
 
 /**
@@ -1975,56 +1975,56 @@ export class EmployeeVO extends Root {
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable departmentName;
+  @observable departmentName = "";
 
   /**
    * 公司邮箱
    * @example zhangdabiao@baidu.com
    * @type {string}
    */
-  @observable email;
+  @observable email = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 员工姓名
    * @example 张大彪
    * @type {string}
    */
-  @observable fullName;
+  @observable fullName = "";
 
   /**
    * 服务器ID
    * @example 111
    * @type {number}
    */
-  @observable periodOfServiceId;
+  @observable periodOfServiceId = "";
 
   /**
    * 员工id
    * @example 1111
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 职位名称
    * @example 1110T050.研发.开发.-.Band4.T5.高级研发工程师
    * @type {string}
    */
-  @observable positionName;
+  @observable positionName = "";
 
   /**
    * 入职日期
    * @example 2018-01-01
    * @type {string}
    */
-  @observable serviceStartDate;
+  @observable serviceStartDate = "";
 }
 
 /**
@@ -2037,56 +2037,56 @@ export class EsopMenuVO extends Root {
    * @example 800
    * @type {number}
    */
-  @observable appId;
+  @observable appId = "";
 
   /**
    * 子菜单
    * @example
    * @type {array}
    */
-  @observable childList;
+  @observable childList = [];
 
   /**
    * 功能CODE
    * @example CUX_ESOP_AGREEMENT
    * @type {string}
    */
-  @observable funcCode;
+  @observable funcCode = "";
 
   /**
    * 功能描述
    * @example CUX_ESOP_协议设置
    * @type {string}
    */
-  @observable funcDesc;
+  @observable funcDesc = "";
 
   /**
    * 功能名称
    * @example CUX_ESOP_协议设置
    * @type {string}
    */
-  @observable funcName;
+  @observable funcName = "";
 
   /**
    * 功能地址
    * @example pages/setting.html#/agreement
    * @type {string}
    */
-  @observable resUrl;
+  @observable resUrl = "";
 
   /**
    * 职责ID
    * @example 74454
    * @type {number}
    */
-  @observable respId;
+  @observable respId = "";
 
   /**
    * 业务组ID
    * @example
    * @type {number}
    */
-  @observable secGroupId;
+  @observable secGroupId = "";
 }
 
 /**
@@ -2099,21 +2099,21 @@ export class FreezingPeriodQueryDTO extends Root {
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -2126,49 +2126,49 @@ export class FreezingPeriodQueryVO extends Root {
    * @example 冻结2周，授予停止
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 编辑
    * @example
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 冻结结束日期
    * @example 2018-02-04
    * @type {string}
    */
-  @observable endDate;
+  @observable endDate = "";
 
   /**
    * 冻结设置ID
    * @example 11111
    * @type {number}
    */
-  @observable freezingId;
+  @observable freezingId = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 冻结开始日期
    * @example 2018-02-03
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -2181,35 +2181,35 @@ export class FreezingPeriodSaveDTO extends Root {
    * @example 冻结2周，授予停止
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 冻结结束日期
    * @example 2018-02-04
    * @type {string}
    */
-  @observable endDate;
+  @observable endDate = "";
 
   /**
    * 冻结设置ID
    * @example 11111
    * @type {number}
    */
-  @observable freezingId;
+  @observable freezingId = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 冻结开始日期
    * @example 2018-02-03
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -2222,14 +2222,14 @@ export class GrantAddDTO extends Root {
    * @example []
    * @type {array}
    */
-  @observable ascriptionList;
+  @observable ascriptionList = [];
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 是否已经确认
@@ -2243,70 +2243,70 @@ export class GrantAddDTO extends Root {
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 出资期限，RS类型有
    * @example 2018-01-01
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 员工Id
    * @example 10000
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 行权价/股 出资本金/股
    * @example 1
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 提交类型，保存并发布/保存
    * @example post
    * @type {string}
    */
-  @observable saveType;
+  @observable saveType = "";
 
   /**
    * 授予角色
    * @example XX
    * @type {string}
    */
-  @observable soClass;
+  @observable soClass = "";
 }
 
 /**
@@ -2319,77 +2319,77 @@ export class GrantLogListDTO extends Root {
    * @example 2018-01-25 12:23:12
    * @type {string}
    */
-  @observable grantEndDate;
+  @observable grantEndDate = "";
 
   /**
    * 授予开始日期
    * @example 2018-01-22 12:23:12
    * @type {string}
    */
-  @observable grantStartDate;
+  @observable grantStartDate = "";
 
   /**
    * 授予类型
    * @example SO/RS
    * @type {array}
    */
-  @observable grantTypeList;
+  @observable grantTypeList = [];
 
   /**
    * 部门ID
    * @example
    * @type {array}
    */
-  @observable orgIdList;
+  @observable orgIdList = [];
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划ID
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable rsStatusList;
+  @observable rsStatusList = [];
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable soStatusList;
+  @observable soStatusList = [];
 
   /**
    * suggestId
    * @example 1111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * suggest类型
    * @example grants
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -2402,14 +2402,14 @@ export class GrantPostDTO extends Root {
    * @example
    * @type {string}
    */
-  @observable code;
+  @observable code = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable codes;
+  @observable codes = [];
 
   /**
    *
@@ -2429,14 +2429,14 @@ export class GrantUpdateDTO extends Root {
    * @example []
    * @type {array}
    */
-  @observable ascriptionList;
+  @observable ascriptionList = [];
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 是否已经确认
@@ -2450,63 +2450,63 @@ export class GrantUpdateDTO extends Root {
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 出资期限，RS类型有
    * @example 2018-01-01
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 员工Id
    * @example 10000
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 行权价/股 出资本金/股
    * @example 1
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 提交类型，保存并发布/保存
    * @example post
    * @type {string}
    */
-  @observable saveType;
+  @observable saveType = "";
 
   /**
    * 授予角色
    * @example XX
    * @type {string}
    */
-  @observable soClass;
+  @observable soClass = "";
 }
 
 /**
@@ -2519,91 +2519,91 @@ export class GrantsListDTO extends Root {
    * @example []
    * @type {array}
    */
-  @observable createRoleList;
+  @observable createRoleList = [];
 
   /**
    * 员工类型
    * @example []
    * @type {array}
    */
-  @observable employeeType;
+  @observable employeeType = [];
 
   /**
    * 授予日期结束时间
    * @example 2018-02-01
    * @type {string}
    */
-  @observable grantEndDate;
+  @observable grantEndDate = "";
 
   /**
    * 授予日期开始时间
    * @example 2018-02-01
    * @type {string}
    */
-  @observable grantStartDate;
+  @observable grantStartDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 计划下对应业务线下的部门列表
    * @example []
    * @type {array}
    */
-  @observable orgIdList;
+  @observable orgIdList = [];
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 授予角色
    * @example []
    * @type {array}
    */
-  @observable soClassList;
+  @observable soClassList = [];
 
   /**
    * 授予状态
    * @example []
    * @type {array}
    */
-  @observable statusList;
+  @observable statusList = [];
 
   /**
    * suggestId
    * @example 1111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * suggest类型
    * @example grants
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -2616,168 +2616,168 @@ export class GrantsListVO extends Root {
    * @example 特殊规则
    * @type {string}
    */
-  @observable ascriptionRule;
+  @observable ascriptionRule = "";
 
   /**
    * 备注
    * @example 保存中
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 负责角色
    * @example HRBP
    * @type {string}
    */
-  @observable createRole;
+  @observable createRole = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期时间戳，后端使用
    * @example
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予日期-前端使用
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDateStr;
+  @observable grantDateStr = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 大层级
    * @example Band3
    * @type {string}
    */
-  @observable largeLevel;
+  @observable largeLevel = "";
 
   /**
    * 大序列
    * @example 研发
    * @type {string}
    */
-  @observable largeSequence;
+  @observable largeSequence = "";
 
   /**
    * 出资期限
    * @example 2018-03-03
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 可操作类型
    * @example 编辑
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 部门
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 员工Id
    * @example 23423423
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 员工姓名
    * @example 张大彪
    * @type {string}
    */
-  @observable personName;
+  @observable personName = "";
 
   /**
    * 行权价/股 出资本金/股
    * @example 1
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 入职日期
    * @example 2017-12-12
    * @type {string}
    */
-  @observable serviceStartDate;
+  @observable serviceStartDate = "";
 
   /**
    * 小序列
    * @example 开发
    * @type {string}
    */
-  @observable smallSequence;
+  @observable smallSequence = "";
 
   /**
    * 授予角色
    * @example XX
    * @type {string}
    */
-  @observable soClass;
+  @observable soClass = "";
 
   /**
    * 授予状态
    * @example 保存中
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    * 小层级
    * @example T1
    * @type {string}
    */
-  @observable subLevel;
+  @observable subLevel = "";
 }
 
 /**
@@ -2790,245 +2790,245 @@ export class GrantsLogListVO extends Root {
    * @example
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 归属规则
    * @example
    * @type {string}
    */
-  @observable ascriptionRule;
+  @observable ascriptionRule = "";
 
   /**
    * 取消已归属
    * @example
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 员工编号
    * @example
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example
    * @type {string}
    */
-  @observable grantDateStr;
+  @observable grantDateStr = "";
 
   /**
    * 授予类型
    * @example
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 离职时间
    * @example
    * @type {string}
    */
-  @observable leaveDate;
+  @observable leaveDate = "";
 
   /**
    * 离职日期
    * @example
    * @type {string}
    */
-  @observable leaveDateStr;
+  @observable leaveDateStr = "";
 
   /**
    * 出资期限
    * @example
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 人事变更调出日期
    * @example
    * @type {string}
    */
-  @observable moveDateStr;
+  @observable moveDateStr = "";
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 部门名
    * @example
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 员工id
    * @example
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 员工姓名
    * @example
    * @type {string}
    */
-  @observable personName;
+  @observable personName = "";
 
   /**
    * 计划ID
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名字
    * @example
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 行权价(SO)/认购价(RS)
    * @example
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 保留已归属
    * @example
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予角色
    * @example XX
    * @type {string}
    */
-  @observable soClass;
+  @observable soClass = "";
 
   /**
    * 授予状态
    * @example
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    * 当前股价
    * @example
    * @type {number}
    */
-  @observable stockPrice;
+  @observable stockPrice = "";
 }
 
 /**
@@ -3041,56 +3041,56 @@ export class GrantsQueryInitVO extends Root {
    * @example
    * @type {array}
    */
-  @observable createRoleList;
+  @observable createRoleList = [];
 
   /**
    * 员工类型
    * @example
    * @type {array}
    */
-  @observable employeeType;
+  @observable employeeType = [];
 
   /**
    * 批量操作按钮
    * @example
    * @type {array}
    */
-  @observable options;
+  @observable options = [];
 
   /**
    * 计划下对应业务线下的部门列表
    * @example
    * @type {array}
    */
-  @observable orgIdList;
+  @observable orgIdList = [];
 
   /**
    * 计划结束日期
    * @example
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划开始日期
    * @example
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * 授予角色
    * @example
    * @type {array}
    */
-  @observable soClassList;
+  @observable soClassList = [];
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable statusList;
+  @observable statusList = [];
 }
 
 /**
@@ -3103,98 +3103,98 @@ export class GrantsVO extends Root {
    * @example []
    * @type {array}
    */
-  @observable ascriptionList;
+  @observable ascriptionList = [];
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 修改查询时，能够修改的范围标志,rs只有生效前和已生效两种状态
    * @example RS_ADD
    * @type {string}
    */
-  @observable editFlag;
+  @observable editFlag = "";
 
   /**
    * 员工信息
    * @example {}
    * @type {EmployeeVO}
    */
-  @observable employeeVO;
+  @observable employeeVO = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 出资期限，RS类型有
    * @example 2018-01-01
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 计划ID
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 行权价/股 出资本金/股
    * @example 1
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 授予角色
    * @example XX
    * @type {string}
    */
-  @observable soClass;
+  @observable soClass = "";
 }
 
 /**
@@ -3207,21 +3207,21 @@ export class GrantsViewLog extends Root {
    * @example
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 日志list
    * @example
    * @type {array}
    */
-  @observable logList;
+  @observable logList = [];
 }
 
 /**
@@ -3246,35 +3246,35 @@ export class JsonResult_AgreementViewVO_ extends Root {
    * @example
    * @type {AgreementViewVO}
    */
-  @observable data;
+  @observable data = AgreementViewVO.create();
 
   /**
    *
    * @example
    * @type {errors}
    */
-  @observable errors;
+  @observable errors = errors.create();
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {warnings}
    */
-  @observable warnings;
+  @observable warnings = warnings.create();
 }
 
 /**
@@ -3287,35 +3287,35 @@ export class JsonResult_AscriptionVO_ extends Root {
    * @example
    * @type {AscriptionVO}
    */
-  @observable data;
+  @observable data = AscriptionVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3328,35 +3328,35 @@ export class JsonResult_BussLineVO_ extends Root {
    * @example
    * @type {BussLineVO}
    */
-  @observable data;
+  @observable data = BussLineVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3369,35 +3369,35 @@ export class JsonResult_CABUpdateMoveVo_ extends Root {
    * @example
    * @type {CABUpdateMoveVo}
    */
-  @observable data;
+  @observable data = CABUpdateMoveVo.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3410,35 +3410,35 @@ export class JsonResult_CancelVO_ extends Root {
    * @example
    * @type {CancelVO}
    */
-  @observable data;
+  @observable data = CancelVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3451,35 +3451,35 @@ export class JsonResult_DepartmentVO_ extends Root {
    * @example
    * @type {DepartmentVO}
    */
-  @observable data;
+  @observable data = DepartmentVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3492,35 +3492,35 @@ export class JsonResult_GrantsVO_ extends Root {
    * @example
    * @type {GrantsVO}
    */
-  @observable data;
+  @observable data = GrantsVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3533,35 +3533,35 @@ export class JsonResult_GrantsViewLog_ extends Root {
    * @example
    * @type {GrantsViewLog}
    */
-  @observable data;
+  @observable data = GrantsViewLog.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3574,35 +3574,35 @@ export class JsonResult_List_AgreementSuggestVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3615,35 +3615,35 @@ export class JsonResult_List_BussLineSuggestVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3656,35 +3656,35 @@ export class JsonResult_List_BussOrgLogListVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3697,35 +3697,35 @@ export class JsonResult_List_CGrantForRSVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3738,35 +3738,35 @@ export class JsonResult_List_CGrantForSOVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3779,35 +3779,35 @@ export class JsonResult_List_DepartmentSimpleVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3820,35 +3820,35 @@ export class JsonResult_List_DepartmentSuggestVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3861,35 +3861,35 @@ export class JsonResult_List_EmployeeGrantsVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3902,35 +3902,35 @@ export class JsonResult_List_EmployeeVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3943,35 +3943,35 @@ export class JsonResult_List_EsopMenuVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -3984,35 +3984,35 @@ export class JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___ extends Root
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4025,35 +4025,35 @@ export class JsonResult_List_LogCommonVO_LogPlanViewVO___ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4066,35 +4066,35 @@ export class JsonResult_List_LogCommonVO_LogRightPriceViewVO___ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4107,35 +4107,35 @@ export class JsonResult_List_LogCommonVO_LogStockPriceViewVO___ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4148,35 +4148,35 @@ export class JsonResult_List_OrgVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4189,35 +4189,35 @@ export class JsonResult_List_PlanSimpleVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4230,35 +4230,35 @@ export class JsonResult_List_SOAscriptionSimpleVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4271,35 +4271,35 @@ export class JsonResult_List_TBCGrantVO__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4312,35 +4312,35 @@ export class JsonResult_List_string__ extends Root {
    * @example
    * @type {array}
    */
-  @observable data;
+  @observable data = [];
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4353,35 +4353,35 @@ export class JsonResult_LogPlanPanelVO_ extends Root {
    * @example
    * @type {LogPlanPanelVO}
    */
-  @observable data;
+  @observable data = LogPlanPanelVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4394,35 +4394,35 @@ export class JsonResult_LogPlanPlanViewVO_ extends Root {
    * @example
    * @type {LogPlanPlanViewVO}
    */
-  @observable data;
+  @observable data = LogPlanPlanViewVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4435,35 +4435,35 @@ export class JsonResult_LogQueryInitVO_ extends Root {
    * @example
    * @type {LogQueryInitVO}
    */
-  @observable data;
+  @observable data = LogQueryInitVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4482,35 +4482,35 @@ export class JsonResult_Map_string_AnalyzeMovePanelVO__ extends Root {
    * @example
    * @type {data}
    */
-  @observable data;
+  @observable data = data.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4523,35 +4523,35 @@ export class JsonResult_Map_string_AnalyzePanelVO__ extends Root {
    * @example
    * @type {object}
    */
-  @observable data;
+  @observable data = {};
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4564,35 +4564,35 @@ export class JsonResult_Map_string_AnalyzeQuitPanelVO__ extends Root {
    * @example
    * @type {object}
    */
-  @observable data;
+  @observable data = {};
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4605,35 +4605,35 @@ export class JsonResult_Map_string_GrantsQueryInitVO__ extends Root {
    * @example
    * @type {object}
    */
-  @observable data;
+  @observable data = {};
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4646,35 +4646,35 @@ export class JsonResult_Map_string_MovePanelVO__ extends Root {
    * @example
    * @type {object}
    */
-  @observable data;
+  @observable data = {};
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4687,35 +4687,35 @@ export class JsonResult_Map_string_QuitPanelVO__ extends Root {
    * @example
    * @type {object}
    */
-  @observable data;
+  @observable data = {};
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4728,35 +4728,35 @@ export class JsonResult_MoveCBQueryParams_ extends Root {
    * @example
    * @type {MoveCBQueryParams}
    */
-  @observable data;
+  @observable data = MoveCBQueryParams.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4769,35 +4769,35 @@ export class JsonResult_PageInfo_AgreementVO__ extends Root {
    * @example
    * @type {PageInfo_AgreementVO_}
    */
-  @observable data;
+  @observable data = PageInfo_AgreementVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4810,35 +4810,35 @@ export class JsonResult_PageInfo_BussLineVO__ extends Root {
    * @example
    * @type {PageInfo_BussLineVO_}
    */
-  @observable data;
+  @observable data = PageInfo_BussLineVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4851,35 +4851,35 @@ export class JsonResult_PageInfo_DepartmentVO__ extends Root {
    * @example
    * @type {PageInfo_DepartmentVO_}
    */
-  @observable data;
+  @observable data = PageInfo_DepartmentVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4892,35 +4892,35 @@ export class JsonResult_PageInfo_FreezingPeriodQueryVO__ extends Root {
    * @example
    * @type {PageInfo_FreezingPeriodQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_FreezingPeriodQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4933,35 +4933,35 @@ export class JsonResult_PageInfo_GrantsListVO__ extends Root {
    * @example
    * @type {PageInfo_GrantsListVO_}
    */
-  @observable data;
+  @observable data = PageInfo_GrantsListVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -4974,35 +4974,35 @@ export class JsonResult_PageInfo_GrantsLogListVO__ extends Root {
    * @example
    * @type {PageInfo_GrantsLogListVO_}
    */
-  @observable data;
+  @observable data = PageInfo_GrantsLogListVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5015,35 +5015,35 @@ export class JsonResult_PageInfo_LogPlanQueryVO__ extends Root {
    * @example
    * @type {PageInfo_LogPlanQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_LogPlanQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5056,35 +5056,35 @@ export class JsonResult_PageInfo_MoveCBQueryVO__ extends Root {
    * @example
    * @type {PageInfo_MoveCBQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_MoveCBQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5097,35 +5097,35 @@ export class JsonResult_PageInfo_MoveRsAnlyVO__ extends Root {
    * @example
    * @type {PageInfo_MoveRsAnlyVO_}
    */
-  @observable data;
+  @observable data = PageInfo_MoveRsAnlyVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5138,35 +5138,35 @@ export class JsonResult_PageInfo_MoveRsQueryVO__ extends Root {
    * @example
    * @type {PageInfo_MoveRsQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_MoveRsQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5179,35 +5179,35 @@ export class JsonResult_PageInfo_MoveSoAnlyVO__ extends Root {
    * @example
    * @type {PageInfo_MoveSoAnlyVO_}
    */
-  @observable data;
+  @observable data = PageInfo_MoveSoAnlyVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5220,35 +5220,35 @@ export class JsonResult_PageInfo_MoveSoQueryVO__ extends Root {
    * @example
    * @type {PageInfo_MoveSoQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_MoveSoQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5261,35 +5261,35 @@ export class JsonResult_PageInfo_PlanQueryVO__ extends Root {
    * @example
    * @type {PageInfo_PlanQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_PlanQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5302,35 +5302,35 @@ export class JsonResult_PageInfo_QuitRsAnlyVO__ extends Root {
    * @example
    * @type {PageInfo_QuitRsAnlyVO_}
    */
-  @observable data;
+  @observable data = PageInfo_QuitRsAnlyVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5343,35 +5343,35 @@ export class JsonResult_PageInfo_QuitRsQueryVO__ extends Root {
    * @example
    * @type {PageInfo_QuitRsQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_QuitRsQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5384,35 +5384,35 @@ export class JsonResult_PageInfo_QuitSoAnlyVO__ extends Root {
    * @example
    * @type {PageInfo_QuitSoAnlyVO_}
    */
-  @observable data;
+  @observable data = PageInfo_QuitSoAnlyVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5425,35 +5425,35 @@ export class JsonResult_PageInfo_QuitSoQueryVO__ extends Root {
    * @example
    * @type {PageInfo_QuitSoQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_QuitSoQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5466,35 +5466,35 @@ export class JsonResult_PageInfo_RightPriceQueryVO__ extends Root {
    * @example
    * @type {PageInfo_RightPriceQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_RightPriceQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5507,35 +5507,35 @@ export class JsonResult_PageInfo_StockOwnVO__ extends Root {
    * @example
    * @type {PageInfo_StockOwnVO_}
    */
-  @observable data;
+  @observable data = PageInfo_StockOwnVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5548,35 +5548,35 @@ export class JsonResult_PageInfo_StockPriceQueryVO__ extends Root {
    * @example
    * @type {PageInfo_StockPriceQueryVO_}
    */
-  @observable data;
+  @observable data = PageInfo_StockPriceQueryVO_.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5589,35 +5589,35 @@ export class JsonResult_PlanPanelVO_ extends Root {
    * @example
    * @type {PlanPanelVO}
    */
-  @observable data;
+  @observable data = PlanPanelVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5630,35 +5630,35 @@ export class JsonResult_PlanViewVO_ extends Root {
    * @example
    * @type {PlanViewVO}
    */
-  @observable data;
+  @observable data = PlanViewVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5671,35 +5671,35 @@ export class JsonResult_QuitDeduDetailVO_ extends Root {
    * @example
    * @type {QuitDeduDetailVO}
    */
-  @observable data;
+  @observable data = QuitDeduDetailVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5712,35 +5712,35 @@ export class JsonResult_RSAscriptionVO_ extends Root {
    * @example
    * @type {RSAscriptionVO}
    */
-  @observable data;
+  @observable data = RSAscriptionVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5753,35 +5753,35 @@ export class JsonResult_RightPriceQueryVO_ extends Root {
    * @example
    * @type {RightPriceQueryVO}
    */
-  @observable data;
+  @observable data = RightPriceQueryVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5794,35 +5794,35 @@ export class JsonResult_StockUseSimpleInfoVO_ extends Root {
    * @example
    * @type {StockUseSimpleInfoVO}
    */
-  @observable data;
+  @observable data = StockUseSimpleInfoVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5835,35 +5835,35 @@ export class JsonResult_TBCGrantBeforeVO_ extends Root {
    * @example
    * @type {TBCGrantBeforeVO}
    */
-  @observable data;
+  @observable data = TBCGrantBeforeVO.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5876,35 +5876,35 @@ export class JsonResult_UserVo_ extends Root {
    * @example
    * @type {UserVo}
    */
-  @observable data;
+  @observable data = UserVo.create();
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5917,28 +5917,28 @@ export class JsonResult_Void_ extends Root {
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5958,28 +5958,28 @@ export class JsonResult_boolean_ extends Root {
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -5992,35 +5992,35 @@ export class JsonResult_int_ extends Root {
    * @example
    * @type {number}
    */
-  @observable data;
+  @observable data = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -6033,35 +6033,35 @@ export class JsonResult_long_ extends Root {
    * @example
    * @type {number}
    */
-  @observable data;
+  @observable data = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -6074,35 +6074,35 @@ export class JsonResult_string_ extends Root {
    * @example
    * @type {string}
    */
-  @observable data;
+  @observable data = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable errors;
+  @observable errors = {};
 
   /**
    * 话术
    * @example 系统异常/操作成功
    * @type {string}
    */
-  @observable message;
+  @observable message = "";
 
   /**
    * 状态code
    * @example ok
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable warnings;
+  @observable warnings = {};
 }
 
 /**
@@ -6115,35 +6115,35 @@ export class LogCommonVO extends Root {
    * @example
    * @type {array}
    */
-  @observable logs;
+  @observable logs = [];
 
   /**
    * 操作人信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable operation;
+  @observable operation = EmployeeVO.create();
 
   /**
    * 操作类型
    * @example CREATE
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 
   /**
    * 操作日期
    * @example 2018-01-02 11:11:11
    * @type {string}
    */
-  @observable operationDate;
+  @observable operationDate = "";
 
   /**
    * 操作描述
    * @example 本次操作对XX做了XX修改
    * @type {string}
    */
-  @observable operationMsg;
+  @observable operationMsg = "";
 }
 
 /**
@@ -6156,35 +6156,35 @@ export class LogCommonVO_LogFreezingPeriodViewVO_ extends Root {
    * @example
    * @type {array}
    */
-  @observable logs;
+  @observable logs = [];
 
   /**
    * 操作人信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable operation;
+  @observable operation = EmployeeVO.create();
 
   /**
    * 操作类型
    * @example CREATE
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 
   /**
    * 操作日期
    * @example 2018-01-02 11:11:11
    * @type {string}
    */
-  @observable operationDate;
+  @observable operationDate = "";
 
   /**
    * 操作描述
    * @example 本次操作对XX做了XX修改
    * @type {string}
    */
-  @observable operationMsg;
+  @observable operationMsg = "";
 }
 
 /**
@@ -6197,35 +6197,35 @@ export class LogCommonVO_LogPlanViewVO_ extends Root {
    * @example
    * @type {array}
    */
-  @observable logs;
+  @observable logs = [];
 
   /**
    * 操作人信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable operation;
+  @observable operation = EmployeeVO.create();
 
   /**
    * 操作类型
    * @example CREATE
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 
   /**
    * 操作日期
    * @example 2018-01-02 11:11:11
    * @type {string}
    */
-  @observable operationDate;
+  @observable operationDate = "";
 
   /**
    * 操作描述
    * @example 本次操作对XX做了XX修改
    * @type {string}
    */
-  @observable operationMsg;
+  @observable operationMsg = "";
 }
 
 /**
@@ -6238,35 +6238,35 @@ export class LogCommonVO_LogRightPriceViewVO_ extends Root {
    * @example
    * @type {array}
    */
-  @observable logs;
+  @observable logs = [];
 
   /**
    * 操作人信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable operation;
+  @observable operation = EmployeeVO.create();
 
   /**
    * 操作类型
    * @example CREATE
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 
   /**
    * 操作日期
    * @example 2018-01-02 11:11:11
    * @type {string}
    */
-  @observable operationDate;
+  @observable operationDate = "";
 
   /**
    * 操作描述
    * @example 本次操作对XX做了XX修改
    * @type {string}
    */
-  @observable operationMsg;
+  @observable operationMsg = "";
 }
 
 /**
@@ -6279,35 +6279,35 @@ export class LogCommonVO_LogStockPriceViewVO_ extends Root {
    * @example
    * @type {array}
    */
-  @observable logs;
+  @observable logs = [];
 
   /**
    * 操作人信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable operation;
+  @observable operation = EmployeeVO.create();
 
   /**
    * 操作类型
    * @example CREATE
    * @type {string}
    */
-  @observable operationCode;
+  @observable operationCode = "";
 
   /**
    * 操作日期
    * @example 2018-01-02 11:11:11
    * @type {string}
    */
-  @observable operationDate;
+  @observable operationDate = "";
 
   /**
    * 操作描述
    * @example 本次操作对XX做了XX修改
    * @type {string}
    */
-  @observable operationMsg;
+  @observable operationMsg = "";
 }
 
 /**
@@ -6320,35 +6320,35 @@ export class LogFreezingPeriodViewVO extends Root {
    * @example 冻结2周，授予停止
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 冻结结束日期
    * @example 2018-02-04
    * @type {string}
    */
-  @observable endDate;
+  @observable endDate = "";
 
   /**
    * 日志ID
    * @example 11111
    * @type {number}
    */
-  @observable logId;
+  @observable logId = "";
 
   /**
    * 老值或新值
    * @example
    * @type {string}
    */
-  @observable oldOrNew;
+  @observable oldOrNew = "";
 
   /**
    * 冻结开始日期
    * @example 2018-02-03
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -6361,7 +6361,7 @@ export class LogPlanPanelVO extends Root {
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 }
 
 /**
@@ -6374,105 +6374,105 @@ export class LogPlanPlanViewVO extends Root {
    * @example
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 业务线id
    * @example
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 备注
    * @example 激励效果非常好，继续保持
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBp
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 计划Code
    * @example planCode
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 
   /**
    * 计划状态
    * @example FINISH
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -6485,49 +6485,49 @@ export class LogPlanQueryDTO extends Root {
    * @example 11111
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 开始日期左边界
    * @example 2017-02-08
    * @type {string}
    */
-  @observable planStartDateLeft;
+  @observable planStartDateLeft = "";
 
   /**
    * 开始日期右边界
    * @example 2017-12-08
    * @type {string}
    */
-  @observable planStartDateRight;
+  @observable planStartDateRight = "";
 
   /**
    * 状态
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 }
 
 /**
@@ -6540,105 +6540,105 @@ export class LogPlanQueryVO extends Root {
    * @example 业务线名称
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 是否已冻结
    * @example Y
    * @type {string}
    */
-  @observable freezing;
+  @observable freezing = "";
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBp
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划Code
    * @example planCode
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 
   /**
    * 状态
    * @example status
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -6651,98 +6651,98 @@ export class LogPlanViewVO extends Root {
    * @example
    * @type {string}
    */
-  @observable agreeName;
+  @observable agreeName = "";
 
   /**
    * 业务线名称
    * @example
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 备注
    * @example 激励效果非常好，继续保持
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBp
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 日志ID
    * @example 11111
    * @type {number}
    */
-  @observable logId;
+  @observable logId = "";
 
   /**
    * 老值还是新值
    * @example
    * @type {string}
    */
-  @observable oldOrNew;
+  @observable oldOrNew = "";
 
   /**
    * 计划Code
    * @example planCode
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 }
 
 /**
@@ -6755,49 +6755,49 @@ export class LogQueryInitVO extends Root {
    * @example
    * @type {string}
    */
-  @observable grantEndDate;
+  @observable grantEndDate = "";
 
   /**
    * 授予开始日期
    * @example
    * @type {string}
    */
-  @observable grantStartDate;
+  @observable grantStartDate = "";
 
   /**
    * 授予类型
    * @example
    * @type {array}
    */
-  @observable grantTypeList;
+  @observable grantTypeList = [];
 
   /**
    * 计划下对应业务线下的部门列表
    * @example
    * @type {array}
    */
-  @observable orgIdList;
+  @observable orgIdList = [];
 
   /**
    * 计划列表
    * @example
    * @type {array}
    */
-  @observable planList;
+  @observable planList = [];
 
   /**
    * rs授予状态
    * @example
    * @type {array}
    */
-  @observable rsStatusList;
+  @observable rsStatusList = [];
 
   /**
    * so授予状态
    * @example
    * @type {array}
    */
-  @observable soStatusList;
+  @observable soStatusList = [];
 }
 
 /**
@@ -6810,35 +6810,35 @@ export class LogRightPriceViewVO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 日志ID
    * @example 11111
    * @type {number}
    */
-  @observable logId;
+  @observable logId = "";
 
   /**
    * 老值或新值
    * @example
    * @type {string}
    */
-  @observable oldOrNew;
+  @observable oldOrNew = "";
 
   /**
    * RS/SO价格/股
    * @example 160.33
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 生效日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -6851,42 +6851,42 @@ export class LogStockPriceViewVO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 日志ID
    * @example 11111
    * @type {number}
    */
-  @observable logId;
+  @observable logId = "";
 
   /**
    * 老值或新值
    * @example
    * @type {string}
    */
-  @observable oldOrNew;
+  @observable oldOrNew = "";
 
   /**
    * 股价
    * @example 160.33
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 发布日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable publishDate;
+  @observable publishDate = "";
 
   /**
    * 生效日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -6935,84 +6935,84 @@ export class MoveAnalyzeDTO extends Root {
    * @example 扣减状态
    * @type {array}
    */
-  @observable deduStatusSet;
+  @observable deduStatusSet = [];
 
   /**
    * 授予处理调出开始时间
    * @example 2017-11-11
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予处理调出结束时间
    * @example 2017-12-11
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {array}
    */
-  @observable grantStatusSet;
+  @observable grantStatusSet = [];
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 退款状态 RS 才有
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * personId
    * @example 员工ID
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 人事变更调出结束时间
    * @example 2017-12-11
    * @type {string}
    */
-  @observable personMoveEndDate;
+  @observable personMoveEndDate = "";
 
   /**
    * 人事变更调出开始时间
    * @example 2017-11-11
    * @type {string}
    */
-  @observable personMoveStartDate;
+  @observable personMoveStartDate = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -7025,77 +7025,77 @@ export class MoveCBListDTO extends Root {
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 人事变更调出时间左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateLeft;
+  @observable moveDateLeft = "";
 
   /**
    * 人事变更调出时间右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateRight;
+  @observable moveDateRight = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 付款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 计划id或者全选
    * @example 1111
    * @type {string}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 员工/授予ID
    * @example 11111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * 员工/授予code
    * @example employee
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -7108,42 +7108,42 @@ export class MoveCBPanelVO extends Root {
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 人事变更调出时间左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateLeft;
+  @observable moveDateLeft = "";
 
   /**
    * 人事变更调出时间右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateRight;
+  @observable moveDateRight = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 付款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 }
 
 /**
@@ -7156,7 +7156,7 @@ export class MoveCBQueryDTO extends Root {
    * @example
    * @type {number}
    */
-  @observable moveDeduId;
+  @observable moveDeduId = "";
 }
 
 /**
@@ -7175,14 +7175,14 @@ export class MoveCBQueryParams extends Root {
    * @example
    * @type {panelMap}
    */
-  @observable panelMap;
+  @observable panelMap = panelMap.create();
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable planList;
+  @observable planList = [];
 }
 
 /**
@@ -7195,182 +7195,182 @@ export class MoveCBQueryVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 归属规则
    * @example 特殊规则
    * @type {string}
    */
-  @observable ascriptionRule;
+  @observable ascriptionRule = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工信息
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 调出扣减id
    * @example 1111
    * @type {number}
    */
-  @observable moveDeduId;
+  @observable moveDeduId = "";
 
   /**
    * 新部门
    * @example 渡鸦
    * @type {string}
    */
-  @observable newOrgName;
+  @observable newOrgName = "";
 
   /**
    * 原部门
    * @example 流程信息
    * @type {string}
    */
-  @observable oldOrgName;
+  @observable oldOrgName = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 付款状态
    * @example 付款状态
    * @type {string}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 出资本金/股
    * @example 1212.12
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 退款金额
    * @example 退款金额
    * @type {number}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 退款股价
    * @type {number}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -7383,21 +7383,21 @@ export class MoveCBUpdateDTO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 调出扣减id
    * @example 1111
    * @type {number}
    */
-  @observable moveDeduId;
+  @observable moveDeduId = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 }
 
 /**
@@ -7410,63 +7410,63 @@ export class MovePanelVO extends Root {
    * @example
    * @type {array}
    */
-  @observable creatRole;
+  @observable creatRole = [];
 
   /**
    * 扣减状态
    * @example
    * @type {array}
    */
-  @observable deduStatus;
+  @observable deduStatus = [];
 
   /**
    * 授予日期左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 人事变更调出时间左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateLeft;
+  @observable moveDateLeft = "";
 
   /**
    * 人事变更调出时间右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateRight;
+  @observable moveDateRight = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 付款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 }
 
 /**
@@ -7479,175 +7479,175 @@ export class MoveRsAnlyVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工姓名
    * @example
    * @type {string}
    */
-  @observable employeeName;
+  @observable employeeName = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable grantStatus;
+  @observable grantStatus = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 员工id
    * @example 页面不显示
    * @type {number}
    */
-  @observable moveDeduId;
+  @observable moveDeduId = "";
 
   /**
    * 新部门
    * @example 渡鸦
    * @type {string}
    */
-  @observable newOrgName;
+  @observable newOrgName = "";
 
   /**
    * 原部门
    * @example 流程信息
    * @type {string}
    */
-  @observable oldOrgName;
+  @observable oldOrgName = "";
 
   /**
    * 付款状态
    * @example 付款状态
    * @type {string}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = "";
 
   /**
    * 员工id
    * @example 页面不显示
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 认购价/股
    * @example 1212.12
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 退款金额
    * @example 退款金额
    * @type {number}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 退款股价
    * @type {number}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 }
 
 /**
@@ -7660,91 +7660,91 @@ export class MoveRsQueryDTO extends Root {
    * @example
    * @type {array}
    */
-  @observable creatRole;
+  @observable creatRole = [];
 
   /**
    * 扣减状态
    * @example
    * @type {array}
    */
-  @observable deduStatus;
+  @observable deduStatus = [];
 
   /**
    * 授予日期左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 人事变更调出时间左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateLeft;
+  @observable moveDateLeft = "";
 
   /**
    * 人事变更调出时间右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable moveDateRight;
+  @observable moveDateRight = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 付款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 计划id
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 
   /**
    * 员工/授予ID
    * @example 11111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * 员工/授予code
    * @example employee
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -7757,175 +7757,175 @@ export class MoveRsQueryVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 调出扣减id
    * @example 1111
    * @type {number}
    */
-  @observable moveDeduId;
+  @observable moveDeduId = "";
 
   /**
    * 新部门
    * @example 渡鸦
    * @type {string}
    */
-  @observable newOrgName;
+  @observable newOrgName = "";
 
   /**
    * 原部门
    * @example 流程信息
    * @type {string}
    */
-  @observable oldOrgName;
+  @observable oldOrgName = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 付款状态
    * @example 付款状态
    * @type {string}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 认购价/股
    * @example 1212.12
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 退款金额
    * @example 退款金额
    * @type {string}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 退款股价
    * @type {string}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -7938,133 +7938,133 @@ export class MoveSoAnlyVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工姓名
    * @example
    * @type {string}
    */
-  @observable employeeName;
+  @observable employeeName = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable grantStatus;
+  @observable grantStatus = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 新部门
    * @example 渡鸦
    * @type {string}
    */
-  @observable newOrgName;
+  @observable newOrgName = "";
 
   /**
    * 原部门
    * @example 流程信息
    * @type {string}
    */
-  @observable oldOrgName;
+  @observable oldOrgName = "";
 
   /**
    * personId
    * @example 前端不显示
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 认购价/股
    * @example 1212.12
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 }
 
 /**
@@ -8077,84 +8077,84 @@ export class MoveSoQueryDTO extends Root {
    * @example
    * @type {array}
    */
-  @observable creatRole;
+  @observable creatRole = [];
 
   /**
    * 扣减状态
    * @example
    * @type {array}
    */
-  @observable deduStatus;
+  @observable deduStatus = [];
 
   /**
    * 授予日期左边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 人事变更调出时间左边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDateLeft;
+  @observable moveDateLeft = "";
 
   /**
    * 人事变更调出时间右边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDateRight;
+  @observable moveDateRight = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划id
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 
   /**
    * 员工/授予ID
    * @example 11111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * 员工/授予code
    * @example employee
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -8167,147 +8167,147 @@ export class MoveSoQueryVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example 2018-02-02
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 调出扣减id
    * @example 1111
    * @type {number}
    */
-  @observable moveDeduId;
+  @observable moveDeduId = "";
 
   /**
    * 新部门
    * @example 渡鸦
    * @type {string}
    */
-  @observable newOrgName;
+  @observable newOrgName = "";
 
   /**
    * 原部门
    * @example 流程信息
    * @type {string}
    */
-  @observable oldOrgName;
+  @observable oldOrgName = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 行权价/股
    * @example 1212.12
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -8320,14 +8320,14 @@ export class OrgVO extends Root {
    * @example 1111
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部门名称
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 }
 
 /**
@@ -8340,14 +8340,14 @@ export class PageInfo_AgreementVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -8382,98 +8382,98 @@ export class PageInfo_AgreementVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -8486,14 +8486,14 @@ export class PageInfo_BussLineVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -8528,98 +8528,98 @@ export class PageInfo_BussLineVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -8632,14 +8632,14 @@ export class PageInfo_DepartmentVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -8674,98 +8674,98 @@ export class PageInfo_DepartmentVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -8778,14 +8778,14 @@ export class PageInfo_FreezingPeriodQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -8820,98 +8820,98 @@ export class PageInfo_FreezingPeriodQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -8924,14 +8924,14 @@ export class PageInfo_GrantsListVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -8966,98 +8966,98 @@ export class PageInfo_GrantsListVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9070,14 +9070,14 @@ export class PageInfo_GrantsLogListVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9112,98 +9112,98 @@ export class PageInfo_GrantsLogListVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9216,14 +9216,14 @@ export class PageInfo_LogPlanQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9258,98 +9258,98 @@ export class PageInfo_LogPlanQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9362,14 +9362,14 @@ export class PageInfo_MoveCBQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9404,98 +9404,98 @@ export class PageInfo_MoveCBQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9508,14 +9508,14 @@ export class PageInfo_MoveRsAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9550,98 +9550,98 @@ export class PageInfo_MoveRsAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9654,14 +9654,14 @@ export class PageInfo_MoveRsQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9696,98 +9696,98 @@ export class PageInfo_MoveRsQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9800,14 +9800,14 @@ export class PageInfo_MoveSoAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9842,98 +9842,98 @@ export class PageInfo_MoveSoAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -9946,14 +9946,14 @@ export class PageInfo_MoveSoQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -9988,98 +9988,98 @@ export class PageInfo_MoveSoQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10092,14 +10092,14 @@ export class PageInfo_PlanQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -10134,98 +10134,98 @@ export class PageInfo_PlanQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10238,14 +10238,14 @@ export class PageInfo_QuitRsAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -10280,98 +10280,98 @@ export class PageInfo_QuitRsAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10384,14 +10384,14 @@ export class PageInfo_QuitRsQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -10426,98 +10426,98 @@ export class PageInfo_QuitRsQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10530,14 +10530,14 @@ export class PageInfo_QuitSoAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -10572,98 +10572,98 @@ export class PageInfo_QuitSoAnlyVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10676,14 +10676,14 @@ export class PageInfo_QuitSoQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -10718,98 +10718,98 @@ export class PageInfo_QuitSoQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10822,14 +10822,14 @@ export class PageInfo_RightPriceQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -10864,98 +10864,98 @@ export class PageInfo_RightPriceQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -10968,14 +10968,14 @@ export class PageInfo_StockOwnVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -11010,98 +11010,98 @@ export class PageInfo_StockOwnVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -11114,14 +11114,14 @@ export class PageInfo_StockPriceQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable endRow;
+  @observable endRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable firstPage;
+  @observable firstPage = "";
 
   /**
    *
@@ -11156,98 +11156,98 @@ export class PageInfo_StockPriceQueryVO_ extends Root {
    * @example
    * @type {number}
    */
-  @observable lastPage;
+  @observable lastPage = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable list;
+  @observable list = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateFirstPage;
+  @observable navigateFirstPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigateLastPage;
+  @observable navigateLastPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable navigatePages;
+  @observable navigatePages = "";
 
   /**
    *
    * @example
    * @type {array}
    */
-  @observable navigatepageNums;
+  @observable navigatepageNums = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nextPage;
+  @observable nextPage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable pages;
+  @observable pages = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable prePage;
+  @observable prePage = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable size;
+  @observable size = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable startRow;
+  @observable startRow = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 }
 
 /**
@@ -11260,14 +11260,14 @@ export class PlanNameCodeCheckDTO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * code/name
    * @example A11/渡鸦计划2017
    * @type {string}
    */
-  @observable value;
+  @observable value = "";
 }
 
 /**
@@ -11280,28 +11280,28 @@ export class PlanPanelVO extends Root {
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 开始日期左边界
    * @example 2017-02-08
    * @type {string}
    */
-  @observable planStartDateLeft;
+  @observable planStartDateLeft = "";
 
   /**
    * 开始日期右边界
    * @example 2017-12-08
    * @type {string}
    */
-  @observable planStartDateRight;
+  @observable planStartDateRight = "";
 
   /**
    * 状态
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 }
 
 /**
@@ -11314,49 +11314,49 @@ export class PlanQueryDTO extends Root {
    * @example 11111
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 开始日期左边界
    * @example 2017-02-08
    * @type {string}
    */
-  @observable planStartDateLeft;
+  @observable planStartDateLeft = "";
 
   /**
    * 开始日期右边界
    * @example 2017-12-08
    * @type {string}
    */
-  @observable planStartDateRight;
+  @observable planStartDateRight = "";
 
   /**
    * 状态
    * @example
    * @type {array}
    */
-  @observable status;
+  @observable status = [];
 }
 
 /**
@@ -11369,105 +11369,105 @@ export class PlanQueryVO extends Root {
    * @example 业务线名称
    * @type {string}
    */
-  @observable bussLineName;
+  @observable bussLineName = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 是否已冻结
    * @example Y
    * @type {string}
    */
-  @observable freezing;
+  @observable freezing = "";
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBp
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划Code
    * @example planCode
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 
   /**
    * 状态
    * @example status
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -11480,91 +11480,91 @@ export class PlanReleaseDTO extends Root {
    * @example
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 业务线
    * @example
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 备注
    * @example 激励效果非常好，继续保持
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBpIdStr
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 计划Code
    * @example A123
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划ID，有表示更新，无表示创建
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 }
 
 /**
@@ -11577,91 +11577,91 @@ export class PlanSaveDTO extends Root {
    * @example
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 业务线
    * @example
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 备注
    * @example 激励效果非常好，继续保持
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBpIdStr
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 计划Code
    * @example A123
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划ID，有表示更新，无表示创建
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 }
 
 /**
@@ -11674,21 +11674,21 @@ export class PlanSimpleVO extends Root {
    * @example planCode
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 }
 
 /**
@@ -11701,112 +11701,112 @@ export class PlanViewVO extends Root {
    * @example
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 业务线id
    * @example
    * @type {number}
    */
-  @observable bussLineId;
+  @observable bussLineId = "";
 
   /**
    * 业务负责人
    * @example
    * @type {array}
    */
-  @observable bussManager;
+  @observable bussManager = [];
 
   /**
    * 备注
    * @example 激励效果非常好，继续保持
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    *
    * @example
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * HRBP
    * @example
    * @type {array}
    */
-  @observable hrbp;
+  @observable hrbp = [];
 
   /**
    * leadingBp
    * @example
    * @type {array}
    */
-  @observable leadingBp;
+  @observable leadingBp = [];
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 计划Code
    * @example planCode
    * @type {string}
    */
-  @observable planCode;
+  @observable planCode = "";
 
   /**
    * 结束日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable planEndDate;
+  @observable planEndDate = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 起始日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable planStartDate;
+  @observable planStartDate = "";
 
   /**
    * RS总份额
    * @example 1200
    * @type {number}
    */
-  @observable rsTotal;
+  @observable rsTotal = "";
 
   /**
    * SO总份额
    * @example 1200
    * @type {number}
    */
-  @observable soTotal;
+  @observable soTotal = "";
 
   /**
    * 计划状态
    * @example FINISH
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -11819,21 +11819,21 @@ export class PriceQueryDTO extends Root {
    * @example
    * @type {string}
    */
-  @observable dateStr;
+  @observable dateStr = "";
 
   /**
    *
    * @example
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -11846,56 +11846,56 @@ export class QuitAnalyzeDTO extends Root {
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 付款状态 RS 才有
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * personId
    * @example 11
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 离职日期截止时间
    * @example 授予Id/员工ID
    * @type {string}
    */
-  @observable quitDateEnd;
+  @observable quitDateEnd = "";
 
   /**
    * 离职日期起始时间
    * @example 授予Id/员工ID
    * @type {string}
    */
-  @observable quitDateStart;
+  @observable quitDateStart = "";
 }
 
 /**
@@ -11908,161 +11908,161 @@ export class QuitDeduDetailVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 是否可编辑
    * @example Y
    * @type {string}
    */
-  @observable editFlag;
+  @observable editFlag = "";
 
   /**
    * 员工
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 退款状态
    * @example 退款状态
    * @type {string}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 认购价/股
    * @example 1212.12
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 离职日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable quitDate;
+  @observable quitDate = "";
 
   /**
    * 离职扣减id
    * @example 1111
    * @type {number}
    */
-  @observable quitDeduId;
+  @observable quitDeduId = "";
 
   /**
    * 退款金额
    * @example 退款金额
    * @type {string}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 退款股价
    * @type {string}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -12075,56 +12075,56 @@ export class QuitModifyDTO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 离职扣减ID
    * @example 1111
    * @type {number}
    */
-  @observable quitDeduId;
+  @observable quitDeduId = "";
 
   /**
    * 退款股数
    * @example 10
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 }
 
 /**
@@ -12137,42 +12137,42 @@ export class QuitPanelVO extends Root {
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operation;
+  @observable operation = [];
 
   /**
    * 付款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 离职日期左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable quitDateLeft;
+  @observable quitDateLeft = "";
 
   /**
    * 离职日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable quitDateRight;
+  @observable quitDateRight = "";
 }
 
 /**
@@ -12185,154 +12185,154 @@ export class QuitRsAnlyVO extends Root {
    * @example 2017-12-12
    * @type {string}
    */
-  @observable actualTerminationDate;
+  @observable actualTerminationDate = "";
 
   /**
    * 已归属
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 部门Id
    * @example 前端不显示
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部门
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    *
    * @example
    * @type {string}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = "";
 
   /**
    * personId
    * @example 前端不显示
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 员工姓名
    * @example 张大彪
    * @type {string}
    */
-  @observable personName;
+  @observable personName = "";
 
   /**
    * 计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 退款金额
    * @example 1111
    * @type {number}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 1111
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 1111
    * @type {number}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 入职日期
    * @example 2017-12-12
    * @type {string}
    */
-  @observable serviceStartDate;
+  @observable serviceStartDate = "";
 }
 
 /**
@@ -12345,70 +12345,70 @@ export class QuitRsQueryDTO extends Root {
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 付款状态
    * @example
    * @type {array}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = [];
 
   /**
    * 计划id
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 离职时间左边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable quitDateLeft;
+  @observable quitDateLeft = "";
 
   /**
    * 离职时间右边界
    * @example 2018-01-03
    * @type {string}
    */
-  @observable quitDateRight;
+  @observable quitDateRight = "";
 
   /**
    * 员工/授予ID
    * @example 11111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * 员工/授予code
    * @example employee
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -12421,161 +12421,161 @@ export class QuitRsQueryVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 退款状态
    * @example 退款状态
    * @type {string}
    */
-  @observable paymentStatus;
+  @observable paymentStatus = "";
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 认购价/股
    * @example 1212.12
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 离职日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable quitDate;
+  @observable quitDate = "";
 
   /**
    * 离职扣减id
    * @example 1111
    * @type {number}
    */
-  @observable quitDeduId;
+  @observable quitDeduId = "";
 
   /**
    * 退款金额
    * @example 退款金额
    * @type {string}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 退款股价
    * @type {string}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -12588,147 +12588,147 @@ export class QuitSoAnlyVO extends Root {
    * @example 2017-12-12
    * @type {string}
    */
-  @observable actualTerminationDate;
+  @observable actualTerminationDate = "";
 
   /**
    * 已归属
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 员工编号
    * @example B1111
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 部门Id
    * @example 前端不显示
    * @type {number}
    */
-  @observable orgId;
+  @observable orgId = "";
 
   /**
    * 部门
    * @example 流程信息管理部
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 员工id
    * @example
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 员工姓名
    * @example 张大彪
    * @type {string}
    */
-  @observable personName;
+  @observable personName = "";
 
   /**
    * 计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 退款金额
    * @example 退款金额
    * @type {number}
    */
-  @observable refundMoney;
+  @observable refundMoney = "";
 
   /**
    * 退款股数
    * @example 退款股数
    * @type {number}
    */
-  @observable refundNumber;
+  @observable refundNumber = "";
 
   /**
    * 退款股价
    * @example 退款股价
    * @type {number}
    */
-  @observable refundPrice;
+  @observable refundPrice = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 入职日期
    * @example 2017-12-12
    * @type {string}
    */
-  @observable serviceStartDate;
+  @observable serviceStartDate = "";
 }
 
 /**
@@ -12741,63 +12741,63 @@ export class QuitSoQueryDTO extends Root {
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDateLeft;
+  @observable grantDateLeft = "";
 
   /**
    * 授予日期右边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDateRight;
+  @observable grantDateRight = "";
 
   /**
    * 页码
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划id
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 离职时间左边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable quitDateLeft;
+  @observable quitDateLeft = "";
 
   /**
    * 离职时间右边界
    * @example 2018-02-02
    * @type {string}
    */
-  @observable quitDateRight;
+  @observable quitDateRight = "";
 
   /**
    * 员工/授予ID
    * @example 11111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * 员工/授予code
    * @example employee
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -12810,133 +12810,133 @@ export class QuitSoQueryVO extends Root {
    * @example 111
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example 1111
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 取消已归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example 1111
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 备注
    * @example 备注
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 扣减状态
    * @example 扣减状态
    * @type {string}
    */
-  @observable deduStatus;
+  @observable deduStatus = "";
 
   /**
    * 员工
    * @example
    * @type {EmployeeVO}
    */
-  @observable employee;
+  @observable employee = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 1111
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example code
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 行权价/股
    * @example 1212.12
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 离职日期
    * @example 2018-02-02
    * @type {string}
    */
-  @observable quitDate;
+  @observable quitDate = "";
 
   /**
    * 离职扣减id
    * @example 1111
    * @type {number}
    */
-  @observable quitDeduId;
+  @observable quitDeduId = "";
 
   /**
    * 保留已归属
    * @example 1111
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予状态
    * @example 授予状态
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 }
 
 /**
@@ -12949,14 +12949,14 @@ export class RSAscrUpdateDTO extends Root {
    * @example
    * @type {array}
    */
-  @observable ascrList;
+  @observable ascrList = [];
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 }
 
 /**
@@ -12969,28 +12969,28 @@ export class RSAscriptionDTO extends Root {
    * @example 2018-01-01
    * @type {string}
    */
-  @observable ascrDate;
+  @observable ascrDate = "";
 
   /**
    * 归属Id
    * @example 1111
    * @type {number}
    */
-  @observable ascrId;
+  @observable ascrId = "";
 
   /**
    * 归属数量
    * @example 1000
    * @type {number}
    */
-  @observable ascrNumber;
+  @observable ascrNumber = "";
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 }
 
 /**
@@ -13003,28 +13003,28 @@ export class RSAscriptionSimpleVO extends Root {
    * @example 2018-01-01
    * @type {string}
    */
-  @observable ascrDate;
+  @observable ascrDate = "";
 
   /**
    * 归属Id
    * @example 1111
    * @type {number}
    */
-  @observable ascrId;
+  @observable ascrId = "";
 
   /**
    * 归属数量
    * @example 1000
    * @type {number}
    */
-  @observable ascrNumber;
+  @observable ascrNumber = "";
 
   /**
    * 备注
    * @example XX
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 归属规则修改标志
@@ -13038,7 +13038,7 @@ export class RSAscriptionSimpleVO extends Root {
    * @example 11111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 }
 
 /**
@@ -13051,49 +13051,49 @@ export class RSAscriptionVO extends Root {
    * @example {}
    * @type {EmployeeVO}
    */
-  @observable employeeVO;
+  @observable employeeVO = EmployeeVO.create();
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予code
    * @example WSSO1000
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example 1000
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 未归属数量
    * @example 2500
    * @type {number}
    */
-  @observable nonAscrAmount;
+  @observable nonAscrAmount = "";
 
   /**
    * 计划名称
    * @example 度秘
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 归属明细和是否可以修改标志
    * @example []
    * @type {array}
    */
-  @observable rsAscrList;
+  @observable rsAscrList = [];
 }
 
 /**
@@ -13106,14 +13106,14 @@ export class RSFullAscrDTO extends Root {
    * @example 2017-12-10
    * @type {string}
    */
-  @observable ascrDate;
+  @observable ascrDate = "";
 
   /**
    * 授予id列表
    * @example []
    * @type {array}
    */
-  @observable codes;
+  @observable codes = [];
 }
 
 /**
@@ -13126,28 +13126,28 @@ export class RightPriceQueryDTO extends Root {
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 股权类型（不需要传参）
    * @example SO
    * @type {string}
    */
-  @observable type;
+  @observable type = "";
 }
 
 /**
@@ -13160,49 +13160,49 @@ export class RightPriceQueryVO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 编辑
    * @example
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * RS/SO价格/股
    * @example 160.33
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 行权价/认购价的ID
    * @example 11111
    * @type {number}
    */
-  @observable rightPriceId;
+  @observable rightPriceId = "";
 
   /**
    * 生效日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -13215,42 +13215,42 @@ export class RightPriceSaveDTO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * RS/SO价格/股
    * @example 160.33
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 行权价/认购价的ID
    * @example 11111
    * @type {number}
    */
-  @observable rightPriceId;
+  @observable rightPriceId = "";
 
   /**
    * 生效日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 
   /**
    * 股权类型（不需要传参）
    * @example SO
    * @type {string}
    */
-  @observable type;
+  @observable type = "";
 }
 
 /**
@@ -13263,21 +13263,21 @@ export class SOAscriptionSimpleVO extends Root {
    * @example 2018-01-01
    * @type {string}
    */
-  @observable ascrDate;
+  @observable ascrDate = "";
 
   /**
    * 归属规则Id
    * @example 100001
    * @type {number}
    */
-  @observable ascrId;
+  @observable ascrId = "";
 
   /**
    * 归属数量
    * @example 1000
    * @type {number}
    */
-  @observable ascrNumber;
+  @observable ascrNumber = "";
 
   /**
    * 归属规则修改标志
@@ -13291,7 +13291,7 @@ export class SOAscriptionSimpleVO extends Root {
    * @example 100001
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 }
 
 /**
@@ -13304,84 +13304,84 @@ export class StockOwnQueryDTO extends Root {
    * @example []
    * @type {array}
    */
-  @observable employeeType;
+  @observable employeeType = [];
 
   /**
    * 授予结束日期
    * @example 2018-01-25 12:23:12
    * @type {string}
    */
-  @observable grantEndDate;
+  @observable grantEndDate = "";
 
   /**
    * 授予开始日期
    * @example 2018-01-22 12:23:12
    * @type {string}
    */
-  @observable grantStartDate;
+  @observable grantStartDate = "";
 
   /**
    * 授予类型
    * @example SO/RS
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 部门ID
    * @example
    * @type {array}
    */
-  @observable orgIdList;
+  @observable orgIdList = [];
 
   /**
    * 第几页
    * @example 1
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 每页大小
    * @example 5
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划ID
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 授予角色
    * @example
    * @type {array}
    */
-  @observable soClassList;
+  @observable soClassList = [];
 
   /**
    * 授予状态
    * @example
    * @type {array}
    */
-  @observable statusList;
+  @observable statusList = [];
 
   /**
    * suggestId
    * @example 1111
    * @type {number}
    */
-  @observable suggestId;
+  @observable suggestId = "";
 
   /**
    * suggest类型
    * @example grants
    * @type {string}
    */
-  @observable suggestType;
+  @observable suggestType = "";
 }
 
 /**
@@ -13394,245 +13394,245 @@ export class StockOwnVO extends Root {
    * @example
    * @type {number}
    */
-  @observable ascriptionEd;
+  @observable ascriptionEd = "";
 
   /**
    * 未归属
    * @example
    * @type {number}
    */
-  @observable ascriptionIng;
+  @observable ascriptionIng = "";
 
   /**
    * 归属规则
    * @example
    * @type {string}
    */
-  @observable ascriptionRule;
+  @observable ascriptionRule = "";
 
   /**
    * 取消已归属
    * @example
    * @type {number}
    */
-  @observable cancelAscriEd;
+  @observable cancelAscriEd = "";
 
   /**
    * 取消未归属
    * @example
    * @type {number}
    */
-  @observable cancelAscriIng;
+  @observable cancelAscriIng = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 员工编号
    * @example
    * @type {string}
    */
-  @observable employeeNumber;
+  @observable employeeNumber = "";
 
   /**
    * 授予数量
    * @example
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example
    * @type {string}
    */
-  @observable grantDateStr;
+  @observable grantDateStr = "";
 
   /**
    * 授予类型
    * @example
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 离职时间
    * @example
    * @type {string}
    */
-  @observable leaveDate;
+  @observable leaveDate = "";
 
   /**
    * 离职日期
    * @example
    * @type {string}
    */
-  @observable leaveDateStr;
+  @observable leaveDateStr = "";
 
   /**
    * 出资期限
    * @example
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 人事变更调出时间
    * @example
    * @type {string}
    */
-  @observable moveDate;
+  @observable moveDate = "";
 
   /**
    * 人事变更调出日期
    * @example
    * @type {string}
    */
-  @observable moveDateStr;
+  @observable moveDateStr = "";
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 部门名
    * @example
    * @type {string}
    */
-  @observable orgName;
+  @observable orgName = "";
 
   /**
    * 员工id
    * @example
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    * 员工姓名
    * @example
    * @type {string}
    */
-  @observable personName;
+  @observable personName = "";
 
   /**
    * 计划ID
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名字
    * @example
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 行权价(SO)/认购价(RS)
    * @example
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 保留已归属
    * @example
    * @type {number}
    */
-  @observable retainAscriEd;
+  @observable retainAscriEd = "";
 
   /**
    * 授予角色
    * @example XX
    * @type {string}
    */
-  @observable soClass;
+  @observable soClass = "";
 
   /**
    * 授予状态
    * @example
    * @type {string}
    */
-  @observable status;
+  @observable status = "";
 
   /**
    * 当前股价
    * @example
    * @type {number}
    */
-  @observable stockPrice;
+  @observable stockPrice = "";
 }
 
 /**
@@ -13645,21 +13645,21 @@ export class StockPriceQueryDTO extends Root {
    * @example 2
    * @type {number}
    */
-  @observable pageNum;
+  @observable pageNum = "";
 
   /**
    * 最大条数
    * @example 20
    * @type {number}
    */
-  @observable pageSize;
+  @observable pageSize = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -13672,56 +13672,56 @@ export class StockPriceQueryVO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 编辑
    * @example
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 操作列表
    * @example
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 股价
    * @example 160.33
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 股价ID
    * @example 11111
    * @type {number}
    */
-  @observable priceId;
+  @observable priceId = "";
 
   /**
    * 发布日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable publishDate;
+  @observable publishDate = "";
 
   /**
    * 生效日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -13734,42 +13734,42 @@ export class StockSaveDTO extends Root {
    * @example 涨势喜人
    * @type {string}
    */
-  @observable comments;
+  @observable comments = "";
 
   /**
    * 计划ID
    * @example 11111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 股价
    * @example 160.33
    * @type {string}
    */
-  @observable price;
+  @observable price = "";
 
   /**
    * 股价ID
    * @example 11111
    * @type {number}
    */
-  @observable priceId;
+  @observable priceId = "";
 
   /**
    * 发布日期
    * @example 2018-12-02
    * @type {string}
    */
-  @observable publishDate;
+  @observable publishDate = "";
 
   /**
    * 生效日期
    * @example 2018-01-02
    * @type {string}
    */
-  @observable startDate;
+  @observable startDate = "";
 }
 
 /**
@@ -13782,35 +13782,35 @@ export class StockSimpleVO extends Root {
    * @example
    * @type {number}
    */
-  @observable abolished;
+  @observable abolished = "";
 
   /**
    * 股票总份额
    * @example
    * @type {number}
    */
-  @observable total;
+  @observable total = "";
 
   /**
    * 股票类型
    * @example
    * @type {string}
    */
-  @observable type;
+  @observable type = "";
 
   /**
    * 未使用股票(包含还在池子里没动的以及处于草稿状态的)
    * @example
    * @type {number}
    */
-  @observable unused;
+  @observable unused = "";
 
   /**
    * 已使用股票
    * @example
    * @type {number}
    */
-  @observable used;
+  @observable used = "";
 }
 
 /**
@@ -13823,7 +13823,7 @@ export class StockUseInfoDTO extends Root {
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 }
 
 /**
@@ -13843,21 +13843,21 @@ export class StockUseSimpleInfoVO extends Root {
    * @example
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * rs股票使用情况
    * @example
    * @type {StockSimpleVO}
    */
-  @observable rs;
+  @observable rs = StockSimpleVO.create();
 
   /**
    * so股票使用情况
    * @example
    * @type {StockSimpleVO}
    */
-  @observable so;
+  @observable so = StockSimpleVO.create();
 }
 
 /**
@@ -13870,14 +13870,14 @@ export class SuggestDTO extends Root {
    * @example xx
    * @type {string}
    */
-  @observable keyword;
+  @observable keyword = "";
 
   /**
    * 限制条数
    * @example 20
    * @type {number}
    */
-  @observable limit;
+  @observable limit = "";
 }
 
 /**
@@ -13890,35 +13890,35 @@ export class TBCGrantBeforeVO extends Root {
    * @example 1111
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 协议富文本内容
    * @example 1111
    * @type {string}
    */
-  @observable contents;
+  @observable contents = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 计划ID
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名字
    * @example 涂鸦科技
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 }
 
 /**
@@ -13931,133 +13931,133 @@ export class TBCGrantVO extends Root {
    * @example 1111
    * @type {number}
    */
-  @observable agreeId;
+  @observable agreeId = "";
 
   /**
    * 创建者ID
    * @example 12
    * @type {number}
    */
-  @observable createdBy;
+  @observable createdBy = "";
 
   /**
    * 创建者
    * @example 逍遥子
    * @type {string}
    */
-  @observable createdByName;
+  @observable createdByName = "";
 
   /**
    * 创建时间
    * @example 2018-01-19
    * @type {Timestamp}
    */
-  @observable creationDate;
+  @observable creationDate = Timestamp.create();
 
   /**
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    * @type {object}
    */
-  @observable edit;
+  @observable edit = {};
 
   /**
    * 授予数量
    * @example 10000
    * @type {number}
    */
-  @observable grantAmount;
+  @observable grantAmount = "";
 
   /**
    * 授予日期
    * @example 2018-01-22
    * @type {string}
    */
-  @observable grantDate;
+  @observable grantDate = "";
 
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
    * @type {string}
    */
-  @observable grantType;
+  @observable grantType = "";
 
   /**
    * 授予编号
    * @example RSDM000001
    * @type {string}
    */
-  @observable grantsCode;
+  @observable grantsCode = "";
 
   /**
    * 授予ID
    * @example 1111
    * @type {number}
    */
-  @observable grantsId;
+  @observable grantsId = "";
 
   /**
    * 修改时间
    * @example
    * @type {Timestamp}
    */
-  @observable lastUpdateDate;
+  @observable lastUpdateDate = Timestamp.create();
 
   /**
    * 修改者ID
    * @example 23
    * @type {number}
    */
-  @observable lastUpdatedBy;
+  @observable lastUpdatedBy = "";
 
   /**
    * 修改者
    * @example 杨铁心
    * @type {string}
    */
-  @observable lastUpdatedByName;
+  @observable lastUpdatedByName = "";
 
   /**
    * 出资期限
    * @example 2018-07-01
    * @type {string}
    */
-  @observable limitDate;
+  @observable limitDate = "";
 
   /**
    * 国际化
    * @example
    * @type {object}
    */
-  @observable map;
+  @observable map = {};
 
   /**
    * 操作列所有需要显示的按钮
-   * @example [[object Undefined]]
+   * @example ["SAVE"]
    * @type {array}
    */
-  @observable operations;
+  @observable operations = [];
 
   /**
    * 计划ID
    * @example 1111
    * @type {number}
    */
-  @observable planId;
+  @observable planId = "";
 
   /**
    * 计划名称
    * @example 渡鸦计划
    * @type {string}
    */
-  @observable planName;
+  @observable planName = "";
 
   /**
    * 行权价/股 出资本金/股
    * @example 1
    * @type {number}
    */
-  @observable price;
+  @observable price = "";
 }
 
 /**
@@ -14070,70 +14070,70 @@ export class Timestamp extends Root {
    * @example
    * @type {number}
    */
-  @observable date;
+  @observable date = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable day;
+  @observable day = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable hours;
+  @observable hours = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable minutes;
+  @observable minutes = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable month;
+  @observable month = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable nanos;
+  @observable nanos = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable seconds;
+  @observable seconds = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable time;
+  @observable time = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable timezoneOffset;
+  @observable timezoneOffset = "";
 
   /**
    *
    * @example
    * @type {number}
    */
-  @observable year;
+  @observable year = "";
 }
 
 /**
@@ -14146,12 +14146,12 @@ export class UserVo extends Root {
    * @example
    * @type {number}
    */
-  @observable personId;
+  @observable personId = "";
 
   /**
    *
    * @example
    * @type {string}
    */
-  @observable personName;
+  @observable personName = "";
 }

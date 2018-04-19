@@ -6,8 +6,11 @@
  */
 
 import * as React from 'react'
-import { h } from 'react-mobx-vm'
+import { h, injectExt } from 'react-mobx-vm'
 
+@injectExt(app => {
+  app.setTitle('Schema to View-Modal')
+})
 export default class View extends React.Component {
 
   render() {

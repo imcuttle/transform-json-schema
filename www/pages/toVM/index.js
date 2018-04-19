@@ -11,7 +11,7 @@ import WorkSpace from '../../vm/WorkSpace'
 
 @bindView(View)
 export class ToVM extends Root {
-  workSpace = WorkSpace.create()
+  workSpace = WorkSpace.create({ type: 'schema-to-vm' })
 }
 
 export default ToVM.create()
