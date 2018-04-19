@@ -24,7 +24,10 @@ function propertiesStr(properties, node, { typeTrans, propertyTrans }) {
 
     return this.propertyString(
       { ...p, type, name: property },
-      propertiesStr.bind(this, p.properties, currentNode, { typeTrans, propertyTrans })
+      propertiesStr.bind(this, p.properties, currentNode, {
+        typeTrans,
+        propertyTrans
+      })
     )
   }
   if (!properties) {
@@ -108,15 +111,18 @@ function toClassDefinition(
   return propertiesClass + ''
 }
 
-function wrapLikeFormatter(
-  node: SchemaPath,
-  {
+function wrapLikeFormatter(node: SchemaPath, options = {}) {
+  this.options = Object.assign({}, this.options, options)
+  if (this.normalizeOptions) {
+    this.normalizeOptions(this.options)
+  }
+  const {
     // raw = false,
     depth = 1,
     typeCapitalize = false,
     propertyCamelcase = false
-  } = {}
-) {
+  } = this.options
+
   const cache = new Set([])
   const typeTrans = typeCapitalize ? t => capitalize(t) : t => t
   const propertyTrans = propertyCamelcase ? t => camelCase(t) : t => t

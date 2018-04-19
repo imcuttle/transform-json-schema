@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "codemirror": "^5.36.0",
+    "material-ui": "^0.20.0",
+    "react-codemirror2": "^4.2.1"
+  }
 }

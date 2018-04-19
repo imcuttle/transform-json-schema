@@ -10,7 +10,7 @@ import View from './View'
 
 @bindView(View)
 export class App extends Root {
-  @observable key = 1
+  @observable drawerOpen = true
 
   toVM = () =>
     new Promise(resolve => {

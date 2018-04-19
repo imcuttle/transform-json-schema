@@ -7,7 +7,7 @@
 const isPlainObj = require('is-plain-obj')
 
 exports.keyword = function(word) {
-  return (word || '').replace(/[^\d\w]/g, '_')
+  return (word || '').replace(/[^\w]/g, '_')
 }
 
 const uniqueid = require('lodash.uniqueid')

@@ -7,21 +7,11 @@
 
 import { action, observable, Root, bindView } from 'react-mobx-vm'
 import View from './View'
+import WorkSpace from '../../vm/WorkSpace'
 
 @bindView(View)
 export class ToVM extends Root {
-  @observable input = JSON.stringify({
-    name: 'imcuttle',
-    age: 23,
-    gender: 'M',
-    parent: {
-      name: 'ppp',
-      age: 50,
-      gender: 'M'
-    }
-  }, null, 2)
-
-  @observable output = ''
+  workSpace = WorkSpace.create()
 }
 
 export default ToVM.create()

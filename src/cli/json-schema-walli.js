@@ -13,9 +13,10 @@ const argv = require('minimist')(process.argv.slice(2))
 const flags = {
   help: argv.help || argv.h,
   filter: new RegExp(argv.filter || '.*'),
+  deep: !!argv['deep'],
   depth: parseInt('depth' in argv ? argv.depth : 1),
-  typeCapitalize: argv['type-capitalize'] !== 'false',
-  propertyCamelcase: argv['property-camelcase'] !== 'false'
+  typeCapitalize: !!argv['type-capitalize'],
+  propertyCamelcase: !!argv['property-camelcase']
 }
 
 if (flags.help) {
@@ -23,6 +24,7 @@ if (flags.help) {
     `
   -h, --help
   --filter
+  --deep
   --depth
   --type-capitalize
   --property-camelcase

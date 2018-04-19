@@ -10,6 +10,14 @@ const capitalize = require('lodash.capitalize')
 const wrapLike = require('./framework/wrap-like').default
 
 export default wrapLike({
+  options: {
+    deep: false
+  },
+  normalizeOptions(options) {
+    if (options.deep) {
+      options.depth = 0
+    }
+  },
   propertyDelimiter: '\n',
   classBodyDelimiter: '\n\n',
   wrapString(str) {
@@ -27,13 +35,16 @@ export default wrapLike({
         return t.leq({${propertiesStr()}}).check(req)
       }
     }
-    export const ${camel(title)} = t.util.createFinalVerifiableClass(${title}Class)
+    export const ${camel(title)} = t.util.createFinalVerifiable(${title}Class)
     `
   },
   propertyString(p, childrenPropertiesStr) {
     let lowType = p.type.toLowerCase()
     let camelType = camel(p.type)
 
+    if (this.options.deep && 'object' === lowType) {
+      return `${p.name}: {${childrenPropertiesStr()}},`
+    }
     // final
     if (['array', 'string', 'object', 'boolean', 'number'].includes(lowType)) {
       return `${p.name}: t.${lowType},`
