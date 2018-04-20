@@ -21,6 +21,9 @@ import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 
 
 export default class View extends React.Component {
+  onClickFetchRemote = async () => {
+    fetch()
+  }
   @computed
   get Header() {
     return (
@@ -29,8 +32,10 @@ export default class View extends React.Component {
           <div>
             {this.local.title}
             <small>
-              <IconButton key="remote">
-                <FileCloudDownload colore="white"/>
+              <IconButton key="remote"
+                onClick={this.onClickFetchRemote}
+              >
+                <FileCloudDownload color="white"/>
               </IconButton>
               <IconButton key="file">
                 <FileUploadDownload color="white" />
