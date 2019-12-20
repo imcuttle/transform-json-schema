@@ -9,6 +9,7 @@ const pReduce = require('p-reduce')
 const presetFormat = {
   vm: require('./formatter/vm').default,
   walli: require('./formatter/walli').default,
+  ts: require('./formatter/ts').default,
 }
 
 class TransformUmbrella {

@@ -24,6 +24,17 @@ describe('a', function() {
       console.log(err)
       // console.log(output)
       writeFileSync(__dirname + '/walli.js', output)
+      // expect(output).to
+      done()
+    })
+  })
+
+  it('should to ts', function(done) {
+    to().format(schema, 'ts', function(err, output) {
+      console.log(err)
+      // console.log(output)
+      writeFileSync(__dirname + '/ts.ts', output)
+      // expect(output).to
       done()
     })
   })

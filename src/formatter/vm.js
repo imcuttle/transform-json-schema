@@ -6,6 +6,7 @@
  */
 import * as u from '../util'
 import { reactUrlSync } from 'react-mobx-vm';
+import * as cc from "change-case";
 
 const wrapLike = require('./framework/wrap-like').default
 
@@ -37,7 +38,7 @@ function fillDefault (p = {}) {
       p.default = '[]'
       return p
     default:
-      p.default = `${p.type}.create()`
+      p.default = `${cc.pascalCase(p.type)}.create()`
       return p
   }
 }
@@ -50,6 +51,7 @@ export default wrapLike({
     return `import { Root, observable } from 'react-mobx-vm'\n` + str
   },
   generateClassString({ description, title }, propertiesStr) {
+    title = cc.pascalCase(title)
     return `
     /**
      * ${description || ''}

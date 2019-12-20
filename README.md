@@ -5,10 +5,13 @@
 [![NPM version](https://img.shields.io/npm/v/transform-json-schema.svg?style=flat-square)](https://www.npmjs.com/package/transform-json-schema)
 [![NPM Downloads](https://img.shields.io/npm/dm/transform-json-schema.svg?style=flat-square&maxAge=43200)](https://www.npmjs.com/package/transform-json-schema)
 
+> Transforms json schema as your wish!
+
 
 ```
 npm install --global transform-json-schema
 
+curl http://example.com/schema.json | json-schema-ts
 curl http://example.com/schema.json | json-schema-vm
 curl http://example.com/schema.json | json-schema-walli
 ```
