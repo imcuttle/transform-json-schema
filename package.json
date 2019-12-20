@@ -1,7 +1,7 @@
 {
   "name": "transform-json-schema",
   "version": "0.3.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "description": "transform-json-schema",
   "author": "imcuttle",
   "bin": {
@@ -9,6 +9,9 @@
     "json-schema-walli": "./lib/cli/json-schema-walli.js",
     "json-schema-ts": "./lib/cli/json-schema-ts.js"
   },
+  "files": [
+    "lib", "src"
+  ],
   "scripts": {
     "site": "cd www && gojs -i index.js --open",
     "site:build": "npm run site -- -b",
