@@ -1,6 +1,6 @@
 {
   "name": "transform-json-schema",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "lib/index.js",
   "description": "transform-json-schema",
   "author": "imcuttle",
@@ -10,7 +10,8 @@
     "json-schema-ts": "./lib/cli/json-schema-ts.js"
   },
   "files": [
-    "lib", "src"
+    "lib",
+    "src"
   ],
   "scripts": {
     "site": "cd www && gojs -i index.js --open",
