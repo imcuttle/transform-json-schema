@@ -19,6 +19,7 @@ function fillType(p = {}) {
     case 'number':
     case 'string':
     case 'boolean':
+    case 'any':
       return p.type
     case 'integer':
       return 'number'
@@ -36,7 +37,7 @@ function fillType(p = {}) {
 export default wrapLike({
   propertyDelimiter: '\n',
   options: {
-    default: true
+    loose: true
   },
   generateClassString({description, title}, propertiesStr) {
     const head = description
@@ -55,9 +56,16 @@ export default wrapLike({
     return str
   },
   propertyString(p) {
-    // console.log('p', p)
-    let head = p.description ? '/**\n' + ` * ${p.description || ''}\n` + ' */\n' : ''
+    const example = u.toString(p.example || '')
+    let head =
+      example || p.description ? '/**\n' + ` * ${p.description || ''}\n` + ` * @example ${example}\n` + ' */\n' : ''
 
-    return head + ` ${p.name}: ${fillType(p)};`
+    let isOptional
+    if (this.options.loose) {
+      isOptional = true
+    } else {
+      isOptional = !!p.allowEmptyValue
+    }
+    return head + ` ${p.name}${isOptional ? '?' : ''}: ${fillType(p)};`
   }
 })

@@ -13,8 +13,10 @@ const argv = require('minimist')(process.argv.slice(2))
 const flags = {
   help: argv.help || argv.h,
   filter: new RegExp(argv.filter || '.*', 'i'),
+  loose: 'loose' in argv ? !!argv.loose : true ,
   depth: parseInt('depth' in argv ? argv.depth : 1),
 }
+
 
 if (flags.help) {
   console.log(
@@ -22,6 +24,7 @@ if (flags.help) {
   -h, --help
   --filter      eg. --filter=^UserVO
   --depth <n>   eg. --depth=1
+  --no-loose    Disables loose mode
 `
   )
 } else {
