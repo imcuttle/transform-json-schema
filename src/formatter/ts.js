@@ -26,7 +26,7 @@ function fillType(p = {}) {
     case 'date':
       return 'Date'
     case 'object':
-      return '{}'
+      return 'Object'
     case 'array':
       if (p.items.type) {
         return `${fillType(p.items)}[]`
@@ -61,7 +61,11 @@ export default wrapLike({
   propertyString(p) {
     const example = u.toString(p.example || '')
     let head =
-      example || p.description ? '/**\n' + ` * ${p.description || ''}\n` + ` * @example ${example}\n` + ' */\n' : ''
+      example || p.description
+        ? ['/**', p.description && ` * ${p.description || ''}`, example && ` * @example ${example}`, ' */\n']
+            .filter(Boolean)
+            .join('\n')
+        : ''
 
     let isOptional
     if (this.options.loose) {
