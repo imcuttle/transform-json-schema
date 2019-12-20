@@ -11,14 +11,7 @@ export type PositiveInteger = number
 
 export type PositiveIntegerDefault0 = PositiveInteger
 
-export type SimpleTypes =
-  | 'array'
-  | 'boolean'
-  | 'integer'
-  | 'null'
-  | 'number'
-  | 'object'
-  | 'string'
+export type SimpleTypes = 'array' | 'boolean' | 'integer' | 'null' | 'number' | 'object' | 'string'
 
 export type StringArray = string[]
 
@@ -79,6 +72,20 @@ function getPaths(string: string) {
   return string
 }
 
+function getSchema(schema, paths) {
+  for (const path of paths) {
+    if (!schema) return null
+    if (schema.hasOwnProperty(path)) {
+      schema = schema[path]
+    } else if (Array.isArray(schema)) {
+      schema = schema.find(item => item.title === path)
+    } else {
+      return null
+    }
+  }
+  return schema
+}
+
 export class SchemaPath {
   constructor(schema: Schema, parent: SchemaPath = null) {
     this.schema = schema
@@ -88,10 +95,9 @@ export class SchemaPath {
   schema: Schema
   parent: SchemaPath
   clear() {
-    Object.keys(this.schema)
-      .forEach(name => {
-        delete this.schema[name]
-      })
+    Object.keys(this.schema).forEach(name => {
+      delete this.schema[name]
+    })
   }
   get rootParent() {
     let p = this
@@ -101,7 +107,7 @@ export class SchemaPath {
     return p
   }
   get(paths: string | string[]) {
-    return new SchemaPath(get(this.schema, paths), this)
+    return new SchemaPath(getSchema(this.schema, paths), this)
   }
   set(paths, val) {
     set(this.schema, paths, val)
@@ -114,7 +120,7 @@ export class SchemaPath {
     let origin = this.schema
     if (origin && origin.$ref) {
       const refVal = this.ref()
-      const { $ref, ...rest } = origin
+      const {$ref, ...rest} = origin
       return Object.assign({}, rest, refVal.fillSchema)
     }
     return origin

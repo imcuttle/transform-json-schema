@@ -28,6 +28,9 @@ function fillType(p = {}) {
     case 'object':
       return '{}'
     case 'array':
+      if (p.items.type) {
+        return `${fillType(p.items)}[]`
+      }
       return '[]'
     default:
       return cc.pascalCase(p.type)

@@ -19,6 +19,13 @@ function propertiesStr(properties, node, { typeTrans, propertyTrans }) {
       }
     }
 
+    if (p.items && p.items.$ref) {
+      let ref = node.ref(p.items.$ref)
+      if (!ref.isEmpty()) {
+        p.items.type = ref.schema.title
+      }
+    }
+
     let type = typeTrans(u.type(u.keyword(p.type || 'any')))
     let property = propertyTrans(u.keyword(name))
 
