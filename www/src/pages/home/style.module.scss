@@ -1,0 +1,25 @@
+
+.container {
+  display: flex;
+  flex: 1;
+  :global {
+    .react-codemirror2 {
+      flex: 1;
+      width: 0;
+      .CodeMirror {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.jsonEditor {
+}
+
+.jsonEditor, .resultEditor {
+  height: 100%;
+}
+
+.resultEditor {
+
+}

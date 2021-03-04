@@ -21,7 +21,7 @@ class TransformUmbrella {
   format(
     schema: Schema,
     formatter: Formatter | string,
-    options?: {
+    options: {
       pretty?: boolean,
       prettyOptions?: {}
     } = { pretty: true, prettyOptions: {} },
