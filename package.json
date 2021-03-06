@@ -22,7 +22,6 @@
     "flow": "flow",
     "dist": "babel src/ -d lib/ -D",
     "dev": "npm run dist -- -w",
-    "postinstall": "cd www && npm i",
     "prepare": "rimraf lib/ && npm run dist"
   },
   "keywords": [
