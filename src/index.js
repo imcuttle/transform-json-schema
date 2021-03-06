@@ -10,6 +10,7 @@ const presetFormat = {
   vm: require('./formatter/vm').default,
   walli: require('./formatter/walli').default,
   ts: require('./formatter/ts').default,
+  'swagger-axios': require('./formatter/swagger-axios/index').default,
 }
 
 class TransformUmbrella {
@@ -24,13 +25,16 @@ class TransformUmbrella {
     options: {
       pretty?: boolean,
       prettyOptions?: {}
-    } = { pretty: true, prettyOptions: {} },
+    } = {},
     callback?: (err: null | Error, output: any) => any
-  ): any | Promise<any> {
+  ): any | Promise<any>
+  {
     const schemaPath = new SchemaPath(schema)
     if (typeof options === 'function') {
       callback = options
       options = { pretty: true }
+    } else {
+      options = {pretty: true, prettyOptions: {}, ...options}
     }
 
     pReduce(

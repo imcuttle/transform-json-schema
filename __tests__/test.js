@@ -39,6 +39,16 @@ describe('a', function() {
     })
   })
 
+  it('should to swagger-axios', function(done) {
+    to().format(require('./swagger.json'), 'swagger-axios', { prefix: '/* eslint-disable */\n' }, function(err, output) {
+      console.log(err)
+      console.log(output)
+      writeFileSync(__dirname + '/ts-axios.ts', output)
+      // expect(output).to
+      done()
+    })
+  })
+
   it('should schemaPath', function() {
     const path = new SchemaPath(schema)
     const AgreementVO = path.get('definitions.AgreementVO')

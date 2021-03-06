@@ -8,17 +8,20 @@ import { SchemaPath } from '../types/Schema'
 
 module.exports = function(node: SchemaPath, { filter = /.*/ } = {}) {
   if (node.schema.swagger) {
-    node.schema.definitions = Object.keys(node.schema.definitions)
+    Object.keys(node.schema.definitions)
       .filter(name => {
         filter.lastIndex = 0
-        return filter.test(name)
+        if (!filter.test(name)) {
+          delete node.schema.definitions[name]
+          return false
+        }
+        return true
       })
-      .map(name => {
+      .forEach(name => {
         const n = node.get(['definitions', name])
         if (n.get('title').isEmpty()) {
           n.set('title', name)
         }
-        return n.schema
       })
   }
 }

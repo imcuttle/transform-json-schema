@@ -36,7 +36,7 @@ window['jsonlint'] = jsonlint; // 不能删除，json-lint有依赖
 
 
 
-function HomePage({type = 'to-ts', defaultJsonText, jsonText, onJsonTextChange}: any) {
+function HomePage({type = 'to-ts', config, defaultJsonText, jsonText, onJsonTextChange}: any) {
   const [jsonTextState, setJsonText] = useUncontrolled({
     value: jsonText,
     onChange: onJsonTextChange,
@@ -46,16 +46,17 @@ function HomePage({type = 'to-ts', defaultJsonText, jsonText, onJsonTextChange}:
 
   React.useEffect(() => {
     const json = JSON.parse(jsonTextState)
-    if (json) {
-      modules[type](json, {}, (err, data) => {
+    if (json && modules[type]) {
+      modules[type](json, config || {}, (err, data) => {
         if (err) {
+          console.error(err)
           notification.error({message: String(err)})
         } else {
           setResult(data)
         }
       })
     }
-  }, [type, jsonTextState])
+  }, [type, config, jsonTextState])
 
   return (
     <div className={css.container}>

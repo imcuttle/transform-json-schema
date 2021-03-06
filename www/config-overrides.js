@@ -5,7 +5,8 @@ const {
   addExternalBabelPlugins,
   addBabelPresets,
   babelInclude,
-  babelExclude
+  setWebpackPublicPath,
+  babelExclude,
 } = require("customize-cra");
 
 const nps = require('path')
@@ -37,7 +38,12 @@ module.exports = {
     fixBabelImports(
       'antd',
       { "libraryName": "antd", "style": "css" },
-    )
+    ),
+    (config) => {
+      config.output.publicPath = ''
+      config.output.path = nps.join(__dirname, '../www-dist')
+      return config
+    }
   ),
 
 }

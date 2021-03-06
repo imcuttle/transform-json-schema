@@ -7,3 +7,4 @@ coverage/
 .entry
 .dist
 lib/
+/www-dist/

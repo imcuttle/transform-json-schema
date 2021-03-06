@@ -9,7 +9,7 @@ import * as cc from 'change-case'
 
 const wrapLike = require('./framework/wrap-like').default
 
-function fillType(p = {}) {
+export function fillType(p = {}) {
   p = {...p}
   if (!p.type) {
     return 'any'
@@ -42,7 +42,7 @@ export default wrapLike({
   options: {
     loose: true
   },
-  generateClassString({description, title}, propertiesStr) {
+  generateClassString({description, title, type}, propertiesStr) {
     const head = description
       ? `/**
      * ${description || ''}

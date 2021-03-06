@@ -4,7 +4,6 @@
  * @date 2018/4/16
  * @description
  */
-import type { Formatter } from '../../types/Formatter'
 import { SchemaPath } from '../../types/Schema'
 import * as u from '../../util'
 const capitalize = require('lodash.capitalize')
@@ -125,6 +124,8 @@ function wrapLikeFormatter(node: SchemaPath, options = {}) {
   }
   const {
     // raw = false,
+    prefix,
+    suffix,
     depth = 1,
     typeCapitalize = false,
     propertyCamelcase = false
@@ -137,12 +138,12 @@ function wrapLikeFormatter(node: SchemaPath, options = {}) {
   if (node.schema.swagger) {
     const nodes = Object.keys(node.schema.definitions).map(name => {
       const n = node.get(['definitions', name])
-      if (!n.get('title')) {
+      if (!n.has('title')) {
         n.set('title', name)
       }
       return n
     })
-    return this.wrapString(
+    return (prefix || '') + this.wrapString(
       nodes
         .map(x =>
           toClassDefinition.call(this, x, {
@@ -154,7 +155,7 @@ function wrapLikeFormatter(node: SchemaPath, options = {}) {
           })
         )
         .join(this.classBodyDelimiter || '\n\n')
-    )
+    ) + (suffix || '')
   }
 
   return this.wrapString(

@@ -109,6 +109,9 @@ export class SchemaPath {
   get(paths: string | string[]) {
     return new SchemaPath(getSchema(this.schema, paths), this)
   }
+  has(paths: string | string[]) {
+    return !!getSchema(this.schema, paths)
+  }
   set(paths, val) {
     set(this.schema, paths, val)
     return this

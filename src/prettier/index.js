@@ -9,7 +9,7 @@ const prettier = require('./prettier.bundle')
 
 module.exports = function(text, opt) {
   return prettier.format(text, {
-    parser: 'babylon',
+    parser: 'typescript',
     ...opt
   })
 }
