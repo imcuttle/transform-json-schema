@@ -15,8 +15,9 @@
     "src"
   ],
   "scripts": {
-    "site": "cd www && npm run build",
-    "site:build": "npm run site -- -b",
+    "deploy": "npm run site:build && gh-pages -d www-dist",
+    "site": "cd www && npm run build && cd -",
+    "site:build": "npm run site",
     "test": "jest",
     "flow": "flow",
     "dist": "babel src/ -d lib/ -D",
