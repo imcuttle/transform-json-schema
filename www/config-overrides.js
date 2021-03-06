@@ -41,7 +41,7 @@ module.exports = {
     ),
     (config) => {
       config.output.publicPath = ''
-      config.output.path = nps.join(__dirname, '../www-dist')
+      // config.output.path = nps.join(__dirname, '../www-dist')
       return config
     }
   ),

@@ -7,6 +7,7 @@
   "bin": {
     "json-schema-vm": "./lib/cli/json-schema-vm.js",
     "json-schema-walli": "./lib/cli/json-schema-walli.js",
+    "json-schema-swagger-axios": "./lib/cli/json-schema-swagger-axios.js",
     "json-schema-ts": "./lib/cli/json-schema-ts.js"
   },
   "files": [

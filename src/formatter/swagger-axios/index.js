@@ -60,21 +60,24 @@ export default function swaggerAxios(
           argsChunks.push(`${token}: any`)
         })
 
-        if (paramType.query) {
-          codes.push(paramType.query.code)
-          argsChunks.push(`params?: ${paramType.query.name}`)
-        }
+        let hasData = false
+        if (paramType) {
+          if (paramType.query) {
+            codes.push(paramType.query.code)
+            argsChunks.push(`params?: ${paramType.query.name}`)
+          }
 
-        const hasData = paramType.body || paramType.formData
-        if (paramType.body) {
-          codes.push(paramType.body.code)
-          argsChunks.push(`data?: ${paramType.body.name}`)
-        } else if (paramType.formData) {
-          argsChunks.push(`data?: FormData`)
+          hasData = paramType.body || paramType.formData
+          if (paramType.body) {
+            codes.push(paramType.body.code)
+            argsChunks.push(`data?: ${paramType.body.name}`)
+          } else if (paramType.formData) {
+            argsChunks.push(`data?: FormData`)
+          }
         }
 
         let responseTypeKey = 'any'
-        if (responseType['200']) {
+        if (responseType && responseType['200']) {
           responseTypeKey = responseType['200'].name
           if (responseType['200'].code) {
             codes.push(responseType['200'].code)
@@ -90,7 +93,7 @@ export default function swaggerAxios(
           pathData: {
             ${pathTokens.map((token) => `${token},`).join('\n')}
           },
-          ${paramType.query ? 'params,' : ''}${hasData ? 'data,' : ''}
+          ${paramType && paramType.query ? 'params,' : ''}${hasData ? 'data,' : ''}
         }, COMMON_CONFIG, axiosRequestConfig))
       }
       `)
