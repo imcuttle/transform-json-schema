@@ -5,45 +5,57 @@ const {
   addExternalBabelPlugins,
   addBabelPresets,
   babelInclude,
+  addWebpackModuleRule,
   setWebpackPublicPath,
-  babelExclude,
-} = require("customize-cra");
+  babelExclude
+} = require('customize-cra')
 
 const nps = require('path')
 
+const devEnv = (...fnList) => {
+  return (config) => {
+    if (config.mode !== 'production') {
+      return fnList.reduce((conf, fn) => fn(conf), config)
+    }
+    return config
+  }
+}
+
+const prodEnv = (...fnList) => {
+  return (config) => {
+    if (config.mode === 'production') {
+      return fnList.reduce((conf, fn) => fn(conf), config)
+    }
+    return config
+  }
+}
+
 module.exports = {
   webpack: override(
-    babelInclude([
-      nps.resolve('../src'),
-      nps.resolve('./src'),
-    ]),
+    babelInclude([nps.resolve('../src'), nps.resolve('./src')]),
     ...addBabelPlugins(
       // "transform-decorators-legacy",
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread",
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-object-rest-spread'
     ),
     ...addBabelPresets(
       [
-        "@babel/env",
+        '@babel/env',
         {
           targets: {
-            browsers: ["> 1%", "last 2 versions"]
+            browsers: ['> 1%', 'last 2 versions']
           },
           modules: 'commonjs'
         }
       ],
-      "@babel/preset-flow",
-      "@babel/preset-react",
+      '@babel/preset-flow',
+      '@babel/preset-react'
     ),
-    fixBabelImports(
-      'antd',
-      { "libraryName": "antd", "style": "css" },
-    ),
+    fixBabelImports('antd', { libraryName: 'antd', style: 'css' }),
     (config) => {
+      // console.log(config.module.rules)
       config.output.publicPath = ''
-      config.output.path = nps.join(__dirname, '../www-dist')
       return config
     }
-  ),
-
+  )
 }

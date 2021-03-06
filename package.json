@@ -15,7 +15,7 @@
     "src"
   ],
   "scripts": {
-    "deploy": "npm run site:build && gh-pages -d www-dist",
+    "deploy": "npm run site:build && npx gh-pages -d www/build",
     "site": "cd www && npm run build && cd -",
     "site:build": "npm run site",
     "test": "jest",
