@@ -118,9 +118,9 @@ function toClassDefinition(
 }
 
 function wrapLikeFormatter(node: SchemaPath, options = {}) {
-  this.options = Object.assign({}, this.options, options)
+  options = Object.assign({}, this.options, options)
   if (this.normalizeOptions) {
-    this.normalizeOptions(this.options)
+    this.normalizeOptions(options)
   }
   const {
     // raw = false,
@@ -129,7 +129,7 @@ function wrapLikeFormatter(node: SchemaPath, options = {}) {
     depth = 1,
     typeCapitalize = false,
     propertyCamelcase = false
-  } = this.options
+  } = options
 
   const cache = new Set([])
   const typeTrans = typeCapitalize ? t => capitalize(t) : t => t
