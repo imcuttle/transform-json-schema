@@ -51,7 +51,6 @@ export interface AgreementUpdateDto {
   agreeContentZh?: string;
   /**
    * 协议ID
-   * @example
    */
   agreeId?: number;
   /**
@@ -107,7 +106,6 @@ export interface AgreementVo {
   isSignPage?: string;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -125,10 +123,9 @@ export interface AgreementVo {
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
   /**
@@ -193,7 +190,7 @@ export interface AgreementViewVo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 授予类型
    * @example SO
@@ -211,7 +208,6 @@ export interface AgreementViewVo {
   hasSignCodeZh?: string;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -226,14 +222,13 @@ export interface AgreementViewVo {
   lastUpdatedByName?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 英文协议签字页名字
    * @example 度秘协议签字页
@@ -249,9 +244,8 @@ export interface AgreementViewVo {
 export interface AnalyzeMovePanelVo {
   /**
    * 扣减状态
-   * @example
    */
-  deductionStatus?: [];
+  deductionStatus?: CodeAndValueVo[];
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -274,24 +268,20 @@ export interface AnalyzeMovePanelVo {
   grantMoveStartDate?: string;
   /**
    * 授予状态
-   * @example
    */
-  grantStatus?: [];
+  grantStatus?: CodeAndValueVo[];
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 操作角色
-   * @example
    */
-  operationRole?: [];
+  operationRole?: CodeAndValueVo[];
   /**
    * 退款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: CodeAndValueVo[];
   /**
    * 人事变更调出结束时间
    * @example 2017-12-11
@@ -307,12 +297,10 @@ export interface AnalyzeMovePanelVo {
 export interface AnalyzePanelVo {
   /**
    * 员工类型
-   * @example
    */
-  employeeType?: [];
+  employeeType?: CodeAndValueVo[];
   /**
    * 授予编号
-   * @example
    */
   grantCode?: string;
   /**
@@ -327,37 +315,31 @@ export interface AnalyzePanelVo {
   grantDateRight?: string;
   /**
    * 授予负责角色/授予创建角色
-   * @example
    */
-  grantRole?: [];
+  grantRole?: CodeAndValueVo[];
   /**
    * 授予状态
-   * @example
    */
-  grantStatus?: [];
+  grantStatus?: CodeAndValueVo[];
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
 }
 
 export interface AnalyzeQuitPanelVo {
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 操作角色
-   * @example
    */
-  operationRole?: [];
+  operationRole?: CodeAndValueVo[];
   /**
    * 退款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: CodeAndValueVo[];
   /**
    * 离职日期截止时间
    * @example 授予Id/员工ID
@@ -411,9 +393,8 @@ export interface AscriptionInfoVo {
   comments?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
 }
 
 export interface AscriptionSimpleVo {
@@ -449,7 +430,7 @@ export interface AscriptionVo {
    * 归属明细
    * @example []
    */
-  rsAscrList?: [];
+  rsAscrList?: AscriptionInfoVo[];
 }
 
 export interface BussLineCreateDto {
@@ -467,7 +448,7 @@ export interface BussLineCreateDto {
    * Leading BP/HRBP
    * @example [12, 23]
    */
-  leadingBp?: [];
+  leadingBp?: number[];
   /**
    * 操作类型(SAVE(保存),PUBLISH(保存并发布)),默认为”保存“操作
    * @example PUBLISH
@@ -506,17 +487,14 @@ export interface BussLineOrgCreateDto {
 export interface BussLineOrgQueryDto {
   /**
    * 业务线id
-   * @example
    */
   bussLineId?: number;
   /**
    * 标志位（大于0有效部门，小于0无效部门，等于0所有部门）
-   * @example
    */
   flag?: number;
   /**
    * 部门名称
-   * @example
    */
   orgName?: string;
   /**
@@ -598,17 +576,15 @@ export interface BussLineUpdateDto {
   bussLineName?: string;
   /**
    * 备注
-   * @example
    */
   comments?: string;
   /**
    * Leading BP/HRBP
    * @example [12, 23]
    */
-  leadingBp?: [];
+  leadingBp?: number[];
   /**
    * 操作类型(SAVE(保存),PUBLISH(保存并发布))
-   * @example
    */
   operationCode?: string;
 }
@@ -653,10 +629,9 @@ export interface BussLineVo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -673,22 +648,20 @@ export interface BussLineVo {
    * leadingBpIdStr
    * @example [{"personId":"12","email":"12@baidu.com"}, {"personId":"12","email":"12@baidu.com"}]
    */
-  leadingBp?: [];
+  leadingBp?: EmployeeVo[];
   /**
    * leadingBpIdStr(该字段FE忽略)
-   * @example
    */
   leadingBpIdStr?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 状态
    * @example 已发布
@@ -699,12 +672,10 @@ export interface BussLineVo {
 export interface BussOrgLogListVo {
   /**
    * 日志详情
-   * @example
    */
-  logs?: [];
+  logs?: BussOrgLogVo[];
   /**
    * 操作人信息
-   * @example
    */
   operation?: EmployeeVo;
   /**
@@ -780,7 +751,6 @@ export interface CabUpdateMoveVo {
   cancelAscriIng?: number;
   /**
    * 员工信息
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -875,7 +845,7 @@ export interface CGrantForRsvo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 授予数量
    * @example 10000
@@ -903,7 +873,6 @@ export interface CGrantForRsvo {
   grantsId?: number;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -923,14 +892,13 @@ export interface CGrantForRsvo {
   limitDate?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划名称
    * @example 渡鸦计划
@@ -993,7 +961,7 @@ export interface CGrantForSovo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 授予数量
    * @example 10000
@@ -1021,7 +989,6 @@ export interface CGrantForSovo {
   grantsId?: number;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -1036,14 +1003,13 @@ export interface CGrantForSovo {
   lastUpdatedByName?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划名称
    * @example 渡鸦计划
@@ -1074,9 +1040,8 @@ export interface CancelSimpleVo {
   comments?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
 }
 
 export interface CancelVo {
@@ -1084,12 +1049,12 @@ export interface CancelVo {
    * 已经归属
    * @example []
    */
-  ascriEd?: [];
+  ascriEd?: CancelSimpleVo[];
   /**
    * 未归属
    * @example []
    */
-  ascriIng?: [];
+  ascriIng?: CancelSimpleVo[];
   /**
    * 授予ID
    * @example 1000
@@ -1143,17 +1108,14 @@ export interface DepartmentSimpleVo {
 export interface DepartmentSuggestVo {
   /**
    * 部门Id
-   * @example
    */
   orgId?: number;
   /**
    * 部门名字
-   * @example
    */
   orgName?: string;
   /**
    * 计划Id
-   * @example
    */
   planId?: number;
 }
@@ -1203,7 +1165,7 @@ export interface DepartmentVo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 删除生效日期
    * @example 2018-01-01
@@ -1211,12 +1173,10 @@ export interface DepartmentVo {
   endDate?: string;
   /**
    * 后台使用，前端忽略
-   * @example
    */
   flag?: number;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -1231,14 +1191,13 @@ export interface DepartmentVo {
   lastUpdatedByName?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 部门ID
    * @example 1212
@@ -1312,9 +1271,8 @@ export interface EmployeeGrantsDataVo {
 export interface EmployeeGrantsVo {
   /**
    * id
-   * @example
    */
-  list?: [];
+  list?: EmployeeGrantsDataVo[];
   /**
    * 类型，需要回传
    * @example employee
@@ -1373,9 +1331,8 @@ export interface EsopMenuVo {
   appId?: number;
   /**
    * 子菜单
-   * @example
    */
-  childList?: [];
+  childList?: EsopMenuVo[];
   /**
    * 功能CODE
    * @example CUX_ESOP_AGREEMENT
@@ -1403,7 +1360,6 @@ export interface EsopMenuVo {
   respId?: number;
   /**
    * 业务组ID
-   * @example
    */
   secGroupId?: number;
 }
@@ -1434,9 +1390,8 @@ export interface FreezingPeriodQueryVo {
   comments?: string;
   /**
    * 编辑
-   * @example
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 冻结结束日期
    * @example 2018-02-04
@@ -1449,9 +1404,8 @@ export interface FreezingPeriodQueryVo {
   freezingId?: number;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划ID
    * @example 11111
@@ -1497,7 +1451,7 @@ export interface GrantAddDto {
    * 归属明细，SO类型有
    * @example []
    */
-  ascriptionList?: [];
+  ascriptionList?: AscriptionSimpleVo[];
   /**
    * 备注
    * @example XX
@@ -1575,12 +1529,11 @@ export interface GrantLogListDto {
    * 授予类型
    * @example SO/RS
    */
-  grantTypeList?: [];
+  grantTypeList?: string[];
   /**
    * 部门ID
-   * @example
    */
-  orgIdList?: [];
+  orgIdList?: number[];
   /**
    * 第几页
    * @example 1
@@ -1593,19 +1546,16 @@ export interface GrantLogListDto {
   pageSize?: number;
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
   /**
    * 授予状态
-   * @example
    */
-  rsStatusList?: [];
+  rsStatusList?: string[];
   /**
    * 授予状态
-   * @example
    */
-  soStatusList?: [];
+  soStatusList?: string[];
   /**
    * suggestId
    * @example 1111
@@ -1620,7 +1570,7 @@ export interface GrantLogListDto {
 
 export interface GrantPostDto {
   code?: string;
-  codes?: [];
+  codes?: string[];
   confirm?: boolean;
 }
 
@@ -1629,7 +1579,7 @@ export interface GrantUpdateDto {
    * 归属明细，SO类型有
    * @example []
    */
-  ascriptionList?: [];
+  ascriptionList?: AscriptionSimpleVo[];
   /**
    * 备注
    * @example XX
@@ -1692,12 +1642,12 @@ export interface GrantsListDto {
    * 负责角色
    * @example []
    */
-  createRoleList?: [];
+  createRoleList?: string[];
   /**
    * 员工类型
    * @example []
    */
-  employeeType?: [];
+  employeeType?: string[];
   /**
    * 授予日期结束时间
    * @example 2018-02-01
@@ -1717,7 +1667,7 @@ export interface GrantsListDto {
    * 计划下对应业务线下的部门列表
    * @example []
    */
-  orgIdList?: [];
+  orgIdList?: number[];
   /**
    * 第几页
    * @example 1
@@ -1737,12 +1687,12 @@ export interface GrantsListDto {
    * 授予角色
    * @example []
    */
-  soClassList?: [];
+  soClassList?: string[];
   /**
    * 授予状态
    * @example []
    */
-  statusList?: [];
+  statusList?: string[];
   /**
    * suggestId
    * @example 1111
@@ -1783,7 +1733,6 @@ export interface GrantsListVo {
   grantAmount?: number;
   /**
    * 授予日期时间戳，后端使用
-   * @example
    */
   grantDate?: string;
   /**
@@ -1823,14 +1772,13 @@ export interface GrantsListVo {
   limitDate?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 可操作类型
    * @example 编辑
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 部门
    * @example 流程信息管理部
@@ -1881,27 +1829,22 @@ export interface GrantsListVo {
 export interface GrantsLogListVo {
   /**
    * 已归属
-   * @example
    */
   ascriptionEd?: number;
   /**
    * 未归属
-   * @example
    */
   ascriptionIng?: number;
   /**
    * 归属规则
-   * @example
    */
   ascriptionRule?: string;
   /**
    * 取消已归属
-   * @example
    */
   cancelAscriEd?: number;
   /**
    * 取消未归属
-   * @example
    */
   cancelAscriIng?: number;
   /**
@@ -1923,40 +1866,33 @@ export interface GrantsLogListVo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 员工编号
-   * @example
    */
   employeeNumber?: string;
   /**
    * 授予数量
-   * @example
    */
   grantAmount?: number;
   /**
    * 授予日期
-   * @example
    */
   grantDateStr?: string;
   /**
    * 授予类型
-   * @example
    */
   grantType?: string;
   /**
    * 授予编号
-   * @example
    */
   grantsCode?: string;
   /**
    * 授予ID
-   * @example
    */
   grantsId?: number;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -1971,72 +1907,59 @@ export interface GrantsLogListVo {
   lastUpdatedByName?: string;
   /**
    * 离职时间
-   * @example
    */
   leaveDate?: string;
   /**
    * 离职日期
-   * @example
    */
   leaveDateStr?: string;
   /**
    * 出资期限
-   * @example
    */
   limitDate?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
-   * @example
    */
   moveDate?: string;
   /**
    * 人事变更调出日期
-   * @example
    */
   moveDateStr?: string;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 部门名
-   * @example
    */
   orgName?: string;
   /**
    * 员工id
-   * @example
    */
   personId?: number;
   /**
    * 员工姓名
-   * @example
    */
   personName?: string;
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
   /**
    * 计划名字
-   * @example
    */
   planName?: string;
   /**
    * 行权价(SO)/认购价(RS)
-   * @example
    */
   price?: number;
   /**
    * 保留已归属
-   * @example
    */
   retainAscriEd?: number;
   /**
@@ -2046,12 +1969,10 @@ export interface GrantsLogListVo {
   soClass?: string;
   /**
    * 授予状态
-   * @example
    */
   status?: string;
   /**
    * 当前股价
-   * @example
    */
   stockPrice?: number;
 }
@@ -2059,44 +1980,36 @@ export interface GrantsLogListVo {
 export interface GrantsQueryInitVo {
   /**
    * 负责角色
-   * @example
    */
-  createRoleList?: [];
+  createRoleList?: CodeAndValueVo[];
   /**
    * 员工类型
-   * @example
    */
-  employeeType?: [];
+  employeeType?: CodeAndValueVo[];
   /**
    * 批量操作按钮
-   * @example
    */
-  options?: [];
+  options?: string[];
   /**
    * 计划下对应业务线下的部门列表
-   * @example
    */
-  orgIdList?: [];
+  orgIdList?: CodeAndValueVo[];
   /**
    * 计划结束日期
-   * @example
    */
   planEndDate?: string;
   /**
    * 计划开始日期
-   * @example
    */
   planStartDate?: string;
   /**
    * 授予角色
-   * @example
    */
-  soClassList?: [];
+  soClassList?: CodeAndValueVo[];
   /**
    * 授予状态
-   * @example
    */
-  statusList?: [];
+  statusList?: CodeAndValueVo[];
 }
 
 export interface GrantsVo {
@@ -2104,7 +2017,7 @@ export interface GrantsVo {
    * 归属明细，SO类型有
    * @example []
    */
-  ascriptionList?: [];
+  ascriptionList?: AscriptionSimpleVo[];
   /**
    * 备注
    * @example XX
@@ -2152,9 +2065,8 @@ export interface GrantsVo {
   limitDate?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 计划ID
    * @example 1111
@@ -2175,19 +2087,16 @@ export interface GrantsVo {
 export interface GrantsViewLog {
   /**
    * 授予类型
-   * @example
    */
   grantType?: string;
   /**
    * 授予编号
-   * @example
    */
   grantsCode?: string;
   /**
    * 日志list
-   * @example
    */
-  logList?: [];
+  logList?: LogCommonVo[];
 }
 
 export interface JsonResultAgreementViewVo {
@@ -2212,7 +2121,7 @@ export interface Warnings {}
 
 export interface JsonResultAscriptionVo {
   data?: AscriptionVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2223,12 +2132,12 @@ export interface JsonResultAscriptionVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultBussLineVo {
   data?: BussLineVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2239,12 +2148,12 @@ export interface JsonResultBussLineVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultCabUpdateMoveVo {
   data?: CabUpdateMoveVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2255,12 +2164,12 @@ export interface JsonResultCabUpdateMoveVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultCancelVo {
   data?: CancelVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2271,12 +2180,12 @@ export interface JsonResultCancelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultDepartmentVo {
   data?: DepartmentVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2287,12 +2196,12 @@ export interface JsonResultDepartmentVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultGrantsVo {
   data?: GrantsVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2303,12 +2212,12 @@ export interface JsonResultGrantsVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultGrantsViewLog {
   data?: GrantsViewLog;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2319,12 +2228,12 @@ export interface JsonResultGrantsViewLog {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListAgreementSuggestVo {
-  data?: [];
-  errors?: {};
+  data?: AgreementSuggestVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2335,12 +2244,12 @@ export interface JsonResultListAgreementSuggestVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListBussLineSuggestVo {
-  data?: [];
-  errors?: {};
+  data?: BussLineSuggestVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2351,12 +2260,12 @@ export interface JsonResultListBussLineSuggestVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListBussOrgLogListVo {
-  data?: [];
-  errors?: {};
+  data?: BussOrgLogListVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2367,12 +2276,12 @@ export interface JsonResultListBussOrgLogListVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListCGrantForRsvo {
-  data?: [];
-  errors?: {};
+  data?: CGrantForRsvo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2383,12 +2292,12 @@ export interface JsonResultListCGrantForRsvo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListCGrantForSovo {
-  data?: [];
-  errors?: {};
+  data?: CGrantForSovo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2399,12 +2308,12 @@ export interface JsonResultListCGrantForSovo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListDepartmentSimpleVo {
-  data?: [];
-  errors?: {};
+  data?: DepartmentSimpleVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2415,12 +2324,12 @@ export interface JsonResultListDepartmentSimpleVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListDepartmentSuggestVo {
-  data?: [];
-  errors?: {};
+  data?: DepartmentSuggestVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2431,12 +2340,12 @@ export interface JsonResultListDepartmentSuggestVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListEmployeeGrantsVo {
-  data?: [];
-  errors?: {};
+  data?: EmployeeGrantsVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2447,12 +2356,12 @@ export interface JsonResultListEmployeeGrantsVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListEmployeeVo {
-  data?: [];
-  errors?: {};
+  data?: EmployeeVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2463,12 +2372,12 @@ export interface JsonResultListEmployeeVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListEsopMenuVo {
-  data?: [];
-  errors?: {};
+  data?: EsopMenuVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2479,12 +2388,12 @@ export interface JsonResultListEsopMenuVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListLogCommonVoLogFreezingPeriodViewVo {
-  data?: [];
-  errors?: {};
+  data?: LogCommonVoLogFreezingPeriodViewVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2495,12 +2404,12 @@ export interface JsonResultListLogCommonVoLogFreezingPeriodViewVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListLogCommonVoLogPlanViewVo {
-  data?: [];
-  errors?: {};
+  data?: LogCommonVoLogPlanViewVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2511,12 +2420,12 @@ export interface JsonResultListLogCommonVoLogPlanViewVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListLogCommonVoLogRightPriceViewVo {
-  data?: [];
-  errors?: {};
+  data?: LogCommonVoLogRightPriceViewVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2527,12 +2436,12 @@ export interface JsonResultListLogCommonVoLogRightPriceViewVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListLogCommonVoLogStockPriceViewVo {
-  data?: [];
-  errors?: {};
+  data?: LogCommonVoLogStockPriceViewVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2543,12 +2452,12 @@ export interface JsonResultListLogCommonVoLogStockPriceViewVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListOrgVo {
-  data?: [];
-  errors?: {};
+  data?: OrgVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2559,12 +2468,12 @@ export interface JsonResultListOrgVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListPlanSimpleVo {
-  data?: [];
-  errors?: {};
+  data?: PlanSimpleVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2575,12 +2484,12 @@ export interface JsonResultListPlanSimpleVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListSoAscriptionSimpleVo {
-  data?: [];
-  errors?: {};
+  data?: SoAscriptionSimpleVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2591,12 +2500,12 @@ export interface JsonResultListSoAscriptionSimpleVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListTbcGrantVo {
-  data?: [];
-  errors?: {};
+  data?: TbcGrantVo[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2607,12 +2516,12 @@ export interface JsonResultListTbcGrantVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultListString {
-  data?: [];
-  errors?: {};
+  data?: string[];
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2623,12 +2532,12 @@ export interface JsonResultListString {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultLogPlanPanelVo {
   data?: LogPlanPanelVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2639,12 +2548,12 @@ export interface JsonResultLogPlanPanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultLogPlanPlanViewVo {
   data?: LogPlanPlanViewVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2655,12 +2564,12 @@ export interface JsonResultLogPlanPlanViewVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultLogQueryInitVo {
   data?: LogQueryInitVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2671,12 +2580,12 @@ export interface JsonResultLogQueryInitVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultMapStringAnalyzeMovePanelVo {
   data?: Data;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2687,14 +2596,14 @@ export interface JsonResultMapStringAnalyzeMovePanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface Data {}
 
 export interface JsonResultMapStringAnalyzePanelVo {
-  data?: {};
-  errors?: {};
+  data?: Object;
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2705,12 +2614,12 @@ export interface JsonResultMapStringAnalyzePanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultMapStringAnalyzeQuitPanelVo {
-  data?: {};
-  errors?: {};
+  data?: Object;
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2721,12 +2630,12 @@ export interface JsonResultMapStringAnalyzeQuitPanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultMapStringGrantsQueryInitVo {
-  data?: {};
-  errors?: {};
+  data?: Object;
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2737,12 +2646,12 @@ export interface JsonResultMapStringGrantsQueryInitVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultMapStringMovePanelVo {
-  data?: {};
-  errors?: {};
+  data?: Object;
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2753,12 +2662,12 @@ export interface JsonResultMapStringMovePanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultMapStringQuitPanelVo {
-  data?: {};
-  errors?: {};
+  data?: Object;
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2769,12 +2678,12 @@ export interface JsonResultMapStringQuitPanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultMoveCbQueryParams {
   data?: MoveCbQueryParams;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2785,12 +2694,12 @@ export interface JsonResultMoveCbQueryParams {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoAgreementVo {
   data?: PageInfoAgreementVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2801,12 +2710,12 @@ export interface JsonResultPageInfoAgreementVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoBussLineVo {
   data?: PageInfoBussLineVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2817,12 +2726,12 @@ export interface JsonResultPageInfoBussLineVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoDepartmentVo {
   data?: PageInfoDepartmentVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2833,12 +2742,12 @@ export interface JsonResultPageInfoDepartmentVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoFreezingPeriodQueryVo {
   data?: PageInfoFreezingPeriodQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2849,12 +2758,12 @@ export interface JsonResultPageInfoFreezingPeriodQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoGrantsListVo {
   data?: PageInfoGrantsListVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2865,12 +2774,12 @@ export interface JsonResultPageInfoGrantsListVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoGrantsLogListVo {
   data?: PageInfoGrantsLogListVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2881,12 +2790,12 @@ export interface JsonResultPageInfoGrantsLogListVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoLogPlanQueryVo {
   data?: PageInfoLogPlanQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2897,12 +2806,12 @@ export interface JsonResultPageInfoLogPlanQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoMoveCbQueryVo {
   data?: PageInfoMoveCbQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2913,12 +2822,12 @@ export interface JsonResultPageInfoMoveCbQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoMoveRsAnlyVo {
   data?: PageInfoMoveRsAnlyVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2929,12 +2838,12 @@ export interface JsonResultPageInfoMoveRsAnlyVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoMoveRsQueryVo {
   data?: PageInfoMoveRsQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2945,12 +2854,12 @@ export interface JsonResultPageInfoMoveRsQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoMoveSoAnlyVo {
   data?: PageInfoMoveSoAnlyVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2961,12 +2870,12 @@ export interface JsonResultPageInfoMoveSoAnlyVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoMoveSoQueryVo {
   data?: PageInfoMoveSoQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2977,12 +2886,12 @@ export interface JsonResultPageInfoMoveSoQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoPlanQueryVo {
   data?: PageInfoPlanQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -2993,12 +2902,12 @@ export interface JsonResultPageInfoPlanQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoQuitRsAnlyVo {
   data?: PageInfoQuitRsAnlyVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3009,12 +2918,12 @@ export interface JsonResultPageInfoQuitRsAnlyVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoQuitRsQueryVo {
   data?: PageInfoQuitRsQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3025,12 +2934,12 @@ export interface JsonResultPageInfoQuitRsQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoQuitSoAnlyVo {
   data?: PageInfoQuitSoAnlyVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3041,12 +2950,12 @@ export interface JsonResultPageInfoQuitSoAnlyVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoQuitSoQueryVo {
   data?: PageInfoQuitSoQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3057,12 +2966,12 @@ export interface JsonResultPageInfoQuitSoQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoRightPriceQueryVo {
   data?: PageInfoRightPriceQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3073,12 +2982,12 @@ export interface JsonResultPageInfoRightPriceQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoStockOwnVo {
   data?: PageInfoStockOwnVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3089,12 +2998,12 @@ export interface JsonResultPageInfoStockOwnVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPageInfoStockPriceQueryVo {
   data?: PageInfoStockPriceQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3105,12 +3014,12 @@ export interface JsonResultPageInfoStockPriceQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPlanPanelVo {
   data?: PlanPanelVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3121,12 +3030,12 @@ export interface JsonResultPlanPanelVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultPlanViewVo {
   data?: PlanViewVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3137,12 +3046,12 @@ export interface JsonResultPlanViewVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultQuitDeduDetailVo {
   data?: QuitDeduDetailVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3153,12 +3062,12 @@ export interface JsonResultQuitDeduDetailVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultRsAscriptionVo {
   data?: RsAscriptionVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3169,12 +3078,12 @@ export interface JsonResultRsAscriptionVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultRightPriceQueryVo {
   data?: RightPriceQueryVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3185,12 +3094,12 @@ export interface JsonResultRightPriceQueryVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultStockUseSimpleInfoVo {
   data?: StockUseSimpleInfoVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3201,12 +3110,12 @@ export interface JsonResultStockUseSimpleInfoVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultTbcGrantBeforeVo {
   data?: TbcGrantBeforeVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3217,12 +3126,12 @@ export interface JsonResultTbcGrantBeforeVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultUserVo {
   data?: UserVo;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3233,11 +3142,11 @@ export interface JsonResultUserVo {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultVoid {
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3248,12 +3157,12 @@ export interface JsonResultVoid {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultBoolean {
   data?: boolean;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3264,12 +3173,12 @@ export interface JsonResultBoolean {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultInt {
   data?: number;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3280,12 +3189,12 @@ export interface JsonResultInt {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultLong {
   data?: number;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3296,12 +3205,12 @@ export interface JsonResultLong {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface JsonResultString {
   data?: string;
-  errors?: {};
+  errors?: Object;
   /**
    * 话术
    * @example 系统异常/操作成功
@@ -3312,18 +3221,16 @@ export interface JsonResultString {
    * @example ok
    */
   status?: string;
-  warnings?: {};
+  warnings?: Object;
 }
 
 export interface LogCommonVo {
   /**
    * 日志详情
-   * @example
    */
-  logs?: [];
+  logs?: Object[];
   /**
    * 操作人信息
-   * @example
    */
   operation?: EmployeeVo;
   /**
@@ -3346,12 +3253,10 @@ export interface LogCommonVo {
 export interface LogCommonVoLogFreezingPeriodViewVo {
   /**
    * 日志详情
-   * @example
    */
-  logs?: [];
+  logs?: LogFreezingPeriodViewVo[];
   /**
    * 操作人信息
-   * @example
    */
   operation?: EmployeeVo;
   /**
@@ -3374,12 +3279,10 @@ export interface LogCommonVoLogFreezingPeriodViewVo {
 export interface LogCommonVoLogPlanViewVo {
   /**
    * 日志详情
-   * @example
    */
-  logs?: [];
+  logs?: LogPlanViewVo[];
   /**
    * 操作人信息
-   * @example
    */
   operation?: EmployeeVo;
   /**
@@ -3402,12 +3305,10 @@ export interface LogCommonVoLogPlanViewVo {
 export interface LogCommonVoLogRightPriceViewVo {
   /**
    * 日志详情
-   * @example
    */
-  logs?: [];
+  logs?: LogRightPriceViewVo[];
   /**
    * 操作人信息
-   * @example
    */
   operation?: EmployeeVo;
   /**
@@ -3430,12 +3331,10 @@ export interface LogCommonVoLogRightPriceViewVo {
 export interface LogCommonVoLogStockPriceViewVo {
   /**
    * 日志详情
-   * @example
    */
-  logs?: [];
+  logs?: LogStockPriceViewVo[];
   /**
    * 操作人信息
-   * @example
    */
   operation?: EmployeeVo;
   /**
@@ -3473,7 +3372,6 @@ export interface LogFreezingPeriodViewVo {
   logId?: number;
   /**
    * 老值或新值
-   * @example
    */
   oldOrNew?: string;
   /**
@@ -3486,27 +3384,23 @@ export interface LogFreezingPeriodViewVo {
 export interface LogPlanPanelVo {
   /**
    * 状态
-   * @example
    */
-  status?: [];
+  status?: CodeAndValueVo[];
 }
 
 export interface LogPlanPlanViewVo {
   /**
    * 协议id
-   * @example
    */
   agreeId?: number;
   /**
    * 业务线id
-   * @example
    */
   bussLineId?: number;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: EmployeeVo[];
   /**
    * 备注
    * @example 激励效果非常好，继续保持
@@ -3514,19 +3408,16 @@ export interface LogPlanPlanViewVo {
   comments?: string;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: EmployeeVo[];
   /**
    * leadingBp
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: EmployeeVo[];
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 计划Code
    * @example planCode
@@ -3602,9 +3493,8 @@ export interface LogPlanQueryDto {
   planStartDateRight?: string;
   /**
    * 状态
-   * @example
    */
-  status?: [];
+  status?: string[];
 }
 
 export interface LogPlanQueryVo {
@@ -3615,9 +3505,8 @@ export interface LogPlanQueryVo {
   bussLineName?: string;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: EmployeeVo[];
   /**
    * 是否已冻结
    * @example Y
@@ -3625,24 +3514,20 @@ export interface LogPlanQueryVo {
   freezing?: string;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: EmployeeVo[];
   /**
    * leadingBp
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: EmployeeVo[];
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划Code
    * @example planCode
@@ -3688,19 +3573,16 @@ export interface LogPlanQueryVo {
 export interface LogPlanViewVo {
   /**
    * 协议名称
-   * @example
    */
   agreeName?: string;
   /**
    * 业务线名称
-   * @example
    */
   bussLineName?: string;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: EmployeeVo[];
   /**
    * 备注
    * @example 激励效果非常好，继续保持
@@ -3708,14 +3590,12 @@ export interface LogPlanViewVo {
   comments?: string;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: EmployeeVo[];
   /**
    * leadingBp
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: EmployeeVo[];
   /**
    * 日志ID
    * @example 11111
@@ -3723,7 +3603,6 @@ export interface LogPlanViewVo {
   logId?: number;
   /**
    * 老值还是新值
-   * @example
    */
   oldOrNew?: string;
   /**
@@ -3761,39 +3640,32 @@ export interface LogPlanViewVo {
 export interface LogQueryInitVo {
   /**
    * 授予结束日期
-   * @example
    */
   grantEndDate?: string;
   /**
    * 授予开始日期
-   * @example
    */
   grantStartDate?: string;
   /**
    * 授予类型
-   * @example
    */
-  grantTypeList?: [];
+  grantTypeList?: CodeAndValueVo[];
   /**
    * 计划下对应业务线下的部门列表
-   * @example
    */
-  orgIdList?: [];
+  orgIdList?: CodeAndValueVo[];
   /**
    * 计划列表
-   * @example
    */
-  planList?: [];
+  planList?: PlanSimpleVo[];
   /**
    * rs授予状态
-   * @example
    */
-  rsStatusList?: [];
+  rsStatusList?: CodeAndValueVo[];
   /**
    * so授予状态
-   * @example
    */
-  soStatusList?: [];
+  soStatusList?: CodeAndValueVo[];
 }
 
 export interface LogRightPriceViewVo {
@@ -3809,7 +3681,6 @@ export interface LogRightPriceViewVo {
   logId?: number;
   /**
    * 老值或新值
-   * @example
    */
   oldOrNew?: string;
   /**
@@ -3837,7 +3708,6 @@ export interface LogStockPriceViewVo {
   logId?: number;
   /**
    * 老值或新值
-   * @example
    */
   oldOrNew?: string;
   /**
@@ -3874,7 +3744,7 @@ export interface MoveAnalyzeDto {
    * 扣减状态
    * @example 扣减状态
    */
-  deduStatusSet?: [];
+  deduStatusSet?: string[];
   /**
    * 授予处理调出开始时间
    * @example 2017-11-11
@@ -3889,7 +3759,7 @@ export interface MoveAnalyzeDto {
    * 授予状态
    * @example 授予状态
    */
-  grantStatusSet?: [];
+  grantStatusSet?: string[];
   /**
    * 授予类型
    * @example 授予类型CODE RS/SO
@@ -3907,9 +3777,8 @@ export interface MoveAnalyzeDto {
   pageSize?: number;
   /**
    * 退款状态 RS 才有
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: string[];
   /**
    * personId
    * @example 员工ID
@@ -3970,9 +3839,8 @@ export interface MoveCbListDto {
   pageSize?: number;
   /**
    * 付款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: string[];
   /**
    * 计划id或者全选
    * @example 1111
@@ -4013,14 +3881,12 @@ export interface MoveCbPanelVo {
   moveDateRight?: string;
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 付款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: CodeAndValueVo[];
 }
 
 export interface MoveCbQueryDto {
@@ -4029,7 +3895,7 @@ export interface MoveCbQueryDto {
 
 export interface MoveCbQueryParams {
   panelMap?: PanelMap;
-  planList?: [];
+  planList?: PlanSimpleVo[];
 }
 
 export interface MoveCbQueryVo {
@@ -4070,7 +3936,6 @@ export interface MoveCbQueryVo {
   deduStatus?: string;
   /**
    * 员工信息
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -4095,9 +3960,8 @@ export interface MoveCbQueryVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
    * @example 2018-02-02
@@ -4120,9 +3984,8 @@ export interface MoveCbQueryVo {
   oldOrgName?: string;
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 付款状态
    * @example 付款状态
@@ -4186,14 +4049,12 @@ export interface MoveCbUpdateDto {
 export interface MovePanelVo {
   /**
    * 授予负责角色/授予创建角色
-   * @example
    */
-  creatRole?: [];
+  creatRole?: CodeAndValueVo[];
   /**
    * 扣减状态
-   * @example
    */
-  deduStatus?: [];
+  deduStatus?: CodeAndValueVo[];
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -4216,19 +4077,16 @@ export interface MovePanelVo {
   moveDateRight?: string;
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 付款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: CodeAndValueVo[];
   /**
    * 授予状态
-   * @example
    */
-  status?: [];
+  status?: CodeAndValueVo[];
 }
 
 export interface MoveRsAnlyVo {
@@ -4259,7 +4117,6 @@ export interface MoveRsAnlyVo {
   deduStatus?: string;
   /**
    * 员工姓名
-   * @example
    */
   employeeName?: string;
   /**
@@ -4294,9 +4151,8 @@ export interface MoveRsAnlyVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
    * @example 2018-02-02
@@ -4362,14 +4218,12 @@ export interface MoveRsAnlyVo {
 export interface MoveRsQueryDto {
   /**
    * 授予负责角色
-   * @example
    */
-  creatRole?: [];
+  creatRole?: string[];
   /**
    * 扣减状态
-   * @example
    */
-  deduStatus?: [];
+  deduStatus?: string[];
   /**
    * 授予日期左边界
    * @example 2018-01-03
@@ -4402,9 +4256,8 @@ export interface MoveRsQueryDto {
   pageSize?: number;
   /**
    * 付款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: string[];
   /**
    * 计划id
    * @example 1111
@@ -4412,9 +4265,8 @@ export interface MoveRsQueryDto {
   planId?: number;
   /**
    * 授予状态
-   * @example
    */
-  status?: [];
+  status?: string[];
   /**
    * 员工/授予ID
    * @example 11111
@@ -4460,7 +4312,6 @@ export interface MoveRsQueryVo {
   deduStatus?: string;
   /**
    * 员工
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -4485,9 +4336,8 @@ export interface MoveRsQueryVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
    * @example 2018-02-02
@@ -4510,9 +4360,8 @@ export interface MoveRsQueryVo {
   oldOrgName?: string;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 付款状态
    * @example 付款状态
@@ -4578,7 +4427,6 @@ export interface MoveSoAnlyVo {
   deduStatus?: string;
   /**
    * 员工姓名
-   * @example
    */
   employeeName?: string;
   /**
@@ -4613,9 +4461,8 @@ export interface MoveSoAnlyVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
    * @example 2018-02-02
@@ -4656,14 +4503,12 @@ export interface MoveSoAnlyVo {
 export interface MoveSoQueryDto {
   /**
    * 授予负责角色
-   * @example
    */
-  creatRole?: [];
+  creatRole?: string[];
   /**
    * 扣减状态
-   * @example
    */
-  deduStatus?: [];
+  deduStatus?: string[];
   /**
    * 授予日期左边界
    * @example 2018-02-02
@@ -4701,9 +4546,8 @@ export interface MoveSoQueryDto {
   planId?: number;
   /**
    * 授予状态
-   * @example
    */
-  status?: [];
+  status?: string[];
   /**
    * 员工/授予ID
    * @example 11111
@@ -4749,7 +4593,6 @@ export interface MoveSoQueryVo {
   deduStatus?: string;
   /**
    * 员工
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -4774,9 +4617,8 @@ export interface MoveSoQueryVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
    * @example 2018-02-02
@@ -4799,9 +4641,8 @@ export interface MoveSoQueryVo {
   oldOrgName?: string;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
@@ -4845,11 +4686,11 @@ export interface PageInfoAgreementVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: AgreementVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -4868,11 +4709,11 @@ export interface PageInfoBussLineVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: BussLineVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -4891,11 +4732,11 @@ export interface PageInfoDepartmentVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: DepartmentVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -4914,11 +4755,11 @@ export interface PageInfoFreezingPeriodQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: FreezingPeriodQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -4937,11 +4778,11 @@ export interface PageInfoGrantsListVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: GrantsListVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -4960,11 +4801,11 @@ export interface PageInfoGrantsLogListVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: GrantsLogListVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -4983,11 +4824,11 @@ export interface PageInfoLogPlanQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: LogPlanQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5006,11 +4847,11 @@ export interface PageInfoMoveCbQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: MoveCbQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5029,11 +4870,11 @@ export interface PageInfoMoveRsAnlyVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: MoveRsAnlyVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5052,11 +4893,11 @@ export interface PageInfoMoveRsQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: MoveRsQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5075,11 +4916,11 @@ export interface PageInfoMoveSoAnlyVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: MoveSoAnlyVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5098,11 +4939,11 @@ export interface PageInfoMoveSoQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: MoveSoQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5121,11 +4962,11 @@ export interface PageInfoPlanQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: PlanQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5144,11 +4985,11 @@ export interface PageInfoQuitRsAnlyVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: QuitRsAnlyVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5167,11 +5008,11 @@ export interface PageInfoQuitRsQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: QuitRsQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5190,11 +5031,11 @@ export interface PageInfoQuitSoAnlyVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: QuitSoAnlyVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5213,11 +5054,11 @@ export interface PageInfoQuitSoQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: QuitSoQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5236,11 +5077,11 @@ export interface PageInfoRightPriceQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: RightPriceQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5259,11 +5100,11 @@ export interface PageInfoStockOwnVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: StockOwnVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5282,11 +5123,11 @@ export interface PageInfoStockPriceQueryVo {
   isFirstPage?: boolean;
   isLastPage?: boolean;
   lastPage?: number;
-  list?: [];
+  list?: StockPriceQueryVo[];
   navigateFirstPage?: number;
   navigateLastPage?: number;
   navigatePages?: number;
-  navigatepageNums?: [];
+  navigatepageNums?: number[];
   nextPage?: number;
   pageNum?: number;
   pageSize?: number;
@@ -5313,9 +5154,8 @@ export interface PlanNameCodeCheckDto {
 export interface PlanPanelVo {
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 开始日期左边界
    * @example 2017-02-08
@@ -5328,9 +5168,8 @@ export interface PlanPanelVo {
   planStartDateRight?: string;
   /**
    * 状态
-   * @example
    */
-  status?: [];
+  status?: CodeAndValueVo[];
 }
 
 export interface PlanQueryDto {
@@ -5366,9 +5205,8 @@ export interface PlanQueryDto {
   planStartDateRight?: string;
   /**
    * 状态
-   * @example
    */
-  status?: [];
+  status?: string[];
 }
 
 export interface PlanQueryVo {
@@ -5379,9 +5217,8 @@ export interface PlanQueryVo {
   bussLineName?: string;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: EmployeeVo[];
   /**
    * 是否已冻结
    * @example Y
@@ -5389,24 +5226,20 @@ export interface PlanQueryVo {
   freezing?: string;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: EmployeeVo[];
   /**
    * leadingBp
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: EmployeeVo[];
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划Code
    * @example planCode
@@ -5452,19 +5285,16 @@ export interface PlanQueryVo {
 export interface PlanReleaseDto {
   /**
    * 协议
-   * @example
    */
   agreeId?: number;
   /**
    * 业务线
-   * @example
    */
   bussLineId?: number;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: number[];
   /**
    * 备注
    * @example 激励效果非常好，继续保持
@@ -5472,14 +5302,12 @@ export interface PlanReleaseDto {
   comments?: string;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: number[];
   /**
    * leadingBpIdStr
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: number[];
   /**
    * 计划Code
    * @example A123
@@ -5520,19 +5348,16 @@ export interface PlanReleaseDto {
 export interface PlanSaveDto {
   /**
    * 协议
-   * @example
    */
   agreeId?: number;
   /**
    * 业务线
-   * @example
    */
   bussLineId?: number;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: number[];
   /**
    * 备注
    * @example 激励效果非常好，继续保持
@@ -5540,14 +5365,12 @@ export interface PlanSaveDto {
   comments?: string;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: number[];
   /**
    * leadingBpIdStr
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: number[];
   /**
    * 计划Code
    * @example A123
@@ -5606,40 +5429,34 @@ export interface PlanSimpleVo {
 export interface PlanViewVo {
   /**
    * 协议id
-   * @example
    */
   agreeId?: number;
   /**
    * 业务线id
-   * @example
    */
   bussLineId?: number;
   /**
    * 业务负责人
-   * @example
    */
-  bussManager?: [];
+  bussManager?: EmployeeVo[];
   /**
    * 备注
    * @example 激励效果非常好，继续保持
    */
   comments?: string;
-  edit?: {};
+  edit?: Object;
   /**
    * HRBP
-   * @example
    */
-  hrbp?: [];
+  hrbp?: EmployeeVo[];
   /**
    * leadingBp
-   * @example
    */
-  leadingBp?: [];
+  leadingBp?: EmployeeVo[];
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 计划Code
    * @example planCode
@@ -5706,9 +5523,8 @@ export interface QuitAnalyzeDto {
   pageSize?: number;
   /**
    * 付款状态 RS 才有
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: string[];
   /**
    * personId
    * @example 11
@@ -5769,7 +5585,6 @@ export interface QuitDeduDetailVo {
   editFlag?: string;
   /**
    * 员工
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -5794,9 +5609,8 @@ export interface QuitDeduDetailVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 退款状态
    * @example 退款状态
@@ -5905,14 +5719,12 @@ export interface QuitPanelVo {
   grantDateRight?: string;
   /**
    * 操作列表
-   * @example
    */
-  operation?: [];
+  operation?: string[];
   /**
    * 付款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: CodeAndValueVo[];
   /**
    * 离职日期左边界
    * @example 2018-01-03
@@ -5978,9 +5790,8 @@ export interface QuitRsAnlyVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 部门Id
    * @example 前端不显示
@@ -6057,9 +5868,8 @@ export interface QuitRsQueryDto {
   pageSize?: number;
   /**
    * 付款状态
-   * @example
    */
-  paymentStatus?: [];
+  paymentStatus?: string[];
   /**
    * 计划id
    * @example 1111
@@ -6120,7 +5930,6 @@ export interface QuitRsQueryVo {
   deduStatus?: string;
   /**
    * 员工
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -6145,14 +5954,12 @@ export interface QuitRsQueryVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 退款状态
    * @example 退款状态
@@ -6258,9 +6065,8 @@ export interface QuitSoAnlyVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 部门Id
    * @example 前端不显示
@@ -6273,7 +6079,6 @@ export interface QuitSoAnlyVo {
   orgName?: string;
   /**
    * 员工id
-   * @example
    */
   personId?: number;
   /**
@@ -6394,7 +6199,6 @@ export interface QuitSoQueryVo {
   deduStatus?: string;
   /**
    * 员工
-   * @example
    */
   employee?: EmployeeVo;
   /**
@@ -6419,14 +6223,12 @@ export interface QuitSoQueryVo {
   grantsCode?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 虚拟股权计划名称
    * @example 渡鸦计划
@@ -6460,7 +6262,7 @@ export interface QuitSoQueryVo {
 }
 
 export interface RsAscrUpdateDto {
-  ascrList?: [];
+  ascrList?: RsAscriptionDto[];
   grantsId?: number;
 }
 
@@ -6555,7 +6357,7 @@ export interface RsAscriptionVo {
    * 归属明细和是否可以修改标志
    * @example []
    */
-  rsAscrList?: [];
+  rsAscrList?: RsAscriptionSimpleVo[];
 }
 
 export interface RsFullAscrDto {
@@ -6568,7 +6370,7 @@ export interface RsFullAscrDto {
    * 授予id列表
    * @example []
    */
-  codes?: [];
+  codes?: string[];
 }
 
 export interface RightPriceQueryDto {
@@ -6602,14 +6404,12 @@ export interface RightPriceQueryVo {
   comments?: string;
   /**
    * 编辑
-   * @example
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划ID
    * @example 11111
@@ -6698,7 +6498,7 @@ export interface StockOwnQueryDto {
    * 员工类型
    * @example []
    */
-  employeeType?: [];
+  employeeType?: string[];
   /**
    * 授予结束日期
    * @example 2018-01-25 12:23:12
@@ -6716,9 +6516,8 @@ export interface StockOwnQueryDto {
   grantType?: string;
   /**
    * 部门ID
-   * @example
    */
-  orgIdList?: [];
+  orgIdList?: number[];
   /**
    * 第几页
    * @example 1
@@ -6731,19 +6530,16 @@ export interface StockOwnQueryDto {
   pageSize?: number;
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
   /**
    * 授予角色
-   * @example
    */
-  soClassList?: [];
+  soClassList?: string[];
   /**
    * 授予状态
-   * @example
    */
-  statusList?: [];
+  statusList?: string[];
   /**
    * suggestId
    * @example 1111
@@ -6759,27 +6555,22 @@ export interface StockOwnQueryDto {
 export interface StockOwnVo {
   /**
    * 已归属
-   * @example
    */
   ascriptionEd?: number;
   /**
    * 未归属
-   * @example
    */
   ascriptionIng?: number;
   /**
    * 归属规则
-   * @example
    */
   ascriptionRule?: string;
   /**
    * 取消已归属
-   * @example
    */
   cancelAscriEd?: number;
   /**
    * 取消未归属
-   * @example
    */
   cancelAscriIng?: number;
   /**
@@ -6801,40 +6592,33 @@ export interface StockOwnVo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 员工编号
-   * @example
    */
   employeeNumber?: string;
   /**
    * 授予数量
-   * @example
    */
   grantAmount?: number;
   /**
    * 授予日期
-   * @example
    */
   grantDateStr?: string;
   /**
    * 授予类型
-   * @example
    */
   grantType?: string;
   /**
    * 授予编号
-   * @example
    */
   grantsCode?: string;
   /**
    * 授予ID
-   * @example
    */
   grantsId?: number;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -6849,72 +6633,59 @@ export interface StockOwnVo {
   lastUpdatedByName?: string;
   /**
    * 离职时间
-   * @example
    */
   leaveDate?: string;
   /**
    * 离职日期
-   * @example
    */
   leaveDateStr?: string;
   /**
    * 出资期限
-   * @example
    */
   limitDate?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 人事变更调出时间
-   * @example
    */
   moveDate?: string;
   /**
    * 人事变更调出日期
-   * @example
    */
   moveDateStr?: string;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 部门名
-   * @example
    */
   orgName?: string;
   /**
    * 员工id
-   * @example
    */
   personId?: number;
   /**
    * 员工姓名
-   * @example
    */
   personName?: string;
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
   /**
    * 计划名字
-   * @example
    */
   planName?: string;
   /**
    * 行权价(SO)/认购价(RS)
-   * @example
    */
   price?: number;
   /**
    * 保留已归属
-   * @example
    */
   retainAscriEd?: number;
   /**
@@ -6924,12 +6695,10 @@ export interface StockOwnVo {
   soClass?: string;
   /**
    * 授予状态
-   * @example
    */
   status?: string;
   /**
    * 当前股价
-   * @example
    */
   stockPrice?: number;
 }
@@ -6960,14 +6729,12 @@ export interface StockPriceQueryVo {
   comments?: string;
   /**
    * 编辑
-   * @example
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 操作列表
-   * @example
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划ID
    * @example 11111
@@ -7031,27 +6798,22 @@ export interface StockSaveDto {
 export interface StockSimpleVo {
   /**
    * 已作废股票
-   * @example
    */
   abolished?: number;
   /**
    * 股票总份额
-   * @example
    */
   total?: number;
   /**
    * 股票类型
-   * @example
    */
   type?: string;
   /**
    * 未使用股票(包含还在池子里没动的以及处于草稿状态的)
-   * @example
    */
   unused?: number;
   /**
    * 已使用股票
-   * @example
    */
   used?: number;
 }
@@ -7059,7 +6821,6 @@ export interface StockSimpleVo {
 export interface StockUseInfoDto {
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
 }
@@ -7068,17 +6829,14 @@ export interface StockUseSimpleInfoVo {
   freeze?: boolean;
   /**
    * 计划ID
-   * @example
    */
   planId?: number;
   /**
    * rs股票使用情况
-   * @example
    */
   rs?: StockSimpleVo;
   /**
    * so股票使用情况
-   * @example
    */
   so?: StockSimpleVo;
 }
@@ -7149,7 +6907,7 @@ export interface TbcGrantVo {
    * 属性是否可以编辑
    * @example {"attribute1":"N","attribute2":"Y"}
    */
-  edit?: {};
+  edit?: Object;
   /**
    * 授予数量
    * @example 10000
@@ -7177,7 +6935,6 @@ export interface TbcGrantVo {
   grantsId?: number;
   /**
    * 修改时间
-   * @example
    */
   lastUpdateDate?: Timestamp;
   /**
@@ -7197,14 +6954,13 @@ export interface TbcGrantVo {
   limitDate?: string;
   /**
    * 国际化
-   * @example
    */
-  map?: {};
+  map?: Object;
   /**
    * 操作列所有需要显示的按钮
    * @example ["SAVE"]
    */
-  operations?: [];
+  operations?: string[];
   /**
    * 计划ID
    * @example 1111

@@ -3,7 +3,7 @@ import type { Formatter } from './types/Formatter'
 import { SchemaPath } from './types/Schema'
 import type { Schema } from './types/Schema'
 import type { Transformer } from './types/Transformer'
-import prettier from './prettier/index'
+import prettier from './prettier'
 const pReduce = require('p-reduce')
 
 const presetFormat = {

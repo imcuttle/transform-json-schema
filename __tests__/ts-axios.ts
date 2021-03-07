@@ -1,9 +1,9 @@
 /* eslint-disable */
-/* @ts-nocheck */
+// @ts-nocheck
 import {
   responseDataAxios,
   pathRegexpAxios,
-  stringDataAxios
+  stringDataAxios,
 } from "decorate-axios";
 import merge from "lodash.merge";
 import { AxiosRequestConfig } from "axios";
@@ -361,11 +361,14 @@ export interface PracticalQuestionVo {
   type?: number;
 }
 
+// Api code start
 responseDataAxios()(axios);
 pathRegexpAxios()(axios);
 stringDataAxios()(axios);
+
 const COMMON_PREFIX = "/tutor-cyber-corpus/:client/";
 const COMMON_CONFIG = { responseData: true };
+
 export interface BackdoorsAnalysisExcelJobPostQueryParams {
   /**
    * 用户ID
@@ -392,21 +395,21 @@ export interface BackdoorsAnalysisExcelJobPostQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type BackdoorsAnalysisExcelJobPostResponseOk = any;
+export type BackdoorsAnalysisExcelJobPostRes200 = any;
 
 export function postBackdoorsAnalysisExcelJob(
   params?: BackdoorsAnalysisExcelJobPostQueryParams,
   data?: FormData,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<BackdoorsAnalysisExcelJobPostResponseOk>(
+  return axios<BackdoorsAnalysisExcelJobPostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "backdoors/analysis-excel-job",
         method: "post",
         pathData: {},
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -446,7 +449,7 @@ export interface ExercisesParaphraseIdCreateOrUpdateOrDeletePostBodyParams {
    */
   exercises?: number[];
 }
-export type ExercisesParaphraseIdCreateOrUpdateOrDeletePostResponseOk = boolean;
+export type ExercisesParaphraseIdCreateOrUpdateOrDeletePostRes200 = boolean;
 
 export function postExercisesParaphraseIdCreateOrUpdateOrDelete(
   paraphraseId: any,
@@ -454,16 +457,16 @@ export function postExercisesParaphraseIdCreateOrUpdateOrDelete(
   data?: ExercisesParaphraseIdCreateOrUpdateOrDeletePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<ExercisesParaphraseIdCreateOrUpdateOrDeletePostResponseOk>(
+  return axios<ExercisesParaphraseIdCreateOrUpdateOrDeletePostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "exercises/:paraphraseId/createOrUpdateOrDelete",
         method: "post",
         pathData: {
-          paraphraseId
+          paraphraseId,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -503,7 +506,7 @@ export interface ExplainsWordIdCreateOrUpdateOrDeletePostBodyParams {
    */
   vos?: ExplainVo[];
 }
-export type ExplainsWordIdCreateOrUpdateOrDeletePostResponseOk = boolean;
+export type ExplainsWordIdCreateOrUpdateOrDeletePostRes200 = boolean;
 
 export function postExplainsWordIdCreateOrUpdateOrDelete(
   wordId: any,
@@ -511,16 +514,16 @@ export function postExplainsWordIdCreateOrUpdateOrDelete(
   data?: ExplainsWordIdCreateOrUpdateOrDeletePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<ExplainsWordIdCreateOrUpdateOrDeletePostResponseOk>(
+  return axios<ExplainsWordIdCreateOrUpdateOrDeletePostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "explains/:wordId/createOrUpdateOrDelete",
         method: "post",
         pathData: {
-          wordId
+          wordId,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -560,7 +563,7 @@ export interface KnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDeletePostBodyPar
    */
   vocabularyIds?: number[];
 }
-export type KnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDeletePostResponseOk = boolean;
+export type KnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDeletePostRes200 = boolean;
 
 export function postKnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDelete(
   knowledgeId: any,
@@ -568,9 +571,7 @@ export function postKnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDelete(
   data?: KnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDeletePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<
-    KnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDeletePostResponseOk
-  >(
+  return axios<KnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDeletePostRes200>(
     merge(
       {
         url:
@@ -578,10 +579,10 @@ export function postKnowledgeVocabularyKnowledgeIdCreateOrUpdateOrDelete(
           "knowledge-vocabulary/:knowledgeId/createOrUpdateOrDelete",
         method: "post",
         pathData: {
-          knowledgeId
+          knowledgeId,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -622,19 +623,19 @@ export interface ParaphrasesBatchQueryGetQueryParams {
 /**
  * OK
  */
-export interface ParaphrasesBatchQueryGetResponseOk {}
+export interface ParaphrasesBatchQueryGetRes200 {}
 
 export function getParaphrasesBatchQuery(
   params?: ParaphrasesBatchQueryGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<ParaphrasesBatchQueryGetResponseOk>(
+  return axios<ParaphrasesBatchQueryGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "paraphrases/batch-query",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -674,21 +675,21 @@ export interface ParaphrasesBatchSavePostBodyParams {
    */
   paraphraseVOList?: ParaphraseVo[];
 }
-export type ParaphrasesBatchSavePostResponseOk = number[];
+export type ParaphrasesBatchSavePostRes200 = number[];
 
 export function postParaphrasesBatchSave(
   params?: ParaphrasesBatchSavePostQueryParams,
   data?: ParaphrasesBatchSavePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<ParaphrasesBatchSavePostResponseOk>(
+  return axios<ParaphrasesBatchSavePostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "paraphrases/batch-save",
         method: "post",
         pathData: {},
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -722,22 +723,22 @@ export interface ParaphrasesIdDeleteDeleteQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type ParaphrasesIdDeleteDeleteResponseOk = boolean;
+export type ParaphrasesIdDeleteDeleteRes200 = boolean;
 
 export function deleteParaphrasesIdDelete(
   id: any,
   params?: ParaphrasesIdDeleteDeleteQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<ParaphrasesIdDeleteDeleteResponseOk>(
+  return axios<ParaphrasesIdDeleteDeleteRes200>(
     merge(
       {
         url: COMMON_PREFIX + "paraphrases/:id/delete",
         method: "delete",
         pathData: {
-          id
+          id,
         },
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -777,7 +778,7 @@ export interface ParaphrasesIdUpdatePutBodyParams {
    */
   paraphraseVO?: ParaphraseVo;
 }
-export type ParaphrasesIdUpdatePutResponseOk = boolean;
+export type ParaphrasesIdUpdatePutRes200 = boolean;
 
 export function putParaphrasesIdUpdate(
   id: any,
@@ -785,16 +786,16 @@ export function putParaphrasesIdUpdate(
   data?: ParaphrasesIdUpdatePutBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<ParaphrasesIdUpdatePutResponseOk>(
+  return axios<ParaphrasesIdUpdatePutRes200>(
     merge(
       {
         url: COMMON_PREFIX + "paraphrases/:id/update",
         method: "put",
         pathData: {
-          id
+          id,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -834,7 +835,7 @@ export interface PracticalQuestionsWordIdCreateOrUpdateOrDeletePostBodyParams {
    */
   vos?: PracticalQuestionVo[];
 }
-export type PracticalQuestionsWordIdCreateOrUpdateOrDeletePostResponseOk = boolean;
+export type PracticalQuestionsWordIdCreateOrUpdateOrDeletePostRes200 = boolean;
 
 export function postPracticalQuestionsWordIdCreateOrUpdateOrDelete(
   wordId: any,
@@ -842,17 +843,17 @@ export function postPracticalQuestionsWordIdCreateOrUpdateOrDelete(
   data?: PracticalQuestionsWordIdCreateOrUpdateOrDeletePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<PracticalQuestionsWordIdCreateOrUpdateOrDeletePostResponseOk>(
+  return axios<PracticalQuestionsWordIdCreateOrUpdateOrDeletePostRes200>(
     merge(
       {
         url:
           COMMON_PREFIX + "practicalQuestions/:wordId/createOrUpdateOrDelete",
         method: "post",
         pathData: {
-          wordId
+          wordId,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -886,21 +887,21 @@ export interface TmpCreatePhraseByCsvPostQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type TmpCreatePhraseByCsvPostResponseOk = CreateVocabularyByCsvResult;
+export type TmpCreatePhraseByCsvPostRes200 = CreateVocabularyByCsvResult;
 
 export function postTmpCreatePhraseByCsv(
   params?: TmpCreatePhraseByCsvPostQueryParams,
   data?: FormData,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<TmpCreatePhraseByCsvPostResponseOk>(
+  return axios<TmpCreatePhraseByCsvPostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "tmp/createPhraseByCsv",
         method: "post",
         pathData: {},
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -934,21 +935,21 @@ export interface TmpCreateWordsByCsvPostQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type TmpCreateWordsByCsvPostResponseOk = CreateVocabularyByCsvResult;
+export type TmpCreateWordsByCsvPostRes200 = CreateVocabularyByCsvResult;
 
 export function postTmpCreateWordsByCsv(
   params?: TmpCreateWordsByCsvPostQueryParams,
   data?: FormData,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<TmpCreateWordsByCsvPostResponseOk>(
+  return axios<TmpCreateWordsByCsvPostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "tmp/createWordsByCsv",
         method: "post",
         pathData: {},
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -982,19 +983,19 @@ export interface TmpWriteNoMp3AudioIdJobGetQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type TmpWriteNoMp3AudioIdJobGetResponseOk = any;
+export type TmpWriteNoMp3AudioIdJobGetRes200 = any;
 
 export function getTmpWriteNoMp3AudioIdJob(
   params?: TmpWriteNoMp3AudioIdJobGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<TmpWriteNoMp3AudioIdJobGetResponseOk>(
+  return axios<TmpWriteNoMp3AudioIdJobGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "tmp/writeNoMp3AudioIdJob",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1032,19 +1033,19 @@ export interface VocabularyRootsGetByRootContentGetQueryParams {
    */
   rootContent?: string;
 }
-export type VocabularyRootsGetByRootContentGetResponseOk = VocabularyRootVo;
+export type VocabularyRootsGetByRootContentGetRes200 = VocabularyRootVo;
 
 export function getVocabularyRootsGetByRootContent(
   params?: VocabularyRootsGetByRootContentGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularyRootsGetByRootContentGetResponseOk>(
+  return axios<VocabularyRootsGetByRootContentGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularyRoots/getByRootContent",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1082,19 +1083,19 @@ export interface VocabularyRootsSuggestGetQueryParams {
    */
   rootContent?: string;
 }
-export type VocabularyRootsSuggestGetResponseOk = VocabularyRootVo[];
+export type VocabularyRootsSuggestGetRes200 = VocabularyRootVo[];
 
 export function getVocabularyRootsSuggest(
   params?: VocabularyRootsSuggestGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularyRootsSuggestGetResponseOk>(
+  return axios<VocabularyRootsSuggestGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularyRoots/suggest",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1143,19 +1144,19 @@ export interface VocabularysGetQueryParams {
 /**
  * OK
  */
-export interface VocabularysGetResponseOk {}
+export interface VocabularysGetRes200 {}
 
 export function getVocabularys(
   params?: VocabularysGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysGetResponseOk>(
+  return axios<VocabularysGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1195,21 +1196,21 @@ export interface VocabularysPostBodyParams {
    */
   vocabularyVo?: VocabularyVo;
 }
-export type VocabularysPostResponseOk = number;
+export type VocabularysPostRes200 = number;
 
 export function postVocabularys(
   params?: VocabularysPostQueryParams,
   data?: VocabularysPostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysPostResponseOk>(
+  return axios<VocabularysPostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys",
         method: "post",
         pathData: {},
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1247,19 +1248,19 @@ export interface VocabularysByRootGetQueryParams {
    */
   rootContent?: string;
 }
-export type VocabularysByRootGetResponseOk = SpellingStructVo[];
+export type VocabularysByRootGetRes200 = SpellingStructVo[];
 
 export function getVocabularysByRoot(
   params?: VocabularysByRootGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysByRootGetResponseOk>(
+  return axios<VocabularysByRootGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/byRoot",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1293,22 +1294,22 @@ export interface VocabularysDetailIdGetQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type VocabularysDetailIdGetResponseOk = VocabularyDetailVo;
+export type VocabularysDetailIdGetRes200 = VocabularyDetailVo;
 
 export function getVocabularysDetailId(
   id: any,
   params?: VocabularysDetailIdGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysDetailIdGetResponseOk>(
+  return axios<VocabularysDetailIdGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/detail/:id",
         method: "get",
         pathData: {
-          id
+          id,
         },
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1346,19 +1347,19 @@ export interface VocabularysPhoneticDataGetQueryParams {
    */
   spelling?: string;
 }
-export type VocabularysPhoneticDataGetResponseOk = PhoneticVo[];
+export type VocabularysPhoneticDataGetRes200 = PhoneticVo[];
 
 export function getVocabularysPhoneticData(
   params?: VocabularysPhoneticDataGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysPhoneticDataGetResponseOk>(
+  return axios<VocabularysPhoneticDataGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/phonetic-data",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1398,21 +1399,21 @@ export interface VocabularysRelatedPhrasesBatchSavePostBodyParams {
    */
   vo?: RelatedPhraseVo;
 }
-export type VocabularysRelatedPhrasesBatchSavePostResponseOk = SaveRelatedPhraseResult;
+export type VocabularysRelatedPhrasesBatchSavePostRes200 = SaveRelatedPhraseResult;
 
 export function postVocabularysRelatedPhrasesBatchSave(
   params?: VocabularysRelatedPhrasesBatchSavePostQueryParams,
   data?: VocabularysRelatedPhrasesBatchSavePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysRelatedPhrasesBatchSavePostResponseOk>(
+  return axios<VocabularysRelatedPhrasesBatchSavePostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/related-phrases/batch-save",
         method: "post",
         pathData: {},
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1458,19 +1459,19 @@ export interface VocabularysSearchGetQueryParams {
    */
   spelling?: string;
 }
-export type VocabularysSearchGetResponseOk = VocabularyVo[];
+export type VocabularysSearchGetRes200 = VocabularyVo[];
 
 export function getVocabularysSearch(
   params?: VocabularysSearchGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysSearchGetResponseOk>(
+  return axios<VocabularysSearchGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/search",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1524,19 +1525,19 @@ export interface VocabularysSuggestGetQueryParams {
    */
   suggestLimit?: number;
 }
-export type VocabularysSuggestGetResponseOk = SpellingPhaseVo[];
+export type VocabularysSuggestGetRes200 = SpellingPhaseVo[];
 
 export function getVocabularysSuggest(
   params?: VocabularysSuggestGetQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysSuggestGetResponseOk>(
+  return axios<VocabularysSuggestGetRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/suggest",
         method: "get",
         pathData: {},
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1576,7 +1577,7 @@ export interface VocabularysIdPutBodyParams {
    */
   vocabularyVo?: VocabularyVo;
 }
-export type VocabularysIdPutResponseOk = boolean;
+export type VocabularysIdPutRes200 = boolean;
 
 export function putVocabularysId(
   id: any,
@@ -1584,16 +1585,16 @@ export function putVocabularysId(
   data?: VocabularysIdPutBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysIdPutResponseOk>(
+  return axios<VocabularysIdPutRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/:id",
         method: "put",
         pathData: {
-          id
+          id,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1627,22 +1628,22 @@ export interface VocabularysIdCancelPublishPutQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type VocabularysIdCancelPublishPutResponseOk = boolean;
+export type VocabularysIdCancelPublishPutRes200 = boolean;
 
 export function putVocabularysIdCancelPublish(
   id: any,
   params?: VocabularysIdCancelPublishPutQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysIdCancelPublishPutResponseOk>(
+  return axios<VocabularysIdCancelPublishPutRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/:id/cancelPublish",
         method: "put",
         pathData: {
-          id
+          id,
         },
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1682,7 +1683,7 @@ export interface VocabularysIdCreateOrUpdateOrDeletePostBodyParams {
    */
   rootContentVO?: RootContentVo;
 }
-export type VocabularysIdCreateOrUpdateOrDeletePostResponseOk = any;
+export type VocabularysIdCreateOrUpdateOrDeletePostRes200 = any;
 
 export function postVocabularysIdCreateOrUpdateOrDelete(
   id: any,
@@ -1690,16 +1691,16 @@ export function postVocabularysIdCreateOrUpdateOrDelete(
   data?: VocabularysIdCreateOrUpdateOrDeletePostBodyParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysIdCreateOrUpdateOrDeletePostResponseOk>(
+  return axios<VocabularysIdCreateOrUpdateOrDeletePostRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/:id/createOrUpdateOrDelete",
         method: "post",
         pathData: {
-          id
+          id,
         },
         params,
-        data
+        data,
       },
       COMMON_CONFIG,
       axiosRequestConfig
@@ -1709,7 +1710,7 @@ export function postVocabularysIdCreateOrUpdateOrDelete(
 
 export interface VocabularysIdPublishPutQueryParams {
   /**
-   * 用户ID
+   * 啊撒收到撒
    */
   _debug_user_?: number;
   /**
@@ -1733,22 +1734,22 @@ export interface VocabularysIdPublishPutQueryParams {
    */
   _debug_ldap_?: string;
 }
-export type VocabularysIdPublishPutResponseOk = ValidateResultVo[];
+export type VocabularysIdPublishPutRes200 = ValidateResultVo[];
 
 export function putVocabularysIdPublish(
   id: any,
   params?: VocabularysIdPublishPutQueryParams,
   axiosRequestConfig?: AxiosRequestConfig
 ) {
-  return axios<VocabularysIdPublishPutResponseOk>(
+  return axios<VocabularysIdPublishPutRes200>(
     merge(
       {
         url: COMMON_PREFIX + "vocabularys/:id/publish",
         method: "put",
         pathData: {
-          id
+          id,
         },
-        params
+        params,
       },
       COMMON_CONFIG,
       axiosRequestConfig

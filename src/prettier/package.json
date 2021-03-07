@@ -1,0 +1,8 @@
+{
+  "name": "prettier",
+  "version": "1.0.0",
+  "browser": "index.browser.js",
+  "main": "index.js",
+  "dependencies": {
+  }
+}

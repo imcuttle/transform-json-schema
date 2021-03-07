@@ -30,6 +30,7 @@ export default function swaggerAxios(
   const codes = [tsTypeTransform(node, options)]
   const axiosResult = axiosTransform(node, options)
   if (axiosResult) {
+    codes.push('\n// Api code start')
     const addImport = (...args) => {
       const { code, key } = getImportStatement(...args)
       codes.unshift(code)
@@ -43,11 +44,11 @@ export default function swaggerAxios(
     codes.push(
       `responseDataAxios()(${axiosKey});`,
       `pathRegexpAxios()(${axiosKey});`,
-      `stringDataAxios()(${axiosKey});`
+      `stringDataAxios()(${axiosKey});\n`
     )
     const { commonPrefix, data } = axiosResult
     codes.push(`const COMMON_PREFIX = ${JSON.stringify(tUrl(commonPrefix) || '')};`)
-    codes.push(`const COMMON_CONFIG = ${JSON.stringify(commonConfig)};`)
+    codes.push(`const COMMON_CONFIG = ${JSON.stringify(commonConfig)};\n`)
 
     const tokens = getTokens(commonPrefix)
     Object.keys(data).forEach((pathChunk) => {

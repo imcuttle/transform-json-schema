@@ -4,7 +4,7 @@
  * @date 2018/4/15
  * @description
  */
-const prettier = require('./prettier.bundle')
+const prettier = require('prettier')
 
 
 module.exports = function(text, opt) {

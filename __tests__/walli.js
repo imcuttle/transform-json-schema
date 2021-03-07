@@ -18,11 +18,7 @@ export const acceptGrantDto = t.util.createFinalVerifiable(AcceptGrantDTOClass);
 export class AgreementQueryDTOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        language: t.string,
-        pageNum: t.number,
-        pageSize: t.number
-      })
+      .leq({ language: t.string, pageNum: t.number, pageSize: t.number })
       .check(req);
   }
 }
@@ -37,11 +33,7 @@ export const agreementQueryDto = t.util.createFinalVerifiable(
 export class AgreementSuggestVOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        agreeId: t.number,
-        agreeName: t.string,
-        agreeNum: t.string
-      })
+      .leq({ agreeId: t.number, agreeName: t.string, agreeNum: t.string })
       .check(req);
   }
 }
@@ -62,7 +54,7 @@ export class AgreementUpdateDTOClass extends t.Verifiable {
         agreeId: t.number,
         agreeName: t.string,
         signCodeEn: t.string,
-        signCodeZh: t.string
+        signCodeZh: t.string,
       })
       .check(req);
   }
@@ -94,7 +86,7 @@ export class AgreementVOClass extends t.Verifiable {
         map: map,
         operations: t.array,
         planId: t.number,
-        planStatus: t.string
+        planStatus: t.string,
       })
       .check(req);
   }
@@ -149,7 +141,7 @@ export class AgreementViewVOClass extends t.Verifiable {
         map: t.object,
         operations: t.array,
         signPageNameUs: t.string,
-        signPageNameZh: t.string
+        signPageNameZh: t.string,
       })
       .check(req);
   }
@@ -176,7 +168,7 @@ export class AnalyzeMovePanelVOClass extends t.Verifiable {
         operationRole: t.array,
         paymentStatus: t.array,
         personMoveEndDate: t.string,
-        personMoveStartDate: t.string
+        personMoveStartDate: t.string,
       })
       .check(req);
   }
@@ -199,7 +191,7 @@ export class AnalyzePanelVOClass extends t.Verifiable {
         grantDateRight: t.string,
         grantRole: t.array,
         grantStatus: t.array,
-        operation: t.array
+        operation: t.array,
       })
       .check(req);
   }
@@ -218,7 +210,7 @@ export class AnalyzeQuitPanelVOClass extends t.Verifiable {
         operationRole: t.array,
         paymentStatus: t.array,
         quitDateEnd: t.string,
-        quitDateStart: t.string
+        quitDateStart: t.string,
       })
       .check(req);
   }
@@ -233,12 +225,7 @@ export const analyzeQuitPanelVo = t.util.createFinalVerifiable(
  */
 export class AscrRuleDTOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        grantAmount: t.number,
-        grantDate: t.string
-      })
-      .check(req);
+    return t.leq({ grantAmount: t.number, grantDate: t.string }).check(req);
   }
 }
 export const ascrRuleDto = t.util.createFinalVerifiable(AscrRuleDTOClass);
@@ -256,7 +243,7 @@ export class AscriptionInfoVOClass extends t.Verifiable {
         ascrNumber: t.number,
         ascriptionId: t.number,
         comments: t.string,
-        map: t.object
+        map: t.object,
       })
       .check(req);
   }
@@ -272,11 +259,7 @@ export const ascriptionInfoVo = t.util.createFinalVerifiable(
 export class AscriptionSimpleVOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        ascrDate: t.string,
-        ascrNumber: t.number,
-        editFlag: t.boolean
-      })
+      .leq({ ascrDate: t.string, ascrNumber: t.number, editFlag: t.boolean })
       .check(req);
   }
 }
@@ -291,11 +274,7 @@ export const ascriptionSimpleVo = t.util.createFinalVerifiable(
 export class AscriptionVOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        grantsId: t.number,
-        planName: t.string,
-        rsAscrList: t.array
-      })
+      .leq({ grantsId: t.number, planName: t.string, rsAscrList: t.array })
       .check(req);
   }
 }
@@ -312,7 +291,7 @@ export class BussLineCreateDTOClass extends t.Verifiable {
         bussLineName: t.string,
         comments: t.string,
         leadingBp: t.array,
-        operationCode: t.string
+        operationCode: t.string,
       })
       .check(req);
   }
@@ -333,7 +312,7 @@ export class BussLineOrgCreateDTOClass extends t.Verifiable {
         comments: t.string,
         orgId: t.number,
         orgName: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -354,7 +333,7 @@ export class BussLineOrgQueryDTOClass extends t.Verifiable {
         flag: t.number,
         orgName: t.string,
         pageNum: t.number,
-        pageSize: t.number
+        pageSize: t.number,
       })
       .check(req);
   }
@@ -374,7 +353,7 @@ export class BussLineOrgUpdateDTOClass extends t.Verifiable {
         bussOrgId: t.number,
         comments: t.string,
         endDate: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -390,11 +369,7 @@ export const bussLineOrgUpdateDto = t.util.createFinalVerifiable(
 export class BussLineQueryTempDTOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        bussLineName: t.string,
-        pageNum: t.number,
-        pageSize: t.number
-      })
+      .leq({ bussLineName: t.string, pageNum: t.number, pageSize: t.number })
       .check(req);
   }
 }
@@ -408,12 +383,7 @@ export const bussLineQueryTempDto = t.util.createFinalVerifiable(
  */
 export class BussLineSuggestVOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        bussLineId: t.number,
-        bussLineName: t.string
-      })
-      .check(req);
+    return t.leq({ bussLineId: t.number, bussLineName: t.string }).check(req);
   }
 }
 export const bussLineSuggestVo = t.util.createFinalVerifiable(
@@ -432,7 +402,7 @@ export class BussLineUpdateDTOClass extends t.Verifiable {
         bussLineName: t.string,
         comments: t.string,
         leadingBp: t.array,
-        operationCode: t.string
+        operationCode: t.string,
       })
       .check(req);
   }
@@ -464,7 +434,7 @@ export class BussLineVOClass extends t.Verifiable {
         leadingBpIdStr: t.string,
         map: t.object,
         operations: t.array,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -483,7 +453,7 @@ export class BussOrgLogListVOClass extends t.Verifiable {
         operation: employeeVo,
         operationCode: t.string,
         operationDate: t.string,
-        operationMsg: t.string
+        operationMsg: t.string,
       })
       .check(req);
   }
@@ -505,7 +475,7 @@ export class BussOrgLogVOClass extends t.Verifiable {
         endDate: t.string,
         logId: t.number,
         orgName: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -532,7 +502,7 @@ export class CABUpdateMoveVoClass extends t.Verifiable {
         moveDate: t.string,
         planName: t.string,
         refundNumber: t.number,
-        retainAscriEd: t.number
+        retainAscriEd: t.number,
       })
       .check(req);
   }
@@ -571,7 +541,7 @@ export class CGrantForRSVOClass extends t.Verifiable {
         map: t.object,
         operations: t.array,
         planName: t.string,
-        price: t.number
+        price: t.number,
       })
       .check(req);
   }
@@ -607,7 +577,7 @@ export class CGrantForSOVOClass extends t.Verifiable {
         map: t.object,
         operations: t.array,
         planName: t.string,
-        price: t.number
+        price: t.number,
       })
       .check(req);
   }
@@ -625,7 +595,7 @@ export class CancelSimpleVOClass extends t.Verifiable {
         cancelDate: timestamp,
         cancelNumber: t.number,
         comments: t.string,
-        map: t.object
+        map: t.object,
       })
       .check(req);
   }
@@ -643,7 +613,7 @@ export class CancelVOClass extends t.Verifiable {
         ascriEd: t.array,
         ascriIng: t.array,
         grantsId: t.number,
-        planName: t.string
+        planName: t.string,
       })
       .check(req);
   }
@@ -657,11 +627,7 @@ export const cancelVo = t.util.createFinalVerifiable(CancelVOClass);
 export class CodeAndValueVOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        code: t.string,
-        selectFlag: t.string,
-        value: t.string
-      })
+      .leq({ code: t.string, selectFlag: t.string, value: t.string })
       .check(req);
   }
 }
@@ -678,7 +644,7 @@ export class DateCheckDTOClass extends t.Verifiable {
         grantType: t.string,
         grantsDate: t.string,
         personId: t.number,
-        planId: t.number
+        planId: t.number,
       })
       .check(req);
   }
@@ -691,12 +657,7 @@ export const dateCheckDto = t.util.createFinalVerifiable(DateCheckDTOClass);
  */
 export class DepartmentSimpleVOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        orgId: t.number,
-        orgName: t.string
-      })
-      .check(req);
+    return t.leq({ orgId: t.number, orgName: t.string }).check(req);
   }
 }
 export const departmentSimpleVo = t.util.createFinalVerifiable(
@@ -710,11 +671,7 @@ export const departmentSimpleVo = t.util.createFinalVerifiable(
 export class DepartmentSuggestVOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        orgId: t.number,
-        orgName: t.string,
-        planId: t.number
-      })
+      .leq({ orgId: t.number, orgName: t.string, planId: t.number })
       .check(req);
   }
 }
@@ -748,7 +705,7 @@ export class DepartmentVOClass extends t.Verifiable {
         operations: t.array,
         orgId: t.number,
         orgName: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -772,7 +729,7 @@ export class EmployeeGrantsDataVOClass extends t.Verifiable {
         positionName: t.string,
         serviceStartDate: t.string,
         suggestId: t.number,
-        suggestValue: t.string
+        suggestValue: t.string,
       })
       .check(req);
   }
@@ -787,12 +744,7 @@ export const employeeGrantsDataVo = t.util.createFinalVerifiable(
  */
 export class EmployeeGrantsVOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        list: t.array,
-        type: t.string
-      })
-      .check(req);
+    return t.leq({ list: t.array, type: t.string }).check(req);
   }
 }
 export const employeeGrantsVo = t.util.createFinalVerifiable(
@@ -814,7 +766,7 @@ export class EmployeeVOClass extends t.Verifiable {
         periodOfServiceId: t.number,
         personId: t.number,
         positionName: t.string,
-        serviceStartDate: t.string
+        serviceStartDate: t.string,
       })
       .check(req);
   }
@@ -836,7 +788,7 @@ export class EsopMenuVOClass extends t.Verifiable {
         funcName: t.string,
         resUrl: t.string,
         respId: t.number,
-        secGroupId: t.number
+        secGroupId: t.number,
       })
       .check(req);
   }
@@ -850,11 +802,7 @@ export const esopMenuVo = t.util.createFinalVerifiable(EsopMenuVOClass);
 export class FreezingPeriodQueryDTOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        pageNum: t.number,
-        pageSize: t.number,
-        planId: t.number
-      })
+      .leq({ pageNum: t.number, pageSize: t.number, planId: t.number })
       .check(req);
   }
 }
@@ -876,7 +824,7 @@ export class FreezingPeriodQueryVOClass extends t.Verifiable {
         freezingId: t.number,
         operations: t.array,
         planId: t.number,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -897,7 +845,7 @@ export class FreezingPeriodSaveDTOClass extends t.Verifiable {
         endDate: t.string,
         freezingId: t.number,
         planId: t.number,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -926,7 +874,7 @@ export class GrantAddDTOClass extends t.Verifiable {
         planId: t.number,
         price: t.number,
         saveType: t.string,
-        soClass: t.string
+        soClass: t.string,
       })
       .check(req);
   }
@@ -951,7 +899,7 @@ export class GrantLogListDTOClass extends t.Verifiable {
         rsStatusList: t.array,
         soStatusList: t.array,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -967,11 +915,7 @@ export const grantLogListDto = t.util.createFinalVerifiable(
 export class GrantPostDTOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        code: t.string,
-        codes: t.array,
-        confirm: t.boolean
-      })
+      .leq({ code: t.string, codes: t.array, confirm: t.boolean })
       .check(req);
   }
 }
@@ -996,7 +940,7 @@ export class GrantUpdateDTOClass extends t.Verifiable {
         planId: t.number,
         price: t.number,
         saveType: t.string,
-        soClass: t.string
+        soClass: t.string,
       })
       .check(req);
   }
@@ -1023,7 +967,7 @@ export class GrantsListDTOClass extends t.Verifiable {
         soClassList: t.array,
         statusList: t.array,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -1061,7 +1005,7 @@ export class GrantsListVOClass extends t.Verifiable {
         smallSequence: t.string,
         soClass: t.string,
         status: t.string,
-        subLevel: t.string
+        subLevel: t.string,
       })
       .check(req);
   }
@@ -1110,7 +1054,7 @@ export class GrantsLogListVOClass extends t.Verifiable {
         retainAscriEd: t.number,
         soClass: t.string,
         status: t.string,
-        stockPrice: t.number
+        stockPrice: t.number,
       })
       .check(req);
   }
@@ -1134,7 +1078,7 @@ export class GrantsQueryInitVOClass extends t.Verifiable {
         planEndDate: t.string,
         planStartDate: t.string,
         soClassList: t.array,
-        statusList: t.array
+        statusList: t.array,
       })
       .check(req);
   }
@@ -1164,7 +1108,7 @@ export class GrantsVOClass extends t.Verifiable {
         map: t.object,
         planId: t.number,
         price: t.number,
-        soClass: t.string
+        soClass: t.string,
       })
       .check(req);
   }
@@ -1178,11 +1122,7 @@ export const grantsVo = t.util.createFinalVerifiable(GrantsVOClass);
 export class GrantsViewLogClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        grantType: t.string,
-        grantsCode: t.string,
-        logList: t.array
-      })
+      .leq({ grantType: t.string, grantsCode: t.string, logList: t.array })
       .check(req);
   }
 }
@@ -1200,7 +1140,7 @@ export class JsonResult_AgreementViewVO_Class extends t.Verifiable {
         errors: errors,
         message: t.string,
         status: t.string,
-        warnings: warnings
+        warnings: warnings,
       })
       .check(req);
   }
@@ -1243,7 +1183,7 @@ export class JsonResult_AscriptionVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1264,7 +1204,7 @@ export class JsonResult_BussLineVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1285,7 +1225,7 @@ export class JsonResult_CABUpdateMoveVo_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1306,7 +1246,7 @@ export class JsonResult_CancelVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1327,7 +1267,7 @@ export class JsonResult_DepartmentVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1348,7 +1288,7 @@ export class JsonResult_GrantsVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1369,7 +1309,7 @@ export class JsonResult_GrantsViewLog_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1390,7 +1330,7 @@ export class JsonResult_List_AgreementSuggestVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1411,7 +1351,7 @@ export class JsonResult_List_BussLineSuggestVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1432,7 +1372,7 @@ export class JsonResult_List_BussOrgLogListVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1453,7 +1393,7 @@ export class JsonResult_List_CGrantForRSVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1474,7 +1414,7 @@ export class JsonResult_List_CGrantForSOVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1495,7 +1435,7 @@ export class JsonResult_List_DepartmentSimpleVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1516,7 +1456,7 @@ export class JsonResult_List_DepartmentSuggestVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1537,7 +1477,7 @@ export class JsonResult_List_EmployeeGrantsVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1558,7 +1498,7 @@ export class JsonResult_List_EmployeeVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1579,7 +1519,7 @@ export class JsonResult_List_EsopMenuVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1600,7 +1540,7 @@ export class JsonResult_List_LogCommonVO_LogFreezingPeriodViewVO___Class extends
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1621,7 +1561,7 @@ export class JsonResult_List_LogCommonVO_LogPlanViewVO___Class extends t.Verifia
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1642,7 +1582,7 @@ export class JsonResult_List_LogCommonVO_LogRightPriceViewVO___Class extends t.V
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1663,7 +1603,7 @@ export class JsonResult_List_LogCommonVO_LogStockPriceViewVO___Class extends t.V
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1684,7 +1624,7 @@ export class JsonResult_List_OrgVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1705,7 +1645,7 @@ export class JsonResult_List_PlanSimpleVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1726,7 +1666,7 @@ export class JsonResult_List_SOAscriptionSimpleVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1747,7 +1687,7 @@ export class JsonResult_List_TBCGrantVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1768,7 +1708,7 @@ export class JsonResult_List_string__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1789,7 +1729,7 @@ export class JsonResult_LogPlanPanelVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1810,7 +1750,7 @@ export class JsonResult_LogPlanPlanViewVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1831,7 +1771,7 @@ export class JsonResult_LogQueryInitVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1852,7 +1792,7 @@ export class JsonResult_Map_string_AnalyzeMovePanelVO__Class extends t.Verifiabl
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1884,7 +1824,7 @@ export class JsonResult_Map_string_AnalyzePanelVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1905,7 +1845,7 @@ export class JsonResult_Map_string_AnalyzeQuitPanelVO__Class extends t.Verifiabl
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1926,7 +1866,7 @@ export class JsonResult_Map_string_GrantsQueryInitVO__Class extends t.Verifiable
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1947,7 +1887,7 @@ export class JsonResult_Map_string_MovePanelVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1968,7 +1908,7 @@ export class JsonResult_Map_string_QuitPanelVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -1989,7 +1929,7 @@ export class JsonResult_MoveCBQueryParams_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2010,7 +1950,7 @@ export class JsonResult_PageInfo_AgreementVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2031,7 +1971,7 @@ export class JsonResult_PageInfo_BussLineVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2052,7 +1992,7 @@ export class JsonResult_PageInfo_DepartmentVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2073,7 +2013,7 @@ export class JsonResult_PageInfo_FreezingPeriodQueryVO__Class extends t.Verifiab
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2094,7 +2034,7 @@ export class JsonResult_PageInfo_GrantsListVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2115,7 +2055,7 @@ export class JsonResult_PageInfo_GrantsLogListVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2136,7 +2076,7 @@ export class JsonResult_PageInfo_LogPlanQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2157,7 +2097,7 @@ export class JsonResult_PageInfo_MoveCBQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2178,7 +2118,7 @@ export class JsonResult_PageInfo_MoveRsAnlyVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2199,7 +2139,7 @@ export class JsonResult_PageInfo_MoveRsQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2220,7 +2160,7 @@ export class JsonResult_PageInfo_MoveSoAnlyVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2241,7 +2181,7 @@ export class JsonResult_PageInfo_MoveSoQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2262,7 +2202,7 @@ export class JsonResult_PageInfo_PlanQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2283,7 +2223,7 @@ export class JsonResult_PageInfo_QuitRsAnlyVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2304,7 +2244,7 @@ export class JsonResult_PageInfo_QuitRsQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2325,7 +2265,7 @@ export class JsonResult_PageInfo_QuitSoAnlyVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2346,7 +2286,7 @@ export class JsonResult_PageInfo_QuitSoQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2367,7 +2307,7 @@ export class JsonResult_PageInfo_RightPriceQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2388,7 +2328,7 @@ export class JsonResult_PageInfo_StockOwnVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2409,7 +2349,7 @@ export class JsonResult_PageInfo_StockPriceQueryVO__Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2430,7 +2370,7 @@ export class JsonResult_PlanPanelVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2451,7 +2391,7 @@ export class JsonResult_PlanViewVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2472,7 +2412,7 @@ export class JsonResult_QuitDeduDetailVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2493,7 +2433,7 @@ export class JsonResult_RSAscriptionVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2514,7 +2454,7 @@ export class JsonResult_RightPriceQueryVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2535,7 +2475,7 @@ export class JsonResult_StockUseSimpleInfoVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2556,7 +2496,7 @@ export class JsonResult_TBCGrantBeforeVO_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2577,7 +2517,7 @@ export class JsonResult_UserVo_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2597,7 +2537,7 @@ export class JsonResult_Void_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2618,7 +2558,7 @@ export class JsonResult_boolean_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2639,7 +2579,7 @@ export class JsonResult_int_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2658,7 +2598,7 @@ export class JsonResult_long_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2679,7 +2619,7 @@ export class JsonResult_string_Class extends t.Verifiable {
         errors: t.object,
         message: t.string,
         status: t.string,
-        warnings: t.object
+        warnings: t.object,
       })
       .check(req);
   }
@@ -2700,7 +2640,7 @@ export class LogCommonVOClass extends t.Verifiable {
         operation: employeeVo,
         operationCode: t.string,
         operationDate: t.string,
-        operationMsg: t.string
+        operationMsg: t.string,
       })
       .check(req);
   }
@@ -2719,7 +2659,7 @@ export class LogCommonVO_LogFreezingPeriodViewVO_Class extends t.Verifiable {
         operation: employeeVo,
         operationCode: t.string,
         operationDate: t.string,
-        operationMsg: t.string
+        operationMsg: t.string,
       })
       .check(req);
   }
@@ -2740,7 +2680,7 @@ export class LogCommonVO_LogPlanViewVO_Class extends t.Verifiable {
         operation: employeeVo,
         operationCode: t.string,
         operationDate: t.string,
-        operationMsg: t.string
+        operationMsg: t.string,
       })
       .check(req);
   }
@@ -2761,7 +2701,7 @@ export class LogCommonVO_LogRightPriceViewVO_Class extends t.Verifiable {
         operation: employeeVo,
         operationCode: t.string,
         operationDate: t.string,
-        operationMsg: t.string
+        operationMsg: t.string,
       })
       .check(req);
   }
@@ -2782,7 +2722,7 @@ export class LogCommonVO_LogStockPriceViewVO_Class extends t.Verifiable {
         operation: employeeVo,
         operationCode: t.string,
         operationDate: t.string,
-        operationMsg: t.string
+        operationMsg: t.string,
       })
       .check(req);
   }
@@ -2803,7 +2743,7 @@ export class LogFreezingPeriodViewVOClass extends t.Verifiable {
         endDate: t.string,
         logId: t.number,
         oldOrNew: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -2845,7 +2785,7 @@ export class LogPlanPlanViewVOClass extends t.Verifiable {
         planStartDate: t.string,
         rsTotal: t.number,
         soTotal: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -2868,7 +2808,7 @@ export class LogPlanQueryDTOClass extends t.Verifiable {
         planName: t.string,
         planStartDateLeft: t.string,
         planStartDateRight: t.string,
-        status: t.array
+        status: t.array,
       })
       .check(req);
   }
@@ -2899,7 +2839,7 @@ export class LogPlanQueryVOClass extends t.Verifiable {
         planStartDate: t.string,
         rsTotal: t.number,
         soTotal: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -2927,7 +2867,7 @@ export class LogPlanViewVOClass extends t.Verifiable {
         planName: t.string,
         planStartDate: t.string,
         rsTotal: t.number,
-        soTotal: t.number
+        soTotal: t.number,
       })
       .check(req);
   }
@@ -2948,7 +2888,7 @@ export class LogQueryInitVOClass extends t.Verifiable {
         orgIdList: t.array,
         planList: t.array,
         rsStatusList: t.array,
-        soStatusList: t.array
+        soStatusList: t.array,
       })
       .check(req);
   }
@@ -2967,7 +2907,7 @@ export class LogRightPriceViewVOClass extends t.Verifiable {
         logId: t.number,
         oldOrNew: t.string,
         price: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -2989,7 +2929,7 @@ export class LogStockPriceViewVOClass extends t.Verifiable {
         oldOrNew: t.string,
         price: t.string,
         publishDate: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -3095,7 +3035,7 @@ export class MoveAnalyzeDTOClass extends t.Verifiable {
         personId: t.number,
         personMoveEndDate: t.string,
         personMoveStartDate: t.string,
-        planId: t.number
+        planId: t.number,
       })
       .check(req);
   }
@@ -3120,7 +3060,7 @@ export class MoveCBListDTOClass extends t.Verifiable {
         paymentStatus: t.array,
         planId: t.string,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -3140,7 +3080,7 @@ export class MoveCBPanelVOClass extends t.Verifiable {
         moveDateLeft: t.string,
         moveDateRight: t.string,
         operation: t.array,
-        paymentStatus: t.array
+        paymentStatus: t.array,
       })
       .check(req);
   }
@@ -3164,12 +3104,7 @@ export const moveCbQueryDto = t.util.createFinalVerifiable(MoveCBQueryDTOClass);
  */
 export class MoveCBQueryParamsClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        panelMap: panelMap,
-        planList: t.array
-      })
-      .check(req);
+    return t.leq({ panelMap: panelMap, planList: t.array }).check(req);
   }
 }
 export const moveCbQueryParams = t.util.createFinalVerifiable(
@@ -3209,7 +3144,7 @@ export class MoveCBQueryVOClass extends t.Verifiable {
         refundNumber: t.number,
         refundPrice: t.number,
         retainAscriEd: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -3226,7 +3161,7 @@ export class MoveCBUpdateDTOClass extends t.Verifiable {
       .leq({
         ascriptionEd: t.number,
         moveDeduId: t.number,
-        retainAscriEd: t.number
+        retainAscriEd: t.number,
       })
       .check(req);
   }
@@ -3251,7 +3186,7 @@ export class MovePanelVOClass extends t.Verifiable {
         moveDateRight: t.string,
         operation: t.array,
         paymentStatus: t.array,
-        status: t.array
+        status: t.array,
       })
       .check(req);
   }
@@ -3290,7 +3225,7 @@ export class MoveRsAnlyVOClass extends t.Verifiable {
         refundMoney: t.number,
         refundNumber: t.number,
         refundPrice: t.number,
-        retainAscriEd: t.number
+        retainAscriEd: t.number,
       })
       .check(req);
   }
@@ -3317,7 +3252,7 @@ export class MoveRsQueryDTOClass extends t.Verifiable {
         planId: t.number,
         status: t.array,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -3356,7 +3291,7 @@ export class MoveRsQueryVOClass extends t.Verifiable {
         refundNumber: t.number,
         refundPrice: t.string,
         retainAscriEd: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -3389,7 +3324,7 @@ export class MoveSoAnlyVOClass extends t.Verifiable {
         personId: t.number,
         planName: t.string,
         price: t.number,
-        retainAscriEd: t.number
+        retainAscriEd: t.number,
       })
       .check(req);
   }
@@ -3415,7 +3350,7 @@ export class MoveSoQueryDTOClass extends t.Verifiable {
         planId: t.number,
         status: t.array,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -3450,7 +3385,7 @@ export class MoveSoQueryVOClass extends t.Verifiable {
         planName: t.string,
         price: t.string,
         retainAscriEd: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -3463,12 +3398,7 @@ export const moveSoQueryVo = t.util.createFinalVerifiable(MoveSoQueryVOClass);
  */
 export class OrgVOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        orgId: t.number,
-        orgName: t.string
-      })
-      .check(req);
+    return t.leq({ orgId: t.number, orgName: t.string }).check(req);
   }
 }
 export const orgVo = t.util.createFinalVerifiable(OrgVOClass);
@@ -3500,7 +3430,7 @@ export class PageInfo_AgreementVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3536,7 +3466,7 @@ export class PageInfo_BussLineVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3572,7 +3502,7 @@ export class PageInfo_DepartmentVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3608,7 +3538,7 @@ export class PageInfo_FreezingPeriodQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3644,7 +3574,7 @@ export class PageInfo_GrantsListVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3680,7 +3610,7 @@ export class PageInfo_GrantsLogListVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3716,7 +3646,7 @@ export class PageInfo_LogPlanQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3752,7 +3682,7 @@ export class PageInfo_MoveCBQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3788,7 +3718,7 @@ export class PageInfo_MoveRsAnlyVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3824,7 +3754,7 @@ export class PageInfo_MoveRsQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3860,7 +3790,7 @@ export class PageInfo_MoveSoAnlyVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3896,7 +3826,7 @@ export class PageInfo_MoveSoQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3932,7 +3862,7 @@ export class PageInfo_PlanQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -3968,7 +3898,7 @@ export class PageInfo_QuitRsAnlyVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4004,7 +3934,7 @@ export class PageInfo_QuitRsQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4040,7 +3970,7 @@ export class PageInfo_QuitSoAnlyVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4076,7 +4006,7 @@ export class PageInfo_QuitSoQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4112,7 +4042,7 @@ export class PageInfo_RightPriceQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4148,7 +4078,7 @@ export class PageInfo_StockOwnVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4184,7 +4114,7 @@ export class PageInfo_StockPriceQueryVO_Class extends t.Verifiable {
         prePage: t.number,
         size: t.number,
         startRow: t.number,
-        total: t.number
+        total: t.number,
       })
       .check(req);
   }
@@ -4199,12 +4129,7 @@ export const pageInfoStockPriceQueryVo = t.util.createFinalVerifiable(
  */
 export class PlanNameCodeCheckDTOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        planId: t.number,
-        value: t.string
-      })
-      .check(req);
+    return t.leq({ planId: t.number, value: t.string }).check(req);
   }
 }
 export const planNameCodeCheckDto = t.util.createFinalVerifiable(
@@ -4222,7 +4147,7 @@ export class PlanPanelVOClass extends t.Verifiable {
         operations: t.array,
         planStartDateLeft: t.string,
         planStartDateRight: t.string,
-        status: t.array
+        status: t.array,
       })
       .check(req);
   }
@@ -4243,7 +4168,7 @@ export class PlanQueryDTOClass extends t.Verifiable {
         planName: t.string,
         planStartDateLeft: t.string,
         planStartDateRight: t.string,
-        status: t.array
+        status: t.array,
       })
       .check(req);
   }
@@ -4272,7 +4197,7 @@ export class PlanQueryVOClass extends t.Verifiable {
         planStartDate: t.string,
         rsTotal: t.number,
         soTotal: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -4299,7 +4224,7 @@ export class PlanReleaseDTOClass extends t.Verifiable {
         planName: t.string,
         planStartDate: t.string,
         rsTotal: t.number,
-        soTotal: t.number
+        soTotal: t.number,
       })
       .check(req);
   }
@@ -4326,7 +4251,7 @@ export class PlanSaveDTOClass extends t.Verifiable {
         planName: t.string,
         planStartDate: t.string,
         rsTotal: t.number,
-        soTotal: t.number
+        soTotal: t.number,
       })
       .check(req);
   }
@@ -4340,11 +4265,7 @@ export const planSaveDto = t.util.createFinalVerifiable(PlanSaveDTOClass);
 export class PlanSimpleVOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        planCode: t.string,
-        planId: t.number,
-        planName: t.string
-      })
+      .leq({ planCode: t.string, planId: t.number, planName: t.string })
       .check(req);
   }
 }
@@ -4373,7 +4294,7 @@ export class PlanViewVOClass extends t.Verifiable {
         planStartDate: t.string,
         rsTotal: t.number,
         soTotal: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -4387,11 +4308,7 @@ export const planViewVo = t.util.createFinalVerifiable(PlanViewVOClass);
 export class PriceQueryDTOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        dateStr: t.string,
-        grantType: t.string,
-        planId: t.number
-      })
+      .leq({ dateStr: t.string, grantType: t.string, planId: t.number })
       .check(req);
   }
 }
@@ -4412,7 +4329,7 @@ export class QuitAnalyzeDTOClass extends t.Verifiable {
         personId: t.number,
         planId: t.number,
         quitDateEnd: t.string,
-        quitDateStart: t.string
+        quitDateStart: t.string,
       })
       .check(req);
   }
@@ -4449,7 +4366,7 @@ export class QuitDeduDetailVOClass extends t.Verifiable {
         refundNumber: t.number,
         refundPrice: t.string,
         retainAscriEd: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -4473,7 +4390,7 @@ export class QuitModifyDTOClass extends t.Verifiable {
         comments: t.string,
         quitDeduId: t.number,
         refundNumber: t.number,
-        retainAscriEd: t.number
+        retainAscriEd: t.number,
       })
       .check(req);
   }
@@ -4493,7 +4410,7 @@ export class QuitPanelVOClass extends t.Verifiable {
         operation: t.array,
         paymentStatus: t.array,
         quitDateLeft: t.string,
-        quitDateRight: t.string
+        quitDateRight: t.string,
       })
       .check(req);
   }
@@ -4529,7 +4446,7 @@ export class QuitRsAnlyVOClass extends t.Verifiable {
         refundNumber: t.number,
         refundPrice: t.number,
         retainAscriEd: t.number,
-        serviceStartDate: t.string
+        serviceStartDate: t.string,
       })
       .check(req);
   }
@@ -4553,7 +4470,7 @@ export class QuitRsQueryDTOClass extends t.Verifiable {
         quitDateLeft: t.string,
         quitDateRight: t.string,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -4590,7 +4507,7 @@ export class QuitRsQueryVOClass extends t.Verifiable {
         refundNumber: t.number,
         refundPrice: t.string,
         retainAscriEd: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -4625,7 +4542,7 @@ export class QuitSoAnlyVOClass extends t.Verifiable {
         refundNumber: t.number,
         refundPrice: t.number,
         retainAscriEd: t.number,
-        serviceStartDate: t.string
+        serviceStartDate: t.string,
       })
       .check(req);
   }
@@ -4648,7 +4565,7 @@ export class QuitSoQueryDTOClass extends t.Verifiable {
         quitDateLeft: t.string,
         quitDateRight: t.string,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -4681,7 +4598,7 @@ export class QuitSoQueryVOClass extends t.Verifiable {
         quitDate: t.string,
         quitDeduId: t.number,
         retainAscriEd: t.number,
-        status: t.string
+        status: t.string,
       })
       .check(req);
   }
@@ -4694,12 +4611,7 @@ export const quitSoQueryVo = t.util.createFinalVerifiable(QuitSoQueryVOClass);
  */
 export class RSAscrUpdateDTOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        ascrList: t.array,
-        grantsId: t.number
-      })
-      .check(req);
+    return t.leq({ ascrList: t.array, grantsId: t.number }).check(req);
   }
 }
 export const rsAscrUpdateDto = t.util.createFinalVerifiable(
@@ -4717,7 +4629,7 @@ export class RSAscriptionDTOClass extends t.Verifiable {
         ascrDate: t.string,
         ascrId: t.number,
         ascrNumber: t.number,
-        comments: t.string
+        comments: t.string,
       })
       .check(req);
   }
@@ -4739,7 +4651,7 @@ export class RSAscriptionSimpleVOClass extends t.Verifiable {
         ascrNumber: t.number,
         comments: t.string,
         editFlag: t.boolean,
-        grantsId: t.number
+        grantsId: t.number,
       })
       .check(req);
   }
@@ -4762,7 +4674,7 @@ export class RSAscriptionVOClass extends t.Verifiable {
         grantsId: t.number,
         nonAscrAmount: t.number,
         planName: t.string,
-        rsAscrList: t.array
+        rsAscrList: t.array,
       })
       .check(req);
   }
@@ -4775,12 +4687,7 @@ export const rsAscriptionVo = t.util.createFinalVerifiable(RSAscriptionVOClass);
  */
 export class RSFullAscrDTOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        ascrDate: t.string,
-        codes: t.array
-      })
-      .check(req);
+    return t.leq({ ascrDate: t.string, codes: t.array }).check(req);
   }
 }
 export const rsFullAscrDto = t.util.createFinalVerifiable(RSFullAscrDTOClass);
@@ -4796,7 +4703,7 @@ export class RightPriceQueryDTOClass extends t.Verifiable {
         pageNum: t.number,
         pageSize: t.number,
         planId: t.number,
-        type: t.string
+        type: t.string,
       })
       .check(req);
   }
@@ -4819,7 +4726,7 @@ export class RightPriceQueryVOClass extends t.Verifiable {
         planId: t.number,
         price: t.string,
         rightPriceId: t.number,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -4841,7 +4748,7 @@ export class RightPriceSaveDTOClass extends t.Verifiable {
         price: t.string,
         rightPriceId: t.number,
         startDate: t.string,
-        type: t.string
+        type: t.string,
       })
       .check(req);
   }
@@ -4862,7 +4769,7 @@ export class SOAscriptionSimpleVOClass extends t.Verifiable {
         ascrId: t.number,
         ascrNumber: t.number,
         editFlag: t.boolean,
-        grantsId: t.number
+        grantsId: t.number,
       })
       .check(req);
   }
@@ -4890,7 +4797,7 @@ export class StockOwnQueryDTOClass extends t.Verifiable {
         soClassList: t.array,
         statusList: t.array,
         suggestId: t.number,
-        suggestType: t.string
+        suggestType: t.string,
       })
       .check(req);
   }
@@ -4941,7 +4848,7 @@ export class StockOwnVOClass extends t.Verifiable {
         retainAscriEd: t.number,
         soClass: t.string,
         status: t.string,
-        stockPrice: t.number
+        stockPrice: t.number,
       })
       .check(req);
   }
@@ -4955,11 +4862,7 @@ export const stockOwnVo = t.util.createFinalVerifiable(StockOwnVOClass);
 export class StockPriceQueryDTOClass extends t.Verifiable {
   _check(req) {
     return t
-      .leq({
-        pageNum: t.number,
-        pageSize: t.number,
-        planId: t.number
-      })
+      .leq({ pageNum: t.number, pageSize: t.number, planId: t.number })
       .check(req);
   }
 }
@@ -4982,7 +4885,7 @@ export class StockPriceQueryVOClass extends t.Verifiable {
         price: t.string,
         priceId: t.number,
         publishDate: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -5004,7 +4907,7 @@ export class StockSaveDTOClass extends t.Verifiable {
         price: t.string,
         priceId: t.number,
         publishDate: t.string,
-        startDate: t.string
+        startDate: t.string,
       })
       .check(req);
   }
@@ -5023,7 +4926,7 @@ export class StockSimpleVOClass extends t.Verifiable {
         total: t.number,
         type: t.string,
         unused: t.number,
-        used: t.number
+        used: t.number,
       })
       .check(req);
   }
@@ -5054,7 +4957,7 @@ export class StockUseSimpleInfoVOClass extends t.Verifiable {
         freeze: t.boolean,
         planId: t.number,
         rs: stockSimpleVo,
-        so: stockSimpleVo
+        so: stockSimpleVo,
       })
       .check(req);
   }
@@ -5069,12 +4972,7 @@ export const stockUseSimpleInfoVo = t.util.createFinalVerifiable(
  */
 export class SuggestDTOClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        keyword: t.string,
-        limit: t.number
-      })
-      .check(req);
+    return t.leq({ keyword: t.string, limit: t.number }).check(req);
   }
 }
 export const suggestDto = t.util.createFinalVerifiable(SuggestDTOClass);
@@ -5091,7 +4989,7 @@ export class TBCGrantBeforeVOClass extends t.Verifiable {
         contents: t.string,
         grantsId: t.number,
         planId: t.number,
-        planName: t.string
+        planName: t.string,
       })
       .check(req);
   }
@@ -5126,7 +5024,7 @@ export class TBCGrantVOClass extends t.Verifiable {
         operations: t.array,
         planId: t.number,
         planName: t.string,
-        price: t.number
+        price: t.number,
       })
       .check(req);
   }
@@ -5150,7 +5048,7 @@ export class TimestampClass extends t.Verifiable {
         seconds: t.number,
         time: t.number,
         timezoneOffset: t.number,
-        year: t.number
+        year: t.number,
       })
       .check(req);
   }
@@ -5163,12 +5061,7 @@ export const timestamp = t.util.createFinalVerifiable(TimestampClass);
  */
 export class UserVoClass extends t.Verifiable {
   _check(req) {
-    return t
-      .leq({
-        personId: t.number,
-        personName: t.string
-      })
-      .check(req);
+    return t.leq({ personId: t.number, personName: t.string }).check(req);
   }
 }
 export const userVo = t.util.createFinalVerifiable(UserVoClass);
