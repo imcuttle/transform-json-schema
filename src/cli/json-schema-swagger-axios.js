@@ -41,7 +41,12 @@ if (flags.help) {
         if (err) {
           throw err
         }
-        process.stdout.write(output)
+        if (typeof output === 'object') {
+          console.log(JSON.stringify(output));
+        }
+        else {
+          process.stdout.write(output);
+        }
       })
     })
   )

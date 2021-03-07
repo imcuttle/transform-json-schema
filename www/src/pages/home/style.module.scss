@@ -14,12 +14,36 @@
 }
 
 .jsonEditor {
+  margin-right: 10px;
 }
 
-.jsonEditor, .resultEditor {
+.resultEditor, .wrapperResult {
+  margin-left: 10px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.3) !important;
+}
+.wrapperResult {
+
+  flex: 1;
+  width: 0;
+
+  :global {
+    .ant-tabs, .ant-tabs-content {
+      height: 100%;
+    }
+    .react-codemirror2 {
+      width: 100% !important;
+    }
+
+    .ant-tabs-tab {
+      padding: 5px 10px !important;
+    }
+
+    .ant-tabs-tabpane {
+      padding-left: 0!important;
+    }
+  }
+}
+
+.jsonEditor, .resultEditor, .subEditor {
   height: 100%;
-}
-
-.resultEditor {
-
 }

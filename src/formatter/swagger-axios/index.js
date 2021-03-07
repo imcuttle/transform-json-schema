@@ -2,6 +2,7 @@ import { SchemaPath } from '../../types/Schema'
 import tsTypeTransform from '../ts'
 import axiosTransform from './axios-transform'
 import camelCase from 'lodash.camelcase'
+import uniq from 'lodash.uniq'
 
 const getImportStatement = (source, key = camelCase(source)) => {
   return {
@@ -17,29 +18,56 @@ const getTokens = (string) => {
 
 const tUrl = (url) => url.replace(/{(.+?)}/g, `:$1`)
 
+const addImport = (codes, ...args) => {
+  const { code, key } = getImportStatement(...args)
+  codes.unshift(code)
+  return key
+}
+
 export default function swaggerAxios(
   node: SchemaPath,
   {
     axiosRequest = 'axios',
     commonConfig = { responseData: true },
+    splitModule = false,
+    typeRequest = './type',
     prefix,
     suffix,
     ...options
   }: { axiosRequest?: string } = {}
 ): { tsType: string, api: string, index: string } {
-  const codes = [tsTypeTransform(node, options)]
+  const tsTypeCodes = [tsTypeTransform(node, options) + '\n']
+  let apiCode = ''
   const axiosResult = axiosTransform(node, options)
+
   if (axiosResult) {
-    codes.push('\n// Api code start')
-    const addImport = (...args) => {
-      const { code, key } = getImportStatement(...args)
-      codes.unshift(code)
-      return key
+    const codes = []
+    const addImportInner = (...args) => (splitModule ? addImport(codes, ...args) : addImport(tsTypeCodes, ...args))
+    const maybeImportMap = {}
+    const addTypeImportOrInject = (code, key) => {
+      const source = typeRequest;
+      if (splitModule) {
+        tsTypeCodes.push(code)
+        let keys = (maybeImportMap[source] = maybeImportMap[source] || [])
+        keys.push(key)
+        maybeImportMap[source] = uniq(keys)
+      } else {
+        tsTypeCodes.push(code)
+      }
     }
-    const axiosKey = addImport(axiosRequest, 'axios')
-    addImport('axios', '{ AxiosRequestConfig }')
-    addImport('lodash.merge', 'merge')
-    addImport('decorate-axios', '{ responseDataAxios, pathRegexpAxios, stringDataAxios }')
+    const addTypeImportOrInjectEnd = () => {
+      Object.keys(maybeImportMap).forEach((source) => {
+        const keys = maybeImportMap[source]
+        addImport(codes, source, `{ ${keys.join(', ')} }`)
+      })
+    }
+
+    codes.push('\n// Api code start')
+
+    const axiosKey = addImportInner(axiosRequest, 'axios')
+    addImportInner('axios', '{ AxiosRequestConfig }')
+    addImportInner('lodash.merge', 'merge')
+    addImportInner('decorate-axios', '{ responseDataAxios, pathRegexpAxios, stringDataAxios }')
 
     codes.push(
       `responseDataAxios()(${axiosKey});`,
@@ -50,7 +78,6 @@ export default function swaggerAxios(
     codes.push(`const COMMON_PREFIX = ${JSON.stringify(tUrl(commonPrefix) || '')};`)
     codes.push(`const COMMON_CONFIG = ${JSON.stringify(commonConfig)};\n`)
 
-    const tokens = getTokens(commonPrefix)
     Object.keys(data).forEach((pathChunk) => {
       Object.keys(data[pathChunk]).forEach((method) => {
         const { responseType, paramType } = data[pathChunk][method]
@@ -64,13 +91,13 @@ export default function swaggerAxios(
         let hasData = false
         if (paramType) {
           if (paramType.query) {
-            codes.push(paramType.query.code)
+            addTypeImportOrInject(paramType.query.code, paramType.query.name)
             argsChunks.push(`params?: ${paramType.query.name}`)
           }
 
           hasData = paramType.body || paramType.formData
           if (paramType.body) {
-            codes.push(paramType.body.code)
+            addTypeImportOrInject(paramType.body.code, paramType.body.name)
             argsChunks.push(`data?: ${paramType.body.name}`)
           } else if (paramType.formData) {
             argsChunks.push(`data?: FormData`)
@@ -81,7 +108,7 @@ export default function swaggerAxios(
         if (responseType && responseType['200']) {
           responseTypeKey = responseType['200'].name
           if (responseType['200'].code) {
-            codes.push(responseType['200'].code)
+            addTypeImportOrInject(responseType['200'].code, responseTypeKey)
           }
         }
 
@@ -100,7 +127,17 @@ export default function swaggerAxios(
       `)
       })
     })
+    addTypeImportOrInjectEnd()
+
+    apiCode = codes.join('\n')
   }
 
-  return `${prefix || ''}${codes.join('\n')}${suffix || ''}`
+  if (!splitModule) {
+    return `${prefix || ''}${tsTypeCodes.concat(apiCode).join('\n')}${suffix || ''}`
+  }
+
+  return {
+    'type.ts': `${prefix || ''}${tsTypeCodes.join('\n')}${suffix || ''}`,
+    'api.ts': `${prefix || ''}${apiCode}${suffix || ''}`,
+  }
 }
