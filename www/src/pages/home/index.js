@@ -46,16 +46,20 @@ function HomePage({ type = 'to-ts', config, defaultJsonText, jsonText, onJsonTex
   const [result, setResult] = React.useState('')
 
   React.useEffect(() => {
-    const json = JSON.parse(jsonTextState)
-    if (json && modules[type]) {
-      modules[type](json, config || {}, (err, data) => {
-        if (err) {
-          console.error(err)
-          notification.error({ message: String(err) })
-        } else {
-          setResult(data)
-        }
-      })
+    try {
+      const json = JSON.parse(jsonTextState)
+      if (json && modules[type]) {
+        modules[type](json, config || {}, (err, data) => {
+          if (err) {
+            console.error(err)
+            notification.error({message: String(err)})
+          } else {
+            setResult(data)
+          }
+        })
+      }
+    } catch (_) {
+      console.error(_)
     }
   }, [type, config, jsonTextState])
 
