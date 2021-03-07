@@ -10,6 +10,7 @@
     "file-saver": "^2.0.5",
     "jsonlint-mod": "^1.7.6",
     "jszip": "^3.6.0",
+    "promise-worker": "^2.0.1",
     "react": "^17.0.1",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^17.0.1",
@@ -47,7 +48,9 @@
     "@babel/preset-react": "^7.12.13",
     "babel-plugin-import": "^1.13.3",
     "customize-cra": "^1.0.0",
+    "null-loader": "^4.0.1",
     "react-app-rewired": "^2.1.8",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "worker-loader": "^3.0.8"
   }
 }

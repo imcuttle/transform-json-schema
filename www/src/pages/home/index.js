@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import useUncontrolled from '@rcp/use.uncontrolled'
 import JSZIP from 'jszip'
@@ -31,8 +32,13 @@ import 'codemirror/addon/lint/lint.css'
 import 'codemirror/addon/lint/lint.js'
 
 import jsonlint from 'jsonlint-mod'
-import modules from '../../utils/modules'
-import {Button, notification, Tabs, Tooltip} from 'antd'
+import PromiseWorker from 'promise-worker';
+import TransformWorker from 'worker-loader!../../utils/transform-worker'
+
+import { Button, notification, Tabs, Tooltip } from 'antd'
+
+const worker = new TransformWorker();
+const promiseWorker = new PromiseWorker(worker);
 
 // eslint-disable-next-line dot-notation
 window['jsonlint'] = jsonlint // 不能删除，json-lint有依赖
@@ -48,13 +54,13 @@ function HomePage({ type = 'to-ts', config, defaultJsonText, jsonText, onJsonTex
   React.useEffect(() => {
     try {
       const json = JSON.parse(jsonTextState)
-      if (json && modules[type]) {
-        modules[type](json, config || {}, (err, data) => {
+      if (json) {
+        promiseWorker.postMessage([type, json, config]).then(function (response) {
+          setResult(response)
+        }).catch((err) => {
           if (err) {
             console.error(err)
             notification.error({message: String(err)})
-          } else {
-            setResult(data)
           }
         })
       }
@@ -116,7 +122,7 @@ function HomePage({ type = 'to-ts', config, defaultJsonText, jsonText, onJsonTex
                   type={'primary'}
                   onClick={() => {
                     const zip = new JSZIP()
-                    Object.keys(result).forEach(name => {
+                    Object.keys(result).forEach((name) => {
                       zip.file(name, result[name])
                     })
 

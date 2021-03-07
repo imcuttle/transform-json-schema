@@ -7,6 +7,7 @@ const {
   babelInclude,
   addWebpackModuleRule,
   setWebpackPublicPath,
+  disableEsLint,
   babelExclude
 } = require('customize-cra')
 
@@ -32,6 +33,7 @@ const prodEnv = (...fnList) => {
 
 module.exports = {
   webpack: override(
+    disableEsLint(),
     babelInclude([nps.resolve('../src'), nps.resolve('./src')]),
     ...addBabelPlugins(
       // "transform-decorators-legacy",

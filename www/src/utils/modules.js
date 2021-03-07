@@ -1,5 +1,5 @@
 import { dirname, basename, extname } from 'path'
-const modulesRequire = require.context('../../../src/shortcut', false, /\.js$/)
+const modulesRequire = require.context('null-loader!../../../src/shortcut', false, /\.js$/)
 
 const keys = modulesRequire.keys()
 
