@@ -10,7 +10,7 @@ const capitalize = require('lodash.capitalize')
 const wrapLike = require('./framework/wrap-like').default
 
 export default wrapLike({
-  options: {
+  defaultOptions: {
     deep: false
   },
   normalizeOptions(options) {

@@ -85,7 +85,7 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
         const responseType = methodEnt.responseType = {}
 
         if (apiNode.responses['200']) {
-          const keyName = cc.pascalCase(`${prefix}_Res200`)
+          const keyName = cc.pascalCase(`${prefix}_Res`)
           const okNode = {...apiNode.responses['200'], ...apiNode.responses['200'].schema}
 
           if (okNode.type === 'object') {

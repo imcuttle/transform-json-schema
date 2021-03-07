@@ -10,7 +10,7 @@ import * as cc from 'change-case'
 const wrapLike = require('./framework/wrap-like').default
 
 function fillDefault(p = {}) {
-  p = {...p}
+  p = { ...p }
   if (p.hasOwnProperty('default')) {
     return p
   }
@@ -43,13 +43,13 @@ function fillDefault(p = {}) {
 }
 
 export default wrapLike({
-  options: {
+  defaultOptions: {
     default: true
   },
   wrapString(str) {
     return `import { Root, observable } from 'react-mobx-vm'\n` + str
   },
-  generateClassString({description, title}, propertiesStr) {
+  generateClassString({ description, title }, propertiesStr) {
     title = cc.pascalCase(title)
     return `
     /**

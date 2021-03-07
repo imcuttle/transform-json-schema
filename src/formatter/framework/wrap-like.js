@@ -118,7 +118,7 @@ function toClassDefinition(
 }
 
 function wrapLikeFormatter(node: SchemaPath, options = {}) {
-  options = Object.assign({}, this.options, options)
+  options = this.options = Object.assign({}, this.defaultOptions, options)
   if (this.normalizeOptions) {
     this.normalizeOptions(options)
   }

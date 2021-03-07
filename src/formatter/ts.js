@@ -39,7 +39,7 @@ export function fillType(p = {}) {
 
 export default wrapLike({
   propertyDelimiter: '\n',
-  options: {
+  defaultOptions: {
     loose: true
   },
   generateClassString({description, title, type}, propertiesStr) {
