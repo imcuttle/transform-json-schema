@@ -1,5 +1,8 @@
 import React from 'react'
 import useUncontrolled from '@rcp/use.uncontrolled'
+import JSZIP from 'jszip'
+import { saveAs } from 'file-saver'
+
 import css from './style.module.scss'
 
 import { Controlled as CodeMirror, UnControlled as UnControlledCodeMirror } from 'react-codemirror2'
@@ -29,7 +32,7 @@ import 'codemirror/addon/lint/lint.js'
 
 import jsonlint from 'jsonlint-mod'
 import modules from '../../utils/modules'
-import { notification, Tabs } from 'antd'
+import {Button, notification, Tabs, Tooltip} from 'antd'
 
 // eslint-disable-next-line dot-notation
 window['jsonlint'] = jsonlint // 不能删除，json-lint有依赖
@@ -97,7 +100,32 @@ function HomePage({ type = 'to-ts', config, defaultJsonText, jsonText, onJsonTex
 
       {typeof result === 'object' && result && (
         <div className={css.wrapperResult}>
-          <Tabs size={'small'} tabBarGutter={0} tabPosition={'left'} defaultActiveKey={Object.keys(result)[0]}>
+          <Tabs
+            size={'small'}
+            tabBarGutter={0}
+            tabPosition={'left'}
+            defaultActiveKey={Object.keys(result)[0]}
+            tabBarExtraContent={
+              <Tooltip title={'下载 ZIP'}>
+                <Button
+                  size={'small'}
+                  type={'primary'}
+                  onClick={() => {
+                    const zip = new JSZIP()
+                    Object.keys(result).forEach(name => {
+                      zip.file(name, result[name])
+                    })
+
+                    zip.generateAsync({ type: 'blob' }).then(function (content) {
+                      saveAs(content, 'transform-json-schema-result.zip')
+                    })
+                  }}
+                >
+                  下载
+                </Button>
+              </Tooltip>
+            }
+          >
             {Object.keys(result).map((fileName) => (
               <Tabs.TabPane tab={fileName} key={fileName}>
                 <CodeMirror
