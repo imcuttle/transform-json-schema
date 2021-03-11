@@ -1,117 +1,153 @@
-import React from 'react'
-import css from './App.module.scss'
-import axios from 'axios'
-import { Layout, Input, Select, ConfigProvider, Form, Space, Button, Tooltip, Popover, Spin, notification } from 'antd'
-import zh_CN from 'antd/lib/locale/zh_CN'
-import HomePage from './pages/home'
-import modules from './utils/modules'
-import { Controlled as CodeMirror } from 'react-codemirror2'
+import React from "react";
+import css from "./App.module.scss";
+import axios from "axios";
+import {
+  Layout,
+  Input,
+  Select,
+  ConfigProvider,
+  Form,
+  Space,
+  Button,
+  Tooltip,
+  Popover,
+  Spin,
+  notification,
+  message,
+} from "antd";
+import zh_CN from "antd/lib/locale/zh_CN";
+import { SettingOutlined } from "@ant-design/icons";
+import isHotKey from "is-hotkey";
+import HomePage from "./pages/home";
+import modules from "./utils/modules";
+import { Controlled as CodeMirror } from "react-codemirror2";
 
 const useLocalStorageState = (key, initialValue) => {
   const storeValue = React.useMemo(() => {
     try {
-      return JSON.parse(localStorage.getItem(`localStorage_${key}`))
+      return JSON.parse(localStorage.getItem(`localStorage_${key}`));
     } catch (_) {}
-    return null
-  }, [])
-  const [v, setVal] = React.useState(storeValue || initialValue)
-  const initRef = React.useRef(false)
+    return null;
+  }, []);
+  const [v, setVal] = React.useState(storeValue || initialValue);
+  const initRef = React.useRef(false);
 
   React.useLayoutEffect(() => {
     if (!initRef.current) {
-      initRef.current = true
-      return
+      initRef.current = true;
+      return;
     }
-    localStorage.setItem(`localStorage_${key}`, JSON.stringify(v))
-  }, [v])
+    localStorage.setItem(`localStorage_${key}`, JSON.stringify(v));
+  }, [v]);
 
-  return [v, setVal]
-}
+  return [v, setVal];
+};
 
-const { TextArea } = Input
-const { Header, Content, Footer } = Layout
+const { TextArea } = Input;
+const { Header, Content, Footer } = Layout;
 
 const CONFIG = JSON.stringify(
   {
-    axiosRequest: 'axios',
+    axiosRequest: "axios",
     commonConfig: { responseData: true },
     splitModule: true,
     prefix: `/* eslint-disable */\n// @ts-nocheck\n`,
-    suffix: ''
+    suffix: "",
   },
   null,
   2
-)
+);
 
 function App() {
-  const [loading, setLoading] = React.useState(false)
-  const [jsonText, setJsonText] = React.useState('{}')
-  const [transform, setTransform] = useLocalStorageState('transform-type', { type: 'to-swagger-axios', config: CONFIG })
-  const [type, setType] = useLocalStorageState('import-type', 'url')
+  const [loading, setLoading] = React.useState(false);
+  const [jsonText, setJsonText] = React.useState("{}");
+  const [transform, setTransform] = useLocalStorageState("transform-type", {
+    type: "to-swagger-axios",
+    config: CONFIG,
+  });
+  const [type, setType] = useLocalStorageState("import-type", "url");
   const [urlText, setUrlText] = useLocalStorageState(
-    'import-value-url',
-    'http://tutor-test.zhenguanyu.com/tutor-cyber-corpus/swagger/v2/api-docs'
-  )
-  const [jsText, setJsText] = useLocalStorageState('import-value-js', '')
+    "import-value-url",
+    "http://tutor-test.zhenguanyu.com/tutor-cyber-corpus/swagger/v2/api-docs"
+  );
+  const [jsText, setJsText] = useLocalStorageState("import-value-js", "");
+
+  React.useEffect(() => {
+    const handle = (evt) => {
+      if (evt.target.tagName !== "TEXTAREA" && isHotKey("mod+f", evt)) {
+        evt.preventDefault();
+        message.info("建议在编辑器中进行搜索，选中编辑器，然后键入搜索快捷键");
+      }
+    };
+    document.addEventListener("keydown", handle);
+    return () => {
+      document.removeEventListener("keydown", handle);
+    };
+  });
+
   const onSearch = React.useCallback(
     async (val) => {
-      setLoading(true)
+      setLoading(true);
       try {
-        if (type === 'js') {
-          val = jsText
+        if (type === "js") {
+          val = jsText;
           if (!val) {
-            return
+            return;
           }
-          const res = await eval(val)
+          const res = await eval(val);
           if (res.status === 200) {
-            setJsonText(JSON.stringify(await res.json(), null, 2))
+            setJsonText(JSON.stringify(await res.json(), null, 2));
           }
         } else {
-          val = urlText
+          val = urlText;
           if (!val) {
-            return
+            return;
           }
-          const res = await axios.get(val.trim(), { responseType: 'json', withCredentials: true })
+          const res = await axios.get(val.trim(), {
+            responseType: "json",
+            withCredentials: true,
+          });
           if (res.status === 200) {
-            setJsonText(JSON.stringify(res.data, null, 2))
+            setJsonText(JSON.stringify(res.data, null, 2));
           }
         }
       } catch (e) {
-        notification.error({
-          message: '请求出错',
-          description: e.config
-            ? `${e.config.method?.toUpperCase()} ${e.config.url} (${e.response?.status || '-'})`
+        message.error(
+          e.config
+            ? `${e.config.method?.toUpperCase()} ${e.config.url} (${
+                e.response?.status || "-"
+              })`
             : String(e)
-        })
+        );
       }
-      setLoading(false)
+      setLoading(false);
     },
     [type, urlText, jsonText]
-  )
+  );
 
   React.useEffect(() => {
-    onSearch()
-  }, [])
+    onSearch();
+  }, []);
 
   const config = React.useMemo(() => {
     try {
-      return JSON.parse(transform.config)
+      return JSON.parse(transform.config);
     } catch (_) {}
-    return null
-  }, [transform.config])
+    return null;
+  }, [transform.config]);
 
   return (
-    <ConfigProvider locale={zh_CN} theme={'light'}>
-      <Layout className={css.App} theme={'light'}>
+    <ConfigProvider locale={zh_CN} theme={"light"}>
+      <Layout className={css.App} theme={"light"}>
         <Header className={css.header}>
           <span className={css.logo}>Transform json schema</span>
 
-          <Form.Item label={'转换类型'} wrapperCol={{ style: { width: 150 } }}>
+          <Form.Item label={"转换类型"} wrapperCol={{ style: { width: 150 } }}>
             <Select
               value={transform.type}
               className={css.select}
               onChange={(value) => {
-                setTransform((v) => ({ ...v, type: value }))
+                setTransform((v) => ({ ...v, type: value }));
               }}
             >
               {Object.keys(modules).map((name) => (
@@ -128,41 +164,45 @@ function App() {
                 className={css.paramsEditor}
                 value={transform.config}
                 onBeforeChange={(editor, data, value) => {
-                  setTransform((v) => ({ ...v, config: value }))
+                  setTransform((v) => ({ ...v, config: value }));
                 }}
                 options={{
-                  mode: 'application/json',
-                  theme: 'material',
+                  mode: "application/json",
+                  theme: "material",
                   smartIndent: true,
                   tabSize: 2,
                   lint: true,
                   foldGutter: true,
-                  gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter', 'CodeMirror-lint-markers']
+                  gutters: [
+                    "CodeMirror-linenumbers",
+                    "CodeMirror-foldgutter",
+                    "CodeMirror-lint-markers",
+                  ],
                 }}
               />
             }
           >
-            <Tooltip title={'设置转换配置'} placement={'right'}>
-              <Button style={{ marginLeft: 10 }}>设置</Button>
+            <Tooltip title={"设置转换配置"} placement={"right"}>
+              <Button style={{ marginLeft: 10 }} icon={<SettingOutlined />} />
             </Tooltip>
           </Popover>
 
           <div className={css.btns}>
             <Select value={type} onChange={(v) => setType(v)}>
-              <Select.Option value={'url'}>从 URL 导入</Select.Option>
-              <Select.Option value={'js'}>从 JS 脚本 导入</Select.Option>
+              <Select.Option value={"url"}>从 URL 导入</Select.Option>
+              <Select.Option value={"js"}>从 JS 脚本 导入</Select.Option>
             </Select>
-            {type === 'url' && (
+            {type === "url" && (
               <Input.Search
                 value={urlText}
                 onChange={(e) => setUrlText(e.target.value)}
                 enterButton="导入"
-                placeholder={'从 URL 导入'}
+                placeholder={"从 URL 导入"}
                 onSearch={onSearch}
                 className={css.search}
               />
             )}
-            {type === 'js' && (
+            {type === "js" && (
               <div className={css.jsTextareaWrapper}>
                 <Popover
                   destroyTooltipOnHide
@@ -173,10 +213,12 @@ function App() {
                       rows={10}
                       value={jsText}
                       onChange={(e) => setJsText(e.target.value)}
-                      placeholder={'输入 JS 请求脚本，具体可以使用 Chrome Network 中的 Copy as fetch'}
+                      placeholder={
+                        "输入 JS 请求脚本，具体可以使用 Chrome Network 中的 Copy as fetch"
+                      }
                     />
                   }
-                  trigger={'click'}
+                  trigger={"click"}
                 >
                   <Input.Search
                     readOnly
@@ -184,7 +226,9 @@ function App() {
                     className={css.jsTextarea}
                     value={jsText}
                     enterButton="导入"
-                    placeholder={'输入 JS 请求脚本，具体可以使用 Chrome Network 中的 Copy as fetch'}
+                    placeholder={
+                      "输入 JS 请求脚本，具体可以使用 Chrome Network 中的 Copy as fetch"
+                    }
                   />
                 </Popover>
               </div>
@@ -202,14 +246,19 @@ function App() {
             {/*</Tooltip>*/}
           </div>
         </Header>
-        <Content style={{ padding: '0 50px' }} className={css.body}>
+        <Content style={{ padding: "0 50px" }} className={css.body}>
           <Spin spinning={loading} wrapperClassName={css.loading} delay={400}>
-            <HomePage type={transform.type} config={config} jsonText={jsonText} onJsonTextChange={setJsonText} />
+            <HomePage
+              type={transform.type}
+              config={config}
+              jsonText={jsonText}
+              onJsonTextChange={setJsonText}
+            />
           </Spin>
         </Content>
       </Layout>
     </ConfigProvider>
-  )
+  );
 }
 
-export default App
+export default App;

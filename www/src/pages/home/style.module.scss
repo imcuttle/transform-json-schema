@@ -13,6 +13,19 @@
   }
 }
 
+.transfroming {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+
+  > span {
+    color: #ccc;
+  }
+}
+
 .jsonEditor {
   margin-right: 10px;
 }
