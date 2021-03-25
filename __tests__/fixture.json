@@ -4,13 +4,13 @@
     "description": "esop",
     "version": "1.0",
     "title": "esop",
-    "termsOfService": "esop.baidu.com",
+    "termsOfService": "example.com",
     "contact": {
       "name": "金明",
-      "email": "jinming@baidu.com"
+      "email": "jinming@example.com"
     }
   },
-  "host": "erp8070.baidu.com",
+  "host": "example.com",
   "basePath": "/esop",
   "tags": [
     {
@@ -5971,11 +5971,11 @@
           "example": [
             {
               "personId": "12",
-              "email": "12@baidu.com"
+              "email": "12@example.com"
             },
             {
               "personId": "12",
-              "email": "12@baidu.com"
+              "email": "12@example.com"
             }
           ],
           "description": "leadingBpIdStr",
@@ -6810,7 +6810,7 @@
         },
         "email": {
           "type": "string",
-          "example": "zhangdabiao@baidu.com",
+          "example": "zhangdabiao@example.com",
           "description": "公司邮箱",
           "allowEmptyValue": false
         },
@@ -6899,7 +6899,7 @@
         },
         "email": {
           "type": "string",
-          "example": "zhangdabiao@baidu.com",
+          "example": "zhangdabiao@example.com",
           "description": "公司邮箱",
           "allowEmptyValue": false
         },

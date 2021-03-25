@@ -22,6 +22,8 @@ import HomePage from "./pages/home";
 import modules from "./utils/modules";
 import { Controlled as CodeMirror } from "react-codemirror2";
 
+useSyncState([], new LocalStore())
+
 const useLocalStorageState = (key, initialValue) => {
   const storeValue = React.useMemo(() => {
     try {
