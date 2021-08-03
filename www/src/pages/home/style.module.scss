@@ -1,4 +1,15 @@
 
+.result {
+  position: relative;
+}
+
+.floatBtns {
+  position: absolute;
+  right: 1px;
+  top: 0;
+  z-index: 10;
+}
+
 .container {
   display: flex;
   flex: 1;
@@ -16,7 +27,7 @@
 .transfroming {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
   z-index: 1;
   display: inline-flex;
   flex-direction: column;
@@ -35,7 +46,7 @@
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.3) !important;
 }
 .wrapperResult {
-
+  position: relative;
   flex: 1;
   width: 0;
 

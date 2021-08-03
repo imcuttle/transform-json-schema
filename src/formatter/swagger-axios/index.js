@@ -1,6 +1,6 @@
 import { SchemaPath } from '../../types/Schema'
 import tsTypeTransform from '../ts'
-import axiosTransform from './axios-transform'
+import axiosTransform, {createGetUniqName} from './axios-transform'
 import camelCase from 'lodash.camelcase'
 import uniq from 'lodash.uniq'
 
@@ -36,6 +36,7 @@ export default function swaggerAxios(
     ...options
   }: { axiosRequest?: string } = {}
 ): { tsType: string, api: string, index: string } {
+  const uniqKeyName = createGetUniqName()
   const tsTypeCodes = [tsTypeTransform(node, options) + '\n']
   let apiCode = ''
   const axiosResult = axiosTransform(node, options)
@@ -90,17 +91,22 @@ export default function swaggerAxios(
 
         let hasData = false
         if (paramType) {
-          if (paramType.query) {
+          if (paramType.query && method.toLowerCase() === 'get') {
             addTypeImportOrInject(paramType.query.code, paramType.query.name)
-            argsChunks.push(`params?: ${paramType.query.name}`)
+            argsChunks.push(`params${paramType.query.required ? '' : '?'}: ${paramType.query.name}`)
           }
 
           hasData = paramType.body || paramType.formData
           if (paramType.body) {
             addTypeImportOrInject(paramType.body.code, paramType.body.name)
-            argsChunks.push(`data?: ${paramType.body.name}`)
+            argsChunks.push(`data${paramType.body.required ? '' : '?'}: ${paramType.body.name}`)
           } else if (paramType.formData) {
-            argsChunks.push(`data?: FormData`)
+            argsChunks.push(`data${paramType.formData.required ? '' : '?'}: FormData`)
+          }
+
+          if (paramType.query && method.toLowerCase() !== 'get') {
+            addTypeImportOrInject(paramType.query.code, paramType.query.name)
+            argsChunks.push(`params${paramType.query.required ? '' : '?'}: ${paramType.query.name}`)
           }
         }
 
@@ -114,10 +120,10 @@ export default function swaggerAxios(
 
         argsChunks.push(`axiosRequestConfig?: AxiosRequestConfig`)
         codes.push(`
-      export function ${camelCase(reqCommonPrefix)}(${argsChunks.join(', ')}) {
+      export function ${uniqKeyName(camelCase(reqCommonPrefix))}(${argsChunks.join(', ')}) {
         return ${axiosKey}<${responseTypeKey}>(merge({
           url: COMMON_PREFIX + ${JSON.stringify(tUrl(pathChunk))},
-          method: ${JSON.stringify(method)},
+          method: ${JSON.stringify(method.toUpperCase())},
           pathData: {
             ${pathTokens.map((token) => `${token},`).join('\n')}
           },

@@ -1,9 +1,9 @@
 /* eslint-disable */
-import React from "react";
+import React, { useCallback, useRef } from "react";
 import useUncontrolled from "@rcp/use.uncontrolled";
 import JSZIP from "jszip";
 import { saveAs } from "file-saver";
-import { LoadingOutlined } from "@ant-design/icons";
+import { CopyFilled, LoadingOutlined } from "@ant-design/icons";
 
 import css from "./style.module.scss";
 
@@ -44,11 +44,12 @@ import "codemirror/addon/lint/json-lint.js";
 import "codemirror/addon/lint/lint.css";
 import "codemirror/addon/lint/lint.js";
 
+import copyText from "copy-text-to-clipboard";
 import jsonlint from "jsonlint-mod";
 import PromiseWorker from "promise-worker";
 import TransformWorker from "worker-loader!../../utils/transform-worker";
 
-import {Button, message, notification, Tabs, Tooltip} from "antd";
+import { Button, message, notification, Tabs, Tooltip } from "antd";
 
 const worker = new TransformWorker();
 const promiseWorker = new PromiseWorker(worker);
@@ -56,13 +57,56 @@ const promiseWorker = new PromiseWorker(worker);
 // eslint-disable-next-line dot-notation
 window["jsonlint"] = jsonlint; // 不能删除，json-lint有依赖
 
+const FloatBtns = ({ text }) => {
+  const [copyStatus, setCopyStatus] = React.useState("");
+
+  const timerRef = useRef(null);
+  const copy = useCallback(() => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null
+    }
+    try {
+      copyText(text);
+      setCopyStatus("ok");
+    } catch (e) {
+      setCopyStatus("fail");
+    } finally {
+      timerRef.current = setTimeout(() => {
+        setCopyStatus();
+      }, 2000);
+    }
+  }, [text]);
+
+  return (
+    <div className={css.floatBtns}>
+      <Tooltip
+        onVisibleChange={v => {
+          if (!v) {
+            if (timerRef.current) {
+              clearTimeout(timerRef.current);
+              timerRef.current = null
+            }
+            setCopyStatus();
+          }
+        }}
+        title={
+          !copyStatus ? "复制" : copyStatus === "ok" ? "复制成功" : "复制失败"
+        }
+      >
+        <Button icon={<CopyFilled />} size={"small"} ghost onClick={copy} />
+      </Tooltip>
+    </div>
+  );
+};
+
 function HomePage({
   type = "to-ts",
   config,
   defaultJsonText,
   jsonText,
   onJsonTextChange,
-}: any) {
+}) {
   const [jsonTextState, setJsonText] = useUncontrolled({
     value: jsonText,
     onChange: onJsonTextChange,
@@ -71,7 +115,12 @@ function HomePage({
   const [result, setResult] = React.useState("");
   const [transforming, setTransforming] = React.useState(false);
 
+  const isFirstRef = useRef(true);
   React.useEffect(() => {
+    if (isFirstRef.current) {
+      isFirstRef.current = false;
+      return;
+    }
     try {
       const json = JSON.parse(jsonTextState);
       if (json) {
@@ -125,26 +174,30 @@ function HomePage({
       )}
 
       {typeof result === "string" && (
-        <CodeMirror
-          className={css.resultEditor}
-          value={result}
-          onBeforeChange={(editor, data, value) => {
-            setResult(value);
-          }}
-          options={{
-            mode: "text/typescript",
-            theme: "material",
-            lineNumbers: true,
-            smartIndent: true,
-            tabSize: 2,
-            foldGutter: true,
-            gutters: [
-              "CodeMirror-linenumbers",
-              "CodeMirror-foldgutter",
-              "CodeMirror-lint-markers",
-            ],
-          }}
-        />
+        <div className={css.wrapperResult}>
+          <CodeMirror
+            className={css.resultEditor}
+            value={result}
+            onBeforeChange={(editor, data, value) => {
+              setResult(value);
+            }}
+            options={{
+              mode: "text/typescript",
+              theme: "material",
+              lineNumbers: true,
+              smartIndent: true,
+              lineWrapping: true,
+              tabSize: 2,
+              foldGutter: true,
+              gutters: [
+                "CodeMirror-linenumbers",
+                "CodeMirror-foldgutter",
+                "CodeMirror-lint-markers",
+              ],
+            }}
+          />
+          <FloatBtns text={result} />
+        </div>
       )}
 
       {typeof result === "object" && result && (
@@ -190,6 +243,7 @@ function HomePage({
                     theme: "material",
                     lineNumbers: true,
                     smartIndent: true,
+                    lineWrapping: true,
                     tabSize: 2,
                     foldGutter: true,
                     gutters: [
@@ -199,6 +253,7 @@ function HomePage({
                     ],
                   }}
                 />
+                <FloatBtns text={result[fileName]} />
               </Tabs.TabPane>
             ))}
           </Tabs>

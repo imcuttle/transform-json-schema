@@ -8,6 +8,7 @@
     "antd": "^4.13.0",
     "axios": "^0.21.1",
     "codemirror": "^5.59.4",
+    "copy-text-to-clipboard": "^3.0.1",
     "file-saver": "^2.0.5",
     "is-hotkey": "^0.2.0",
     "jsonlint-mod": "^1.7.6",
@@ -20,7 +21,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
+    "start": "PORT=8000 SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
     "build": "SKIP_PREFLIGHT_CHECK=true react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"

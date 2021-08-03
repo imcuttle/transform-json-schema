@@ -68,7 +68,7 @@ function App() {
   const [type, setType] = useLocalStorageState("import-type", "url");
   const [urlText, setUrlText] = useLocalStorageState(
     "import-value-url",
-    "http://tutor-test.zhenguanyu.com/tutor-cyber-corpus/swagger/v2/api-docs"
+    ""
   );
   const [jsText, setJsText] = useLocalStorageState("import-value-js", "");
 
@@ -119,8 +119,9 @@ function App() {
               })`
             : String(e)
         );
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     },
     [type, urlText, jsonText]
   );
