@@ -2,7 +2,8 @@ import { SchemaPath } from "../../types/Schema";
 import toTs, { fillType } from "../ts";
 import groupBy from "lodash.groupby";
 import * as cc from "change-case";
-import commonPathPrefix from "common-path-prefix";
+import commonSubString from "common-substrings";
+import escapeRegExp from "escape-string-regexp";
 
 /**
  import twAxios from '@/shared/utils/tw-axios';
@@ -147,16 +148,23 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
    */
   const rootEnt = {};
   const paths = Object.keys(node.schema.paths);
-  const commonPrefix = commonPathPrefix(paths);
-  paths.map((path) => {
-    const uniqPath = path.slice(commonPrefix.length);
+  const commonSubStrings = commonSubString(paths, {
+    minOccurrence: paths.length,
+    minLength: 2,
+  });
+
+  paths.forEach((path) => {
+    let uniqPath = path
+    commonSubStrings.forEach(subStr => {
+      uniqPath = uniqPath.replace(new RegExp(escapeRegExp(subStr.name), 'g'), '')
+    })
     const pathEnt = (rootEnt[uniqPath] = {});
     const pathNode = node.schema.paths[path];
 
     const methods = Object.keys(pathNode);
     methods.forEach((method) => {
       const apiNode = pathNode[method];
-      const methodEnt = (pathEnt[method] = {});
+      const methodEnt = (pathEnt[method] = { path });
 
       const prefix = `${uniqPath.replace(/\//, "_")}_${method}`;
 
@@ -214,7 +222,7 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
   });
 
   return {
-    commonPrefix,
+    commonSubStrings: commonSubStrings.map(x => x.name),
     data: rootEnt,
   };
 }

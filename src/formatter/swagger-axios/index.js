@@ -3,7 +3,7 @@ import tsTypeTransform from "../ts";
 import axiosTransform, { createGetUniqName } from "./axios-transform";
 import camelCase from "lodash.camelcase";
 import uniq from "lodash.uniq";
-import { AxiosPromise } from "axios";
+import escapeRegexp from "escape-string-regexp";
 
 const getImportStatement = (source, key = camelCase(source)) => {
   return {
@@ -17,7 +17,7 @@ const getTokens = (string) => {
   return (chunks || []).map((x) => x.slice(1, -1));
 };
 
-const tUrl = (url) => url.replace(/{(.+?)}/g, `:$1`);
+const tUrl = (url) => url.replace(/(?<!\$){(.+?)}/g, `:$1`);
 
 const addImport = (codes, ...args) => {
   const { code, key } = getImportStatement(...args);
@@ -51,8 +51,10 @@ export default function swaggerAxios(
       const source = typeRequest;
       if (splitModule) {
         tsTypeCodes.push(code);
-        const result = key.match(/^([A-Z$_][$_a-zA-Z0-9]*)(\[])?$/) || key.match(/^Array<\s*([A-Z$_][$_a-zA-Z0-9]*)\s*>$/)
-        if (!!result && !['Date', 'Object'].includes(result[1])) {
+        const result =
+          key.match(/^([A-Z$_][$_a-zA-Z0-9]*)(\[])?$/) ||
+          key.match(/^Array<\s*([A-Z$_][$_a-zA-Z0-9]*)\s*>$/);
+        if (!!result && !["Date", "Object"].includes(result[1])) {
           let keys = (maybeImportMap[source] = maybeImportMap[source] || []);
           keys.push(result[1]);
           maybeImportMap[source] = uniq(keys);
@@ -83,9 +85,11 @@ export default function swaggerAxios(
       `pathRegexpAxios()(${axiosKey});`,
       `stringDataAxios()(${axiosKey});\n`
     );
-    const { commonPrefix, data } = axiosResult;
+    const { commonSubStrings, data } = axiosResult;
     codes.push(
-      `const COMMON_PREFIX = ${JSON.stringify(tUrl(commonPrefix) || "")};`
+      `const COMMON_SUBSTRS = ${JSON.stringify(
+        commonSubStrings.map((subStr) => tUrl(subStr) || "")
+      )};`
     );
     codes.push(
       `const COMMON_CONFIG: AxiosRequestConfig & ${
@@ -98,7 +102,7 @@ export default function swaggerAxios(
 
     Object.keys(data).forEach((pathChunk) => {
       Object.keys(data[pathChunk]).forEach((method) => {
-        const { responseType, paramType } = data[pathChunk][method];
+        const { responseType, paramType, path } = data[pathChunk][method];
         const pathTokens = getTokens(pathChunk);
         const reqCommonPrefix = method + " " + pathChunk;
         const argsChunks = [];
@@ -145,13 +149,18 @@ export default function swaggerAxios(
         if (responseType && responseType["200"]) {
           responseTypeKey = responseType["200"].name;
           // if (responseType["200"].code) {
-            addTypeImportOrInject(responseType["200"].code, responseTypeKey);
+          addTypeImportOrInject(responseType["200"].code, responseTypeKey);
           // }
         }
 
         argsChunks.push(
           `axiosRequestConfig?: AxiosRequestConfig & { responseData?: B }`
         );
+
+        let url = path
+        commonSubStrings.forEach((chunk, i) => {
+          url = url.replace(new RegExp(escapeRegexp(chunk), 'g'), `\${COMMON_SUBSTRS[${i}]}`)
+        })
         codes.push(`
       export function ${uniqKeyName(
         camelCase(reqCommonPrefix)
@@ -159,7 +168,7 @@ export default function swaggerAxios(
           ", "
         )}) {
         return ${axiosKey}(merge({
-          url: COMMON_PREFIX + ${JSON.stringify(tUrl(pathChunk))},
+          url: \`${tUrl(url)}\`,
           method: ${JSON.stringify(method.toUpperCase())},
           pathData: {
             ${pathTokens.map((token) => `${token},`).join("\n")}
