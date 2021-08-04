@@ -51,9 +51,10 @@ export default function swaggerAxios(
       const source = typeRequest;
       if (splitModule) {
         tsTypeCodes.push(code);
-        if (/^[a-zA-Z$_][$_a-zA-Z0-9]*$/.test(key)) {
+        const result = key.match(/^([A-Z$_][$_a-zA-Z0-9]*)(\[])?$/) || key.match(/^Array<\s*([A-Z$_][$_a-zA-Z0-9]*)\s*>$/)
+        if (!!result && !['Date', 'Object'].includes(result[1])) {
           let keys = (maybeImportMap[source] = maybeImportMap[source] || []);
-          keys.push(key);
+          keys.push(result[1]);
           maybeImportMap[source] = uniq(keys);
         }
       } else {
@@ -143,9 +144,9 @@ export default function swaggerAxios(
         let responseTypeKey = "any";
         if (responseType && responseType["200"]) {
           responseTypeKey = responseType["200"].name;
-          if (responseType["200"].code) {
+          // if (responseType["200"].code) {
             addTypeImportOrInject(responseType["200"].code, responseTypeKey);
-          }
+          // }
         }
 
         argsChunks.push(
