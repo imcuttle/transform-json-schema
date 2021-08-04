@@ -7,42 +7,15 @@ import { CopyFilled, LoadingOutlined } from "@ant-design/icons";
 
 import css from "./style.module.scss";
 
-import {
-  Controlled as CodeMirror,
-  UnControlled as UnControlledCodeMirror,
-} from "react-codemirror2";
-import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material.css";
-// // 代码模式
-import "codemirror/mode/javascript/javascript";
+import AceEditor from "react-ace";
 
-// 添加折叠
-import "codemirror/addon/fold/brace-fold.js";
-import "codemirror/addon/fold/comment-fold.js";
-import "codemirror/addon/fold/foldcode.js";
-import "codemirror/addon/fold/foldgutter.js";
-import "codemirror/addon/fold/foldgutter.css";
-
-import "codemirror/addon/search/search";
-import "codemirror/addon/search/searchcursor";
-import "codemirror/addon/search/matchesonscrollbar";
-import "codemirror/addon/search/jump-to-line";
-import "codemirror/addon/search/match-highlighter";
-import "codemirror/addon/search/matchesonscrollbar.css";
-import "codemirror/addon/dialog/dialog";
-import "codemirror/addon/dialog/dialog.css";
-
-// 括号匹配
-import "codemirror/addon/edit/matchbrackets.js";
-
-// 自动补全
-import "codemirror/addon/hint/show-hint.css";
-import "codemirror/addon/hint/show-hint.js";
-import "codemirror/addon/hint/anyword-hint.js";
-
-import "codemirror/addon/lint/json-lint.js";
-import "codemirror/addon/lint/lint.css";
-import "codemirror/addon/lint/lint.js";
+import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/mode-javascript";
+import "ace-builds/src-noconflict/mode-typescript";
+import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/keybinding-vscode";
+import "ace-builds/src-noconflict/ext-static_highlight";
 
 import copyText from "copy-text-to-clipboard";
 import jsonlint from "jsonlint-mod";
@@ -64,7 +37,7 @@ const FloatBtns = ({ text }) => {
   const copy = useCallback(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
-      timerRef.current = null
+      timerRef.current = null;
     }
     try {
       copyText(text);
@@ -81,11 +54,11 @@ const FloatBtns = ({ text }) => {
   return (
     <div className={css.floatBtns}>
       <Tooltip
-        onVisibleChange={v => {
+        onVisibleChange={(v) => {
           if (!v) {
             if (timerRef.current) {
               clearTimeout(timerRef.current);
-              timerRef.current = null
+              timerRef.current = null;
             }
             setCopyStatus();
           }
@@ -94,7 +67,7 @@ const FloatBtns = ({ text }) => {
           !copyStatus ? "复制" : copyStatus === "ok" ? "复制成功" : "复制失败"
         }
       >
-        <Button icon={<CopyFilled />} size={"small"} ghost onClick={copy} />
+        <Button icon={<CopyFilled />} size={"small"} type={'link'} onClick={copy} />
       </Tooltip>
     </div>
   );
@@ -115,12 +88,12 @@ function HomePage({
   const [result, setResult] = React.useState("");
   const [transforming, setTransforming] = React.useState(false);
 
-  const isFirstRef = useRef(true);
+  // const isFirstRef = useRef(true);
   React.useEffect(() => {
-    if (isFirstRef.current) {
-      isFirstRef.current = false;
-      return;
-    }
+    // if (isFirstRef.current) {
+    //   isFirstRef.current = false;
+    //   return;
+    // }
     try {
       const json = JSON.parse(jsonTextState);
       if (json) {
@@ -145,26 +118,13 @@ function HomePage({
 
   return (
     <div className={css.container}>
-      <CodeMirror
+      <AceEditor
         className={css.jsonEditor}
+        mode="json"
         value={jsonTextState}
-        onBeforeChange={(editor, data, value) => {
-          setJsonText(value);
-        }}
-        options={{
-          mode: "application/json",
-          theme: "material",
-          lineNumbers: true,
-          smartIndent: true,
-          tabSize: 2,
-          lint: true,
-          foldGutter: true,
-          gutters: [
-            "CodeMirror-linenumbers",
-            "CodeMirror-foldgutter",
-            "CodeMirror-lint-markers",
-          ],
-        }}
+        theme="github"
+        onChange={(v) => setJsonText(v)}
+        editorProps={{ $blockScrolling: true }}
       />
 
       {transforming && (
@@ -175,26 +135,13 @@ function HomePage({
 
       {typeof result === "string" && (
         <div className={css.wrapperResult}>
-          <CodeMirror
+          <AceEditor
             className={css.resultEditor}
+            mode="typescript"
             value={result}
-            onBeforeChange={(editor, data, value) => {
-              setResult(value);
-            }}
-            options={{
-              mode: "text/typescript",
-              theme: "material",
-              lineNumbers: true,
-              smartIndent: true,
-              lineWrapping: true,
-              tabSize: 2,
-              foldGutter: true,
-              gutters: [
-                "CodeMirror-linenumbers",
-                "CodeMirror-foldgutter",
-                "CodeMirror-lint-markers",
-              ],
-            }}
+            theme="github"
+            onChange={(v) => setResult(v)}
+            editorProps={{ $blockScrolling: true }}
           />
           <FloatBtns text={result} />
         </div>
@@ -232,26 +179,15 @@ function HomePage({
           >
             {Object.keys(result).map((fileName) => (
               <Tabs.TabPane tab={fileName} key={fileName}>
-                <CodeMirror
+                <AceEditor
                   className={css.subEditor}
+                  mode="typescript"
                   value={result[fileName]}
-                  onBeforeChange={(editor, data, value) => {
-                    setResult({ ...result, [fileName]: value });
-                  }}
-                  options={{
-                    mode: "text/typescript",
-                    theme: "material",
-                    lineNumbers: true,
-                    smartIndent: true,
-                    lineWrapping: true,
-                    tabSize: 2,
-                    foldGutter: true,
-                    gutters: [
-                      "CodeMirror-linenumbers",
-                      "CodeMirror-foldgutter",
-                      "CodeMirror-lint-markers",
-                    ],
-                  }}
+                  theme="github"
+                  onChange={(value) =>
+                    setResult({ ...result, [fileName]: value })
+                  }
+                  editorProps={{ $blockScrolling: true }}
                 />
                 <FloatBtns text={result[fileName]} />
               </Tabs.TabPane>

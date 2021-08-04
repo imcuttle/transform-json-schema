@@ -20,7 +20,7 @@ import { SettingOutlined } from "@ant-design/icons";
 import isHotKey from "is-hotkey";
 import HomePage from "./pages/home";
 import modules from "./utils/modules";
-import { Controlled as CodeMirror } from "react-codemirror2";
+import AceEditor from "react-ace";
 
 const useLocalStorageState = (key, initialValue) => {
   const storeValue = React.useMemo(() => {
@@ -66,23 +66,20 @@ function App() {
     config: CONFIG,
   });
   const [type, setType] = useLocalStorageState("import-type", "url");
-  const [urlText, setUrlText] = useLocalStorageState(
-    "import-value-url",
-    ""
-  );
+  const [urlText, setUrlText] = useLocalStorageState("import-value-url", "");
   const [jsText, setJsText] = useLocalStorageState("import-value-js", "");
 
   React.useEffect(() => {
-    const handle = (evt) => {
-      if (evt.target.tagName !== "TEXTAREA" && isHotKey("mod+f", evt)) {
-        evt.preventDefault();
-        message.info("建议在编辑器中进行搜索，选中编辑器，然后键入搜索快捷键");
-      }
-    };
-    document.addEventListener("keydown", handle);
-    return () => {
-      document.removeEventListener("keydown", handle);
-    };
+    // const handle = (evt) => {
+    //   if (evt.target.tagName !== "TEXTAREA" && isHotKey("mod+f", evt)) {
+    //     evt.preventDefault();
+    //     message.info("建议在编辑器中进行搜索，选中编辑器，然后键入搜索快捷键");
+    //   }
+    // };
+    // document.addEventListener("keydown", handle);
+    // return () => {
+    //   document.removeEventListener("keydown", handle);
+    // };
   });
 
   const onSearch = React.useCallback(
@@ -161,25 +158,14 @@ function App() {
 
           <Popover
             content={
-              <CodeMirror
+              <AceEditor
                 className={css.paramsEditor}
                 value={transform.config}
-                onBeforeChange={(editor, data, value) => {
+                onChange={(value) => {
                   setTransform((v) => ({ ...v, config: value }));
                 }}
-                options={{
-                  mode: "application/json",
-                  theme: "material",
-                  smartIndent: true,
-                  tabSize: 2,
-                  lint: true,
-                  foldGutter: true,
-                  gutters: [
-                    "CodeMirror-linenumbers",
-                    "CodeMirror-foldgutter",
-                    "CodeMirror-lint-markers",
-                  ],
-                }}
+                mode={"json"}
+                theme={"github"}
               />
             }
           >

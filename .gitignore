@@ -8,3 +8,5 @@ coverage/
 .dist
 lib/
 /www-dist/
+/__tests__/swagger.json
+/__tests__/ts-axios.ts

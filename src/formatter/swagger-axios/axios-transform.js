@@ -27,7 +27,7 @@ import commonPathPrefix from "common-path-prefix";
 }
  */
 
-function toCodeEntity(keyName, node, parent) {
+function toCodeEntity(keyName, node, parent, opts) {
   if (node.type === "object") {
     return {
       name: keyName,
@@ -38,41 +38,40 @@ function toCodeEntity(keyName, node, parent) {
             title: keyName,
           },
           parent
-        )
+        ),
+        { ...opts, depth: 2 }
       ).trim(),
     };
   } else if (node.$ref) {
     const refPath = parent.ref(node.$ref);
     return {
-      name: keyName,
-      code: `export type ${keyName} = ${cc.pascalCase(refPath.schema.title)}`,
+      name: cc.pascalCase(refPath.schema.title),
+      code: "",
     };
   } else if (node.type === "array") {
     if (!node.items || !node.items.$ref) {
       return {
-        name: keyName,
-        code: `export type ${keyName} = ${fillType(node)}`,
+        name: fillType(node),
+        code: "",
       };
     } else {
       const refPath = parent.ref(node.items.$ref);
       if (refPath && !refPath.isEmpty()) {
         return {
-          name: keyName,
-          code: `export type ${keyName} = ${cc.pascalCase(
-            refPath.schema.title
-          )}[]`,
+          name: `${cc.pascalCase(refPath.schema.title)}[]`,
+          code: "",
         };
       } else {
         return {
-          name: keyName,
-          code: `export type ${keyName} = any[]`,
+          name: "any[]",
+          code: "",
         };
       }
     }
   } else {
     return {
-      name: keyName,
-      code: `export type ${keyName} = ${fillType(node)}`,
+      name: fillType(node),
+      code: "",
     };
   }
 }
@@ -88,11 +87,47 @@ export function createGetUniqName() {
     map.set(keyName, map.get(keyName) + 1);
     return out;
   };
-  return uniqKeyName
+  return uniqKeyName;
 }
 
 export default function axiosTransform(node: SchemaPath, opts?: any) {
-  const uniqKeyName = createGetUniqName()
+  const uniqKeyName = createGetUniqName();
+  const uniqCodeMap = new Map();
+  function innerToCodeEntity(keyName, innerNode, { optimize = true } = {}) {
+    if (innerNode && innerNode.type === "object") {
+      keyName = uniqKeyName(keyName);
+    }
+    const result = toCodeEntity(keyName, innerNode, node, opts);
+    if (
+      optimize &&
+      innerNode &&
+      innerNode.type === "object" &&
+      result.code &&
+      result.code.trim &&
+      result.code.trim()
+    ) {
+      const codeKey = result.code.trim().replace(result.name, "");
+      const prev = uniqCodeMap.get(codeKey);
+      if (prev && !prev.hits) {
+        prev.result.name = uniqKeyName("CommonParams");
+        prev.result.code = toCodeEntity(
+          prev.result.name,
+          innerNode,
+          node,
+          opts
+        ).code;
+      }
+      if (prev) {
+        prev.hits++;
+        return {
+          name: prev.result.name,
+          code: "",
+        };
+      }
+      uniqCodeMap.set(codeKey, { result, hits: 0 });
+    }
+    return result;
+  }
 
   if (!node.schema.paths || !Object.keys(node.schema.paths).length) {
     return null;
@@ -129,58 +164,50 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
         const paramGroups = groupBy(apiNode.parameters, "in");
         const paramType = (methodEnt.paramType = {});
         Object.keys(paramGroups).forEach((inType) => {
-          const keyName = uniqKeyName(
-            cc.pascalCase(`${prefix}_${inType}_Params`)
-          );
           if (!paramGroups[inType].length) {
             return;
           }
 
+          const keyName = cc.pascalCase(`${prefix} ${inType} Params`);
+
           if (inType === "body" && paramGroups[inType].length === 1) {
             paramType[inType] = {
-              ...toCodeEntity(
-                keyName,
-                {
-                  ...paramGroups[inType][0],
-                  ...paramGroups[inType][0].schema,
-                },
-                node
-              ),
+              ...innerToCodeEntity(keyName, {
+                ...paramGroups[inType][0],
+                ...paramGroups[inType][0].schema,
+              }),
               required: true,
             };
           } else {
-            paramType[inType] = {
-              name: keyName,
-              code: toTs(
-                new SchemaPath(
-                  {
-                    type: "object",
-                    properties: paramGroups[inType].reduce((obj, def) => {
-                      obj[def.name] = {
-                        ...def,
-                        ...def.schema,
-                      };
-                      return obj;
-                    }, {}),
-                    title: keyName,
-                  },
-                  node
-                ),
-                { ...opts, depth: 2 }
-              ).trim(),
-            };
+            paramType[inType] = innerToCodeEntity(
+              keyName,
+              {
+                type: "object",
+                properties: paramGroups[inType].reduce((obj, def) => {
+                  obj[def.name] = {
+                    ...def,
+                    ...def.schema,
+                  };
+                  return obj;
+                }, {}),
+                title: keyName,
+              },
+              { optimize: inType !== "path" }
+            );
           }
         });
 
         const responseType = (methodEnt.responseType = {});
 
         if (apiNode.responses["200"]) {
-          const keyName = uniqKeyName(cc.pascalCase(`${prefix}_Res`));
+          const keyName = cc.pascalCase(`${prefix} Res`);
           const okNode = {
             ...apiNode.responses["200"],
             ...apiNode.responses["200"].schema,
           };
-          responseType["200"] = toCodeEntity(keyName, okNode, node);
+          responseType["200"] = innerToCodeEntity(keyName, okNode, {
+            optimize: false,
+          });
         }
       }
     });
