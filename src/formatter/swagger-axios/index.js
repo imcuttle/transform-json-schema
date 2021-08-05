@@ -102,7 +102,7 @@ export default function swaggerAxios(
 
     Object.keys(data).forEach((pathChunk) => {
       Object.keys(data[pathChunk]).forEach((method) => {
-        const { responseType, paramType, path } = data[pathChunk][method];
+        const { responseType, paramType, path, summary } = data[pathChunk][method];
         const pathTokens = getTokens(pathChunk);
         const reqCommonPrefix = method + " " + pathChunk;
         const argsChunks = [];
@@ -162,6 +162,10 @@ export default function swaggerAxios(
           url = url.replace(new RegExp(escapeRegexp(chunk), 'g'), `\${COMMON_SUBSTRS[${i}]}`)
         })
         codes.push(`
+      /**
+       * ${method.toUpperCase()} ${tUrl(path)}
+       * ${summary || ''}
+       */
       export function ${uniqKeyName(
         camelCase(reqCommonPrefix)
       )}<B extends boolean = (typeof COMMON_CONFIG)['responseData']>(${argsChunks.join(

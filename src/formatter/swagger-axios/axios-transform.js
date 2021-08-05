@@ -164,7 +164,7 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
     const methods = Object.keys(pathNode);
     methods.forEach((method) => {
       const apiNode = pathNode[method];
-      const methodEnt = (pathEnt[method] = { path });
+      const methodEnt = (pathEnt[method] = { path, summary: apiNode.summary });
 
       const prefix = `${uniqPath.replace(/\//, "_")}_${method}`;
 
