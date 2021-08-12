@@ -1,3 +1,4 @@
+// @flow
 import { SchemaPath } from "../../types/Schema";
 import toTs, { fillType } from "../ts";
 import groupBy from "lodash.groupby";
@@ -91,7 +92,10 @@ export function createGetUniqName() {
   return uniqKeyName;
 }
 
-export default function axiosTransform(node: SchemaPath, opts?: any) {
+export default function axiosTransform(
+  node: SchemaPath,
+  { exactCommonSubStrings = false, ...opts }: any = {}
+) {
   const uniqKeyName = createGetUniqName();
   const uniqCodeMap = new Map();
   function innerToCodeEntity(keyName, innerNode, { optimize = true } = {}) {
@@ -148,16 +152,26 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
    */
   const rootEnt = {};
   const paths = Object.keys(node.schema.paths);
-  const commonSubStrings = commonSubString(paths, {
-    minOccurrence: paths.length,
-    minLength: 2,
-  });
+  const stripTemplate = (url) =>
+    url.replace(/(?<!\$){(.+?)}/g, "").replace(/\/\/+/g, "/");
+  const commonSubStrings = exactCommonSubStrings
+    ? commonSubString(
+        paths.map((p) => stripTemplate(p)),
+        {
+          minOccurrence: paths.length,
+          minLength: 2,
+        }
+      )
+    : [];
 
   paths.forEach((path) => {
-    let uniqPath = path
-    commonSubStrings.forEach(subStr => {
-      uniqPath = uniqPath.replace(new RegExp(escapeRegExp(subStr.name), 'g'), '')
-    })
+    let uniqPath = path;
+    commonSubStrings.forEach((subStr) => {
+      uniqPath = uniqPath.replace(
+        new RegExp(escapeRegExp(subStr.name), "g"),
+        ""
+      );
+    });
     const pathEnt = (rootEnt[uniqPath] = {});
     const pathNode = node.schema.paths[path];
 
@@ -222,7 +236,7 @@ export default function axiosTransform(node: SchemaPath, opts?: any) {
   });
 
   return {
-    commonSubStrings: commonSubStrings.map(x => x.name),
+    commonSubStrings: commonSubStrings.map((x) => x.name),
     data: rootEnt,
   };
 }

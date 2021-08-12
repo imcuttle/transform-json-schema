@@ -86,11 +86,12 @@ export default function swaggerAxios(
       `stringDataAxios()(${axiosKey});\n`
     );
     const { commonSubStrings, data } = axiosResult;
-    codes.push(
-      `const COMMON_SUBSTRS = ${JSON.stringify(
-        commonSubStrings.map((subStr) => tUrl(subStr) || "")
-      )};`
-    );
+    !!commonSubStrings.length &&
+      codes.push(
+        `const COMMON_SUBSTRS = ${JSON.stringify(
+          commonSubStrings.map((subStr) => tUrl(subStr) || "")
+        )};`
+      );
     codes.push(
       `const COMMON_CONFIG: AxiosRequestConfig & ${
         commonConfig && commonConfig.hasOwnProperty("responseData")
@@ -102,7 +103,9 @@ export default function swaggerAxios(
 
     Object.keys(data).forEach((pathChunk) => {
       Object.keys(data[pathChunk]).forEach((method) => {
-        const { responseType, paramType, path, summary } = data[pathChunk][method];
+        const { responseType, paramType, path, summary } = data[pathChunk][
+          method
+        ];
         const pathTokens = getTokens(pathChunk);
         const reqCommonPrefix = method + " " + pathChunk;
         const argsChunks = [];
@@ -157,14 +160,17 @@ export default function swaggerAxios(
           `axiosRequestConfig?: AxiosRequestConfig & { responseData?: B }`
         );
 
-        let url = path
+        let url = path;
         commonSubStrings.forEach((chunk, i) => {
-          url = url.replace(new RegExp(escapeRegexp(chunk), 'g'), `\${COMMON_SUBSTRS[${i}]}`)
-        })
+          url = url.replace(
+            new RegExp(escapeRegexp(chunk), "g"),
+            `\${COMMON_SUBSTRS[${i}]}`
+          );
+        });
         codes.push(`
       /**
        * ${method.toUpperCase()} ${tUrl(path)}
-       * ${summary || ''}
+       * ${summary || ""}
        */
       export function ${uniqKeyName(
         camelCase(reqCommonPrefix)
