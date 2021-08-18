@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.5fcc11e6.chunk.css",
-    "main.js": "/static/js/main.c964a642.chunk.js",
-    "main.js.map": "/static/js/main.c964a642.chunk.js.map",
+    "main.js": "/static/js/main.fc62cd47.chunk.js",
+    "main.js.map": "/static/js/main.fc62cd47.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d5c70904.js",
     "runtime-main.js.map": "/static/js/runtime-main.d5c70904.js.map",
     "static/css/2.4149e034.chunk.css": "/static/css/2.4149e034.chunk.css",
@@ -12,15 +12,15 @@
     "static/css/2.4149e034.chunk.css.map": "/static/css/2.4149e034.chunk.css.map",
     "static/css/main.5fcc11e6.chunk.css.map": "/static/css/main.5fcc11e6.chunk.css.map",
     "static/js/2.27ef5d1b.chunk.js.LICENSE.txt": "/static/js/2.27ef5d1b.chunk.js.LICENSE.txt",
-    "static/js/transform-worker.94501be5.worker.js": "/static/js/transform-worker.94501be5.worker.js",
-    "static/js/transform-worker.94501be5.worker.js.LICENSE.txt": "/static/js/transform-worker.94501be5.worker.js.LICENSE.txt",
-    "static/js/transform-worker.94501be5.worker.js.map": "/static/js/transform-worker.94501be5.worker.js.map"
+    "static/js/transform-worker.d07115b9.worker.js": "/static/js/transform-worker.d07115b9.worker.js",
+    "static/js/transform-worker.d07115b9.worker.js.LICENSE.txt": "/static/js/transform-worker.d07115b9.worker.js.LICENSE.txt",
+    "static/js/transform-worker.d07115b9.worker.js.map": "/static/js/transform-worker.d07115b9.worker.js.map"
   },
   "entrypoints": [
     "static/js/runtime-main.d5c70904.js",
     "static/css/2.4149e034.chunk.css",
     "static/js/2.27ef5d1b.chunk.js",
     "static/css/main.5fcc11e6.chunk.css",
-    "static/js/main.c964a642.chunk.js"
+    "static/js/main.fc62cd47.chunk.js"
   ]
 }
