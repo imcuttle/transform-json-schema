@@ -152,14 +152,12 @@ export default function axiosTransform(
    */
   const rootEnt = {};
   const paths = Object.keys(node.schema.paths);
-  const stripTemplate = (url) =>
-    url.replace(/(?<!\$){(.+?)}/g, "").replace(/\/\/+/g, "/");
   const commonSubStrings = exactCommonSubStrings
     ? commonSubString(
-        paths.map((p) => stripTemplate(p)),
+        paths,
         {
           minOccurrence: paths.length,
-          minLength: 6,
+          minLength: 8,
           ...(typeof exactCommonSubStrings === "object"
             ? exactCommonSubStrings
             : {}),
