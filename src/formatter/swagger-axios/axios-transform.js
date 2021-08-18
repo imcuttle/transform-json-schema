@@ -94,7 +94,7 @@ export function createGetUniqName() {
 
 export default function axiosTransform(
   node: SchemaPath,
-  { exactCommonSubStrings = false, ...opts }: any = {}
+  { exactCommonSubStrings = true, ...opts }: any = {}
 ) {
   const uniqKeyName = createGetUniqName();
   const uniqCodeMap = new Map();

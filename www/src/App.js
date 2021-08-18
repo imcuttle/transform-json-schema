@@ -50,7 +50,7 @@ const CONFIG = JSON.stringify(
   {
     axiosRequest: "axios",
     commonConfig: { responseData: true },
-    exactCommonSubStrings: false,
+    exactCommonSubStrings: true,
     splitModule: true,
     prefix: `/* eslint-disable */\n// @ts-nocheck\n`,
     suffix: "",

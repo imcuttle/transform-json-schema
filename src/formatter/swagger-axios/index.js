@@ -106,7 +106,9 @@ export default function swaggerAxios(
         const { responseType, paramType, path, summary } = data[pathChunk][
           method
         ];
-        const pathTokens = getTokens(pathChunk);
+        const pathTokens = getTokens(pathChunk).filter(
+          (token) => !Object.hasOwnProperty.call((commonConfig.pathData || {}), token)
+        );
         const reqCommonPrefix = method + " " + pathChunk;
         const argsChunks = [];
         pathTokens.forEach((token) => {
