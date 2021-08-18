@@ -159,7 +159,10 @@ export default function axiosTransform(
         paths.map((p) => stripTemplate(p)),
         {
           minOccurrence: paths.length,
-          minLength: 2,
+          minLength: 6,
+          ...(typeof exactCommonSubStrings === "object"
+            ? exactCommonSubStrings
+            : {}),
         }
       )
     : [];
