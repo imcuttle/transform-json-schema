@@ -8,7 +8,7 @@ import { SchemaPath } from '../types/Schema'
 
 module.exports = function(node: SchemaPath, { filter = /.*/ } = {}) {
   if (node.schema.swagger) {
-    Object.keys(node.schema.definitions)
+    Object.keys(node.schema.definitions || {})
       .filter(name => {
         filter.lastIndex = 0
         if (!filter.test(name)) {

@@ -136,7 +136,7 @@ function wrapLikeFormatter(node: SchemaPath, options = {}) {
   const propertyTrans = propertyCamelcase ? t => camelCase(t) : t => t
 
   if (node.schema.swagger) {
-    const nodes = Object.keys(node.schema.definitions).map(name => {
+    const nodes = Object.keys(node.schema.definitions || {}).map(name => {
       const n = node.get(['definitions', name])
       if (!n.has('title')) {
         n.set('title', name)
